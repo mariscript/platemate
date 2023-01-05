@@ -10,7 +10,7 @@ Driver: Jason
 
 Driver: Marison
 Updated ZipCode to VARCHAR from integer
-Made addition migration file
+Made additional migration file.
 Created pydantic models for user. UserIn, UserOut, UserQueries.
 CRUD functions were created.
 Watched the Authorization with JWTdown for FastAPI

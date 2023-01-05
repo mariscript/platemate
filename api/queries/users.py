@@ -23,8 +23,56 @@ class UserOut(BaseModel):
 class UsersOut(BaseModel):
     users: list[UserOut]
 
+class UserOutWithPassword(UserOut):
+    hashed_password: str
 
 class UserQueries:
+    def get(self, email: str) -> UserOutWithPassword:
+        with pool.connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """
+                    SELECT user_id, first_name, last_name,
+                        email, zipcode, password
+                    FROM users
+                """,
+                )
+
+                record = None
+                row = cur.fetchone()
+                if row is not None:
+                    record = {}
+                    for i, column in enumerate(cur.description):
+                        record[column.name] = row[i]
+
+                return record
+
+    def create_user(self, info: UserIn, hashed_password: str) -> UserOutWithPassword:
+        with pool.connection() as conn:
+            with conn.cursor() as cur:
+                params = [
+                    info.first_name,
+                    info.last_name,
+                    info.email,
+                    info.zipcode,
+                    info.password,
+                ]
+                cur.execute(
+                    """
+                    INSERT INTO users (first_name, last_name, email, zipcode, password)
+                    VALUES (%s, %s, %s, %s, %s)
+                    RETURNING user_id, first_name, last_name, email, zipcode, password
+                    """,
+                    params,
+                )
+
+                record = None
+                row = cur.fetchone()
+                if row is not None:
+                    record = {}
+                    for i, column in enumerate(cur.description):
+                        record[column.name] = row[i]
+
     def get_all_users(self):
         with pool.connection() as conn:
             with conn.cursor() as cur:
@@ -35,18 +83,12 @@ class UserQueries:
                     """
                 )
                 results = []
-                # loop through the results
-                # for each row, create a user
                 for row in cur.fetchall():
-
-                    # either build a dict or a UserOut
                     print('row *********', row)
                     user = {}
                     for i, column in enumerate(cur.description):
                         user[column.name] = row[i]
                     results.append(user)
-
-                # append the user to results
 
                 return results
 
