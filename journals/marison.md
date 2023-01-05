@@ -2,16 +2,33 @@
 
 ## Week 2:
 
+### 1/6/2023 Friday
+
+Driver: Jason
+
+### 1/5/2023 Thursday
+
+Driver: Marison
+Updated ZipCode to VARCHAR from integer
+Made addition migration file
+Created pydantic models for user. UserIn, UserOut, UserQueries.
+CRUD functions were created.
+Watched the Authorization with JWTdown for FastAPI
+
 ### 1/4/2023 Wednesday
 
+Driver: Zac
 Learned how to make a yaml file from scratch.
 Completed the yaml file as a team, set up and chose Postgres Database
 I was the person typing to make sure the file was successfuly typed out correctly and able to be cloned by the rest of the group.
 Set up PG Admin successfully
 Everyone was able to clone the project.
 
+We created our first table collaboratively.
+
 ### 1/3/2023 Tuesday
 
+Driver: Marison
 Worked on routes of each page
 Studied/learned Yelp API filters
 Revised api-design-user.md on gitlab
@@ -28,7 +45,7 @@ I started and completed api-design-user.md in the repository
 ### 12/21/2022 Wednesday
 
 Working on completing wireframe design via Figma.
-Had to brainstorm change name of app
+Had to brainstorm change name of app.
 
 ### 12/20/2022 Tuesday
 

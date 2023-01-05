@@ -3,6 +3,8 @@ volumes:
     external: true
   pg-admin:
     external: true
+  jwtdown-db-data:
+    external: true
 services:
   api:
     build:
@@ -13,6 +15,10 @@ services:
     volumes:
       - ./api:/app
     environment:
+      SIGNING_KEY:
+      WAIT_HOSTS: db:5432
+      WAIT_BEFORE: 5
+      WAIT_TIMEOUT: 60
       DATABASE_URL: postgresql://platemate:platemate@db/platemate
   db:
     image: postgres:14.5-bullseye

@@ -49,7 +49,7 @@
 - "email": email,
 - "password": string,
 - "check_password": string,
-- "zip": string,
+- "zipcode": string,
 
 - Response: Create a user
 - Response shape (JSON):
@@ -61,7 +61,7 @@
               "last_name": string,
               "email": email,
               "password": string,
-              "zip": string,
+              "zipcode": string,
           }
       ]
   }
@@ -86,7 +86,7 @@
               "last_name": string,
               "email": email,
               "password": string,
-              "zip": string,
+              "zipcode": string,
           }
               "allergies": {
                   "seafood": boolean,
