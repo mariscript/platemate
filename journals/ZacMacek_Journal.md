@@ -1,7 +1,17 @@
 ## Week 2:
+### 1/6/2023
+
 ### 1/5/2023
+Marison drove the bus
+installed jwtdown-fastapi. created a routers and queries folders. 
+created pydantic models UserIn UserOut and UserQueries.
+created retrieve CRUD functions in all models.
+Made additional Migrations
+Started the authentication files.
+Learned how to change the datatype on a table
 
 ### 1/4/2023 
+I drove the bus today
 Started the project, got our docker-compose file set up.
 Set up and chose postgres database.
 installed and set up pg-admin.
