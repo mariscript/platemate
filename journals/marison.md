@@ -5,10 +5,12 @@
 ### 1/6/2023 Friday
 
 Driver: Jason
+Fixed authenticator.py
 
 ### 1/5/2023 Thursday
 
 Driver: Marison
+Learned how to manually put in data through PGAdmin.
 Updated ZipCode to VARCHAR from integer
 Made additional migration file.
 Created pydantic models for user. UserIn, UserOut, UserQueries.

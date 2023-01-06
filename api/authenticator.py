@@ -1,27 +1,26 @@
 import os
 from fastapi import Depends
 from jwtdown_fastapi.authentication import Authenticator
-from queries.users import UsersOut, UserOut, UserIn, UserQueries, UserOutWithPassword
+from queries.accounts import AccountOut, AccountsQueries, Account
 
 class PMAuthenticator(Authenticator):
     async def get_account_data(
         self,
-        email: str,
-        users: UserQueries,
+        username: str,
+        accounts: AccountsQueries,
     ):
-        return users.get(email)
+        return accounts.get(username)
 
     def get_account_getter(
         self,
-        users: UserQueries = Depends(),
+        accounts: AccountsQueries = Depends(),
     ):
-        return users
+        return accounts
 
-    def get_hashed_password(self, user: UserOutWithPassword):
-        return user.hashed_password
+    def get_hashed_password(self, account: Account):
+        return account.hashed_password
 
-    def get_user_data_for_cookie(self, user: UserOut):
-        return user.email, UserOut(**user.dict())
-
+    def get_account_data_for_cookie(self, account: Account):
+        return account.email, AccountOut(**account.dict())
 
 authenticator = PMAuthenticator(os.environ["SIGNING_KEY"])
