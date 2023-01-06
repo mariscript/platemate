@@ -20,6 +20,9 @@ class AccountOut(BaseModel):
     email: str
     zipcode: str
 
+class AccountsOut(BaseModel):
+    accounts: list[AccountOut]
+
 class AccountIn(BaseModel):
     first_name: str
     last_name: str
@@ -46,10 +49,10 @@ class AccountsQueries:
                 )
 
                 # record = None
-                # row = cur.fetchone()
+                # row = db.fetchone()
                 # if row is not None:
                 #     record = {}
-                #     for i, column in enumerate(cur.description):
+                #     for i, column in enumerate(db.description):
                 #         record[column.name] = row[i]
                 # return record
 
@@ -91,50 +94,61 @@ class AccountsQueries:
                 )
 
 
-    # def get_all_users(self):
-    #     with pool.connection() as conn:
-    #         with conn.cursor() as cur:
-    #             cur.execute(
-    #                 """
-    #                 SELECT user_id
-    #                 , first_name
-    #                 , last_name
-    #                 , email
-    #                 , zipcode
-    #                 , hashed_password
-    #                 FROM users;
-    #                 """
-    #             )
-    #             results = []
-    #             for row in cur.fetchall():
-    #                 print('row *********', row)
-    #                 user = {}
-    #                 for i, column in enumerate(cur.description):
-    #                     user[column.name] = row[i]
-    #                 results.append(user)
+    def get_all_accounts(self):
+        with pool.connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """
+                    SELECT user_id
+                    , first_name
+                    , last_name
+                    , email
+                    , zipcode
+                    , hashed_password
+                    FROM accounts;
+                    """
+                )
+                results = []
+                for row in cur.fetchall():
+                    account = {}
+                    for i, column in enumerate(cur.description):
+                        account[column.name] = row[i]
+                    results.append(account)
+                return results
 
-    #             return results
+    # delete account
+    def delete_account(self, user_id: int) -> bool:
+        with pool.connection() as conn:
+            with conn.cursor() as db:
+                db.execute(
+                    """
+                    DELETE FROM accounts
+                    WHERE user_id = %s
+                    """,
+                    [user_id]
+                )
+                return True
 
-    # def get_user_by_id(self, user_id: int):
-    #     with pool.connection() as conn:
-    #         with conn.cursor() as cur:
-    #             cur.execute(
-    #                 """
-    #                 SELECT user_id
-    #                 , first_name
-    #                 , last_name
-    #                 , email
-    #                 , zipcode
-    #                 , hashed_password
-    #                 FROM users
-    #                 WHERE user_id = %s;
-    #                 """,
-    #                 [user_id]
-    #             )
+    def get_account_by_id(self, user_id: int):
+        with pool.connection() as conn:
+            with conn.cursor() as db:
+                db.execute(
+                    """
+                    SELECT user_id
+                    , first_name
+                    , last_name
+                    , email
+                    , zipcode
+                    , hashed_password
+                    FROM accounts
+                    WHERE user_id = %s;
+                    """,
+                    [user_id]
+                )
 
-    #             results = cur.fetchone()
-    #             if results is None: return results
-    #             user = {}
-    #             for i, column in enumerate(cur.description):
-    #                 user[column.name] = results[i]
-    #             return user
+                results = db.fetchone()
+                if results is None: return results
+                account = {}
+                for i, column in enumerate(db.description):
+                    account[column.name] = results[i]
+                return account

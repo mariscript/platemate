@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Response, Request
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
 from pydantic import BaseModel
-from queries.accounts import AccountOut, AccountIn, AccountsQueries
+from queries.accounts import AccountOut, AccountIn, AccountsQueries, AccountsOut
 
 
 class AccountForm(BaseModel):
@@ -17,25 +17,38 @@ class HttpError(BaseModel):
 
 router = APIRouter()
 
+@router.get("/token", response_model=AccountToken | None)
+async def get_token(
+    request: Request,
+    account: AccountOut = Depends(authenticator.try_get_current_account_data)
+) -> AccountToken | None:
+    if authenticator.cookie_name in request.cookies:
+        return {
+            "access_token": request.cookies[authenticator.cookie_name],
+            "type": "Bearer",
+            "account": account,
+        }
 
-# @router.get("/api/accounts", response_model=AccountOut)
-# def accounts_list(queries: AccountsQueries = Depends()):
-#     return {
-#         "accounts": queries.get_all_accounts(),
-#     }
 
 
-# @router.get("/api/accounts/{user_id}", response_model=AccountOut)
-# def get_account(
-#     user_id: int,
-#     response: Response,
-#     queries: AccountsQueries = Depends(),
-# ):
-#     record = queries.get_account_by_id(user_id)
-#     if record is None:
-#         response.status_code = 404
-#     else:
-#         return record
+@router.get("/api/accounts", response_model=AccountsOut)
+def accounts_list(queries: AccountsQueries = Depends()):
+    return {
+        "accounts": queries.get_all_accounts(),
+    }
+
+
+@router.get("/api/accounts/{user_id}", response_model=AccountOut)
+def get_account(
+    user_id: int,
+    response: Response,
+    queries: AccountsQueries = Depends(),
+):
+    record = queries.get_account_by_id(user_id)
+    if record is None:
+        response.status_code = 404
+    else:
+        return record
 
 
 @router.post("/api/accounts", response_model=AccountToken | HttpError)
@@ -66,7 +79,6 @@ async def create_account(
 #         return record
 
 
-# @router.delete("/api/accounts/{user_id}", response_model=bool)
-# def delete_account(user_id: int, queries: AccountsQueries = Depends()):
-#     queries.delete_account(user_id)
-#     return True
+@router.delete("/api/accounts/{user_id}", response_model=bool)
+def delete_account(user_id: int, queries: AccountsQueries = Depends()):
+    return queries.delete_account(user_id)
