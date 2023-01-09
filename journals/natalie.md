@@ -1,10 +1,35 @@
-# Week Two
+# Week 3
 
-### (Thurs) 1/5/2023
+### (Mon) 1/9/2023
 
 -
 
+# Week 2
+
+### (Fri) 1/6/2023
+
+## Driver: Marison & Jason
+
+- changed 'users' table to 'accounts' table
+- completed sign up for new accounts with hash password & authenticator
+- completed login & logout
+- completed CRD for accounts
+  💡 Learned to create data for table through FastAPI
+
+### (Thurs) 1/5/2023
+
+Driver: Marison
+
+- installed jwtdown for FastAPI
+- create pydantic models for users including UserIn, UserOut, UserQueries
+- inside UserQueries, we created retrieve function of CRUD to see users data
+- created first user & added another migration to update zipcode to VARCHAR
+- started authentication
+  💡 Learned to alter the table, create pydantic models & insert data manually in pgAdmin
+
 ### (Wed) 1/4/2023
+
+Driver: Zac
 
 - updated the docker compose file to create the PostgreSQL to establish our database and be able to open it in Docker
 - updated the requirements.txt file to add FastAPI services in order to use PostgreSQL
@@ -13,15 +38,17 @@
 - added another volume and service in the docker compose file with the installation of pgAdmin to interact with PostgresSQL servers
 - used SqlDBM to visualize tables
 - created our first migration
-  💡 Learned to create a yaml file from scratch!
+  💡 Learned to create a yaml file from scratch
 
 ### (Tues) 1/3/2023
+
+Driver: Marison
 
 - completed Figma that included routers and API endpoints
 - worked with Yelp API to determine additional filters
 - revised and replaced the API design on GitLab for users
 
-# Week One
+# Week 1
 
 ### (Wed) 12/21/2022
 
