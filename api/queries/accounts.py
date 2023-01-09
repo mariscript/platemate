@@ -50,10 +50,10 @@ class AccountsQueries:
                 )
 
                 # record = None
-                # row = cur.fetchone()
+                # row = db.fetchone()
                 # if row is not None:
                 #     record = {}
-                #     for i, column in enumerate(cur.description):
+                #     for i, column in enumerate(db.description):
                 #         record[column.name] = row[i]
                 # return record
 
@@ -117,26 +117,39 @@ class AccountsQueries:
                     results.append(account)
                 return results
 
-    # def get_user_by_id(self, user_id: int):
-    #     with pool.connection() as conn:
-    #         with conn.cursor() as cur:
-    #             cur.execute(
-    #                 """
-    #                 SELECT user_id
-    #                 , first_name
-    #                 , last_name
-    #                 , email
-    #                 , zipcode
-    #                 , hashed_password
-    #                 FROM users
-    #                 WHERE user_id = %s;
-    #                 """,
-    #                 [user_id]
-    #             )
+    # delete account
+    def delete_account(self, user_id: int) -> bool:
+        with pool.connection() as conn:
+            with conn.cursor() as db:
+                db.execute(
+                    """
+                    DELETE FROM accounts
+                    WHERE user_id = %s
+                    """,
+                    [user_id]
+                )
+                return True
 
-    #             results = cur.fetchone()
-    #             if results is None: return results
-    #             user = {}
-    #             for i, column in enumerate(cur.description):
-    #                 user[column.name] = results[i]
-    #             return user
+    def get_account_by_id(self, user_id: int):
+        with pool.connection() as conn:
+            with conn.cursor() as db:
+                db.execute(
+                    """
+                    SELECT user_id
+                    , first_name
+                    , last_name
+                    , email
+                    , zipcode
+                    , hashed_password
+                    FROM accounts
+                    WHERE user_id = %s;
+                    """,
+                    [user_id]
+                )
+
+                results = db.fetchone()
+                if results is None: return results
+                account = {}
+                for i, column in enumerate(db.description):
+                    account[column.name] = results[i]
+                return account
