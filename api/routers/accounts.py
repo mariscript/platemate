@@ -38,13 +38,13 @@ def accounts_list(queries: AccountsQueries = Depends()):
     }
 
 
-@router.get("/api/accounts/{user_id}", response_model=AccountOut)
+@router.get("/api/accounts/{id}", response_model=AccountOut)
 def get_account(
-    user_id: int,
+    id: int,
     response: Response,
     queries: AccountsQueries = Depends(),
 ):
-    record = queries.get_account_by_id(user_id)
+    record = queries.get_account_by_id(id)
     if record is None:
         response.status_code = 404
     else:
@@ -65,20 +65,20 @@ async def create_account(
     return AccountToken(account=account, **token.dict())
 
 
-@router.put("/api/accounts/{user_id}", response_model=AccountOut)
+@router.put("/api/accounts/{id}", response_model=AccountOut)
 def update_account(
-    user_id: int,
+    id: int,
     account_in: AccountIn,
     response: Response,
     queries: AccountsQueries = Depends(),
 ):
-    record = queries.update_account(user_id, account_in)
+    record = queries.update_account(id, account_in)
     if record is None:
         response.status_code = 404
     else:
         return record
 
 
-@router.delete("/api/accounts/{user_id}", response_model=bool)
-def delete_account(user_id: int, queries: AccountsQueries = Depends()):
-    return queries.delete_account(user_id)
+@router.delete("/api/accounts/{id}", response_model=bool)
+def delete_account(id: int, queries: AccountsQueries = Depends()):
+    return queries.delete_account(id)
