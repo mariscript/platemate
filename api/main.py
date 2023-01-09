@@ -1,13 +1,14 @@
 from fastapi import FastAPI
 from authenticator import authenticator
 from fastapi.middleware.cors import CORSMiddleware
-from routers import accounts
+from routers import accounts, yelp
 import os
 
 
 app = FastAPI()
 app.include_router(accounts.router, tags=['Accounts'])
 app.include_router(authenticator.router)
+app.include_router(yelp.router, tags=['YelpAPI'])
 
 app.add_middleware(
     CORSMiddleware,

@@ -2,7 +2,10 @@
 
 ### (Mon) 1/9/2023
 
--
+## Driver: Natalie (Me)
+
+- completed update for accounts
+- successfully imported YelpAPI
 
 # Week 2
 
