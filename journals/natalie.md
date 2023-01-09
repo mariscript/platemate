@@ -5,7 +5,8 @@
 ## Driver: Natalie (Me)
 
 - completed update for accounts
-- successfully imported YelpAPI
+- was able to get a call back from Yelp using the imported YelpAPI, had to make two separate files in both queries and routers as well as added to the yaml file
+- each person had their own unique YelpAPI key and made their own keys file in queries, also added file to gitignore so that it wouldn't show up publicly
 
 # Week 2
 

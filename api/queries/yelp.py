@@ -3,8 +3,8 @@ import os
 from .keys import YELP_KEY
 
 class YelpQueries:
-    def get_yelp(self):
-        url = "https://api.yelp.com/v3/businesses/search?location=new%20york%20city&term=restaurants&categories=&sort_by=best_match&limit=20"
+    def get_yelp(self, location: str, distance: int, budget: int, unix_time: int):
+        url = f"https://api.yelp.com/v3/businesses/search?location={location}&term=restaurants&radius={distance}&categories=japanese&price={budget}&open_at={unix_time}&attributes=&sort_by=best_match&limit=20"
         headers = {"Authorization": f"Bearer {YELP_KEY}"}
         res = requests.get(url, headers=headers)
         data = res.json()
