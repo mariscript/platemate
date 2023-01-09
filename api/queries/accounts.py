@@ -1,6 +1,7 @@
 import os
 from pydantic import BaseModel
 from queries.pool import pool
+from typing import List, Optional
 
 class DuplicateUserError(ValueError):
     pass
@@ -19,6 +20,9 @@ class AccountOut(BaseModel):
     last_name: str
     email: str
     zipcode: str
+
+class AccountsOut(BaseModel):
+    accounts: list[AccountOut]
 
 class AccountIn(BaseModel):
     first_name: str
@@ -74,7 +78,7 @@ class AccountsQueries:
                     VALUES (%s, %s, %s, %s, %s)
                     RETURNING user_id;
                     """,
-                    [account.first_name, 
+                    [account.first_name,
                     account.last_name,
                     account.email,
                     account.zipcode,
@@ -83,7 +87,7 @@ class AccountsQueries:
                 user_id = result.fetchone()[0]
                 return Account(
                     user_id=user_id,
-                    first_name=account.first_name, 
+                    first_name=account.first_name,
                     last_name=account.last_name,
                     email=account.email,
                     zipcode=account.zipcode,
@@ -91,29 +95,27 @@ class AccountsQueries:
                 )
 
 
-    # def get_all_users(self):
-    #     with pool.connection() as conn:
-    #         with conn.cursor() as cur:
-    #             cur.execute(
-    #                 """
-    #                 SELECT user_id
-    #                 , first_name
-    #                 , last_name
-    #                 , email
-    #                 , zipcode
-    #                 , hashed_password
-    #                 FROM users;
-    #                 """
-    #             )
-    #             results = []
-    #             for row in cur.fetchall():
-    #                 print('row *********', row)
-    #                 user = {}
-    #                 for i, column in enumerate(cur.description):
-    #                     user[column.name] = row[i]
-    #                 results.append(user)
-
-    #             return results
+    def get_all_accounts(self):
+        with pool.connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """
+                    SELECT user_id
+                    , first_name
+                    , last_name
+                    , email
+                    , zipcode
+                    , hashed_password
+                    FROM accounts;
+                    """
+                )
+                results = []
+                for row in cur.fetchall():
+                    account = {}
+                    for i, column in enumerate(cur.description):
+                        account[column.name] = row[i]
+                    results.append(account)
+                return results
 
     # def get_user_by_id(self, user_id: int):
     #     with pool.connection() as conn:

@@ -2,6 +2,10 @@
 
 ## Week 2:
 
+### Friday 1/6/2023
+
+Today we were able to get JWT authentication working to be able to create an authenticated user! We originally had a user table which we changed to an accounts table in order for it to work with the jwt library we were provided. We had to change all of our user variables and functions to accounts to ensure that we could get accounts to work. We also got all functionality for Accounts to work outside of update (CRD from CRUD).
+
 ### Thursday 1/5/2023
 
 We started today with the plan of working on JWT authentication. To do so, we had to first create our pydantic models for User including UserIn, UserOut, and UserQueries. Inside UserQueries, we created the retrieve functions from CRUD for the User table. We learned how to alter a column using the ALTER command in SQL and added a row using the PgAdmin tool. We were able to see this data using the router endpoints that we created today as well. We started on Authentication, but are running into issues with our users.py file specifically with the UserQueries.
