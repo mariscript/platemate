@@ -1,6 +1,11 @@
 import os
 from pydantic import BaseModel
 from queries.pool import pool
+from typing import Union
+
+
+class Error(BaseModel):
+    message: str
 
 class DuplicateUserError(ValueError):
     pass
@@ -13,6 +18,13 @@ class Account(BaseModel):
     zipcode: str
     hashed_password: str
 
+class AccountIn(BaseModel):
+    first_name: str
+    last_name: str
+    email: str
+    zipcode: str
+    password: str
+
 class AccountOut(BaseModel):
     user_id: int
     first_name: str
@@ -23,12 +35,6 @@ class AccountOut(BaseModel):
 class AccountsOut(BaseModel):
     accounts: list[AccountOut]
 
-class AccountIn(BaseModel):
-    first_name: str
-    last_name: str
-    email: str
-    zipcode: str
-    password: str
 
 class AccountsQueries:
     def get(self, email: str) -> Account:
@@ -77,7 +83,7 @@ class AccountsQueries:
                     VALUES (%s, %s, %s, %s, %s)
                     RETURNING user_id;
                     """,
-                    [account.first_name, 
+                    [account.first_name,
                     account.last_name,
                     account.email,
                     account.zipcode,
@@ -86,7 +92,7 @@ class AccountsQueries:
                 user_id = result.fetchone()[0]
                 return Account(
                     user_id=user_id,
-                    first_name=account.first_name, 
+                    first_name=account.first_name,
                     last_name=account.last_name,
                     email=account.email,
                     zipcode=account.zipcode,
@@ -116,7 +122,6 @@ class AccountsQueries:
                     results.append(account)
                 return results
 
-    # delete account
     def delete_account(self, user_id: int) -> bool:
         with pool.connection() as conn:
             with conn.cursor() as db:
@@ -152,3 +157,33 @@ class AccountsQueries:
                 for i, column in enumerate(db.description):
                     account[column.name] = results[i]
                 return account
+
+    def update_account(self,user_id:int, account:AccountIn) -> Union[AccountOut,Error]:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as db:
+                    db.execute(
+                        """
+                        UPDATE accounts
+                        SET first_name = %s
+                        , last_name = %s
+                        , email = %s
+                        , zipcode = %s
+                        WHERE user_id = %s
+                        """,
+                        [
+                            account.first_name,
+                            account.last_name,
+                            account.email,
+                            account.zipcode,
+                            user_id
+                        ]
+                    )
+                    return self.account_in_to_out(user_id, account)
+        except Exception as e:
+            print(e)
+            return {"message":"Could not update the account"}
+
+    def account_in_to_out(self, user_id: int, account: AccountIn):
+            old_data = account.dict()
+            return AccountOut(user_id=user_id, **old_data)
