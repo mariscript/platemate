@@ -6,6 +6,7 @@ steps = [
             seafood BOOLEAN NOT NULL DEFAULT FALSE,
             gluten_free BOOLEAN NOT NULL DEFAULT FALSE,
             account_id INTEGER UNIQUE REFERENCES accounts(id)
+            ON DELETE CASCADE
         );
         """,
         """
@@ -20,6 +21,7 @@ steps = [
             vegetarian BOOLEAN NOT NULL DEFAULT FALSE,
             halal BOOLEAN NOT NULL DEFAULT FALSE,
             account_id INTEGER UNIQUE REFERENCES accounts(id)
+            ON DELETE CASCADE
         );
         """,
         """
