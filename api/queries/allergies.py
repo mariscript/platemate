@@ -8,26 +8,29 @@ from queries.accounts import Account
 class Error(BaseModel):
     message: str
 
-class Allergies(BaseModel):
+class Allergy(BaseModel):
     id: int
     seafood: bool
     gluten_free: bool
     account_id: int
 
-class AllergiesIn(BaseModel):
+class AllergyIn(BaseModel):
+    seafood: bool
+    gluten_free: bool
+    account_id: int
+
+class AllergyOut(BaseModel):
+    id: int
     seafood: bool
     gluten_free: bool
     account_id: int
 
 class AllergiesOut(BaseModel):
-    id: int
-    seafood: bool
-    gluten_free: bool
-    account_id: int
+    allergies: list[AllergyOut]
 
 class AllergiesQueries(BaseModel):
 
-    def create(self, allergies: AllergiesIn) -> Allergies:
+    def create(self, allergies: AllergyIn) -> Allergy:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 result = db.execute(
@@ -41,9 +44,93 @@ class AllergiesQueries(BaseModel):
                     allergies.account_id]
                 )
                 id = result.fetchone()[0]
-                return Allergies(
+                return Allergy(
                     id=id,
                     seafood=allergies.seafood,
                     gluten_free=allergies.gluten_free,
                     account_id=allergies.account_id
                 )
+    
+    def get_all_allergies(self):
+        with pool.connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """
+                    SELECT id
+                    , seafood
+                    , gluten_free
+                    , account_id
+                    FROM allergies
+                    """
+                )
+                results = []
+                for row in cur.fetchall():
+                    allergy = {}
+                    for i, column in enumerate(cur.description):
+                        allergy[column.name] = row[i]
+                    results.append(allergy)
+                return results
+
+    def get_allergy_by_id(self, id: int):
+        with pool.connection() as conn:
+            with conn.cursor() as db:
+                db.execute(
+                    """
+                    SELECT id
+                    , seafood
+                    , gluten_free
+                    , account_id
+                    FROM allergies
+                    WHERE id = %s;
+                    """,
+                    [id]
+                )
+
+                results = db.fetchone()
+                if results is None: return results
+                allergy = {}
+                for i, column in enumerate(db.description):
+                    allergy[column.name] = results[i]
+                return allergy
+
+
+
+    def update_allergy(self, id:int, allergy:AllergyIn) -> Union[AllergyOut,Error]:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as db:
+                    db.execute(
+                        """
+                        UPDATE allergies
+                        SET seafood = %s
+                        , gluten_free = %s
+                        , account_id = %s
+                        WHERE id = %s
+                        """,
+                        [
+                            allergy.seafood,
+                            allergy.gluten_free,
+                            allergy.account_id,
+                            id
+                        ]
+                    )
+                    return self.allergy_in_to_out(id, allergy)
+        except Exception as e:
+            print(e)
+            return {"message":"Could not update the allergy"}
+
+    def allergy_in_to_out(self, id: int, allergy: AllergyIn):
+        old_data = allergy.dict()
+        return AllergyOut(id=id, **old_data)
+
+    def delete_allergy(self, id: int) -> bool:
+        with pool.connection() as conn:
+            with conn.cursor() as db:
+                db.execute(
+                    """
+                    DELETE FROM allergies
+                    WHERE id = %s
+                    """,
+                    [id]
+                )
+                return True
