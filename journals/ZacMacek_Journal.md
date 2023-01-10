@@ -1,5 +1,17 @@
+## Week 3:
+### 1/9/2023
+Natalie Drove the bus today
+Finished CRUD functions for Accounts
+Started getting our yelp api calls to work
+We have tested our yelp api and learned how to call filters for url
+created our allergies and dietary restrictions tables
+and worked on the crud functions for the allergies table
+
 ## Week 2:
 ### 1/6/2023
+Marison Drove the bus
+finished Authentication
+
 
 ### 1/5/2023
 Marison drove the bus
