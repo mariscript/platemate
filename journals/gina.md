@@ -4,9 +4,9 @@
 
 ### Monday 1/9/2023
 
-Today we were able to finish our update function. We also were able to make a call to our Yelp API using the FastAPI Swagger tool as a get function. We had to create a header which we called along with the url. After lunch, we are going to work on custom url instead of a preset one which we used for testing, and also work on creating additional tables with foreign key relationships.
+Today we were able to finish our update function. We also were able to make a call to our Yelp API using the FastAPI Swagger tool as a get function. We had to create a header which we called along with the url and a gitignored keys.py file. After lunch, we are going to work on custom url instead of a preset one which we used for testing, and also work on creating additional tables with foreign key relationships.
 
-It is now after lunch, and we were able to set and test custom filters on the URL for our Yelp API call!
+It is now after lunch, and we were able to set and test custom filters on the URL for our Yelp API call! We also made an allergies and diet_restrict table. We are currently working on the create function for allergies which we are having issuses with because of the foreign key.
 
 ## Week 2:
 
