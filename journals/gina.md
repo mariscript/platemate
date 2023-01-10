@@ -2,6 +2,12 @@
 
 ## Week 3:
 
+### Tuesday 1/10/2023
+
+Today we were able to complete the CRUD functions for allergies and diet_restrict tables. We changed the account_id FK on both tables to be unique and on delete cascade so that if the parent (account) table is deleted, the child (allergies & diet_restrict) table will be deleted.
+
+We are now going to work on the get one restaurant from the Yelp API using a unique API call.
+
 ### Monday 1/9/2023
 
 Today we were able to finish our update function. We also were able to make a call to our Yelp API using the FastAPI Swagger tool as a get function. We had to create a header which we called along with the url and a gitignored keys.py file. After lunch, we are going to work on custom url instead of a preset one which we used for testing, and also work on creating additional tables with foreign key relationships.
