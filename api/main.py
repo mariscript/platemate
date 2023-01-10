@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from authenticator import authenticator
 from fastapi.middleware.cors import CORSMiddleware
-from routers import accounts, yelp, allergies
+from routers import accounts, yelp, allergies, diet_restrict
 import os
 
 
@@ -10,6 +10,7 @@ app.include_router(accounts.router, tags=['Accounts'])
 app.include_router(authenticator.router)
 app.include_router(yelp.router, tags=['YelpAPI'])
 app.include_router(allergies.router, tags=['Allergies'])
+app.include_router(diet_restrict.router, tags=['Diet Restrictions'])
 
 app.add_middleware(
     CORSMiddleware,
