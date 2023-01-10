@@ -1,4 +1,10 @@
 ## Week 3:
+### 1/10/2023
+I drove the bus for the first half of the day
+finished CRUD functions for allergies
+
+
+
 ### 1/9/2023
 Natalie Drove the bus today
 Finished CRUD functions for Accounts
