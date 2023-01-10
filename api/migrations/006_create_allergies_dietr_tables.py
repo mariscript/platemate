@@ -5,7 +5,7 @@ steps = [
             id SERIAL PRIMARY KEY NOT NULL,
             seafood BOOLEAN NOT NULL DEFAULT FALSE,
             gluten_free BOOLEAN NOT NULL DEFAULT FALSE,
-            FOREIGN KEY (id) REFERENCES accounts(id)
+            account_id INTEGER UNIQUE REFERENCES accounts(id)
         );
         """,
         """
@@ -19,7 +19,7 @@ steps = [
             vegan BOOLEAN NOT NULL DEFAULT FALSE,
             vegetarian BOOLEAN NOT NULL DEFAULT FALSE,
             halal BOOLEAN NOT NULL DEFAULT FALSE,
-            FOREIGN KEY (id) REFERENCES accounts(id)
+            account_id INTEGER UNIQUE REFERENCES accounts(id)
         );
         """,
         """
