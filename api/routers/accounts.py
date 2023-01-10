@@ -65,18 +65,18 @@ async def create_account(
     return AccountToken(account=account, **token.dict())
 
 
-# @router.put("/api/accounts/{user_id}", response_model=AccountOut)
-# def update_account(
-#     user_id: int,
-#     account_in: AccountIn,
-#     response: Response,
-#     queries: AccountsQueries = Depends(),
-# ):
-#     record = queries.update_account(user_id, account_in)
-#     if record is None:
-#         response.status_code = 404
-#     else:
-#         return record
+@router.put("/api/accounts/{user_id}", response_model=AccountOut)
+def update_account(
+    user_id: int,
+    account_in: AccountIn,
+    response: Response,
+    queries: AccountsQueries = Depends(),
+):
+    record = queries.update_account(user_id, account_in)
+    if record is None:
+        response.status_code = 404
+    else:
+        return record
 
 
 @router.delete("/api/accounts/{user_id}", response_model=bool)
