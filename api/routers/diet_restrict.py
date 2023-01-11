@@ -13,11 +13,15 @@ def create_diet_restrict(
     diet_restrict: DietRestrictIn,
     response: Response,
     repo: DietRestrictQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     return repo.create(diet_restrict)
 
 @router.get("/api/diet_restricts", response_model=DietRestrictsOut)
-def diet_restrict_list(queries: DietRestrictQueries = Depends()):
+def diet_restrict_list(
+    queries: DietRestrictQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    ):
     return {
         "diet_restricts": queries.get_all_diet_restricts(),
     }
@@ -27,6 +31,7 @@ def get_diet_restrict(
     id: int,
     response: Response,
     queries: DietRestrictQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     record = queries.get_diet_restrict_by_id(id)
     if record is None:
@@ -40,6 +45,7 @@ def update_diet_restrict(
     diet_restrict_in: DietRestrictIn,
     response: Response,
     queries: DietRestrictQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     record = queries.update_diet_restrict(id, diet_restrict_in)
     if record is None:
@@ -48,5 +54,9 @@ def update_diet_restrict(
         return record
 
 @router.delete("/api/diet_restrict/{id}", response_model=bool)
-def delete_allergy(id: int, queries: DietRestrictQueries = Depends()):
+def delete_allergy(
+    id: int, 
+    queries: DietRestrictQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    ):
     return queries.delete_diet_restrict(id)

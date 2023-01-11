@@ -180,13 +180,15 @@ class AccountsQueries:
             return AccountOut(id=id, **old_data)
 
     def delete_account(self, id: int) -> bool:
-        with pool.connection() as conn:
-            with conn.cursor() as db:
-                db.execute(
-                    """
-                    DELETE FROM accounts
-                    WHERE id = %s
-                    """,
-                    [id]
-                )
-                return True
+        try: 
+            with pool.connection() as conn:
+                with conn.cursor() as db:
+                    db.execute(
+                        """
+                        DELETE FROM accounts
+                        WHERE id = %s
+                        """,
+                        [id]
+                    )
+        except Exception as e:
+            return {"message":"This account doesn't exist"}

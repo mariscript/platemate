@@ -13,11 +13,15 @@ def create_allergies(
     allergies: AllergyIn,
     response: Response,
     repo: AllergiesQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     return repo.create(allergies)
 
 @router.get("/api/allergies", response_model=AllergiesOut)
-def allergies_list(queries: AllergiesQueries = Depends()):
+def allergies_list(
+    queries: AllergiesQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
+):
     return {
         "allergies": queries.get_all_allergies(),
     }
@@ -27,6 +31,7 @@ def get_allergy(
     id: int,
     response: Response,
     queries: AllergiesQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     record = queries.get_allergy_by_id(id)
     if record is None:
@@ -40,6 +45,7 @@ def update_allergy(
     allergy_in: AllergyIn,
     response: Response,
     queries: AllergiesQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     record = queries.update_allergy(id, allergy_in)
     if record is None:
@@ -48,5 +54,9 @@ def update_allergy(
         return record
 
 @router.delete("/api/allergies/{id}", response_model=bool)
-def delete_allergy(id: int, queries: AllergiesQueries = Depends()):
+def delete_allergy(
+    id: int, 
+    queries: AllergiesQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    ):
     return queries.delete_allergy(id)

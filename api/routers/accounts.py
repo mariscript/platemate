@@ -43,7 +43,9 @@ async def create_account(
     return AccountToken(account=account, **token.dict())
 
 @router.get("/api/accounts", response_model=AccountsOut)
-def accounts_list(queries: AccountsQueries = Depends()):
+def accounts_list(
+    queries: AccountsQueries = Depends()
+    ):
     return {
         "accounts": queries.get_all_accounts(),
     }
@@ -53,6 +55,7 @@ def get_account(
     id: int,
     response: Response,
     queries: AccountsQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     record = queries.get_account_by_id(id)
     if record is None:
@@ -66,6 +69,7 @@ def update_account(
     account_in: AccountIn,
     response: Response,
     queries: AccountsQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     record = queries.update_account(id, account_in)
     if record is None:
@@ -75,5 +79,9 @@ def update_account(
 
 
 @router.delete("/api/accounts/{id}", response_model=bool)
-def delete_account(id: int, queries: AccountsQueries = Depends()):
+def delete_account(
+    id: int, 
+    queries: AccountsQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    ):
     return queries.delete_account(id)
