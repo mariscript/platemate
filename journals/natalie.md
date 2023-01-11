@@ -9,6 +9,7 @@
 ### (Tues) 1/10/2023
 
 - worked on creating routes for front-end with App.js and main.js
+- created skeleton files/folders for front-end
 
 ## Driver: Zac(morning) & Gina(afternoon)
 
