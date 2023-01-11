@@ -1,6 +1,14 @@
 # Journal
 
-## Week 2:
+## Week 3:
+
+### 1/10/2023 Tuesday
+
+Drivers: Zac & Gina.
+Completed CRUD functions of the allergies and dietary restrictions table.
+Changed child tables to unique to match the one-to-one relationship with accounts, allergies, and diet restrict.
+Took off the foreign key in the SQl command for queries.allergies and used just ‘references’ to connect both tables. Made some changes to allergies classes.
+Updated allergies and diet restrict table to have ‘ON DELETE CASCADE’ so that deleted accounts will also delete the allergies and diet restrict values.
 
 ### 1/9/2023 Monday
 
@@ -10,6 +18,8 @@ Was able to make a call to our Yelp API usig the FastApi Swagger UI tool.
 Modified URL with filters for existing Yelp API.  
 Created allergies and dietary restrictions tables.
 Worked on creating functions for allergies.
+
+## Week 2:
 
 ### 1/6/2023 Friday
 
