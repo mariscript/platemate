@@ -8,12 +8,6 @@ from queries.accounts import Account
 class Error(BaseModel):
     message: str
 
-class Allergy(BaseModel):
-    id: int
-    seafood: bool
-    gluten_free: bool
-    account_id: int
-
 class AllergyIn(BaseModel):
     seafood: bool
     gluten_free: bool
@@ -30,7 +24,7 @@ class AllergiesOut(BaseModel):
 
 class AllergiesQueries(BaseModel):
 
-    def create(self, allergies: AllergyIn) -> Allergy:
+    def create(self, allergies: AllergyIn) -> AllergyOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 result = db.execute(
@@ -44,13 +38,13 @@ class AllergiesQueries(BaseModel):
                     allergies.account_id]
                 )
                 id = result.fetchone()[0]
-                return Allergy(
+                return AllergyOut(
                     id=id,
                     seafood=allergies.seafood,
                     gluten_free=allergies.gluten_free,
                     account_id=allergies.account_id
                 )
-    
+
     def get_all_allergies(self):
         with pool.connection() as conn:
             with conn.cursor() as cur:

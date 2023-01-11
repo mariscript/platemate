@@ -10,6 +10,9 @@ class Error(BaseModel):
 class DuplicateUserError(ValueError):
     pass
 
+class Error(BaseModel):
+    message: str
+
 class Account(BaseModel):
     id: int
     first_name: str

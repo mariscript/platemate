@@ -1,3 +1,9 @@
+1/10/23
+Today, we finished CRUD for allergies and linked the tables. Todaw we were able to complete the CRUD functions for allergies and diet_restrict tables. We were able to enable cascading deletions on both tables. This allows for a user to delete their account effeciently.
+
+1/7/23
+Today we were able to complete the search function. We were also able to make a call to the Yelp API using SWAGGER as a GET function. After lunch, we were able to add and test multiple filters to our yelp URL call.
+
 1/6/23
 Completed authentication
 

@@ -9,3 +9,10 @@ class YelpQueries:
         res = requests.get(url, headers=headers)
         data = res.json()
         return data
+
+    def get_yelp_by_id(self, id):
+        url = f"https://api.yelp.com/v3/businesses/{id}"
+        headers = {"Authorization": f"Bearer {YELP_KEY}"}
+        res = requests.get(url, headers=headers)
+        data = res.json()
+        return data

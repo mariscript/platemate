@@ -23,7 +23,7 @@ def allergies_list(queries: AllergiesQueries = Depends()):
     }
 
 @router.get("/api/allergies/{id}", response_model=AllergyOut)
-def get_allergies(
+def get_allergy(
     id: int,
     response: Response,
     queries: AllergiesQueries = Depends(),
@@ -47,6 +47,6 @@ def update_allergy(
     else:
         return record
 
-@router.delete("/api/allergiess/{id}", response_model=bool)
+@router.delete("/api/allergies/{id}", response_model=bool)
 def delete_allergy(id: int, queries: AllergiesQueries = Depends()):
     return queries.delete_allergy(id)
