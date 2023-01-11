@@ -2,14 +2,17 @@
 
 ### (Wed) 1/11/2023
 
-## Driver: Jason
-
--
-
-### (Tues) 1/10/2023
+## Driver: Jason (morning) & split (afternoon)
 
 - worked on creating routes for front-end with App.js and main.js
 - created skeleton files/folders for front-end
+- Zac and Gina authenticated everything but external API on back-end
+- updated table to make email unique and made migrations
+- started error handling for PUT and DELETE
+- Marison and Jason started sign up form front-end
+- completed nav bar front-end for landing page
+
+### (Tues) 1/10/2023
 
 ## Driver: Zac(morning) & Gina(afternoon)
 
