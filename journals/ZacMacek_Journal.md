@@ -1,9 +1,14 @@
 ## Week 3:
 ### 1/10/2023
 I drove the bus for the first half of the day
-finished CRUD functions for allergies
-
-
+Gina finished off the day
+- completed the create function for allergies and was able to get it to work
+- changed child tables to unique to match the one-to-one relationship with accounts, allergies, and diet restrict
+- took off the foreign key in the SQl command for queries.allergies and used just ‘references’ to connect both tables
+- created CRUD functions for allergies (also made some changes to allergies classes)
+- updated allergies and diet restrict table to have ‘ON DELETE CASCADE’ so that deleted accounts will also delete the allergies and diet restrict values
+- created CRUD functions for diet restrict
+- set up a get by id function for yelp api
 
 ### 1/9/2023
 Natalie Drove the bus today
