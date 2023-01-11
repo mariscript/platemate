@@ -10,6 +10,9 @@ class Error(BaseModel):
 class DuplicateUserError(ValueError):
     pass
 
+class Error(BaseModel):
+    message: str
+
 class Account(BaseModel):
     id: int
     first_name: str
@@ -122,18 +125,6 @@ class AccountsQueries:
                     results.append(account)
                 return results
 
-    def delete_account(self, id: int) -> bool:
-        with pool.connection() as conn:
-            with conn.cursor() as db:
-                db.execute(
-                    """
-                    DELETE FROM accounts
-                    WHERE id = %s
-                    """,
-                    [id]
-                )
-                return True
-
     def get_account_by_id(self, id: int):
         with pool.connection() as conn:
             with conn.cursor() as db:
@@ -187,3 +178,15 @@ class AccountsQueries:
     def account_in_to_out(self, id: int, account: AccountIn):
             old_data = account.dict()
             return AccountOut(id=id, **old_data)
+
+    def delete_account(self, id: int) -> bool:
+        with pool.connection() as conn:
+            with conn.cursor() as db:
+                db.execute(
+                    """
+                    DELETE FROM accounts
+                    WHERE id = %s
+                    """,
+                    [id]
+                )
+                return True
