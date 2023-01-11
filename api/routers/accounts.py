@@ -29,28 +29,6 @@ async def get_token(
             "account": account,
         }
 
-
-
-@router.get("/api/accounts", response_model=AccountsOut)
-def accounts_list(queries: AccountsQueries = Depends()):
-    return {
-        "accounts": queries.get_all_accounts(),
-    }
-
-
-@router.get("/api/accounts/{id}", response_model=AccountOut)
-def get_account(
-    id: int,
-    response: Response,
-    queries: AccountsQueries = Depends(),
-):
-    record = queries.get_account_by_id(id)
-    if record is None:
-        response.status_code = 404
-    else:
-        return record
-
-
 @router.post("/api/accounts", response_model=AccountToken | HttpError)
 async def create_account(
     info: AccountIn,
@@ -64,6 +42,23 @@ async def create_account(
     token = await authenticator.login(response, request, form, repo)
     return AccountToken(account=account, **token.dict())
 
+@router.get("/api/accounts", response_model=AccountsOut)
+def accounts_list(queries: AccountsQueries = Depends()):
+    return {
+        "accounts": queries.get_all_accounts(),
+    }
+
+@router.get("/api/accounts/{id}", response_model=AccountOut)
+def get_account(
+    id: int,
+    response: Response,
+    queries: AccountsQueries = Depends(),
+):
+    record = queries.get_account_by_id(id)
+    if record is None:
+        response.status_code = 404
+    else:
+        return record
 
 @router.put("/api/accounts/{id}", response_model=AccountOut)
 def update_account(
