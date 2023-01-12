@@ -1,4 +1,14 @@
 ## Week 3:
+### 1/11/2023
+- worked on creating routes for front-end with App.js and main.js
+- created skeleton files/folders for front-end
+- Zac and Gina authenticated everything but external API on back-end
+- updated table to make email unique and made migrations
+- started error handling for PUT and DELETE
+- Marison and Jason started sign up form front-end
+- completed nav bar front-end
+
+
 ### 1/10/2023
 I drove the bus for the first half of the day
 Gina finished off the day
