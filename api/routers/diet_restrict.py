@@ -26,37 +26,34 @@ def diet_restrict_list(
         "diet_restricts": queries.get_all_diet_restricts(),
     }
 
-@router.get("/api/diet_restricts/{id}", response_model=DietRestrictOut)
+@router.get("/api/diet_restricts/me", response_model=DietRestrictOut)
 def get_diet_restrict(
-    id: int,
     response: Response,
     queries: DietRestrictQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
 ):
-    record = queries.get_diet_restrict_by_id(id)
+    record = queries.get_diet_restrict_by_id(account_data['id'])
     if record is None:
         response.status_code = 404
     else:
         return record
 
-@router.put("/api/diet_restrict/{id}", response_model=DietRestrictOut)
+@router.put("/api/diet_restrict/me", response_model=DietRestrictOut)
 def update_diet_restrict(
-    id: int,
     diet_restrict_in: DietRestrictIn,
     response: Response,
     queries: DietRestrictQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
 ):
-    record = queries.update_diet_restrict(id, diet_restrict_in)
+    record = queries.update_diet_restrict(account_data['id'], diet_restrict_in)
     if record is None:
         response.status_code = 404
     else:
         return record
 
-@router.delete("/api/diet_restrict/{id}", response_model=bool)
-def delete_allergy(
-    id: int, 
+@router.delete("/api/diet_restrict/me", response_model=bool)
+def delete_allergy( 
     queries: DietRestrictQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
     ):
-    return queries.delete_diet_restrict(id)
+    return queries.delete_diet_restrict(account_data['id'])

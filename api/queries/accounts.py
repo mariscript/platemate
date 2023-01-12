@@ -190,5 +190,6 @@ class AccountsQueries:
                         """,
                         [id]
                     )
+            return True
         except Exception as e:
-            return {"message":"This account doesn't exist"}
+            return False

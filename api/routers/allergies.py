@@ -26,37 +26,34 @@ def allergies_list(
         "allergies": queries.get_all_allergies(),
     }
 
-@router.get("/api/allergies/{id}", response_model=AllergyOut)
+@router.get("/api/allergies/me", response_model=AllergyOut)
 def get_allergy(
-    id: int,
     response: Response,
     queries: AllergiesQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
 ):
-    record = queries.get_allergy_by_id(id)
+    record = queries.get_allergy_by_id(account_data['id'])
     if record is None:
         response.status_code = 404
     else:
         return record
 
-@router.put("/api/allergies/{id}", response_model=AllergyOut)
+@router.put("/api/allergies/me", response_model=AllergyOut)
 def update_allergy(
-    id: int,
     allergy_in: AllergyIn,
     response: Response,
     queries: AllergiesQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
 ):
-    record = queries.update_allergy(id, allergy_in)
+    record = queries.update_allergy(account_data['id'], allergy_in)
     if record is None:
         response.status_code = 404
     else:
         return record
 
-@router.delete("/api/allergies/{id}", response_model=bool)
+@router.delete("/api/allergies/me", response_model=bool)
 def delete_allergy(
-    id: int, 
     queries: AllergiesQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
     ):
-    return queries.delete_allergy(id)
+    return queries.delete_allergy(account_data['id'])
