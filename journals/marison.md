@@ -2,6 +2,16 @@
 
 ## Week 3:
 
+###
+
+### 1/12/2023 Thrusday
+
+### 1/11/2023 Wednesday
+
+Gina & Zac: authenticated backend. Started error handling for put and delete.
+Marison & Jason: Sign Up Form.
+Nat: Completed Nav.js
+
 ### 1/10/2023 Tuesday
 
 Drivers: Zac & Gina.
