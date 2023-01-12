@@ -1,7 +1,12 @@
 import { NavLink, Link } from "react-router-dom";
+import Signup from "./Authentication/Signup";
 
 function Nav() {
-  return <h1>hello</h1>;
+  return (
+    <>
+      <NavLink to="/signup">Signup</NavLink>
+    </>
+  );
 }
 
 export default Nav;
