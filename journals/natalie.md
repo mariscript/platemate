@@ -1,5 +1,12 @@
 # Week 3
 
+### (Thurs) 1/12/2023
+
+## Driver: Jason (morning)
+
+- fixed sign up form to work
+- updated accounts queries and accounts routers files to CRUD correctly if account does/does not exist
+
 ### (Wed) 1/11/2023
 
 ## Driver: Jason (morning) & split (afternoon)
