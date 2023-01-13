@@ -43,37 +43,44 @@ async def create_account(
     return AccountToken(account=account, **token.dict())
 
 @router.get("/api/accounts", response_model=AccountsOut)
-def accounts_list(queries: AccountsQueries = Depends()):
+def accounts_list(
+    queries: AccountsQueries = Depends()
+    ):
     return {
         "accounts": queries.get_all_accounts(),
     }
 
-@router.get("/api/accounts/{id}", response_model=AccountOut)
+@router.get("/api/accounts/me", response_model=AccountOut)
 def get_account(
-    id: int,
     response: Response,
     queries: AccountsQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
-    record = queries.get_account_by_id(id)
+    record = queries.get_account_by_id(account_data['id'])
     if record is None:
         response.status_code = 404
     else:
         return record
 
-@router.put("/api/accounts/{id}", response_model=AccountOut)
+@router.put("/api/accounts/me", response_model=AccountOut)
 def update_account(
-    id: int,
     account_in: AccountIn,
+    queries: AccountsQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
+):
+    record = queries.update_account(account_data['id'], account_in)
+    return record
+
+@router.delete("/api/accounts/me", response_model=bool)
+def delete_account(
+    id: int,
     response: Response,
     queries: AccountsQueries = Depends(),
-):
-    record = queries.update_account(id, account_in)
-    if record is None:
-        response.status_code = 404
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    ):
+    if queries.get_account_by_id(id) and queries.delete_account(id):
+        response.status_code = 200
+        return True
     else:
-        return record
-
-
-@router.delete("/api/accounts/{id}", response_model=bool)
-def delete_account(id: int, queries: AccountsQueries = Depends()):
-    return queries.delete_account(id)
+        response.status_code = 400
+        return False

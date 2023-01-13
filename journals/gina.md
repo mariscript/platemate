@@ -2,6 +2,12 @@
 
 ## Week 3:
 
+### Thursday 1/12/2023
+Zac and I were split up again working on auth. We originally thought we would need specific error handling for get one, put and delete functions. We then learned that we can use the account_data dictionary that is created when a user is authenticated to pull the "id" value from there. This means we don't have to input the userid manually which removes the need for id error handling since only active ids can access those CRUD functions. Nat and Marison worked on design and were able to get a signup modal working! Jason was able to complete a login form without the authentication piece which we are working on tomorrow.
+
+### Wednesday 1/11/2023
+Before we split up into groups, we created skeleton files and folders for our front end. We set up MainPage.js and app.js as a group to have a template, and then we split into groups. Zac and I are worked on completing backend authorization and finished authorizing all routes except for the external API. We also updated the accounts table to make email a unique entry. We also noticed that the put and delete fields need some error handling which we will handle tomorrow. Marison and Jason worked on the signup form which we are very close to completing. Nat was able to download TailWind which we are using instead of Bootstrap and she finished our unauthenticatd user Nav.
+
 ### Tuesday 1/10/2023
 
 Today we were able to complete the CRUD functions for allergies and diet_restrict tables. We changed the account_id FK on both tables to be unique and on delete cascade so that if the parent (account) table is deleted, the child (allergies & diet_restrict) table will be deleted.
