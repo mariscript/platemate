@@ -1,5 +1,8 @@
+1/12/23
+Today, I completed the login page, and prepped it for use in front-end authorization for when the Auth team gets to it.
+
 1/11/23
-Today, we successfully set up the front-end!
+Today, we successfully set up the front-end! I finished up the sign up form. The others worked on back end auth, and front end styling.
 
 1/10/23
 Today, we finished CRUD for allergies and linked the tables. Todaw we were able to complete the CRUD functions for allergies and diet_restrict tables. We were able to enable cascading deletions on both tables. This allows for a user to delete their account effeciently.
