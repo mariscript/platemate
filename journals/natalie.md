@@ -1,11 +1,21 @@
 # Week 3
 
+### (Fri) 1/13/2023
+
+- fixed some issues with sign up form and added error messages to show if email or zipcode was not properly formatted
+- login is able to generate a token
+
 ### (Thurs) 1/12/2023
 
 ## Driver: Jason (morning)
 
-- fixed sign up form to work
+- fixed skeleton sign up form to work
 - updated accounts queries and accounts routers files to CRUD correctly if account does/does not exist
+- worked sign up form design
+- completed skeleton login form to work
+- learned that account_data dictionary that is created when a user is authenticated to pull the "id" value from there, which means user id doesn't need to input manually and removes the need for id error handling since only active ids can access those CRUD functions
+- completed sign up form with error handling
+- was able to get sign up button to navigate the modal to pop up and exit out into home page
 
 ### (Wed) 1/11/2023
 
