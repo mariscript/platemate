@@ -1,10 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { useToken } from "./AuthenticateUser";
+
+
+
 export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+  function LoginComponent() {
+  const [token, login] = useToken();
+  }
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -21,13 +29,12 @@ export default function Login(props) {
     const response = await fetch(url, fetchConfig);
     console.log(response);
     if (response.ok) {
-      const responseData = await response.json();
-      //   the below setToken is for the FRONT END AUTHORIZATION
-      props.setToken(responseData.access_token);
+      LoginComponent();
       setEmail("");
       setPassword("");
       navigate("/");
     }
+    // error handle for if not a valid account
   };
 
   return (
