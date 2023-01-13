@@ -1,10 +1,24 @@
 # Journal
 
+## Week 4:
+
+### 1/20/2023 Friday
+
+### 1/19/2023 Thursday
+
+### 1/18/2023 Wednesday
+
+### 1/17/2023 Tuesday
+
 ## Week 3:
 
-###
+### 1/13/2023 Friday
 
-### 1/12/2023 Thrusday
+### 1/12/2023 Thursday
+
+Gina & Zac: focused on more backend.
+Marison & Nat: Tailwind, Signup Modal
+Jason: Log in Form
 
 ### 1/11/2023 Wednesday
 
