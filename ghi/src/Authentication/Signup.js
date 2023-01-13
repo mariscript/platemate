@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup(props) {
+  // set the state for the info we want to keep track of
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [first_name, setFirst] = useState("");
@@ -21,12 +22,10 @@ export default function Signup(props) {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      JSON.stringify(first_name, last_name, email, zipcode, password)
-    );
     const signupUrl = "http://localhost:8000/api/accounts";
     const fetchConfig = {
       method: "post",
+      // remember to stringify json
       body: JSON.stringify({
         first_name,
         last_name,
@@ -52,17 +51,6 @@ export default function Signup(props) {
       );
     }
   };
-
-  // const url = "http://localhost:8000/api/accounts";
-
-  // const fetchConfig = {
-  //   method: "POST",
-  //   body: JSON.stringify(data),
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // };
-  // // userResponse for setting token...etc goes here
 
   return (
     <>
