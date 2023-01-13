@@ -15,7 +15,8 @@ function GetToken() {
 
 function App() {
   return (
-
+    <AuthProvider>
+      <GetToken />
       <BrowserRouter>
         <Nav />
         <div className="container">
@@ -23,14 +24,11 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            <AuthProvider>
-              <GetToken/>
-              <Route path="/detail" element={<RestaurantDetail />} />
-            </AuthProvider>
-            
-        </Routes>
+            <Route path="/detail" element={<RestaurantDetail />} />
+          </Routes>
         </div>
       </BrowserRouter>
+    </AuthProvider>
   );
 }
 

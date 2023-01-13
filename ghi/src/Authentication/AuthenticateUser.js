@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
 let internalToken = null;
 
 export function getToken() {
@@ -61,7 +61,6 @@ export const useAuthContext = () => useContext(AuthContext);
 
 export function useToken() {
   const { token, setToken } = useAuthContext();
-  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchToken() {
@@ -79,7 +78,7 @@ export function useToken() {
       await fetch(url, { method: "delete", credentials: "include" });
       internalToken = null;
       setToken(null);
-      navigate("/");
+      return redirect("/");
     }
   }
 

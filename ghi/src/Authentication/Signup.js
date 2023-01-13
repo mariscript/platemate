@@ -10,16 +10,6 @@ export default function Signup(props) {
   const [zipcode, setZip] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const data = {
-  //     first_name: first_name,
-  //     last_name: last_name,
-  //     email: email,
-  //     zipcode: zipcode,
-  //     password: password,
-  //   };
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const signupUrl = "http://localhost:8000/api/accounts";
