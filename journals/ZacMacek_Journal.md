@@ -1,4 +1,8 @@
 ## Week 3:
+### 1//12/2023
+- originally thought we would need specific error handling for get one, put and delete functions
+- then learned that we can use the account_data dictionary that is created when a user is authenticated to pull the "id" value from there. This means we don't have to input the userid manually which removes the need for id error handling since only active ids can access those CRUD functions.
+
 ### 1/11/2023
 - worked on creating routes for front-end with App.js and main.js
 - created skeleton files/folders for front-end
