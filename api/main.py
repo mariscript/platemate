@@ -7,7 +7,7 @@ import os
 
 app = FastAPI()
 app.include_router(accounts.router, tags=['Accounts'])
-app.include_router(authenticator.router, tags=['Authentication'])
+app.include_router(authenticator.router,tags=['Authentications'])
 app.include_router(yelp.router, tags=['YelpAPI'])
 app.include_router(allergies.router, tags=['Allergies'])
 app.include_router(diet_restrict.router, tags=['Diet Restrictions'])
