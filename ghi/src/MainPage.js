@@ -1,10 +1,9 @@
 function MainPage() {
   return (
     <div className="px-4 py-5 my-5 text-center">
-      <h1 className="display-5 fw-bold">PLATEMATE</h1>
-      <div className="col-lg-6 mx-auto">
-        <p className="lead mb-4">This is the first page of our new app! </p>
-      </div>
+      <h1 className="bg-red-300 text-3xl font-bold underline">
+        This is MainPage.py!
+      </h1>
     </div>
   );
 }

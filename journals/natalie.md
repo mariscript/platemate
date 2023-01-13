@@ -1,19 +1,53 @@
 # Week 3
 
+### (Thurs) 1/12/2023
+
+## Driver: Jason (morning)
+
+- fixed sign up form to work
+- updated accounts queries and accounts routers files to CRUD correctly if account does/does not exist
+
+### (Wed) 1/11/2023
+
+## Driver: Jason (morning) & split (afternoon)
+
+- worked on creating routes for front-end with App.js and main.js
+- created skeleton files/folders for front-end
+- Zac and Gina authenticated everything but external API on back-end
+- updated table to make email unique and made migrations
+- started error handling for PUT and DELETE
+- Marison and Jason started sign up form front-end
+- completed nav bar front-end for landing page
+
+### (Tues) 1/10/2023
+
+## Driver: Zac(morning) & Gina(afternoon)
+
+- completed the create function for allergies and was able to get it to work
+- changed child tables to unique to match the one-to-one relationship with accounts, allergies, and diet restrict
+- took off the foreign key in the SQL command for queries.allergies and used just 'references' to connect both tables
+- created CRUD functions for allergies (also made some changes to allergies classes)
+- updated allergies and diet restrict table to have 'ON DELETE CASCADE' so that deleted accounts will also delete the allergies and diet restrict values
+- created CRUD functions for diet restrict
+- created router to use GET by id with YelpAPI
+
 ### (Mon) 1/9/2023
 
 ## Driver: Natalie (Me)
 
 - completed update for accounts
-- was able to get a call back from Yelp using the imported YelpAPI, had to make two separate files in both queries and routers as well as added to the yaml file
+- was able to get a call back from Yelp using the imported YelpAPI, had to make two separate files in both queries and routers
 - each person had their own unique YelpAPI key and made their own keys file in queries, also added file to gitignore so that it won't show up publicly
 - modified url with addition of filters to YelpAPI to make calls
+- created allergies and diet restrict tables
+- created allergies and diet restrict files in both queries and routers
+- worked on create function for allergies
 
 # Week 2
 
 ### (Fri) 1/6/2023
 
-## Driver: Marison & Jason
+## Driver: Marison (morning) & Jason (afternoon)
 
 - changed 'users' table to 'accounts' table
 - completed sign up for new accounts with hash password & authenticator
