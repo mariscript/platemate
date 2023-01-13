@@ -4,8 +4,12 @@
 
 ## Driver: Jason (morning)
 
-- fixed sign up form to work
+- fixed skeleton sign up form to work
 - updated accounts queries and accounts routers files to CRUD correctly if account does/does not exist
+- worked sign up form design
+- completed skeleton login form to work
+- learned that account_data dictionary that is created when a user is authenticated to pull the "id" value from there. This means we don't have to input the userid manually which removes the need for id error handling since only active ids can access those CRUD functions
+- completed sign up form with error handling
 
 ### (Wed) 1/11/2023
 
