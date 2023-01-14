@@ -1,9 +1,15 @@
 # Week 3
 
+### (Sat) 1/14/2023
+
+- updated and cleaned up response messages for sign up form and created a better design for the alert
+
 ### (Fri) 1/13/2023
 
 - fixed some issues with sign up form and added error messages to show if email or zipcode was not properly formatted
-- login is able to generate a token
+- Marison worked on footer design
+- Zac, Jason, and Gina worked on front end authentication and created the Authenticator.js file with CRUD functions, and made the Login.js function generate a token
+- learned about array destructuring and using a separate handleSubmit function for onSubmit events
 
 ### (Thurs) 1/12/2023
 
