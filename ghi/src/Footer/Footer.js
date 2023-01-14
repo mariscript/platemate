@@ -8,41 +8,40 @@ import Zac from "../images/zac_icon.png";
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-white h-screen p-12 bg-[#fef5ed]">
-      <div className="">
-        <div className="mb-6 md:mb-0 items-center">
-          <ul className="grid grid-cols-3 text-gray-600 dark:text-black">
-            <li className="items-center mb-4">
-              <a href="/" className="hover:underline font-semibold">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="/" className="flex items-center">
-                <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
-                  PLATE
-                </span>
-                <img src={plateLogo} className="h-9" alt="PlateMate Logo" />
-                <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
-                  MATE
-                </span>
-              </a>
-            </li>
-            <li className="mb-4">
-              <a href="/" className="hover:underline font-semibold">
-                Rescoures
-              </a>
-            </li>
-          </ul>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+    <footer className="justify-between mb-auto p-4 py-3 h-10 p-12 bg-[#fef5ed]">
+      <div className="flex justify-center text-gray-600 dark:text-black">
+        <div className="mb-4 col-end-7 col-span-2">
+          <a href="./about" className="hover:underline font-semibold text-xs">
+            About
+          </a>
         </div>
-
-        <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3"></div>
+        <div className="justify-center mx-14">
+          <a href="/" className="flex items-center">
+            <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
+              PLATE
+            </span>
+            <img src={plateLogo} className="h-9" alt="PlateMate Logo" />
+            <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
+              MATE
+            </span>
+          </a>
+        </div>
+        <div className="mb-4 col-end-7 col-span-2">
+          <a
+            href="./resources"
+            className="hover:underline font-semibold text-xs"
+          >
+            Rescoures
+          </a>
+        </div>
       </div>
+      <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+      <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3"></div>
 
       <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
         <div className="border-2 border-black rounded-full my-2 p-2">
-          <a href="https://www.linkedin.com/in/marisonmunoz/">
+          <a target="_blank" href="https://www.linkedin.com/in/marisonmunoz/">
             <img
               src={Marison}
               className="h-10"
@@ -54,6 +53,7 @@ const Footer = () => {
         </div>
         <div className="border-2 border-black rounded-full my-2 p-2">
           <a
+            target="_blank"
             href="https://www.linkedin.com/in/gina-john/"
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
           >
@@ -62,7 +62,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="border-2 border-black rounded-full my-2 p-2">
-          <a href="https://www.linkedin.com/in/natalientang/">
+          <a target="_blank" href="https://www.linkedin.com/in/natalientang/">
             <img
               src={Natalie}
               className="h-10"
@@ -74,6 +74,7 @@ const Footer = () => {
         </div>
         <div className="border-2 border-black rounded-full my-2 p-2">
           <a
+            target="_blank"
             href="https://www.linkedin.com/in/jason-olefson/"
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
           >
@@ -88,6 +89,7 @@ const Footer = () => {
         </div>
         <div className="border-2 border-black rounded-full my-2 p-2">
           <a
+            target="_blank"
             href="https://www.linkedin.com/in/zachary-macek/"
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
           >

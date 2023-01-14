@@ -14,6 +14,10 @@
 
 ### 1/13/2023 Friday
 
+I worked on the footer using Tailwind. I am loving Tailwind.
+The logo routes to the homepage, About routes to the about page, Resources routes to the resources page.
+Each of our icons route to our LinkedIn profiles. The copyright PlateMate text at the bottom of the footer routes to the group repository.
+
 ### 1/12/2023 Thursday
 
 Gina & Zac: focused on more backend.
