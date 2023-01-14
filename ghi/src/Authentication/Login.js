@@ -28,6 +28,10 @@ export default function Login(props) {
       setPassword("");
       navigate("/");
     }
+    // the below code is a test to set
+    const getToken = await fetch("http://localhost:8000/token", {
+      credentials: "include",
+    });
   };
 
   return (
