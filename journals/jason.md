@@ -1,3 +1,7 @@
+1/15/23
+I enabled the router to just take a datetime string, and it will automatically convert it into unix, then feed it to the Yelp API.
+That way, all we have to pass in, is a date from the front end as a string. This solves the problem of using UNIX at all.
+
 1/13/23
 Today, Zac, Gina, and I worked on front end authentication. We created the Authenticator.js file with most of the froint end auth ready. Two things we learned are thart in JS, array destructering allows us to use "." to skip over any values in a list that we did not want to pull. In addition, we learned that for an onSubmit, we want to put any functions we are going to call withy parameters inside a SEPERATE handleSubmit function inside the onSubmit.
 
