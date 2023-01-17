@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [token , login] = useToken();
+  const [, login] = useToken();
   const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
