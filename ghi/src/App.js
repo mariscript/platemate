@@ -18,7 +18,6 @@ function GetToken() {
   useToken();
   return null
 }
-import RestaurantDetail from "./Restaurant/RestaurantDetail";
 
 function App() {
   return (
@@ -34,7 +33,6 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/restaurants" element={<RestaurantList />}/>
           <Route path="/restaurant" element={<RestaurantDetailTest />}/>
-          <Route path="/detail" element={<RestaurantDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
         </Routes>

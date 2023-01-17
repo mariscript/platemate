@@ -10,10 +10,15 @@ export default function Signup() {
   const [last_name, setLast] = useState(null);
   const [zipcode, setZip] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
   const [ , , , signup] = useToken()
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    if (formValidation() === false) {
+      return;
+    }
     signup(first_name,last_name,email,zipcode,password)
     if (signup = false){
       setErrorMessage("Could not create account. Please try again")
