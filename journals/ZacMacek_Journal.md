@@ -1,5 +1,11 @@
+## Week 4:
+### 1/17/2023
+- this morning we spent a lot of time merging
+- corrected errors with backend allergies get by id and update, and diet restrictions get by id and update functions
+- Started UserProfile page and successfully got account data to show.
+
 ## Week 3:
-### 1//12/2023
+### 1/12/2023
 - originally thought we would need specific error handling for get one, put and delete functions
 - then learned that we can use the account_data dictionary that is created when a user is authenticated to pull the "id" value from there. This means we don't have to input the userid manually which removes the need for id error handling since only active ids can access those CRUD functions.
 
