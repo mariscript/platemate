@@ -8,7 +8,7 @@ import Zac from "../images/zac_icon.png";
 
 const Footer = () => {
   return (
-    <footer className="justify-between mb-auto p-4 py-3 h-10 p-12 bg-[#fef5ed]">
+    <footer className="justify-between mb-auto py-3 h-10 p-12 bg-[#fef5ed]">
       <div className="flex justify-center text-gray-600 dark:text-black">
         <div className="mb-4 col-end-7 col-span-2">
           <a href="./about" className="hover:underline font-semibold text-xs">
@@ -31,7 +31,7 @@ const Footer = () => {
             href="./resources"
             className="hover:underline font-semibold text-xs"
           >
-            Rescoures
+            Resources
           </a>
         </div>
       </div>
