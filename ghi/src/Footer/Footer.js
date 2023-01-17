@@ -26,7 +26,7 @@ const Footer = () => {
             href="./resources"
             className="hover:underline font-semibold text-xs"
           >
-            Rescoures
+            Resources
           </a>
         </div>
       </div>
