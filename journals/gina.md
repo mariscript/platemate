@@ -1,5 +1,12 @@
 # Journal
 
+## Week 4:
+
+### Tuesday 1/14/23
+Over the weekend, I completed front end auth and tested it on the restaurant list page and restaurant detail page which both now have front end authenticated API calls. I also worked on the restuarant list and restaurant detail page API calls to see if those would work. Jason completed the unix code conversion on the backend. Marison completed the footer. Nat completed the signup modal as well as worked on login modal.
+
+Today we spent our morning merging all the changes from this weekend (can you say merge party?). Jason and Zac worked on the user profile pages. While doing that, they corrected the get_by_id router calls, since we changed the account_id to come from login instead of user input. Nat was able to get Tailwind Elements downloaded correctly and work on transitions for our modals. Marison and I are changing some components over to Redux to access Redux Toolkit store for variables that we are getting from the questionnaire page.
+
 ## Week 3:
 
 ### Friday 1/13/23

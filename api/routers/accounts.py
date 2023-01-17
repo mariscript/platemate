@@ -74,7 +74,7 @@ def update_account(
     else:
         response.status_code = 400
         return False
-            
+
 @router.delete("/api/accounts/me", response_model=bool)
 def delete_account(
     id: int,

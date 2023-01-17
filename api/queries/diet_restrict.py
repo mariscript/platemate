@@ -87,7 +87,7 @@ class DietRestrictQueries(BaseModel):
                     , halal
                     , account_id
                     FROM diet_restrict
-                    WHERE id = %s;
+                    WHERE account_id = %s;
                     """,
                     [id]
                 )
