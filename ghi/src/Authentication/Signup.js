@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useToken } from "./AuthenticateUser"
 import React from "react";
 
 export default function Signup() {
@@ -10,52 +12,75 @@ export default function Signup() {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+  const [, , , signup] = useToken()
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (formValidation() === false) {
       return;
     }
-    const signupUrl = "http://localhost:8000/api/accounts";
-    const fetchConfig = {
-      method: "POST",
-      body: JSON.stringify({
-        first_name,
-        last_name,
-        email,
-        zipcode,
-        password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const response = await fetch(signupUrl, fetchConfig);
-    if (response.ok) {
-      setEmail("");
-      setPassword("");
-      setFirst("");
-      setLast("");
-      setZip("");
-      setSuccessMessage("Account created successfully!");
-      setErrorMessage("");
-    } else {
-      setErrorMessage("Could not create account. Please try again!");
-    }
+    signup(first_name,last_name,email,zipcode,password)  
+    setEmail("");
+    setPassword("");
+    setFirst("");
+    setLast("");
+    setZip("");
+    setSuccessMessage("Account created successfully!");
+    setErrorMessage("")
   };
 
+
   function formValidation() {
-    if (!email || !password || !first_name || !last_name || !zipcode) {
-      setErrorMessage("Could not create account. Please try again!");
+    let blankInputs = 0;
+    if (!email) {
+      blankInputs++;
+    }
+    if (!password) {
+      blankInputs++;
+    }
+    if (!first_name) {
+      blankInputs++;
+    }
+    if (!last_name) {
+      blankInputs++;
+    }
+    if (!zipcode) {
+      blankInputs++;
+    }
+
+    if (blankInputs === 5) {
+      setErrorMessage("Form submission is completely blank.");
       setSuccessMessage("");
       return false;
     }
+    if (blankInputs > 1) {
+      setErrorMessage("Form has multiple blank inputs.");
+      setSuccessMessage("");
+      return false;
+    }
+
     if (!validateEmail()) {
-      setErrorMessage("Invalid email, please try again!");
+      setErrorMessage("Whoops! Email format is invalid.");
       setSuccessMessage("");
       return false;
     }
     if (zipcode.length < 5) {
-      setErrorMessage("Invalid zipcode, please try again!");
+      setErrorMessage("Whoops! Zipcode needs to be at least 5 characters");
+      setSuccessMessage("");
+      return false;
+    }
+    if (!password) {
+      setErrorMessage("Whoops! Password is required.");
+      setSuccessMessage("");
+      return false;
+    }
+    if (!first_name) {
+      setErrorMessage("Whoops! First name is required.");
+      setSuccessMessage("");
+      return false;
+    }
+    if (!last_name) {
+      setErrorMessage("Whoops! Last name is required.");
       setSuccessMessage("");
       return false;
     }
@@ -94,14 +119,8 @@ export default function Signup() {
             <div>
               <h1 className="text-3xl text-center font-bold mb-3">SIGN UP</h1>
             </div>
-            <div className="text-red-600 font-bold text-center">
-              {errorMessage}
-            </div>
-            <div className="text-green-600 font-bold text-center">
-              {successMessage}
-            </div>
           </div>
-          <form className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-4">
+          <form className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-3">
             <input
               type="text"
               className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
@@ -137,6 +156,26 @@ export default function Signup() {
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
+            {errorMessage ? (
+              <div className="flex p-4 mb-4 text-sm text-red-700 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800 items-center">
+                <img
+                  src={require("../images/warning.png")}
+                  width="30px"
+                  style={{ marginRight: "15px" }}
+                />
+                {errorMessage}
+              </div>
+            ) : successMessage ? (
+              <div className="flex p-4 mb-4 text-sm text-green-700 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800 items-center">
+                <img
+                  src={require("../images/success.png")}
+                  width="30px"
+                  style={{ marginRight: "15px" }}
+                />
+                {successMessage}
+              </div>
+            ) : null}
+
             <div className="flex flex-col items-center justify-end p-3 border-solid border-slate-200 rounded-b">
               <button
                 className="bg-black text-white font-bold uppercase text-sm px-6 py-3 rounded inline-flex group items-center justify-center cursor-pointer"
