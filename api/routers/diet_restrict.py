@@ -52,7 +52,7 @@ def update_diet_restrict(
         return record
 
 @router.delete("/api/diet_restrict/me", response_model=bool)
-def delete_allergy(
+def delete_diet_restrict(
     queries: DietRestrictQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
     ):

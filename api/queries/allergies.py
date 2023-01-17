@@ -65,7 +65,7 @@ class AllergiesQueries(BaseModel):
                     results.append(allergy)
                 return results
 
-    def get_allergy_by_id(self, id: int):
+    def get_allergy_by_id(self, account_id: int):
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
@@ -75,9 +75,9 @@ class AllergiesQueries(BaseModel):
                     , gluten_free
                     , account_id
                     FROM allergies
-                    WHERE id = %s;
+                    WHERE account_id = %s;
                     """,
-                    [id]
+                    [account_id]
                 )
 
                 results = db.fetchone()
@@ -89,7 +89,7 @@ class AllergiesQueries(BaseModel):
 
 
 
-    def update_allergy(self, id:int, allergy:AllergyIn) -> Union[AllergyOut,Error]:
+    def update_allergy(self, account_id:int, allergy:AllergyIn) -> Union[AllergyOut,Error]:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
@@ -99,16 +99,16 @@ class AllergiesQueries(BaseModel):
                         SET seafood = %s
                         , gluten_free = %s
                         , account_id = %s
-                        WHERE id = %s
+                        WHERE account_id = %s
                         """,
                         [
                             allergy.seafood,
                             allergy.gluten_free,
                             allergy.account_id,
-                            id
+                            account_id
                         ]
                     )
-                    return self.allergy_in_to_out(id, allergy)
+                    return self.allergy_in_to_out(account_id, allergy)
         except Exception as e:
             print(e)
             return {"message":"Could not update the allergy"}
