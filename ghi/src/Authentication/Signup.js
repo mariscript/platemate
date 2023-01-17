@@ -1,50 +1,49 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { useToken } from "./AuthenticateUser"
+import { useToken } from "./AuthenticateUser";
 import React from "react";
 
 export default function Signup() {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [first_name, setFirst] = useState(null);
-  const [last_name, setLast] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [first_name, setFirst] = useState("");
+  const [last_name, setLast] = useState("");
   const [zipcode, setZip] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  const [, , , signup] = useToken()
+  const [, , , signup] = useToken();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (formValidation() === false) {
       return;
     }
-    signup(first_name,last_name,email,zipcode,password)  
+    signup(first_name, last_name, email, zipcode, password);
     setEmail("");
     setPassword("");
     setFirst("");
     setLast("");
     setZip("");
     setSuccessMessage("Account created successfully!");
-    setErrorMessage("")
+    setErrorMessage("");
   };
-
 
   function formValidation() {
     let blankInputs = 0;
-    if (!email) {
+    if (email.length === 0) {
       blankInputs++;
     }
-    if (!password) {
+    if (password.length === 0) {
       blankInputs++;
     }
-    if (!first_name) {
+    if (first_name.length === 0) {
       blankInputs++;
     }
-    if (!last_name) {
+    if (last_name.length === 0) {
       blankInputs++;
     }
-    if (!zipcode) {
+    if (zipcode.length === 0) {
       blankInputs++;
     }
 
