@@ -76,7 +76,7 @@ class DietRestrictQueries(BaseModel):
                     results.append(diet_restrict)
                 return results
 
-    def get_diet_restrict_by_id(self, id: int):
+    def get_diet_restrict_by_id(self, account_id: int):
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
@@ -87,9 +87,9 @@ class DietRestrictQueries(BaseModel):
                     , halal
                     , account_id
                     FROM diet_restrict
-                    WHERE id = %s;
+                    WHERE account_id = %s;
                     """,
-                    [id]
+                    [account_id]
                 )
 
                 results = db.fetchone()
@@ -101,7 +101,7 @@ class DietRestrictQueries(BaseModel):
 
 
 
-    def update_diet_restrict(self, id:int, diet_restrict:DietRestrictIn) -> Union[DietRestrictOut,Error]:
+    def update_diet_restrict(self, account_id:int, diet_restrict:DietRestrictIn) -> Union[DietRestrictOut,Error]:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
@@ -112,17 +112,17 @@ class DietRestrictQueries(BaseModel):
                         , vegetarian = %s
                         , halal = %s
                         , account_id = %s
-                        WHERE id = %s
+                        WHERE account_id = %s
                         """,
                         [
                             diet_restrict.vegan,
                             diet_restrict.vegetarian,
                             diet_restrict.halal,
                             diet_restrict.account_id,
-                            id
+                            account_id
                         ]
                     )
-                    return self.diet_restrict_in_to_out(id, diet_restrict)
+                    return self.diet_restrict_in_to_out(account_id, diet_restrict)
         except Exception as e:
             print(e)
             return {"message":"Could not update the diet_restrict"}

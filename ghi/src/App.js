@@ -12,6 +12,7 @@ import Logout from "./Authentication/Logout";
 import RestaurantList from "./Restaurant/RestaurantList"
 import RestaurantDetailTest from "./Restaurant/RestaurantDetailTest";
 import { AuthProvider, useToken } from "./Authentication/AuthenticateUser"
+import UserProfile from "./User/UserProfile";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -35,6 +36,7 @@ function App() {
           <Route path="/restaurant" element={<RestaurantDetailTest />}/>
           <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/me" element={<UserProfile/>}/>
         </Routes>
         <Footer />
       </div>
