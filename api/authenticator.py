@@ -1,5 +1,6 @@
 import os
 from fastapi import Depends
+from datetime import timedelta
 from jwtdown_fastapi.authentication import Authenticator
 from queries.accounts import AccountOut, AccountsQueries, Account
 
@@ -23,4 +24,6 @@ class PMAuthenticator(Authenticator):
     def get_account_data_for_cookie(self, account: Account):
         return account.email, AccountOut(**account.dict())
 
-authenticator = PMAuthenticator(os.environ["SIGNING_KEY"])
+two_hours = timedelta(hours=2)
+
+authenticator = PMAuthenticator(os.environ["SIGNING_KEY"], exp=two_hours)

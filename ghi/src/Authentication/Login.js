@@ -1,35 +1,22 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useToken } from "./AuthenticateUser";
+import { useNavigate } from "react-router-dom"
 
-export default function Login(props) {
+export default function LoginComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [, login] = useToken();
   const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
-    const form = new FormData();
-    form.append("username", email);
-    form.append("password", password);
-    const url = "http://localhost:8000/token";
-    const fetchConfig = {
-      method: "POST",
-      body: form,
-      credentials: "include",
-    };
-    const response = await fetch(url, fetchConfig);
-    console.log(response);
-    if (response.ok) {
-      const responseData = await response.json();
-      //   the below setToken is for the FRONT END AUTHORIZATION
-      props.setToken(responseData.access_token);
-      setEmail("");
-      setPassword("");
-      navigate("/");
-    }
+    login(email, password)
+    setEmail("");
+    setPassword("");
+    navigate("/")
+        // error handle for if not a valid account
   };
-
+  
   return (
     <>
       <h1>Login</h1>
@@ -50,6 +37,16 @@ export default function Login(props) {
         />
         <button>Order Up!</button>
       </form>
+
+      <div className="flex items-center">
+            <a
+              href="/signup"
+              className="mb-6 mt-4 mx-auto text-black-500 background-transparent font-bold underline uppercase text-sm focus:outline-none ease-linear transition-all duration-150 hover:text-white content-"
+            >
+              Don't have an account?
+            </a>
+          </div>
+
     </>
   );
 }

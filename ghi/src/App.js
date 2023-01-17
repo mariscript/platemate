@@ -8,24 +8,38 @@ import Resources from "./Footer/Resources";
 import Nav from "./Nav";
 import Signup from "./Authentication/Signup";
 import Login from "./Authentication/Login";
-import RestaurantDetail from "./Restaurant/RestaurantDetail";
+import Logout from "./Authentication/Logout";
+import RestaurantList from "./Restaurant/RestaurantList"
+import RestaurantDetailTest from "./Restaurant/RestaurantDetailTest";
+import { AuthProvider, useToken } from "./Authentication/AuthenticateUser"
+
+function GetToken() {
+  // Get token from JWT cookie (if already logged in)
+  useToken();
+  return null
+}
 
 function App() {
   return (
+    <AuthProvider>
     <BrowserRouter>
-      <Nav />
-      <div>
+    <GetToken/>
+      <Nav/>
+      <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/detail" element={<RestaurantDetail />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/restaurants" element={<RestaurantList />}/>
+          <Route path="/restaurant" element={<RestaurantDetailTest />}/>
           <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
         </Routes>
         <Footer />
       </div>
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 

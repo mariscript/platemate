@@ -1,9 +1,28 @@
 ## Week 3:
+### 1//12/2023
+- originally thought we would need specific error handling for get one, put and delete functions
+- then learned that we can use the account_data dictionary that is created when a user is authenticated to pull the "id" value from there. This means we don't have to input the userid manually which removes the need for id error handling since only active ids can access those CRUD functions.
+
+### 1/11/2023
+- worked on creating routes for front-end with App.js and main.js
+- created skeleton files/folders for front-end
+- Zac and Gina authenticated everything but external API on back-end
+- updated table to make email unique and made migrations
+- started error handling for PUT and DELETE
+- Marison and Jason started sign up form front-end
+- completed nav bar front-end
+
+
 ### 1/10/2023
 I drove the bus for the first half of the day
-finished CRUD functions for allergies
-
-
+Gina finished off the day
+- completed the create function for allergies and was able to get it to work
+- changed child tables to unique to match the one-to-one relationship with accounts, allergies, and diet restrict
+- took off the foreign key in the SQl command for queries.allergies and used just ‘references’ to connect both tables
+- created CRUD functions for allergies (also made some changes to allergies classes)
+- updated allergies and diet restrict table to have ‘ON DELETE CASCADE’ so that deleted accounts will also delete the allergies and diet restrict values
+- created CRUD functions for diet restrict
+- set up a get by id function for yelp api
 
 ### 1/9/2023
 Natalie Drove the bus today

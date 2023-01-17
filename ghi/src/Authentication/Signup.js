@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useToken } from "./AuthenticateUser"
 import React from "react";
 
 export default function Signup() {
@@ -10,39 +12,23 @@ export default function Signup() {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+  const [, , , signup] = useToken()
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (formValidation() === false) {
       return;
     }
-    const signupUrl = "http://localhost:8000/api/accounts";
-    const fetchConfig = {
-      method: "POST",
-      body: JSON.stringify({
-        first_name,
-        last_name,
-        email,
-        zipcode,
-        password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const response = await fetch(signupUrl, fetchConfig);
-    console.log(response);
-    if (response.ok) {
-      setEmail("");
-      setPassword("");
-      setFirst("");
-      setLast("");
-      setZip("");
-      setSuccessMessage("Account created successfully!");
-      setErrorMessage("");
-    } else {
-      setErrorMessage("Could not create account. Please try again!");
-    }
+    signup(first_name,last_name,email,zipcode,password)  
+    setEmail("");
+    setPassword("");
+    setFirst("");
+    setLast("");
+    setZip("");
+    setSuccessMessage("Account created successfully!");
+    setErrorMessage("")
   };
+
 
   function formValidation() {
     let blankInputs = 0;
