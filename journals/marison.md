@@ -1,10 +1,28 @@
 # Journal
 
+## Week 4:
+
+### 1/20/2023 Friday
+
+### 1/19/2023 Thursday
+
+### 1/18/2023 Wednesday
+
+### 1/17/2023 Tuesday
+
 ## Week 3:
 
-###
+### 1/13/2023 Friday
 
-### 1/12/2023 Thrusday
+I worked on the footer using Tailwind. I am loving Tailwind.
+The logo routes to the homepage, About routes to the about page, Resources routes to the resources page.
+Each of our icons route to our LinkedIn profiles. The copyright PlateMate text at the bottom of the footer routes to the group repository.
+
+### 1/12/2023 Thursday
+
+Gina & Zac: focused on more backend.
+Marison & Nat: Tailwind, Signup Modal
+Jason: Log in Form
 
 ### 1/11/2023 Wednesday
 
