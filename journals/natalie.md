@@ -1,3 +1,9 @@
+# Week 4
+
+### (Tues) 1/17/2023
+
+- merge party!
+
 # Week 3
 
 ### (Sat) 1/14/2023
