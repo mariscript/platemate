@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useToken } from "./AuthenticateUser";
+import { useNavigate } from "react-router-dom"
 
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
@@ -9,7 +10,10 @@ export default function LoginComponent() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     login(email, password)
-    // error handle for if not a valid account
+    setEmail("");
+    setPassword("");
+    navigate("/")
+        // error handle for if not a valid account
   };
   
   return (
@@ -32,6 +36,16 @@ export default function LoginComponent() {
         />
         <button>Order Up!</button>
       </form>
+
+      <div className="flex items-center">
+            <a
+              href="/signup"
+              className="mb-6 mt-4 mx-auto text-black-500 background-transparent font-bold underline uppercase text-sm focus:outline-none ease-linear transition-all duration-150 hover:text-white content-"
+            >
+              Don't have an account?
+            </a>
+          </div>
+
     </>
   );
 }

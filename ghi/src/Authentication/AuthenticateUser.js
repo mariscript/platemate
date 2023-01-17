@@ -101,13 +101,13 @@ export function useToken() {
     return handleErrorMessage(error);
   }
 
-  async function signup(firstName, lastName, email, zipcode, password) {
+  async function signup(first_name, last_name, email, zipcode, password) {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/`;
     const response = await fetch(url, {
       method: "post",
       body: JSON.stringify({
-        first_name: firstName,
-        last_name: lastName,
+        first_name,
+        last_name,
         email,
         zipcode,
         password
@@ -142,6 +142,9 @@ export function useToken() {
     }
     return false;
   }
+
+  return [token, login, logout, signup, update];
+}
 
   return [token, login, logout, signup, update];
 }

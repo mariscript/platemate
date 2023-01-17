@@ -22,7 +22,7 @@ async def get_token(
     request: Request,
     account: AccountOut = Depends(authenticator.try_get_current_account_data)
 ) -> AccountToken | None:
-    if authenticator.cookie_name in request.cookies:
+    if account and authenticator.cookie_name in request.cookies:
         return {
             "access_token": request.cookies[authenticator.cookie_name],
             "type": "Bearer",
@@ -65,22 +65,12 @@ def get_account(
 @router.put("/api/accounts/me", response_model=AccountOut)
 def update_account(
     account_in: AccountIn,
-    queries: AccountsQueries = Depends(),
-    account_data: dict = Depends(authenticator.get_current_account_data),
-):
-    record = queries.update_account(account_data['id'], account_in)
-    return record
-    
-@router.delete("/api/accounts/me", response_model=bool)
-def delete_account(
-    id: int, 
     response: Response,
     queries: AccountsQueries = Depends(),
-    account_data: dict = Depends(authenticator.get_current_account_data),
-    ):
-    if queries.get_account_by_id(id) and queries.delete_account(id):
-        response.status_code = 200
-        return True
+):
+    record = queries.update_account(id, account_in)
+    if record is None:
+        response.status_code = 404
     else:
         response.status_code = 400
         return False
