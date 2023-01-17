@@ -12,7 +12,7 @@ function Nav() {
     <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
       <div></div>
       <div className="mx-auto">
-        <a href="/home">
+        <a href="/">
           <div className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
             <span>PLATE</span>
             <img

@@ -2,6 +2,9 @@
 
 ## Week 3:
 
+### Friday 1/13/23
+Zac, Jason, and I worked on front end authentication. We created the Authenticator.js file with most of the needed Account CRUD functions. We were able to make the Login.js function generate a token. The next tasks are to require a token for other authenticated pages as well as set up the routes to note which routes need to be authenticated. Two things we learned are that in JS, array destructuring allows you to use a "," to skip over any values in a list that you might not want to pull. We also learned that for an onSubmit, you want to put any functions you are calling with parameters inside a separate handleSubmit function instead of inside the onSubmit. Nat fixed some issues with sign up form and added error messages to show if email or zipcode was not properly formatted. She is almost complete with the design for that. Marison worked on and is almost done with the footer!
+
 ### Thursday 1/12/2023
 Zac and I were split up again working on auth. We originally thought we would need specific error handling for get one, put and delete functions. We then learned that we can use the account_data dictionary that is created when a user is authenticated to pull the "id" value from there. This means we don't have to input the userid manually which removes the need for id error handling since only active ids can access those CRUD functions. Nat and Marison worked on design and were able to get a signup modal working! Jason was able to complete a login form without the authentication piece which we are working on tomorrow.
 

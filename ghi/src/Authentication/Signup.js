@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useToken } from "./AuthenticateUser"
 
-export default function Signup(props) {
+export default function Signup() {
   // set the state for the info we want to keep track of
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -9,47 +10,19 @@ export default function Signup(props) {
   const [last_name, setLast] = useState("");
   const [zipcode, setZip] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const data = {
-  //     first_name: first_name,
-  //     last_name: last_name,
-  //     email: email,
-  //     zipcode: zipcode,
-  //     password: password,
-  //   };
+  const [ , , , signup] = useToken()
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    const signupUrl = "http://localhost:8000/api/accounts";
-    const fetchConfig = {
-      method: "post",
-      // remember to stringify json
-      body: JSON.stringify({
-        first_name,
-        last_name,
-        email,
-        zipcode,
-        password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const response = await fetch(signupUrl, fetchConfig);
-
-    if (response.ok) {
-      setEmail("");
-      setPassword("");
-      setFirst("");
-      setLast("");
-      setZip("");
-    } else {
-      setErrorMessage(
-        "Cannot create account at this time. Please contact support."
-      );
-    }
+    signup(first_name,last_name,email,zipcode,password)
+    if (signup = false){
+      setErrorMessage("Could not create account. Please try again")
+    } //not sure if this will work
+    setEmail("");
+    setPassword("");
+    setFirst("");
+    setLast("");
+    setZip("");
   };
 
   return (

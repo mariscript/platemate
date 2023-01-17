@@ -23,3 +23,10 @@ class YelpQueries:
         res = requests.get(url, headers=headers)
         data = res.json()
         return data
+
+    def yelp_test(self):
+        url = f"https://api.yelp.com/v3/businesses/search?location=nyc&term=restaurants&sort_by=best_match&limit=20"
+        headers = {"Authorization": f"Bearer {YELP_KEY}"}
+        res = requests.get(url, headers=headers)
+        data = res.json()
+        return data
