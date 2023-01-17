@@ -72,16 +72,6 @@ export function useToken() {
     }
   }, [setToken, token]);
 
-  async function logout() {
-    if (token) {
-      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/token/`;
-      await fetch(url, { method: "delete", credentials: "include" });
-      internalToken = null;
-      setToken(null);
-      return redirect("/");
-    }
-  }
-
   async function login(email, password) {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/token/`;
     const form = new FormData();
@@ -100,6 +90,18 @@ export function useToken() {
     let error = await response.json();
     return handleErrorMessage(error);
   }
+
+  async function logout() {
+    if (token) {
+      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/token/`;
+      await fetch(url, { method: "delete", credentials: "include" });
+      internalToken = null;
+      setToken(null);
+      return redirect("/");
+    }
+  }
+
+
 
   async function signup(first_name, last_name, email, zipcode, password) {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/`;
@@ -142,9 +144,6 @@ export function useToken() {
     }
     return false;
   }
-
-  return [token, login, logout, signup, update];
-}
 
   return [token, login, logout, signup, update];
 }
