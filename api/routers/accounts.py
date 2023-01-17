@@ -65,12 +65,16 @@ def get_account(
 @router.put("/api/accounts/me", response_model=AccountOut)
 def update_account(
     account_in: AccountIn,
+    response: Response,
     queries: AccountsQueries = Depends(),
-    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
-    record = queries.update_account(account_data['id'], account_in)
-    return record
-
+    record = queries.update_account(id, account_in)
+    if record is None:
+        response.status_code = 404
+    else:
+        response.status_code = 400
+        return False
+            
 @router.delete("/api/accounts/me", response_model=bool)
 def delete_account(
     id: int,

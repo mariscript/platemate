@@ -16,7 +16,7 @@ export default function LoginComponent() {
     navigate("/")
         // error handle for if not a valid account
   };
-
+  
   return (
     <>
       <h1>Login</h1>

@@ -180,7 +180,7 @@ class AccountsQueries:
             return AccountOut(id=id, **old_data)
 
     def delete_account(self, id: int) -> bool:
-        try:
+        try: 
             with pool.connection() as conn:
                 with conn.cursor() as db:
                     db.execute(

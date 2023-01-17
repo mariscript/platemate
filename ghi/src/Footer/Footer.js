@@ -1,14 +1,9 @@
 import React from "react";
 import plateLogo from "../images/plate.png";
-import Marison from "../images/marison_icon.png";
-import Gina from "../images/gina_icon.png";
-import Natalie from "../images/nat_icon.png";
-import Jason from "../images/jason_icon.png";
-import Zac from "../images/zac_icon.png";
 
 const Footer = () => {
   return (
-    <footer className="justify-between mb-auto p-4 py-3 h-10 p-12 bg-[#fef5ed]">
+    <footer className="justify-between mb-auto py-3 h-10 p-12 bg-[#fef5ed]">
       <div className="flex justify-center text-gray-600 dark:text-black">
         <div className="mb-4 col-end-7 col-span-2">
           <a href="./about" className="hover:underline font-semibold text-xs">
@@ -31,7 +26,7 @@ const Footer = () => {
             href="./resources"
             className="hover:underline font-semibold text-xs"
           >
-            Rescoures
+            Resources
           </a>
         </div>
       </div>
@@ -43,7 +38,7 @@ const Footer = () => {
         <div className="border-2 border-black rounded-full my-2 p-2">
           <a target="_blank" href="https://www.linkedin.com/in/marisonmunoz/">
             <img
-              src={Marison}
+              src={require("../images/marison_icon.png")}
               className="h-10"
               alt="Marison"
               title="Marison Munoz"
@@ -57,14 +52,19 @@ const Footer = () => {
             href="https://www.linkedin.com/in/gina-john/"
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
           >
-            <img src={Gina} className="h-10" alt="Gina" title="Gina John"></img>
+            <img
+              src={require("../images/gina_icon.png")}
+              className="h-10"
+              alt="Gina"
+              title="Gina John"
+            ></img>
             <span className="sr-only">Gina John</span>
           </a>
         </div>
         <div className="border-2 border-black rounded-full my-2 p-2">
           <a target="_blank" href="https://www.linkedin.com/in/natalientang/">
             <img
-              src={Natalie}
+              src={require("../images/nat_icon.png")}
               className="h-10"
               alt="Natalie"
               title="Natalie Tang"
@@ -79,7 +79,7 @@ const Footer = () => {
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
           >
             <img
-              src={Jason}
+              src={require("../images/jason_icon.png")}
               className="h-10"
               alt="Jason"
               title="Jason Olefson"
@@ -94,7 +94,7 @@ const Footer = () => {
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
           >
             <img
-              src={Zac}
+              src={require("../images/zac_icon.png")}
               className="h-10"
               alt="Zachary"
               title="Zachary Macek"

@@ -12,23 +12,23 @@ export default function Signup() {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  const [ , , , signup] = useToken()
+  const [, , , signup] = useToken()
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (formValidation() === false) {
       return;
     }
-    signup(first_name,last_name,email,zipcode,password)
-    if (signup = false){
-      setErrorMessage("Could not create account. Please try again")
-    } //not sure if this will work
+    signup(first_name,last_name,email,zipcode,password)  
     setEmail("");
     setPassword("");
     setFirst("");
     setLast("");
     setZip("");
+    setSuccessMessage("Account created successfully!");
+    setErrorMessage("")
   };
+
 
   function formValidation() {
     let blankInputs = 0;
