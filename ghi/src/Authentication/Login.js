@@ -8,7 +8,6 @@ export default function LoginComponent() {
   const [, login] = useToken();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +17,7 @@ export default function LoginComponent() {
     login(email, password);
     setEmail("");
     setPassword("");
-    navigate("/");
+    navigate("/me");
     // error handle for if not a valid account
   };
 
@@ -33,7 +32,6 @@ export default function LoginComponent() {
 
     if (blankInputs === 2) {
       setErrorMessage("Login form is completely blank.");
-      setSuccessMessage("");
       return false;
     }
   }
@@ -97,18 +95,12 @@ export default function LoginComponent() {
                     />
                     {errorMessage}
                   </div>
-                ) : successMessage ? (
-                  <div className="flex p-4 mb-4 text-sm text-green-700 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800 items-center">
-                    <img
-                      src={require("../images/success.png")}
-                      width="30px"
-                      style={{ marginRight: "15px" }}
-                    />
-                    {successMessage}
-                  </div>
                 ) : null}
                 <button className="bg-black text-white font-bold uppercase text-sm px-6 py-3 rounded inline-flex group items-center justify-center cursor-pointer">
-                  <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-[#F0C797] group-hover:w-32 group-hover:h-24 opacity-10"></span>
+                  <span
+                    data-bs-dismiss="modal"
+                    className="absolute w-0 h-0 transition-all duration-300 ease-out bg-[#F0C797] group-hover:w-32 group-hover:h-24 opacity-10"
+                  ></span>
                   Order up!
                 </button>
               </form>

@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { useToken } from "./AuthenticateUser";
 import React from "react";
+import { useToken } from "./AuthenticateUser";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ export default function Signup() {
   const [zipcode, setZip] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const navigate = useNavigate();
 
   const [, , , signup] = useToken();
 
@@ -24,7 +26,7 @@ export default function Signup() {
     setFirst("");
     setLast("");
     setZip("");
-    setSuccessMessage("Account created successfully!");
+    navigate("/me");
     setErrorMessage("");
   };
 
@@ -184,7 +186,10 @@ export default function Signup() {
 
                 <div className="flex flex-col items-center justify-end p-3 border-solid border-slate-200 rounded-b">
                   <button className="bg-black text-white font-bold uppercase text-sm px-6 py-3 rounded inline-flex group items-center justify-center cursor-pointer">
-                    <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-[#F0C797] group-hover:w-32 group-hover:h-24 opacity-10"></span>
+                    <span
+                      data-bs-dismiss="modal"
+                      className="absolute w-0 h-0 transition-all duration-300 ease-out bg-[#F0C797] group-hover:w-32 group-hover:h-24 opacity-10"
+                    ></span>
                     Order up!
                   </button>
                 </div>
