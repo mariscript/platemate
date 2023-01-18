@@ -50,9 +50,9 @@ function UserProfile() {
             <h2 className="text-center">Hello {account.first_name}</h2>
             <h2 className="text-center">Account Details</h2>
             <div className="flex justify-center">
-                <table className="table table-hover table-striped">
+                <table className="table-auto border-separate border-spacing-4">
                     <thead className="text-center">
-                        <tr className="header">
+                        <tr>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
@@ -60,7 +60,7 @@ function UserProfile() {
                         </tr>
                     </thead>
                     <tbody className="text-center">
-                        <tr className="align-middle">
+                        <tr>
                             <td>{account.first_name}</td>
                             <td>{account.last_name}</td>
                             <td>{account.email}</td>
@@ -69,24 +69,38 @@ function UserProfile() {
                     </tbody>
                 </table>
             </div>
-            <h2>Food Preferences</h2>
-            <div>
-                <h4>Allergies</h4>
-                <table>
+            <h2 className="text-center">Food Preferences:</h2>
+            <div className="flex justify-center">
+                <h4 className="text-center">Allergies:</h4>
+                <table className="table-auto border-separate border-spacing-5">
+                    <thead className="text-center">
+                        <tr className="header">
+                            <th>seafood</th>
+                            <th>gluten free</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
-                            <td>{allergy.seafood}</td>
-                            <td>{allergy.gluten_free}</td>
+                            <td>{allergy?.seafood?.toString()}</td>
+                            <td>{allergy?.gluten_free?.toString()}</td>
                         </tr>
                     </tbody>
                 </table>
-                <h4>Diet Restrictions</h4>
-                <table>
+
+                <h4 className="text-center">Diet Restrictions:</h4>
+                <table className="table-auto border-separate border-spacing-5">
+                    <thead className="text-center">
+                        <tr className="header">
+                            <th>vegan</th>
+                            <th>vegetarian</th>
+                            <th>halal</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
-                            <td>{diet_restrict.vegan}</td>
-                            <td>{diet_restrict.vegetarian}</td>
-                            <td>{diet_restrict.halal}</td>
+                            <td>{diet_restrict?.vegan?.toString()}</td>
+                            <td>{diet_restrict?.vegetarian?.toString()}</td>
+                            <td>{diet_restrict?.halal?.toString()}</td>
                         </tr>
                     </tbody>
                 </table>
