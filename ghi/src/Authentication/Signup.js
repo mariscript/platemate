@@ -93,21 +93,11 @@ export default function Signup() {
 
   return (
     <>
-      <div className="">
-        <button
-          type="button"
-          className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModalCenter"
-        >
-          Vertically centered modal
-        </button>
-      </div>
       <div
         className="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
-        id="exampleModalCenter"
+        id="signup"
         tabIndex="-1"
-        aria-labelledby="exampleModalCenterTitle"
+        aria-labelledby="signupLabel"
         aria-modal="true"
         role="dialog"
       >
@@ -118,10 +108,6 @@ export default function Signup() {
                 <h1 className="text-3xl font-bold mr-4">SIGN UP</h1>
                 <img src={require("../images/checklist.png")} width="50px" />
               </div>
-              {/* <a
-                href="/"
-                className="absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#FEF5ED] hover:text-white ease-linear transition-all duration-150"
-              > */}
               <svg
                 className="w-9 h-9 absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#FEF5ED] hover:text-white ease-linear transition-all duration-150 cursor-pointer"
                 fillRule="currentColor"
@@ -135,10 +121,12 @@ export default function Signup() {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              {/* </a> */}
             </div>
             <div className="modal-body relative p-4">
-              <form className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-3">
+              <form
+                onSubmit={handleFormSubmit}
+                className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-3"
+              >
                 <input
                   type="text"
                   className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
@@ -195,11 +183,7 @@ export default function Signup() {
                 ) : null}
 
                 <div className="flex flex-col items-center justify-end p-3 border-solid border-slate-200 rounded-b">
-                  <button
-                    className="bg-black text-white font-bold uppercase text-sm px-6 py-3 rounded inline-flex group items-center justify-center cursor-pointer"
-                    type="button"
-                    onClick={handleFormSubmit}
-                  >
+                  <button className="bg-black text-white font-bold uppercase text-sm px-6 py-3 rounded inline-flex group items-center justify-center cursor-pointer">
                     <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-[#F0C797] group-hover:w-32 group-hover:h-24 opacity-10"></span>
                     Order up!
                   </button>
@@ -207,8 +191,9 @@ export default function Signup() {
               </form>
               <div className="flex items-center">
                 <a
-                  href="/login"
-                  className="mb-6 mt-4 mx-auto text-black-500 background-transparent font-bold underline uppercase text-sm focus:outline-none ease-linear transition-all duration-150 hover:text-white content-"
+                  data-bs-toggle="modal"
+                  data-bs-target="#login"
+                  className="mb-6 mt-4 mx-auto text-black-500 background-transparent font-bold underline uppercase text-sm focus:outline-none ease-linear transition-all duration-150 hover:text-white cursor-pointer"
                 >
                   Already have an account?
                 </a>

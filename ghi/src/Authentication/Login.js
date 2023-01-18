@@ -8,6 +8,7 @@ export default function LoginComponent() {
   const [, login] = useToken();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -22,31 +23,28 @@ export default function LoginComponent() {
   };
 
   function loginValidation() {
+    let blankInputs = 0;
     if (email.length === 0) {
-      setErrorMessage("Whoops! Email is required.");
+      blankInputs++;
     }
     if (password.length === 0) {
-      setErrorMessage("Whoops! Password is required.");
+      blankInputs++;
+    }
+
+    if (blankInputs === 2) {
+      setErrorMessage("Login form is completely blank.");
+      setSuccessMessage("");
+      return false;
     }
   }
 
   return (
     <>
-      <div className="">
-        <button
-          type="button"
-          className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModalCenter"
-        >
-          Vertically centered modal
-        </button>
-      </div>
       <div
         className="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
-        id="exampleModalCenter"
+        id="login"
         tabIndex="-1"
-        aria-labelledby="exampleModalCenterTitle"
+        aria-labelledby="loginLabel"
         aria-modal="true"
         role="dialog"
       >
@@ -57,10 +55,6 @@ export default function LoginComponent() {
                 <h1 className="text-3xl font-bold mr-2">LOGIN</h1>
                 <img src={require("../images/lock.png")} width="40px" />
               </div>
-              {/* <a
-                href="/"
-                className="absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#FEF5ED] hover:text-white ease-linear transition-all duration-150"
-              > */}
               <svg
                 className="cursor-pointer w-9 h-9 absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#FEF5ED] hover:text-white ease-linear transition-all duration-150"
                 fillRule="currentColor"
@@ -74,7 +68,6 @@ export default function LoginComponent() {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              {/* </a> */}
             </div>
             <div className="modal-body relative p-4">
               <form
@@ -83,24 +76,47 @@ export default function LoginComponent() {
               >
                 <input
                   className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
-                  placeholder="email"
+                  placeholder="Email"
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                 />
                 <input
                   className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
-                  placeholder="password"
+                  placeholder="Password"
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
                 />
-                <button>Order Up!</button>
+                {errorMessage ? (
+                  <div className="flex p-4 mb-4 text-sm text-red-700 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800 items-center">
+                    <img
+                      src={require("../images/warning.png")}
+                      width="30px"
+                      style={{ marginRight: "15px" }}
+                    />
+                    {errorMessage}
+                  </div>
+                ) : successMessage ? (
+                  <div className="flex p-4 mb-4 text-sm text-green-700 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800 items-center">
+                    <img
+                      src={require("../images/success.png")}
+                      width="30px"
+                      style={{ marginRight: "15px" }}
+                    />
+                    {successMessage}
+                  </div>
+                ) : null}
+                <button className="bg-black text-white font-bold uppercase text-sm px-6 py-3 rounded inline-flex group items-center justify-center cursor-pointer">
+                  <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-[#F0C797] group-hover:w-32 group-hover:h-24 opacity-10"></span>
+                  Order up!
+                </button>
               </form>
               <div className="flex items-center">
                 <a
-                  href="/signup"
-                  className="mb-6 mt-4 mx-auto text-black-500 background-transparent font-bold underline uppercase text-sm focus:outline-none ease-linear transition-all duration-150 hover:text-white content-"
+                  data-bs-toggle="modal"
+                  data-bs-target="#signup"
+                  className="mb-6 mt-4 mx-auto text-black-500 background-transparent font-bold underline uppercase text-sm focus:outline-none ease-linear transition-all duration-150 hover:text-white cursor-pointer"
                 >
                   Don't have an account?
                 </a>

@@ -9,38 +9,40 @@ import Nav from "./Nav";
 import Signup from "./Authentication/Signup";
 import Login from "./Authentication/Login";
 import Logout from "./Authentication/Logout";
-import RestaurantList from "./Restaurant/RestaurantList"
+import RestaurantList from "./Restaurant/RestaurantList";
 import RestaurantDetailTest from "./Restaurant/RestaurantDetailTest";
-import { AuthProvider, useToken } from "./Authentication/AuthenticateUser"
+import { AuthProvider, useToken } from "./Authentication/AuthenticateUser";
 import UserProfile from "./User/UserProfile";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
   useToken();
-  return null
+  return null;
 }
 
 function App() {
   return (
     <AuthProvider>
-    <BrowserRouter>
-    <GetToken/>
-      <Nav/>
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/restaurants" element={<RestaurantList />}/>
-          <Route path="/restaurant" element={<RestaurantDetailTest />}/>
-          <Route path="/about" element={<About />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/me" element={<UserProfile/>}/>
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+      <BrowserRouter>
+        <GetToken />
+        <Nav />
+        <Signup />
+        <Login />
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/restaurants" element={<RestaurantList />} />
+            <Route path="/restaurant" element={<RestaurantDetailTest />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/me" element={<UserProfile />} />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
     </AuthProvider>
   );
 }
