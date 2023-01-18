@@ -10,10 +10,11 @@ export default function Signup() {
   const [last_name, setLast] = useState("");
   const [zipcode, setZip] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
 
   const [, , , signup] = useToken();
+
+  const modal = document.getElementById("signup");
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -28,6 +29,7 @@ export default function Signup() {
     setZip("");
     navigate("/me");
     setErrorMessage("");
+    modal.classList.remove("show");
   };
 
   function formValidation() {
@@ -50,38 +52,31 @@ export default function Signup() {
 
     if (blankInputs === 5) {
       setErrorMessage("Form submission is completely blank.");
-      setSuccessMessage("");
       return false;
     }
     if (blankInputs > 1) {
       setErrorMessage("Form has multiple blank inputs.");
-      setSuccessMessage("");
       return false;
     }
 
     if (!validateEmail()) {
       setErrorMessage("Whoops! Email format is invalid.");
-      setSuccessMessage("");
       return false;
     }
     if (zipcode.length < 5) {
       setErrorMessage("Whoops! Zipcode needs to be at least 5 characters");
-      setSuccessMessage("");
       return false;
     }
     if (!password) {
       setErrorMessage("Whoops! Password is required.");
-      setSuccessMessage("");
       return false;
     }
     if (!first_name) {
       setErrorMessage("Whoops! First name is required.");
-      setSuccessMessage("");
       return false;
     }
     if (!last_name) {
       setErrorMessage("Whoops! Last name is required.");
-      setSuccessMessage("");
       return false;
     }
     return true;
@@ -173,23 +168,14 @@ export default function Signup() {
                     />
                     {errorMessage}
                   </div>
-                ) : successMessage ? (
-                  <div className="flex p-4 mb-4 text-sm text-green-700 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800 items-center">
-                    <img
-                      src={require("../images/success.png")}
-                      width="30px"
-                      style={{ marginRight: "15px" }}
-                    />
-                    {successMessage}
-                  </div>
                 ) : null}
 
                 <div className="flex flex-col items-center justify-end p-3 border-solid border-slate-200 rounded-b">
-                  <button className="bg-black text-white font-bold uppercase text-sm px-6 py-3 rounded inline-flex group items-center justify-center cursor-pointer">
-                    <span
-                      data-bs-dismiss="modal"
-                      className="absolute w-0 h-0 transition-all duration-300 ease-out bg-[#F0C797] group-hover:w-32 group-hover:h-24 opacity-10"
-                    ></span>
+                  <button
+                    // data-bs-dismiss="modal"
+                    className="bg-black text-white font-bold uppercase text-sm px-6 py-3 rounded inline-flex group items-center justify-center cursor-pointer"
+                  >
+                    <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-[#F0C797] group-hover:w-32 group-hover:h-24 opacity-10"></span>
                     Order up!
                   </button>
                 </div>
