@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
 import { useToken } from "./AuthenticateUser";
 import React from "react";
 
@@ -114,21 +113,17 @@ export default function Signup() {
       >
         <div className="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
           <div className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-[#F0C797] bg-clip-padding rounded-md outline-none text-current">
-            <div className="modal-header p-6 mt-2">
-              <div className="flex justify-between">
-                <img
-                  src={require("../images/checklist.png")}
-                  width="50px"
-                  style={{ marginLeft: "150px" }}
-                />
-                <h1 className="text-3xl font-bold items-center">SIGN UP</h1>
+            <div className="modal-header p-6 mt-2 text-center">
+              <div className="flex justify-center items-center">
+                <h1 className="text-3xl font-bold mr-4">SIGN UP</h1>
+                <img src={require("../images/checklist.png")} width="50px" />
               </div>
               {/* <a
                 href="/"
                 className="absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#FEF5ED] hover:text-white ease-linear transition-all duration-150"
               > */}
               <svg
-                className="w-9 h-9 absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#FEF5ED] hover:text-white ease-linear transition-all duration-150"
+                className="w-9 h-9 absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#FEF5ED] hover:text-white ease-linear transition-all duration-150 cursor-pointer"
                 fillRule="currentColor"
                 data-bs-dismiss="modal"
                 viewBox="0 0 20 20"
