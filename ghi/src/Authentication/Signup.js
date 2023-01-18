@@ -114,14 +114,10 @@ export default function Signup() {
       >
         <div className="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
           <div className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-[#F0C797] bg-clip-padding rounded-md outline-none text-current">
-            <div className="modal-header p-6 mt-2">
-              <div className="flex justify-between">
-                <img
-                  src={require("../images/checklist.png")}
-                  width="50px"
-                  style={{ marginLeft: "150px" }}
-                />
-                <h1 className="text-3xl font-bold items-center">SIGN UP</h1>
+            <div className="modal-header p-6 mt-2 text-center">
+              <div className="flex justify-center items-center">
+                <h1 className="text-3xl font-bold mr-4">SIGN UP</h1>
+                <img src={require("../images/checklist.png")} width="50px" />
               </div>
               {/* <a
                 href="/"

@@ -9,11 +9,11 @@ function Nav() {
   }
 
   return (
-    <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
+    <nav className="flex justify-between w-screen bg-[#FDECA9] h-16 py-3">
       <div></div>
       <div className="mx-auto mr-25">
         <a href="/">
-          <div className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
+          <div className="flex fixed w-screen tracking-[4px] text-xl font-semibold items-center">
             <span>PLATE</span>
             <img
               src={require("./images/plate.png")}
@@ -70,6 +70,14 @@ function Nav() {
                 className="block px-4 py-2 transition-all duration-300 ease-in-out cursor-pointer hover:text-black"
               >
                 LOGIN
+              </a>
+            </div>
+            <div>
+              <a
+                href="/logout"
+                className="block px-4 py-2 transition-all duration-300 ease-in-out cursor-pointer hover:text-black"
+              >
+                LOGOUT
               </a>
             </div>
           </ul>
