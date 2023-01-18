@@ -1,5 +1,10 @@
 # Week 4
 
+### (Wed) 1/18/2023
+
+- got sign up and login modals to work with each other on the main page
+- changed login submit button to handle in the form and not the button itself
+
 ### (Tues) 1/17/2023
 
 - merge party!
