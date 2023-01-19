@@ -1,21 +1,29 @@
 # Week 4
 
+### (Wed) 1/18/2023
+
+- got sign up and login modals to work with each other on the main page
+- changed login submit button to handle in the form and not the button itself
+- redirected the sign up and login forms to users page
+- Gina and Marison started implementation of reduc for questionnarie variables, created first slice for question 1, started testing "default value" search input pulling directly form logged in user accounts table
+
 ### (Tues) 1/17/2023
 
 - merge party!
+- installed the tailwind elements dependencies to be able to use the fade in/out for the modal
+- Zac and Jason fixed bugs in the functions for getting and updating allergies and diet restrictions from the backend and also began working on the UserProfile page and were able to display account information correctly
+- Gina worked on the API calls for the restaurant list and restaurant detail pages to check if they function properly
+- Marison and Gina are planning to convert some components to use Redux and accessing the variables from the questionnaire page through the Redux Toolkit store
 
 # Week 3
-
-### (Sat) 1/14/2023
-
-- updated and cleaned up response messages for sign up form and created a better design for the alert
 
 ### (Fri) 1/13/2023
 
 - fixed some issues with sign up form and added error messages to show if email or zipcode was not properly formatted
 - Marison worked on footer design
-- Zac, Jason, and Gina worked on front end authentication and created the Authenticator.js file with CRUD functions, and made the Login.js function generate a token
-- learned about array destructuring and using a separate handleSubmit function for onSubmit events
+- Zac, Jason, and Gina worked on front end authentication and created the Authenticator.js file with CRUD functions, and made the Login.js function generate a token (learned about array destructuring and using a separate handleSubmit function for onSubmit events)
+- updated and cleaned up response messages for sign up form and created a better design for the alert
+- Jason completed the unix code conversion on the backend
 
 ### (Thurs) 1/12/2023
 

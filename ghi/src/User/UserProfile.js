@@ -17,23 +17,23 @@ function UserProfile() {
         setAccount(data)
     }
 
-    const fetchAllergies = async () => {
-        const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me/`
-        const result = await fetch(url,{
-            headers: { Authorization: `Bearer ${token}`}, 
-        });
-        const data = await result.json();
-        setAllergy(data)
-    }
-    
-    const fetchDietRestrict = async () => {
-        const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restricts/me/`
-        const result = await fetch(url,{
-            headers: { Authorization: `Bearer ${token}`}, 
-        });
-        const data = await result.json();
-        setDiet(data)
-    }
+  const fetchAllergies = async () => {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me/`;
+    const result = await fetch(url, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await result.json();
+    setAllergy(data);
+  };
+
+  const fetchDietRestrict = async () => {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restricts/me/`;
+    const result = await fetch(url, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await result.json();
+    setDiet(data);
+  };
 
     useEffect(() => {
         if (token) {

@@ -9,9 +9,9 @@ import Nav from "./Nav";
 import Signup from "./Authentication/Signup";
 import Login from "./Authentication/Login";
 import Logout from "./Authentication/Logout";
-import RestaurantList from "./Restaurant/RestaurantList"
+import RestaurantList from "./Restaurant/RestaurantList";
 import RestaurantDetailTest from "./Restaurant/RestaurantDetailTest";
-import { AuthProvider, useToken } from "./Authentication/AuthenticateUser"
+import { AuthProvider, useToken } from "./Authentication/AuthenticateUser";
 import UserProfile from "./User/UserProfile";
 import UpdateAccountInfo from "./User/UpdateAccountInfo";
 import UpdateAllergies from "./User/UpdateAllergies";
@@ -20,7 +20,7 @@ import UpdateDietRestrict from "./User/UpdateDietRestrict";
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
   useToken();
-  return null
+  return null;
 }
 
 function App() {
