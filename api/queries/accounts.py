@@ -26,7 +26,6 @@ class AccountIn(BaseModel):
     last_name: str
     email: str
     zipcode: str
-    password: str
 
 class AccountOut(BaseModel):
     id: int
@@ -113,8 +112,7 @@ class AccountsQueries:
                     , last_name
                     , email
                     , zipcode
-                    , hashed_password
-                    FROM accounts;
+\                    FROM accounts;
                     """
                 )
                 results = []
@@ -149,7 +147,7 @@ class AccountsQueries:
                     account[column.name] = results[i]
                 return account
 
-    def update_account(self,id:int, account:AccountIn) -> Union[AccountOut,Error]:
+    def update_account(self,account_id:int, account:AccountIn) -> Union[AccountOut,Error]:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
@@ -160,27 +158,27 @@ class AccountsQueries:
                         , last_name = %s
                         , email = %s
                         , zipcode = %s
-                        WHERE id = %s
+                        WHERE account_id = %s
                         """,
                         [
                             account.first_name,
                             account.last_name,
                             account.email,
                             account.zipcode,
-                            id
+                            account_id
                         ]
                     )
-                    return self.account_in_to_out(id, account)
+                    return self.account_in_to_out(account_id, account)
         except Exception as e:
             print(e)
             return {"message":"Could not update the account"}
 
-    def account_in_to_out(self, id: int, account: AccountIn):
+    def account_in_to_out(self, account_id: int, account: AccountIn):
             old_data = account.dict()
-            return AccountOut(id=id, **old_data)
+            return AccountOut(id=account_id, **old_data)
 
     def delete_account(self, id: int) -> bool:
-        try: 
+        try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
                     db.execute(

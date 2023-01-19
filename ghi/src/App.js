@@ -12,6 +12,7 @@ import Logout from "./Authentication/Logout";
 import RestaurantList from "./Restaurant/RestaurantList"
 import RestaurantDetailTest from "./Restaurant/RestaurantDetailTest";
 import { AuthProvider, useToken } from "./Authentication/AuthenticateUser"
+import QuestionModal from "./Questionnaire/QuestionnaireModal";
 import UserProfile from "./User/UserProfile";
 
 function GetToken() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/me" element={<UserProfile/>}/>
+          <Route path="/questionnaire" element={<QuestionModal/>}/>
         </Routes>
         <Footer />
       </div>
