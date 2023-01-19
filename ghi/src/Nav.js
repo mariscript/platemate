@@ -10,7 +10,6 @@ function Nav() {
 
   return (
     <nav className="flex flex-1 justify-center w-screen bg-[#FDECA9] h-16 py-4">
-      <div></div>
       <div className="flex flex-col mx-auto mr-25">
         <a href="/">
           <div className="flex fixed w-screen tracking-[4px] text-xl font-semibold items-center">

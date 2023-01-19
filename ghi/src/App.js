@@ -27,7 +27,7 @@ function App() {
       <BrowserRouter>
         <GetToken />
         <Nav />
-        <div className="container">
+        <div className="">
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/signup" element={<Signup />} />
