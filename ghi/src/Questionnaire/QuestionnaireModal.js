@@ -9,7 +9,7 @@ function QuestionModal() {
     const dispatch = useDispatch()
     const [zipcode, setZipcode] = useState("");
     const [budget, setBudget] = useState(0)
-    const [time, setTime] = useState(0)
+    const [time, setTime] = useState("")
     const {token} = useAuthContext()
 
     // const budget =
@@ -56,6 +56,7 @@ function QuestionModal() {
     console.log(account)
 
   return (
+    <>
     <div className="row">
       <div className="offset-3 col-6">
         <div className="shadow p-4 mt-4">
@@ -77,6 +78,16 @@ function QuestionModal() {
               <button onClick={updateLocation} type="submit"> Ready! </button>
             </div>
               <label htmlFor="location">What is your budget</label>
+
+              <div className="form-floating mb-3">
+                <select value={budget} onChange={handleBudgetChange}>
+                <option value="1">$ ($1-10)</option>
+                <option value="2">$$ ($11-30)</option>
+                <option value="3">$$$ ($31-60)</option>
+                <option value="4">$$$$ ($61+)</option>
+                <option value=""> ANY I GOT MONEY</option>
+                </select>
+            </div>
             <div className="form-floating mb-3">
                 <select value={budget} onChange={handleBudgetChange}>
                 <option value="1">$ ($1-10)</option>
@@ -86,15 +97,15 @@ function QuestionModal() {
                 <option value=""> ANY I GOT MONEY</option>
                 </select>
             </div>
-            <label htmlFor="location">What is your budget</label>
-            {/* <div className="form-floating mb-3">
-                <input type="datetime-local" onChange={handleTimeChange}>Choose a date</input>
-              <button onClick={handleTimeChange} type="submit"> Ready! </button>
+            {/* <label htmlFor="location">What is your budget</label>
+            <div className="form-floating mb-3">
+                <input type="datetime-local" onChange={handleTimeChange} value={(time || '').toString().substring(0, 16)}>Choose a date</input>
             </div> */}
           </form>
         </div>
       </div>
     </div>
+    </>
   );
 }
 

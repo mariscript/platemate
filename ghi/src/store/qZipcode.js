@@ -5,7 +5,7 @@ const initialState = {
 }
 
 export const qZipcode = createSlice({
-    name: 'question1',
+    name: 'zipcode',
     initialState,
     reducers: {
         storeZipcode : (state,action) =>
@@ -16,4 +16,4 @@ export const qZipcode = createSlice({
 
 export const {storeZipcode} = qZipcode.actions;
 
-export default qZipcode;
+export default qZipcode.reducer;

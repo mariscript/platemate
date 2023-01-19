@@ -19,9 +19,8 @@ function RestaurantList() {
         if (token) {getData()}
     }, [token])
 
-  const zipcode = useSelector((state) => state.question1.zipcode.zipcode)
+  const zipcode = useSelector((state) => state.zipcode.zipcode)
   console.log(zipcode)
-
 
 
 //   const getFilteredList = () => {

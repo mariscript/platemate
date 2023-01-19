@@ -112,7 +112,7 @@ class AccountsQueries:
                     , last_name
                     , email
                     , zipcode
-\                    FROM accounts;
+                    FROM accounts;
                     """
                 )
                 results = []
@@ -147,7 +147,7 @@ class AccountsQueries:
                     account[column.name] = results[i]
                 return account
 
-    def update_account(self,account_id:int, account:AccountIn) -> Union[AccountOut,Error]:
+    def update_account(self,id:int, account:AccountIn) -> Union[AccountOut,Error]:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
@@ -158,24 +158,24 @@ class AccountsQueries:
                         , last_name = %s
                         , email = %s
                         , zipcode = %s
-                        WHERE account_id = %s
+                        WHERE id = %s
                         """,
                         [
                             account.first_name,
                             account.last_name,
                             account.email,
                             account.zipcode,
-                            account_id
+                            id
                         ]
                     )
-                    return self.account_in_to_out(account_id, account)
+                    return self.account_in_to_out(id, account)
         except Exception as e:
             print(e)
             return {"message":"Could not update the account"}
 
-    def account_in_to_out(self, account_id: int, account: AccountIn):
-            old_data = account.dict()
-            return AccountOut(id=account_id, **old_data)
+    def account_in_to_out(self, id: int, account: AccountIn):
+        old_data = account.dict()
+        return AccountOut(id=id, **old_data)
 
     def delete_account(self, id: int) -> bool:
         try:
