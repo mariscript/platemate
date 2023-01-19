@@ -5,6 +5,7 @@
 - got sign up and login modals to work with each other on the main page
 - changed login submit button to handle in the form and not the button itself
 - redirected the sign up and login forms to users page
+- Gina and Marison started implementation of reduc for questionnarie variables, created first slice for question 1, started testing "default value" search input pulling directly form logged in user accounts table
 
 ### (Tues) 1/17/2023
 

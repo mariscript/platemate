@@ -99,7 +99,7 @@ export default function LoginComponent() {
                 <button className="bg-black text-white font-bold uppercase text-sm px-6 py-3 rounded inline-flex group items-center justify-center cursor-pointer">
                   <span
                     data-bs-dismiss="modal"
-                    className="absolute w-0 h-0 transition-all duration-300 ease-out bg-[#F0C797] group-hover:w-32 group-hover:h-24 opacity-10"
+                    className="absolute w-0 h-0 transition-all duration-300 ease-out bg-[#F0C797] group-hover:w-32 group-hover:h-16 opacity-10"
                   ></span>
                   Order up!
                 </button>
