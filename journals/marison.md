@@ -8,6 +8,8 @@
 
 ### 1/18/2023 Wednesday
 
+Today was a long day with Redux. Definitely marked as a big struggle day for me. Worked with Gina on researching about implemening Redux.
+
 ### 1/17/2023 Tuesday
 
 We had a long merge party in the morning. Luckily all merge conflicts were resolved, but it did take time.

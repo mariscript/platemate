@@ -10,9 +10,9 @@ import { redirect } from "react-router-dom";
 //   };
 // }
 
-function Logout(props) {
-  const [, , logout] = useToken();
-  logout();
+function Logout() {
+  const [token, , logout] = useToken();
+  logout(token);
   return redirect("/");
 }
 

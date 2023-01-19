@@ -9,9 +9,9 @@ function Nav() {
   }
 
   return (
-    <nav className="flex justify-between w-screen bg-[#FDECA9] h-16 py-3">
+    <nav className="flex flex-1 justify-center w-screen bg-[#FDECA9] h-16 py-4">
       <div></div>
-      <div className="mx-auto mr-25">
+      <div className="flex flex-col mx-auto mr-25">
         <a href="/">
           <div className="flex fixed w-screen tracking-[4px] text-xl font-semibold items-center">
             <span>PLATE</span>
@@ -36,6 +36,11 @@ function Nav() {
             LOGIN
           </button>
         </a>
+        {/* <a href="/logout">
+          <button className="text-[#BB5855] mx-0 mr-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] ">
+            LOGOUT
+          </button>
+        </a> */}
       </div>
 
       <div className="block md:hidden">
