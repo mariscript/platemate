@@ -6,6 +6,14 @@
 
 ### 1/19/2023 Thursday
 
+Another long day with Redux, and now redux persist. REHYDRATE. \
+Gina is making progress with Redux as I passenger with her and try to research everything. \
+While also downloading dependencies we way or may not be using. Who knows. \
+After feeling like I wasn't getting anywhere, I decided to do the carousel of the mainpage. \
+Tweaks need to be made but it is coming together. \
+Nat added a loading pizza feature to the sign up form, which helped her figure out her original problem! \
+Zac and Jason fixed/completed the update profile form.\
+
 ### 1/18/2023 Wednesday
 
 Today was a long day with Redux. Definitely marked as a big struggle day for me. \

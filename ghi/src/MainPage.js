@@ -1,6 +1,11 @@
 function MainPage() {
   return (
-    <div className="justify-center">
+    <>
+      <div className="flex justify-center mt-10">
+        <button className="inline-block px-6 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out">
+          Take The Questionnaire!
+        </button>
+      </div>
       <div
         id="carouselDarkVariant"
         className="carousel slide carousel-fade carousel-dark relative"
@@ -40,24 +45,22 @@ function MainPage() {
           <div className="carousel-item active relative float-left w-full">
             <img
               src={require("./images/morimoto.jpg")}
-              className="block scale-75 rounded-lg"
+              className="block w-screen scale-75"
               alt="Morimotos"
             />
-            <div className="carousel-caption hidden md:block absolute text-center">
+            <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
               <h5 className="text-xl">Don't know where to eat?</h5>
               <p className="">PlateMate will help you choose!</p>
             </div>
           </div>
 
           <div className="carousel-item relative float-left w-full">
-            <div class="d-flex justify-content-center">
-              <img
-                src={require("./images/rebelcheese.jpg")}
-                className="block scale-75 rounded-lg"
-                alt="Rebel Cheese"
-              />
-            </div>
-            <div className="carousel-caption hidden md:block absolute text-center">
+            <img
+              src={require("./images/rebelcheese.jpg")}
+              className="block w-screen scale-50"
+              alt="Rebel Cheese"
+            />
+            <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
               <h5 className="text-xl">Take the Questionnaire!</h5>
               <p>We'll help you find the right plate.</p>
             </div>
@@ -66,37 +69,47 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/SUGARFISH.jpg")}
-              className="block scale-75 rounded-lg"
+              className="block w-screen scale-50"
               alt="Sugarfish Sushi"
             />
-            <div className="carousel-caption hidden md:block absolute text-center">
+            <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
               <h5 className="text-xl">Eating now? Eating later?</h5>
               <p>No problem, let us know in the questionnaire!</p>
             </div>
           </div>
-        </div>
-
-        <div className="carousel-item relative float-left w-full">
-          <img
-            src={require("./images/gyukaku.jpg")}
-            className="block scale-75 rounded-lg"
-            alt="Gyukaku"
-          />
-          <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">Fourth slide label</h5>
-            <p>Some representative placeholder content for the fourth slide.</p>
+          <div className="carousel-item relative float-left w-full">
+            <img
+              src={require("./images/gyukaku.jpg")}
+              className="box w-screen scale-50"
+              alt="Gyukaku"
+            />
+            <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
+              <h5 className="text-xl">Eating on a budget?</h5>
+              <p>We'll find the plate for you!</p>
+            </div>
           </div>
-        </div>
+          <div className="carousel-item relative float-left w-full">
+            <img
+              src={require("./images/italian.jpg")}
+              className="block w-screen scale-50"
+              alt="Italian Food"
+            />
+            <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
+              <h5 className="text-xl">Have restrictions or allergies?</h5>
+              <p>Sign up to edit your profile!</p>
+            </div>
+          </div>
 
-        <div className="carousel-item relative float-left w-full">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(40).webp"
-            className="block w-full"
-            alt="Woman Reading a Book"
-          />
-          <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">Fifth slide label</h5>
-            <p>Some representative placeholder content for the fifth slide.</p>
+          <div className="carousel-item relative float-left w-full">
+            <img
+              src={require("./images/italian.jpg")}
+              className="block w-screen scale-50"
+              alt="Italian Food"
+            />
+            <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
+              <h5 className="text-xl">Have restrictions or allergies?</h5>
+              <p>Sign up to edit your profile!</p>
+            </div>
           </div>
         </div>
 
@@ -125,7 +138,7 @@ function MainPage() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-    </div>
+    </>
   );
 }
 
