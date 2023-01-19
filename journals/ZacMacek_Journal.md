@@ -1,4 +1,8 @@
 ## Week 4:
+### 1/18/2023
+- did a lot of research on html input checkboxes
+- worked more on userprofile to start setting up forms
+
 ### 1/17/2023
 - this morning we spent a lot of time merging
 - corrected errors with backend allergies get by id and update, and diet restrictions get by id and update functions
