@@ -159,5 +159,9 @@ export function useToken() {
     });
   }
 
+  async function createallergy(seafood, gluten_free) {
+    const url = ``
+  }
+
   return [token, login, logout, signup, update, updateallergy];
 }

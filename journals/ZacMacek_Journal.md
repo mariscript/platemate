@@ -2,7 +2,6 @@
 ### 1/20/2023
 - sorted out merge conflicts, built an additional account update backend 
 
-
 ### 1/19/2023
 - tried to finish the UserProfile and started/completed Account Update.
 

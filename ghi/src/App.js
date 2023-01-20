@@ -17,6 +17,7 @@ import UserProfile from "./User/UserProfile";
 import UpdateAccountInfo from "./User/UpdateAccountInfo";
 import UpdateAllergies from "./User/UpdateAllergies";
 import UpdateDietRestrict from "./User/UpdateDietRestrict";
+import CreateDietaryNeeds from "./User/CreateDietaryNeeds";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -48,6 +49,7 @@ function App() {
               <Route path="updateaccount" element={<UpdateAccountInfo />} />
               <Route path="updateallergy" element={<UpdateAllergies />} />
               {/* <Route path="updatediet" element={<UpdateDietRestrict/>}/> */}
+              <Route path="createneeds" element={<CreateDietaryNeeds/>}/>
             </Route>
           </Routes>
           <Footer />

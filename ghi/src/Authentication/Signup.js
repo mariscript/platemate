@@ -31,11 +31,10 @@ export default function Signup() {
     setZip("");
     setErrorMessage("");
     setIsLoading(true);
-
     setTimeout(() => {
       setIsSubmit(true);
       setIsLoading(false);
-      navigate("/me");
+      navigate("me/createneeds");
     }, 3000);
   };
 
@@ -182,7 +181,7 @@ export default function Signup() {
 
                   {isLoading ? (
                     <div className="flex flex-col items-center">
-                      <div class="flex justify-center items-center">
+                      <div className="flex justify-center items-center">
                         <img
                           src={require("../images/pizza.gif")}
                           alt="Loading..."
