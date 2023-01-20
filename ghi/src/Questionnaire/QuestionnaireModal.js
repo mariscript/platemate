@@ -3,13 +3,14 @@ import { storeZipcode } from "../store/qZipcode";
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from '../Authentication/AuthenticateUser'
 
-
 function QuestionModal() {
     const [account, setAccount] = useState({});
     const dispatch = useDispatch()
     const [zipcode, setZipcode] = useState("");
     const [budget, setBudget] = useState(0)
-    const [time, setTime] = useState("")
+    const [datetime, setDateTime] = useState("")
+    const [takeInOut, setTakeInOut] = useState("")
+    const [categories, setCategories] = useState([])
     const {token} = useAuthContext()
 
     // const budget =
@@ -22,17 +23,33 @@ function QuestionModal() {
         setZipcode(value);
     }
 
+    const updateLocation = (e) => {
+      e.preventDefault();
+      dispatch(storeZipcode({zipcode}));
+  }
+
     const handleBudgetChange = (e) =>{
       setBudget(e.target.value);
   }
 
-  const handleTimeChange = (e) =>{
-    setTime(e.target.value);
-}
+    const handleDateTimeChange = (e) =>{
+      setDateTime(e.target.value);
+    }
 
-    const updateLocation = (e) => {
-        e.preventDefault();
-        dispatch(storeZipcode({zipcode}));
+    const handleTakeInOutChange = (e) => {
+      setTakeInOut(e.target.value)
+    }
+
+    const handleCategoriesChange = (e) => {
+      let options = e.target.options;
+      let selectedOptions = [];
+
+      for(let i = 0; i < options.length; i++) {
+          if( options[i].selected ) {
+              selectedOptions.push(options[i].value);
+          }
+      }
+      setCategories(selectedOptions)
     }
 
 
@@ -52,8 +69,6 @@ function QuestionModal() {
           setZipcode(account?.zipcode)
         }
     }, [token]);
-
-    console.log(account)
 
   return (
     <>
@@ -77,7 +92,7 @@ function QuestionModal() {
               />
               <button onClick={updateLocation} type="submit"> Ready! </button>
             </div>
-              <label htmlFor="location">What is your budget</label>
+              <label htmlFor="budget">What is your budget</label>
 
               <div className="form-floating mb-3">
                 <select value={budget} onChange={handleBudgetChange}>
@@ -88,19 +103,30 @@ function QuestionModal() {
                 <option value=""> ANY I GOT MONEY</option>
                 </select>
             </div>
+            <label htmlFor="takeInOut">Carryout or Delivery?</label>
             <div className="form-floating mb-3">
-                <select value={budget} onChange={handleBudgetChange}>
-                <option value="1">$ ($1-10)</option>
-                <option value="2">$$ ($11-30)</option>
-                <option value="3">$$$ ($31-60)</option>
-                <option value="4">$$$$ ($61+)</option>
-                <option value=""> ANY I GOT MONEY</option>
+                <select value={takeInOut} onChange={handleTakeInOutChange}>
+                  <option value="pickup">Pickup</option>
+                  <option value="delivery">Delivery</option>
                 </select>
             </div>
-            {/* <label htmlFor="location">What is your budget</label>
+            <label htmlFor="location">What time are you eating?</label>
             <div className="form-floating mb-3">
-                <input type="datetime-local" onChange={handleTimeChange} value={(time || '').toString().substring(0, 16)}>Choose a date</input>
-            </div> */}
+                <input type="datetime-local" value = {datetime} onChange={handleDateTimeChange} />
+            </div>
+
+            <label htmlFor="categories">Which of the following would you prefer</label>
+              <div className="form-floating mb-3">
+                <select value={categories} onChange={handleCategoriesChange} multiple = {true}>
+                  <option value="chinese"> Chinese</option>
+                  <option value="pizza">Pizza</option>
+                  <option value="fast food">Fast Food</option>
+                  <option value="mexican">Mexican</option>
+                  <option value="japanese">Japanese</option>
+                  <option value= ""> NOT FEELING PICKY</option>
+                  <option value="none">None of these</option>
+                </select>
+            </div>
           </form>
         </div>
       </div>
