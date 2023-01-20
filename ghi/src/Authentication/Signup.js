@@ -182,7 +182,7 @@ export default function Signup() {
 
                   {isLoading ? (
                     <div className="flex flex-col items-center">
-                      <div class="flex justify-center items-center">
+                      <div className="flex justify-center items-center">
                         <img
                           src={require("../images/pizza.gif")}
                           alt="Loading..."

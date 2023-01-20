@@ -6,7 +6,6 @@ function UserProfile() {
     const [allergy, setAllergy] = useState({});
     const [diet_restrict, setDiet] = useState({});
     const {token} = useAuthContext()
-    
 
     const fetchAccount = async () => {
         const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`
