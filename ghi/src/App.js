@@ -26,29 +26,31 @@ function GetToken() {
 function App() {
   return (
     <AuthProvider>
-    <BrowserRouter>
-    <GetToken/>
-      <Nav/>
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/restaurants" element={<RestaurantList />}/>
-          <Route path="/restaurant" element={<RestaurantDetailTest />}/>
-          <Route path="/about" element={<About />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/me" element={<UserProfile/>}/>
-          <Route path="me">
-            <Route path="updateaccount" element={<UpdateAccountInfo/>}/>
-            <Route path="updateallergy" element={<UpdateAllergies/>}/>
-            {/* <Route path="updatediet" element={<UpdateDietRestrict/>}/> */}
-          </Route>
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+      <BrowserRouter>
+        <GetToken />
+        <Nav />
+        <Signup />
+        <Login />
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/restaurants" element={<RestaurantList />} />
+            <Route path="/restaurant" element={<RestaurantDetailTest />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/me" element={<UserProfile />} />
+            <Route path="me">
+              <Route path="updateaccount" element={<UpdateAccountInfo />} />
+              <Route path="updateallergy" element={<UpdateAllergies />} />
+              {/* <Route path="updatediet" element={<UpdateDietRestrict/>}/> */}
+            </Route>
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
     </AuthProvider>
   );
 }
