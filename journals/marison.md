@@ -10,6 +10,15 @@
 
 ### 1/17/2023 Tuesday
 
+We had a long merge party in the morning. Luckily all merge conflicts were resolved, but it did take time.
+While merging, we fixed certain front end issues that were occuring when loading the React port.
+I successfully completed the footer today after finding some typos and centering problems.
+Natalie was able to install tailwind-elements into the GHI so we can use more features that we looked to use when we were wireframing.
+Jason and Zac worked on User profile and discovered issues with dietary restrictions and allergies.
+We worked together to figure those issues out.
+Gina got the token to work for logging in.
+Gina and I are learning about Redux Toolkit to implement the functionality of the questionnaire later on.
+
 ## Week 3:
 
 ### 1/13/2023 Friday

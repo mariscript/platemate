@@ -82,7 +82,7 @@ def delete_account(
     queries: AccountsQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
     ):
-    if queries.get_account_by_id(id) and queries.delete_account(id):
+    if queries.get_account_by_id(account_data['id']) and queries.delete_account(account_data['id']):
         response.status_code = 200
         return True
     else:
