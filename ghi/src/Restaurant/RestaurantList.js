@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
+import { useSelector } from 'react-redux'
 import { useAuthContext } from '../Authentication/AuthenticateUser'
 
 function RestaurantList() {
@@ -18,7 +19,8 @@ function RestaurantList() {
         if (token) {getData()}
     }, [token])
 
-  console.log(restaurants)
+  const zipcode = useSelector((state) => state.zipcode.zipcode)
+  console.log(zipcode)
 
 
 //   const getFilteredList = () => {
