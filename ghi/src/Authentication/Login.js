@@ -151,16 +151,10 @@ export default function LoginComponent() {
           role="dialog"
         >
           <div className="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
-            <div className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-[#FFFFFF] bg-clip-padding rounded-md outline-none text-current">
+            <div className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-[#FEECD8] bg-clip-padding rounded-md outline-none text-current">
               <div className="modal-header p-6 mt-2 text-center">
                 <div className="flex justify-center items-center">
-                  <img
-                    src={require("../images/pineapple.gif")}
-                    width="250px"
-                    className="mx-auto mb-3"
-                  />
-
-                  <h1 className="text-lg font-bold mr-5">
+                  <h1 className="text-lg font-bold mr-5 mt-5">
                     <img
                       src={require("../images/waving-hand.png")}
                       width="50px"
@@ -168,7 +162,13 @@ export default function LoginComponent() {
                     />
                     Welcome back Mate!
                   </h1>
+                  <img
+                    src={require("../images/shrimps.gif")}
+                    width="250px"
+                    className="mx-auto mt-4"
+                  />
                 </div>
+                <h1 className="text-sm mt-1">You may now close this window.</h1>
                 <svg
                   className="w-9 h-9 absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#ddd3ca] hover:text-white ease-linear transition-all duration-150 cursor-pointer"
                   fillRule="currentColor"
