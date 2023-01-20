@@ -12,6 +12,7 @@ import Logout from "./Authentication/Logout";
 import RestaurantList from "./Restaurant/RestaurantList";
 import RestaurantDetailTest from "./Restaurant/RestaurantDetailTest";
 import { AuthProvider, useToken } from "./Authentication/AuthenticateUser";
+import QuestionModal from "./Questionnaire/QuestionnaireModal";
 import UserProfile from "./User/UserProfile";
 import UpdateAccountInfo from "./User/UpdateAccountInfo";
 import UpdateAllergies from "./User/UpdateAllergies";
@@ -31,7 +32,7 @@ function App() {
         <Nav />
         <Signup />
         <Login />
-        <div className="container">
+        <div className="">
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/signup" element={<Signup />} />
@@ -42,6 +43,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/me" element={<UserProfile />} />
+            <Route path="/questionnaire" element={<QuestionModal />} />
             <Route path="me">
               <Route path="updateaccount" element={<UpdateAccountInfo />} />
               <Route path="updateallergy" element={<UpdateAllergies />} />

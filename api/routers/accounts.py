@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Response, Request
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
 from pydantic import BaseModel
-from queries.accounts import AccountOut, AccountIn, AccountsQueries, AccountsOut
+from queries.accounts import AccountOut, AccountIn, AccountsQueries, AccountsOut, AccountInUpdate
 
 
 class AccountForm(BaseModel):
@@ -64,7 +64,7 @@ def get_account(
 
 @router.put("/api/accounts/me", response_model=AccountOut)
 def update_account(
-    account_in: AccountIn,
+    account_in: AccountInUpdate,
     response: Response,
     queries: AccountsQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
@@ -74,7 +74,7 @@ def update_account(
         response.status_code = 404
     else:
         return record
-            
+
 @router.delete("/api/accounts/me", response_model=bool)
 def delete_account(
     id: int,

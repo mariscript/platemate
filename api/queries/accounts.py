@@ -28,6 +28,12 @@ class AccountIn(BaseModel):
     zipcode: str
     password: str
 
+class AccountInUpdate(BaseModel):
+    first_name: str
+    last_name: str
+    email: str
+    zipcode: str
+
 class AccountOut(BaseModel):
     id: int
     first_name: str
@@ -113,7 +119,6 @@ class AccountsQueries:
                     , last_name
                     , email
                     , zipcode
-                    , hashed_password
                     FROM accounts;
                     """
                 )
@@ -180,7 +185,7 @@ class AccountsQueries:
         return AccountOut(id=id, **old_data)
 
     def delete_account(self, id: int) -> bool:
-        try: 
+        try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
                     db.execute(

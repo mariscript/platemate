@@ -101,8 +101,6 @@ export function useToken() {
     }
   }
 
-
-
   async function signup(first_name, last_name, email, zipcode, password) {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/`;
     const response = await fetch(url, {
@@ -112,7 +110,7 @@ export function useToken() {
         last_name,
         email,
         zipcode,
-        password
+        password,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -133,11 +131,11 @@ export function useToken() {
         last_name,
         email,
         zipcode,
-        password
+        password,
       }),
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
     });
     if (response.ok) {
@@ -152,11 +150,11 @@ export function useToken() {
       method: "put",
       body: JSON.stringify({
         seafood,
-        gluten_free
+        gluten_free,
       }),
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
     });
   }
