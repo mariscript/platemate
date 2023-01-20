@@ -2,9 +2,11 @@ function MainPage() {
   return (
     <>
       <div className="flex justify-center mt-10">
+      <a href="/questionnaire">
         <button className="inline-block px-6 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out">
           Take The Questionnaire!
         </button>
+        </a>
       </div>
       <div
         id="carouselDarkVariant"

@@ -31,7 +31,6 @@ export default function Signup() {
     setZip("");
     setErrorMessage("");
     setIsLoading(true);
-
     setTimeout(() => {
       setIsSubmit(true);
       setIsLoading(false);
