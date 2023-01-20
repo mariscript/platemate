@@ -32,7 +32,7 @@ function App() {
         <Signup />
         <Login />
         <Nav />
-        <div className="container">
+        <div>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/signup" element={<Signup />} />
