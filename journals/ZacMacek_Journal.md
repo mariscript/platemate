@@ -1,4 +1,7 @@
 ## Week 4:
+### 1/19/2023
+- i give up, im completely useless
+
 ### 1/18/2023
 - did a lot of research on html input checkboxes
 - worked more on userprofile to start setting up forms
