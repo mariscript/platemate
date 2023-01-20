@@ -101,8 +101,6 @@ export function useToken() {
     }
   }
 
-
-
   async function signup(first_name, last_name, email, zipcode, password) {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/`;
     const response = await fetch(url, {

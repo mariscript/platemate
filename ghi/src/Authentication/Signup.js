@@ -12,7 +12,6 @@ export default function Signup() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(true);
-
   const [, , , signup] = useToken();
 
   const handleFormSubmit = async (e) => {
