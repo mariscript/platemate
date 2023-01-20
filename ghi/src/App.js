@@ -29,6 +29,8 @@ function App() {
     <AuthProvider>
     <BrowserRouter>
     <GetToken/>
+    <Signup/>
+    <Login/>
       <Nav/>
       <div className="container">
         <Routes>
