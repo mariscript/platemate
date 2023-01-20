@@ -8,7 +8,6 @@ export default function UpdateAccountInfo() {
     const [first_name, setFirst] = useState("");
     const [last_name, setLast] = useState("");
     const [zipcode, setZip] = useState("");
-    const [password, setPassword] = useState("");
     const [ , , , , update] = useToken();
     const navigate = useNavigate();
     const {token} = useAuthContext()
@@ -27,15 +26,13 @@ export default function UpdateAccountInfo() {
         setZip(data.zipcode)
     }
 
-
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        update(first_name,last_name,email,zipcode, password)  
+        update(first_name,last_name,email,zipcode)  
         setEmail("");
         setFirst("");
         setLast("");
         setZip("");
-        setPassword("");
         navigate("/me")
   };
 
@@ -84,13 +81,6 @@ export default function UpdateAccountInfo() {
                             placeholder="Zipcode"
                             onChange={(e) => setZip(e.target.value)}
                             defaultValue={account?.zipcode}
-                        />
-                        <input
-                            type="password"
-                            className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
-                            placeholder="password"
-                            onChange={(e) => setPassword(e.target.value)}
-                            value={password}
                         />
                         <button className="bg-[#BB5855] mx-0 rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer" type="submit">Update</button>
                     </form>
