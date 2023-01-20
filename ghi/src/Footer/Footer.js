@@ -3,7 +3,7 @@ import plateLogo from "../images/plate.png";
 
 const Footer = () => {
   return (
-    <footer className="w-1/2 mx-auto h-8 transparent 0 bottom-0 items-center absolute inset-x-0 bg-[#fef5ed]">
+    <footer className="w-1/2 mx-auto h-8 transparent 0 bottom-0 items-center inset-x-0 bg-[#fef5ed]">
       <div className="flex justify-center text-gray-600 dark:text-black">
         <div className="mb-4 col-end-7 col-span-2">
           <a href="./about" className="hover:underline font-semibold text-xs">
