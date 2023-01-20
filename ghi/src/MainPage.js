@@ -45,7 +45,7 @@ function MainPage() {
           <div className="carousel-item active relative float-left w-full">
             <img
               src={require("./images/morimoto.jpg")}
-              className="block w-screen scale-75"
+              className="block w-screen scale-50"
               alt="Morimotos"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
