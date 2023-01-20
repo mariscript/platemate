@@ -1,4 +1,7 @@
 1/15/23
+Today started with a 'merge party'. The group merged all our changes we did this weekend. Zac and I pair programmed and deployed the profile detail page, and started mapping the tables to the front end.
+
+1/15/23
 I enabled the router to just take a datetime string, and it will automatically convert it into unix, then feed it to the Yelp API.
 That way, all we have to pass in, is a date from the front end as a string. This solves the problem of using UNIX at all.
 

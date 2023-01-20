@@ -26,7 +26,6 @@ class AccountIn(BaseModel):
     last_name: str
     email: str
     zipcode: str
-    password: str
 
 class AccountOut(BaseModel):
     id: int
@@ -113,7 +112,6 @@ class AccountsQueries:
                     , last_name
                     , email
                     , zipcode
-                    , hashed_password
                     FROM accounts;
                     """
                 )
@@ -176,11 +174,11 @@ class AccountsQueries:
             return {"message":"Could not update the account"}
 
     def account_in_to_out(self, id: int, account: AccountIn):
-            old_data = account.dict()
-            return AccountOut(id=id, **old_data)
+        old_data = account.dict()
+        return AccountOut(id=id, **old_data)
 
     def delete_account(self, id: int) -> bool:
-        try: 
+        try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
                     db.execute(

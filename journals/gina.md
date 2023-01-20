@@ -1,5 +1,18 @@
 # Journal
 
+## Week 4:
+
+### Thursday 1/19/23
+Today was a busy day! Instead of having the modal dismiss after submission of the sign up/login form, she altered the onSubmit to just pop up a message saying the form has been submitted. She also implemented a rotating pizza spinner to load after submission of the sign up form. Marison and I learned that we had to use redux-persist for persistent data storage that we can access from the redux store on other pages/when the page is refreshed. Marison and I worked on getting that set up, and we should officially have persisted state! Fun thing we learned today is that state can be rehydrated? Need to read up more on that! Zac, Jason and I troubleshooted the update form and fixed an issue we were having with the backend update function. Marison additionally worked on a carousel for the main page. Zac and Jason worked on the updated profile form and are working on checkboxes to turn off and on allergies.
+
+### Wednesday 1/18/23
+We started off our day trying to help Nat with a few design bugs with the modals. Once we had reached a stopping point there, we split up into groups. Nat was able to get sign up and login modals working with each other on the main page. She also changed the login submit button to handle through form submit and not an onClick on the button. Marison and I started implementation of redux for questionnaire variables. We created out first slice for question 1 and can see the variable in the redux store. We started testing using "default value" in the form we created for questionnaire to see if we could pull directly from the logged in users table. Most of our day was redux research. Zac and Jason worked on the user profile page including the user profile update form.
+
+### Tuesday 1/17/23
+Over the weekend, I completed front end auth and tested it on the restaurant list page and restaurant detail page which both now have front end authenticated API calls. I also worked on the restuarant list and restaurant detail page API calls to see if those would work. Jason completed the unix code conversion on the backend. Marison completed the footer. Nat completed the signup modal as well as worked on login modal.
+
+Today we spent our morning merging all the changes from this weekend (can you say merge party?). Jason and Zac worked on the user profile pages. While doing that, they corrected the get_by_id router calls, since we changed the account_id to come from login instead of user input. Nat was able to get Tailwind Elements downloaded correctly and work on transitions for our modals. Marison and I are changing some components over to Redux to access Redux Toolkit store for variables that we are getting from the questionnaire page.
+
 ## Week 3:
 
 ### Friday 1/13/23

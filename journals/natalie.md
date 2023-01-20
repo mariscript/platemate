@@ -1,5 +1,20 @@
 # Week 4
 
+### (Thurs) 1/19/2023
+
+- instead of getting the modal to dismiss after submission of the sign up/login form, it has been altered to just pop up a message saying the form has been submitted (spent too much time on it cries)
+- implemented rotating pizza spinner to load after submission of the sign up and login form
+- Marison got the carousel to show on the main page
+- Gina and Marison learned to use redux-persis for persistent data storage that can be accessed from the redux store on other pages/when a page is refreshed and they also troubleshooted the update form and fixed an issue they were having with the backend update function
+- Zac and Jason fixed/completed the update profile form
+
+### (Wed) 1/18/2023
+
+- got sign up and login modals to work with each other on the main page
+- changed login submit button to handle in the form and not the button itself
+- redirected the sign up and login forms to users page
+- Gina and Marison started implementation of redux for questionnarie variables, created first slice for question 1, started testing "default value" search input pulling directly form logged in user accounts table
+
 ### (Tues) 1/17/2023
 
 - merge party!
