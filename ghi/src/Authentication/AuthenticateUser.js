@@ -124,19 +124,20 @@ export function useToken() {
     return false;
   }
 
-  async function update(firstName, lastName, email, zipcode, password) {
-    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/accounts/me`;
+  async function update(first_name, last_name, email, zipcode, password) {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me`;
     const response = await fetch(url, {
-      method: "patch",
+      method: "put",
       body: JSON.stringify({
-        first_name: firstName,
-        last_name: lastName,
+        first_name,
+        last_name,
         email,
         zipcode,
         password
       }),
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
       },
     });
     if (response.ok) {
@@ -145,5 +146,20 @@ export function useToken() {
     return false;
   }
 
-  return [token, login, logout, signup, update];
+  async function updateallergy(seafood, gluten_free) {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me`;
+    const response = await fetch(url, {
+      method: "put",
+      body: JSON.stringify({
+        seafood,
+        gluten_free
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+    });
+  }
+
+  return [token, login, logout, signup, update, updateallergy];
 }

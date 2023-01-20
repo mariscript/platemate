@@ -176,8 +176,8 @@ class AccountsQueries:
             return {"message":"Could not update the account"}
 
     def account_in_to_out(self, id: int, account: AccountIn):
-            old_data = account.dict()
-            return AccountOut(id=id, **old_data)
+        old_data = account.dict()
+        return AccountOut(id=id, **old_data)
 
     def delete_account(self, id: int) -> bool:
         try: 
