@@ -108,6 +108,7 @@ const Footer = () => {
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2023{" "}
           <a
+            target="_blank"
             href="https://gitlab.com/team-4-hack-n-snack/platemate"
             className="hover:underline text-center"
             title="PlateMate GitLab Repository"
