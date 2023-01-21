@@ -2,7 +2,12 @@
 
 ### (Fri) 1/20/2023
 
+- merge party!
 - designed the user profile page and fixed footer to be fixed at the bottom
+- completed edit accounts details page
+  Zac sorted out merge conflicts, built an additional account update backend and worked on UpdateAllergies and started the create dietary restrictions form
+- Gina and Marison still are working on redux and they collaborated on the QuestionnarieModal page and worked together on functions in the form to get the handle change to work with the multi-select feature
+- Jason worked on getting the checkboxes onto the allergies in the user profile
 
 ### (Thurs) 1/19/2023
 
