@@ -50,7 +50,7 @@ function MainPage() {
           <div className="carousel-item active relative float-left w-full">
             <img
               src={require("./images/morimoto.jpg")}
-              className="block w-screen scale-50"
+              className="block w-screen scale-75"
               alt="Morimotos"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
@@ -62,7 +62,7 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/rebelcheese.jpg")}
-              className="block w-screen scale-50"
+              className="block w-screen scale-75"
               alt="Rebel Cheese"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
@@ -74,7 +74,7 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/SUGARFISH.jpg")}
-              className="block w-screen scale-50"
+              className="block w-screen scale-75"
               alt="Sugarfish Sushi"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
@@ -86,7 +86,7 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/gyukaku.jpg")}
-              className="box w-screen scale-50"
+              className="box w-screen scale-75"
               alt="Gyukaku"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
