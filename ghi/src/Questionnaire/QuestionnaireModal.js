@@ -6,12 +6,12 @@ import { useNavigate } from "react-router-dom";
 import Select from "react-tailwindcss-select";
 
 const options = [
-    { value: "chinese", label: "🥢 Chinese" },
-    { value: "pizza", label: "🍕 Pizza" },
-    { value: "fast food", label: "🍔 Fast Food" },
-    { value: "indian", label: "🍛 Indian" },
-    { value: "mexican", label: "🌮 Taco" },
-    { value: "japanese", label: "🍣 Sushi" }
+  { value: "chinese", label: "🥢 Chinese" },
+  { value: "pizza", label: "🍕 Pizza" },
+  { value: "fast food", label: "🍔 Fast Food" },
+  { value: "indian", label: "🍛 Indian" },
+  { value: "mexican", label: "🌮 Mexican" },
+  { value: "japanese", label: "🍣 Sushi" },
 ];
 
 function QuestionModal() {
@@ -42,22 +42,19 @@ function QuestionModal() {
     setTakeInOut(e.target.value);
   };
 
-  const handleCategoriesChange = value => {
-      console.log("value:", value);
-      setCategories(value);
-
+  const handleCategoriesChange = (value) => {
+    console.log("value:", value);
+    setCategories(value);
   };
 
-
   const handleFormSubmit = (e) => {
-    e.preventDefault()
-    let category = categories.map((x)=> x.value)
-    setCategories(category)
-    console.log(category)
-    dispatch(storeYelp({zipcode,budget,datetime,takeInOut,categories}))
-    navigate("/restaurants")
-
-  }
+    e.preventDefault();
+    let category = categories.map((x) => x.value);
+    setCategories(category);
+    console.log(category);
+    dispatch(storeYelp({ zipcode, budget, datetime, takeInOut, categories }));
+    navigate("/restaurants");
+  };
   const fetchAccount = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
     const result = await fetch(url, {
@@ -77,16 +74,18 @@ function QuestionModal() {
 
   return (
     <>
-      <div className="row">
-        <div className="offset-3 col-6">
+      <div
+        className="flex flex-col 
+                    items-center justify-center"
+      >
+        <div className="items-center justify-center">
           <div className="shadow p-4 mt-4">
-            <h1>Questionnaire</h1>
-            <form onSubmit={handleFormSubmit}>
+            <h1 className="items-center justify-center">Questionnaire</h1>
+            <form className="mx-auto" onSubmit={handleFormSubmit}>
               <label htmlFor="location">Your current location</label>
               <div className="form-floating mb-3">
                 <input
                   onChange={handleChange}
-                  placeholder="Zipcode"
                   required
                   type="search"
                   name="zipcode"
@@ -98,7 +97,7 @@ function QuestionModal() {
               <label htmlFor="budget">What is your budget</label>
 
               <div className="form-floating mb-3">
-                <select required value={budget} onChange={handleBudgetChange} >
+                <select required value={budget} onChange={handleBudgetChange}>
                   <option value=""></option>
                   <option value="1">💸 $ ($1-10)</option>
                   <option value="2">💳 $$ ($11-30)</option>
@@ -109,8 +108,12 @@ function QuestionModal() {
               </div>
               <label htmlFor="takeInOut">Carryout or Delivery?</label>
               <div className="form-floating mb-3">
-                <select required value={takeInOut} onChange={handleTakeInOutChange}>
-                <option value=""></option>
+                <select
+                  required
+                  value={takeInOut}
+                  onChange={handleTakeInOutChange}
+                >
+                  <option value=""></option>
                   <option value="pickup">🥡 Pickup</option>
                   <option value="delivery">🚗 Delivery</option>
                 </select>
@@ -137,7 +140,13 @@ function QuestionModal() {
                   placeholder="Select one or more categories... or nothing"
                 />
               </div>
-              <button type="submit"> Ready to eat!</button>
+              <button
+                className="bg-[#C26866] hover:bg-[#FDECA9] text-white hover:text-black font-bold py-3 px-4 mb-2 rounded-full"
+                type="submit"
+              >
+                {" "}
+                Ready to Eat!
+              </button>
             </form>
           </div>
         </div>
