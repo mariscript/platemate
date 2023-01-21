@@ -193,10 +193,7 @@ export function useToken() {
         Authorization: `Bearer ${token}`
       },
     });
-    if (response.ok) {
-      return;
-    }
-    return false;
+    return;
 
   }
   
@@ -215,10 +212,7 @@ export function useToken() {
         Authorization: `Bearer ${token}`
       },
     });
-    if (response.ok) {
-      return;
-    }
-    return false;
+    return;
   }
 
   return [token, login, logout, signup, update, updateallergy, updatedietrestrict, createallergy, createdietrestrict];

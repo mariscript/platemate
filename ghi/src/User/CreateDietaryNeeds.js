@@ -11,7 +11,7 @@ export default function CreateDietaryNeeds() {
     const {token} = useAuthContext();
     const navigate = useNavigate();
     const [account, setAccount] = useState({});
-    const [, , , , , , createallergy, createdietrestrict] = useToken();
+    const [, , , , , , , createallergy, createdietrestrict] = useToken();
 
     const fetchAccount = async () => {
         const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`
@@ -79,6 +79,7 @@ export default function CreateDietaryNeeds() {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
+        console.log(seafood, gluten_free, vegan, vegetarian, halal, account.id)
         createallergy(seafood, gluten_free, account.id)
         createdietrestrict(vegan, vegetarian, halal, account.id)
         setSeafood("");
