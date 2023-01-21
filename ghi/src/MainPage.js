@@ -1,4 +1,9 @@
+import { getToken } from "./Authentication/AuthenticateUser";
+import { useAuthContext } from "./Authentication/AuthenticateUser";
+
+
 function MainPage() {
+
   return (
     <>
       <div className="flex justify-center mt-10">
