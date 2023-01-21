@@ -31,11 +31,10 @@ export default function Signup() {
     setZip("");
     setErrorMessage("");
     setIsLoading(true);
-
     setTimeout(() => {
       setIsSubmit(true);
       setIsLoading(false);
-      navigate("/me");
+      navigate("me/createneeds");
     }, 3000);
   };
 

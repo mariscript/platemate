@@ -3,10 +3,10 @@ import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist'
 import thunk from 'redux-thunk';
-import zipcodeReducer from './qZipcode'
+import yelpReducer from './yelpVar'
 
 const reducers = combineReducers({
-  zipcode: zipcodeReducer})
+  yelp: yelpReducer})
 
 const persistConfig = {
   key: 'root',

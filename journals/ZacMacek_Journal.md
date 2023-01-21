@@ -1,6 +1,10 @@
 ## Week 4:
+### 1/20/2023
+- sorted out merge conflicts, built an additional account update backend 
+- pulled in several directions today.  worked on UpdateAllergies and Started the Create Dietary restrictions form
+
 ### 1/19/2023
-- i give up, im completely useless
+- tried to finish the UserProfile and started/completed Account Update.
 
 ### 1/18/2023
 - did a lot of research on html input checkboxes

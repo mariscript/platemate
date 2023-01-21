@@ -15,8 +15,8 @@ import { AuthProvider, useToken } from "./Authentication/AuthenticateUser";
 import QuestionModal from "./Questionnaire/QuestionnaireModal";
 import UserProfile from "./User/UserProfile";
 import UpdateAccountInfo from "./User/UpdateAccountInfo";
-import UpdateAllergies from "./User/UpdateAllergies";
-import UpdateDietRestrict from "./User/UpdateDietRestrict";
+import CreateDietaryNeeds from "./User/CreateDietaryNeeds";
+import UpdateDietaryNeeds from "./User/UpdateDietaryNeeds";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -29,10 +29,10 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <GetToken />
-        <Nav />
         <Signup />
         <Login />
-        <div className="">
+        <Nav />
+        <div>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/signup" element={<Signup />} />
@@ -46,8 +46,8 @@ function App() {
             <Route path="/questionnaire" element={<QuestionModal />} />
             <Route path="me">
               <Route path="updateaccount" element={<UpdateAccountInfo />} />
-              <Route path="updateallergy" element={<UpdateAllergies />} />
-              {/* <Route path="updatediet" element={<UpdateDietRestrict/>}/> */}
+              <Route path="updateneeds" element={<UpdateDietaryNeeds />} />
+              <Route path="createneeds" element={<CreateDietaryNeeds/>}/>
             </Route>
           </Routes>
           <Footer />

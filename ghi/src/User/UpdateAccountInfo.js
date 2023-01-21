@@ -28,12 +28,11 @@ export default function UpdateAccountInfo() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    update(first_name, last_name, email, zipcode, password);
+    update(first_name, last_name, email, zipcode);
     setEmail("");
     setFirst("");
     setLast("");
     setZip("");
-    setPassword("");
     navigate("/me");
   };
 
