@@ -8,17 +8,25 @@ function RestaurantList() {
   const {token} = useAuthContext()
 
   const getData = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp_test/`
-    const resp = await fetch(url, {
-    headers: { Authorization: `Bearer ${token}` },});
-    const data = await resp.json();
-    setRestaurants(data[1].businesses.slice(0,4));
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp/?location=${location}&budget=${budget}&open_at=${openAt}`
+    const fetchConfig = {
+      headers: {accept: 'application/json', "Content-Type": "application/json", Authorization: `Bearer ${token}`}}
+      const resp = await fetch(url,fetchConfig)
+      const data = await resp.json();
+      console.log(data)
+      setRestaurants(data.businesses.slice(0,4));
   };
 
     useEffect(() => {
         if (token) {getData()}
     }, [token])
 
+    const yelpy = useSelector((state) => state.yelp.name)
+    console.log(yelpy)
+    const location = yelpy.zipcode
+    const budget = yelpy.budget
+    const openAt = yelpy.datetime
+    console.log(location,budget,openAt)
   // const zipcode = useSelector((state) => state.zipcode.zipcode)
   // console.log(zipcode)
 
@@ -53,6 +61,7 @@ function RestaurantList() {
         <table className="table table-hover table-striped">
           <thead className="text-center">
             <tr className="header">
+              <th>Id</th>
               <th>Name</th>
               <th>Phone Number</th>
               <th>Photo</th>
@@ -67,6 +76,7 @@ function RestaurantList() {
             {restaurants.map((restaurant) => {
               return (
                 <tr className="align-middle" key={restaurant.id}>
+                  <td>{restaurant.id}</td>
                   <td>{restaurant.name}</td>
                   <td>{restaurant.display_phone}</td>
                   <td><img src= {restaurant.image_url}/></td>

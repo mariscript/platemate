@@ -15,7 +15,7 @@ const Footer = () => {
             <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
               PLATE
             </span>
-            <img src={plateLogo} className="h-9" alt="PlateMate Logo" />
+            <img src={plateLogo} className="h-9 mr-1" alt="PlateMate Logo" />
             <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
               MATE
             </span>
