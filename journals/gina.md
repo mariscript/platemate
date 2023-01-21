@@ -2,6 +2,9 @@
 
 ## Week 4:
 
+### Friday 1/20/23
+We started off our day with another merge party which would you believe led to some merge issues. We resolved those by correcting a pydantic model on the back end and creating a new one specifically for updateMarison and I completed the questionnaire form and will work later tonight to make sure everything gets into redux store. We also have the questionnaire page redirecting to the restaurant list which still has the tester API on it. As soon as we get redux store working, we can test the actual API call. Marison worked her magic on the form and it looks amazing! We did have to download an additional dependency for multi select which looks great. Nat finished designing the user profile page which looks amazing and also fixed the footer. Zac worked on updating the tables for allergies and dietary restrictions while Jason worked on getting functioning checkboxes for toggling on the user profile.
+
 ### Thursday 1/19/23
 Today was a busy day! Instead of having the modal dismiss after submission of the sign up/login form, she altered the onSubmit to just pop up a message saying the form has been submitted. She also implemented a rotating pizza spinner to load after submission of the sign up form. Marison and I learned that we had to use redux-persist for persistent data storage that we can access from the redux store on other pages/when the page is refreshed. Marison and I worked on getting that set up, and we should officially have persisted state! Fun thing we learned today is that state can be rehydrated? Need to read up more on that! Zac, Jason and I troubleshooted the update form and fixed an issue we were having with the backend update function. Marison additionally worked on a carousel for the main page. Zac and Jason worked on the updated profile form and are working on checkboxes to turn off and on allergies.
 

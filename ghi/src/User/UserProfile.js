@@ -139,7 +139,7 @@ function UserProfile() {
                 />
                 <label
                   htmlFor="default-checkbox"
-                  className="ml-2 text-md font-medium text-gray-900 dark:text-gray-300"
+                  className="ml-2 text-md font-medium text-gray-900 "
                 >
                   Seafood
                 </label>
@@ -153,7 +153,7 @@ function UserProfile() {
                 />
                 <label
                   htmlFor="default-checkbox"
-                  className="ml-2 text-md font-medium text-gray-900 dark:text-gray-300"
+                  className="ml-2 text-md font-medium text-gray-900"
                 >
                   Gluten-Free
                 </label>
@@ -172,7 +172,7 @@ function UserProfile() {
                 />
                 <label
                   htmlFor="default-checkbox"
-                  className="ml-2 text-md font-medium text-gray-900 dark:text-gray-300"
+                  className="ml-2 text-md font-medium text-gray-900"
                 >
                   Vegan
                 </label>
@@ -186,7 +186,7 @@ function UserProfile() {
                 />
                 <label
                   htmlFor="default-checkbox"
-                  className="ml-2 text-md font-medium text-gray-900 dark:text-gray-300"
+                  className="ml-2 text-md font-medium text-gray-900"
                 >
                   Vegetarian
                 </label>
@@ -200,7 +200,7 @@ function UserProfile() {
                 />
                 <label
                   htmlFor="default-checkbox"
-                  className="ml-2 text-md font-medium text-gray-900 dark:text-gray-300"
+                  className="ml-2 text-md font-medium text-gray-900"
                 >
                   Halal
                 </label>

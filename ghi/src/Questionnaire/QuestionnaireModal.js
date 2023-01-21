@@ -10,8 +10,8 @@ const options = [
     { value: "pizza", label: "🍕 Pizza" },
     { value: "fast food", label: "🍔 Fast Food" },
     { value: "indian", label: "🍛 Indian" },
-    { value: "mexican", label: "🌮 Taco" },
-    { value: "japanese", label: "🍣 Sushi" }
+    { value: "mexican", label: "🌮 Mexican" },
+    { value: "japanese", label: "🍣 Japanese" }
 ];
 
 function QuestionModal() {
@@ -19,9 +19,9 @@ function QuestionModal() {
   const dispatch = useDispatch();
   const [zipcode, setZipcode] = useState("");
   const [budget, setBudget] = useState(0);
-  const [datetime, setDateTime] = useState("");
+  let [datetime, setDateTime] = useState("");
   const [takeInOut, setTakeInOut] = useState("");
-  const [categories, setCategories] = useState([]);
+  let [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const { token } = useAuthContext();
 
@@ -43,21 +43,18 @@ function QuestionModal() {
   };
 
   const handleCategoriesChange = value => {
-      console.log("value:", value);
       setCategories(value);
-
   };
-
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    let category = categories.map((x)=> x.value)
-    setCategories(category)
-    console.log(category)
+    categories = categories.map((x)=> x.value)
+    datetime = `${datetime.slice(0,10)} ${datetime.slice(11,13)}%3A${datetime.slice(14)}`
     dispatch(storeYelp({zipcode,budget,datetime,takeInOut,categories}))
     navigate("/restaurants")
-
   }
+
+
   const fetchAccount = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
     const result = await fetch(url, {
@@ -99,18 +96,18 @@ function QuestionModal() {
 
               <div className="form-floating mb-3">
                 <select required value={budget} onChange={handleBudgetChange} >
-                  <option value=""></option>
+                  <option value="">Select One</option>
                   <option value="1">💸 $ ($1-10)</option>
                   <option value="2">💳 $$ ($11-30)</option>
                   <option value="3">💵 $$$ ($31-60)</option>
                   <option value="4">💰 $$$$ ($61+)</option>
-                  <option value="">🤑 ANY I GOT MONEY</option>
+                  <option value="5">🤑 ANY I GOT MONEY</option>
                 </select>
               </div>
               <label htmlFor="takeInOut">Carryout or Delivery?</label>
               <div className="form-floating mb-3">
                 <select required value={takeInOut} onChange={handleTakeInOutChange}>
-                <option value=""></option>
+                <option value="">Select One</option>
                   <option value="pickup">🥡 Pickup</option>
                   <option value="delivery">🚗 Delivery</option>
                 </select>
@@ -128,7 +125,7 @@ function QuestionModal() {
               <label htmlFor="categories">
                 Which of the following would you prefer
               </label>
-              <div className="form-floating mb-3">
+              <div className="form-floating mb-3 mx-2">
                 <Select
                   value={categories}
                   onChange={handleCategoriesChange}
