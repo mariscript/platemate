@@ -43,9 +43,8 @@ export default function UpdateDietaryNeeds() {
         setDiet(data);
     };
     
-    const handleChange1 = () => {
-        let e = document.getElementById("seafood")
-        let value = e.value;
+    const handleChange1 = (e) => {
+        let value = e.target.value;
         if (value==="true"){
             setSeafood(true)
         }
@@ -54,9 +53,8 @@ export default function UpdateDietaryNeeds() {
         }
     }
 
-    const handleChange2 = () => {
-        let e = document.getElementById("gluten")
-        let value = e.value;
+    const handleChange2 = (e) => {
+        let value = e.target.value;
         if (value==="true"){
             setGluten(true)
         }
@@ -65,9 +63,8 @@ export default function UpdateDietaryNeeds() {
         }
     }
 
-    const handleChange3 = () => {
-        let e = document.getElementById("vegan")
-        let value = e.value;
+    const handleChange3 = (e) => {
+        let value = e.target.value;
         if (value==="true"){
             setVegan(true)
         }
@@ -76,9 +73,8 @@ export default function UpdateDietaryNeeds() {
         }
     }
 
-    const handleChange4 = () => {
-        let e = document.getElementById("vegetarian")
-        let value = e.value;
+    const handleChange4 = (e) => {
+        let value = e.target.value;
         if (value==="true"){
             setVegetarian(true)
         }
@@ -87,9 +83,8 @@ export default function UpdateDietaryNeeds() {
         }
     }
 
-    const handleChange5 = () => {
-        let e = document.getElementById("halal")
-        let value = e.value;
+    const handleChange5 = (e) => {
+        let value = e.target.value;
         if (value==="true"){
             setHalal(true)
         }
