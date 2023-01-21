@@ -76,16 +76,17 @@ function QuestionModal() {
 
   return (
     <>
-      <div
-        className="flex flex-col 
-                    items-center justify-center"
-      >
-        <div className="items-center justify-center">
-          <div className="shadow p-4 mt-4">
-            <h1 className="items-center justify-center">Questionnaire</h1>
+      <h1 className="flex justify-center items-center font-bold mt-5 text-3xl">
+        Let's Find Your Plate!
+      </h1>
+      <div className="flex justify-center items-center">
+        <div className="flex items-center justify-center shadow p-4 mt-10 mb-10">
+          <div className="flex items-center justify-center">
             <form className="mx-auto" onSubmit={handleFormSubmit}>
-              <label htmlFor="location">Your current location</label>
-              <div className="form-floating mb-3">
+              <label htmlFor="location">
+                <p className="font-bold">Your Current Location</p>
+              </label>
+              <div className="mb-3">
                 <input
                   onChange={handleChange}
                   required
@@ -96,7 +97,9 @@ function QuestionModal() {
                   defaultValue={account?.zipcode}
                 />
               </div>
-              <label htmlFor="budget">What is your budget</label>
+              <label htmlFor="budget">
+                <p className="font-bold">Your Budget</p>
+              </label>
 
               <div className="form-floating mb-3">
                 <select required value={budget} onChange={handleBudgetChange}>
@@ -108,8 +111,10 @@ function QuestionModal() {
                   <option value="5">🤑 ANY I GOT MONEY</option>
                 </select>
               </div>
-              <label htmlFor="takeInOut">Carryout or Delivery?</label>
-              <div className="form-floating mb-3">
+              <label htmlFor="takeInOut">
+                <p className="font-bold">Carryout or Delivery?</p>
+              </label>
+              <div className="items-center form-floating mb-3 mx-2">
                 <select
                   required
                   value={takeInOut}
@@ -120,8 +125,10 @@ function QuestionModal() {
                   <option value="delivery">🚗 Delivery</option>
                 </select>
               </div>
-              <label htmlFor="location">What time are you eating?</label>
-              <div className="form-floating mb-3">
+              <label htmlFor="location">
+                <p className="font-bold">When are you eating?</p>
+              </label>
+              <div className="form-floating mb-3 mx-2">
                 <input
                   required
                   type="datetime-local"
@@ -131,7 +138,7 @@ function QuestionModal() {
               </div>
 
               <label htmlFor="categories">
-                Which of the following would you prefer
+                <p className="font-bold">Pick your preferences</p>
               </label>
               <div className="form-floating mb-3 mx-2">
                 <Select
@@ -139,7 +146,7 @@ function QuestionModal() {
                   onChange={handleCategoriesChange}
                   isMultiple={true}
                   options={options}
-                  placeholder="Select one or more categories... or nothing"
+                  searchInputPlaceholder
                 />
               </div>
               <button
