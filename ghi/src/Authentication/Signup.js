@@ -34,7 +34,7 @@ export default function Signup() {
     setTimeout(() => {
       setIsSubmit(true);
       setIsLoading(false);
-      navigate("/me");
+      navigate("me/createneeds");
     }, 3000);
   };
 
