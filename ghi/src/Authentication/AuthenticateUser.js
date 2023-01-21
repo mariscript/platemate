@@ -196,7 +196,7 @@ export function useToken() {
     return;
 
   }
-  
+
   async function createdietrestrict(vegan, vegetarian, halal, account_id) {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restrict`
     const response = await fetch(url, {
