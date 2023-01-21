@@ -1,5 +1,9 @@
 # Week 4
 
+### (Fri) 1/20/2023
+
+- designed the user profile page and fixed footer to be fixed at the bottom
+
 ### (Thurs) 1/19/2023
 
 - instead of getting the modal to dismiss after submission of the sign up/login form, it has been altered to just pop up a message saying the form has been submitted (spent too much time on it cries)

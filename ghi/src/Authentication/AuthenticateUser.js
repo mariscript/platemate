@@ -110,7 +110,7 @@ export function useToken() {
         last_name,
         email,
         zipcode,
-        password
+        password,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -131,11 +131,11 @@ export function useToken() {
         last_name,
         email,
         zipcode,
-        password
+        password,
       }),
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
     });
     if (response.ok) {
@@ -190,7 +190,7 @@ export function useToken() {
       }),
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
     });
     return;

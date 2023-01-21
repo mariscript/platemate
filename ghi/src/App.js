@@ -29,10 +29,10 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <GetToken />
-        <Nav />
         <Signup />
         <Login />
-        <div className="">
+        <Nav />
+        <div>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/signup" element={<Signup />} />
