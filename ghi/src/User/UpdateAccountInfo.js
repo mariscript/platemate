@@ -1,31 +1,30 @@
 import React, { useState, useEffect } from "react";
-import { useAuthContext, useToken } from '../Authentication/AuthenticateUser'
+import { useAuthContext, useToken } from "../Authentication/AuthenticateUser";
 import { useNavigate } from "react-router-dom";
 
 export default function UpdateAccountInfo() {
-    const [account, setAccount] = useState({});
-    const [email, setEmail] = useState("");
-    const [first_name, setFirst] = useState("");
-    const [last_name, setLast] = useState("");
-    const [zipcode, setZip] = useState("");
-    const [password, setPassword] = useState("");
-    const [ , , , , update] = useToken();
-    const navigate = useNavigate();
-    const {token} = useAuthContext()
+  const [account, setAccount] = useState({});
+  const [email, setEmail] = useState("");
+  const [first_name, setFirst] = useState("");
+  const [last_name, setLast] = useState("");
+  const [zipcode, setZip] = useState("");
+  const [password, setPassword] = useState("");
+  const [, , , , update] = useToken();
+  const navigate = useNavigate();
+  const { token } = useAuthContext();
 
-
-    const fetchAccount = async () => {
-        const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`
-        const result = await fetch(url,{
-            headers: { Authorization: `Bearer ${token}`}, 
-        });
-        const data = await result.json();
-        setAccount(data)
-        setFirst(data.first_name)
-        setLast(data.last_name)
-        setEmail(data.email)
-        setZip(data.zipcode)
-    }
+  const fetchAccount = async () => {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
+    const result = await fetch(url, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await result.json();
+    setAccount(data);
+    setFirst(data.first_name);
+    setLast(data.last_name);
+    setEmail(data.email);
+    setZip(data.zipcode);
+  };
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
@@ -38,12 +37,11 @@ export default function UpdateAccountInfo() {
         navigate("/me")
   };
 
-    useEffect(() => {
-        if (token) {
-            fetchAccount()
-
-        }
-    }, [token]);
+  useEffect(() => {
+    if (token) {
+      fetchAccount();
+    }
+  }, [token]);
 
 
     if (account || account !== undefined){

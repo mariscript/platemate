@@ -44,6 +44,7 @@ function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/me" element={<UserProfile />} />
             <Route path="/questionnaire" element={<QuestionModal />} />
+            <Route path="/logout" element={<Logout/>}/>
             <Route path="me">
               <Route path="updateaccount" element={<UpdateAccountInfo />} />
               <Route path="updateneeds" element={<UpdateDietaryNeeds />} />

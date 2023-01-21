@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useToken } from "./Authentication/AuthenticateUser"
 
 function Nav() {
+  const [ ,,logout] = useToken()
   let [nav, setNav] = useState(false);
   // nav = false
   function handleNav() {
@@ -8,10 +10,10 @@ function Nav() {
   }
 
   return (
-    <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
-      <div className="mx-auto mr-25">
+    <nav className="flex justify-center items-center bg-[#FDECA9] py-3">
+      <div className="mx-auto">
         <a href="/">
-          <div className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
+          <div className="flex justify-between tracking-[4px] text-xl font-semibold items-center">
             <span>PLATE</span>
             <img
               src={require("./images/plate.png")}
@@ -40,6 +42,15 @@ function Nav() {
         >
           LOGIN
         </button>
+        <a href="/logout">
+        <button
+          type="button"
+          onClick= {logout}
+          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
+        >
+          LOGOUT
+        </button>
+        </a>
       </div>
       <div className="block md:hidden">
         {/* Mobile Hamburger Icon */}

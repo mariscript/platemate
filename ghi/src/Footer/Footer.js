@@ -15,7 +15,7 @@ const Footer = () => {
             <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
               PLATE
             </span>
-            <img src={plateLogo} className="h-9" alt="PlateMate Logo" />
+            <img src={plateLogo} className="h-9 mr-1" alt="PlateMate Logo" />
             <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
               MATE
             </span>
@@ -108,6 +108,7 @@ const Footer = () => {
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2023{" "}
           <a
+            target="_blank"
             href="https://gitlab.com/team-4-hack-n-snack/platemate"
             className="hover:underline text-center"
             title="PlateMate GitLab Repository"
