@@ -2,10 +2,10 @@ function MainPage() {
   return (
     <>
       <div className="flex justify-center mt-10">
-      <a href="/questionnaire">
-        <button className="inline-block px-6 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out">
-          Take The Questionnaire!
-        </button>
+        <a href="/questionnaire">
+          <button className="inline-block px-6 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out">
+            Take The Questionnaire!
+          </button>
         </a>
       </div>
       <div
@@ -47,7 +47,7 @@ function MainPage() {
           <div className="carousel-item active relative float-left w-full">
             <img
               src={require("./images/morimoto.jpg")}
-              className="block w-screen scale-50"
+              className="block w-screen scale-75"
               alt="Morimotos"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
@@ -59,7 +59,7 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/rebelcheese.jpg")}
-              className="block w-screen scale-50"
+              className="block w-screen scale-75"
               alt="Rebel Cheese"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
@@ -71,7 +71,7 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/SUGARFISH.jpg")}
-              className="block w-screen scale-50"
+              className="block w-screen scale-75"
               alt="Sugarfish Sushi"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
@@ -82,7 +82,7 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/gyukaku.jpg")}
-              className="box w-screen scale-50"
+              className="box w-screen scale-75"
               alt="Gyukaku"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
@@ -93,7 +93,7 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/italian.jpg")}
-              className="block w-screen scale-50"
+              className="block w-screen scale-75"
               alt="Italian Food"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
@@ -105,7 +105,7 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/italian.jpg")}
-              className="block w-screen scale-50"
+              className="block w-screen scale-75"
               alt="Italian Food"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
