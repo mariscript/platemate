@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuthContext } from "../Authentication/AuthenticateUser";
+import { useAuthContext , useToken } from "../Authentication/AuthenticateUser";
 
 export default function CreateDietaryNeeds() {
-    const [seafood, setSeafood] = useState({});
-    const [gluten_free, setGluten] = useState({});
-    const [vegan, setVegan] = useState({});
-    const [vegetarian, setVegetarian] = useState({});
-    const [halal, setHalal] = useState({});
+    const [seafood, setSeafood] = useState(false);
+    const [gluten_free, setGluten] = useState(false);
+    const [vegan, setVegan] = useState(false);
+    const [vegetarian, setVegetarian] = useState(false);
+    const [halal, setHalal] = useState(false);
     const {token} = useAuthContext();
     const navigate = useNavigate();
     const [account, setAccount] = useState({});
+    const [, , , , , , createallergy, createdietrestrict] = useToken();
 
     const fetchAccount = async () => {
         const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`
@@ -21,9 +22,65 @@ export default function CreateDietaryNeeds() {
         setAccount(data)
     }
     
+    const handleChange1 = () => {
+        let e = document.getElementById("seafood")
+        let value = e.value;
+        if (value==="true"){
+            setSeafood(true)
+        }
+        else{
+            setSeafood(false)
+        }
+    }
+
+    const handleChange2 = () => {
+        let e = document.getElementById("gluten")
+        let value = e.value;
+        if (value==="true"){
+            setGluten(true)
+        }
+        else{
+            setGluten(false)
+        }
+    }
+
+    const handleChange3 = () => {
+        let e = document.getElementById("vegan")
+        let value = e.value;
+        if (value==="true"){
+            setVegan(true)
+        }
+        else{
+            setVegan(false)
+        }
+    }
+
+    const handleChange4 = () => {
+        let e = document.getElementById("vegatarian")
+        let value = e.value;
+        if (value==="true"){
+            setVegetarian(true)
+        }
+        else{
+            setVegetarian(false)
+        }
+    }
+
+    const handleChange5 = () => {
+        let e = document.getElementById("halal")
+        let value = e.value;
+        if (value==="true"){
+            setHalal(true)
+        }
+        else{
+            setHalal(false)
+        }
+    }
+
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-
+        createallergy(seafood, gluten_free, account.id)
+        createdietrestrict(vegan, vegetarian, halal, account.id)
         setSeafood("");
         setGluten("");
         setVegan("");
@@ -41,34 +98,34 @@ export default function CreateDietaryNeeds() {
 
     return (
         <div className="text-center">
-            <form>
+            <form onSubmit={handleFormSubmit}>
 
-                <select required id="seafood" className="">
-                    <option value="">Seafood</option>
+                <select required id="seafood" onChange={handleChange1}>
+                    <option >Seafood</option>
+                    <option value="true" >Yes</option>
+                    <option value="false" >No</option>
+                </select>
+
+                <select required id="gluten" onChange={handleChange2}>
+                    <option >Gluten Free</option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                 </select>
 
-                <select required id="gluten" className="">
-                    <option value="">Gluten Free</option>
+                <select required id="vegan" onChange={handleChange3}>
+                    <option >Vegan</option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                 </select>
 
-                <select required id="vegan" className="">
-                    <option value="">Vegan</option>
+                <select required id="vegetarian" onChange={handleChange4}>
+                    <option >Vegetarian</option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                 </select>
 
-                <select required id="vegetarian" className="">
-                    <option value="">Vegetarian</option>
-                    <option value="true">Yes</option>
-                    <option value="false">No</option>
-                </select>
-
-                <select required id="halal" className="">
-                    <option value="">Gluten Free</option>
+                <select required id="halal" onChange={handleChange5}>
+                    <option >Halal</option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                 </select>

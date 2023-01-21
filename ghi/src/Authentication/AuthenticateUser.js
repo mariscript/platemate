@@ -159,9 +159,47 @@ export function useToken() {
     });
   }
 
-  async function createallergy(seafood, gluten_free) {
-    const url = ``
+  async function createallergy(seafood, gluten_free, account_id) {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies`
+    const response = await fetch(url, {
+      method: "post",
+      body: JSON.stringify({
+        seafood,
+        gluten_free,
+        account_id
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+    });
+    if (response.ok) {
+      return;
+    }
+    return false;
+
+  }
+  
+  async function createdietrestrict(vegan, vegetarian, halal, account_id) {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restrict`
+    const response = await fetch(url, {
+      method: "post",
+      body: JSON.stringify({
+        vegan,
+        vegetarian,
+        halal,
+        account_id
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+    });
+    if (response.ok) {
+      return;
+    }
+    return false;
   }
 
-  return [token, login, logout, signup, update, updateallergy];
+  return [token, login, logout, signup, update, updateallergy, createallergy, createdietrestrict];
 }
