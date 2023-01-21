@@ -10,10 +10,10 @@ import { redirect } from "react-router-dom";
 //   };
 // }
 
-function Logout() {
-  const [token, , logout] = useToken();
-  logout(token);
-  return redirect("/");
+export default function Logout() {
+  return (
+    <>
+    <h1> thanks for visiting</h1>
+    </>
+  )
 }
-
-export default Logout;

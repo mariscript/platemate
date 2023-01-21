@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useToken } from "./Authentication/AuthenticateUser"
 
 function Nav() {
+  const [ ,,logout] = useToken()
   let [nav, setNav] = useState(false);
   // nav = false
   function handleNav() {
@@ -40,6 +42,15 @@ function Nav() {
         >
           LOGIN
         </button>
+        <a href="/logout">
+        <button
+          type="button"
+          onClick= {logout}
+          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
+        >
+          LOGOUT
+        </button>
+        </a>
       </div>
       <div className="block md:hidden">
         {/* Mobile Hamburger Icon */}
