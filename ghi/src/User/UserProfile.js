@@ -82,18 +82,13 @@ function UserProfile() {
                         <tr className="header">
                             <th>seafood</th>
                             <th>gluten free</th>
-                            <th>button</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>{allergy?.seafood?.toString()}</td> 
                             <td>{allergy?.gluten_free?.toString()}</td>
-                            <td>
-                                <a href="/me/updateallergy">
-                                <button className="bg-[#BB5855] mx-0 rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer">Update Allergies</button>
-                                </a>
-                            </td>
+
                         </tr>
                     </tbody>
                 </table>
@@ -102,24 +97,20 @@ function UserProfile() {
                     <thead className="text-center">
                         <tr className="header">
                             <th>vegan</th>
-                            <th></th>
                             <th>vegetarian</th>
-                            <th></th>
                             <th>halal</th>
-                            <th></th>
                             <th>button</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>{diet_restrict?.vegan?.toString()}</td>
-                            <td></td>
                             <td>{diet_restrict?.vegetarian?.toString()}</td>
-                            <td></td>
                             <td>{diet_restrict?.halal?.toString()}</td>
-                            <td></td>
                             <td>
-                                <button className="bg-[#BB5855] mx-0 rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer">Update Dietary Restrictions</button>
+                                <a href="/me/updateneeds">
+                                <button className="bg-[#BB5855] mx-0 rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer">Update Dietary Needs</button>
+                                </a>
                             </td>
                         </tr>
                     </tbody>

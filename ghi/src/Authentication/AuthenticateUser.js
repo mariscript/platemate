@@ -144,19 +144,39 @@ export function useToken() {
     return false;
   }
 
-  async function updateallergy(seafood, gluten_free) {
+  async function updateallergy(seafood, gluten_free, account_id) {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me`;
     const response = await fetch(url, {
       method: "put",
       body: JSON.stringify({
         seafood,
-        gluten_free
+        gluten_free,
+        account_id
       }),
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`
       },
     });
+    return;
+  }
+
+    async function updatedietrestrict(vegan, vegetarian, halal, account_id) {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restrict/me`;
+    const response = await fetch(url, {
+      method: "put",
+      body: JSON.stringify({
+        vegan,
+        vegetarian,
+        halal,
+        account_id
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+    });
+    return;
   }
 
   async function createallergy(seafood, gluten_free, account_id) {
@@ -201,5 +221,5 @@ export function useToken() {
     return false;
   }
 
-  return [token, login, logout, signup, update, updateallergy, createallergy, createdietrestrict];
+  return [token, login, logout, signup, update, updateallergy, updatedietrestrict, createallergy, createdietrestrict];
 }

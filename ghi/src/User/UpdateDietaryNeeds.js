@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext , useToken } from "../Authentication/AuthenticateUser";
 
-export default function CreateDietaryNeeds() {
+export default function UpdateDietaryNeeds() {
     const [seafood, setSeafood] = useState(false);
     const [gluten_free, setGluten] = useState(false);
     const [vegan, setVegan] = useState(false);
@@ -11,7 +11,10 @@ export default function CreateDietaryNeeds() {
     const {token} = useAuthContext();
     const navigate = useNavigate();
     const [account, setAccount] = useState({});
-    const [, , , , , , createallergy, createdietrestrict] = useToken();
+    const [, , , , , updateallergy, updatedietrestrict ] = useToken();
+
+    const [allergy, setAllergy] = useState({});
+    const [diet_restrict, setDiet] = useState({})
 
     const fetchAccount = async () => {
         const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`
@@ -21,6 +24,24 @@ export default function CreateDietaryNeeds() {
         const data = await result.json();
         setAccount(data)
     }
+
+    const fetchAllergies = async () => {
+        const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me/`;
+        const result = await fetch(url, {
+        headers: { Authorization: `Bearer ${token}` },
+        });
+        const data = await result.json();
+        setAllergy(data);
+    };
+
+    const fetchDietRestrict = async () => {
+        const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restricts/me/`;
+        const result = await fetch(url, {
+        headers: { Authorization: `Bearer ${token}` },
+        });
+        const data = await result.json();
+        setDiet(data);
+    };
     
     const handleChange1 = () => {
         let e = document.getElementById("seafood")
@@ -79,8 +100,8 @@ export default function CreateDietaryNeeds() {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        createallergy(seafood, gluten_free, account.id)
-        createdietrestrict(vegan, vegetarian, halal, account.id)
+        updateallergy(seafood, gluten_free, allergy.account_id)
+        updatedietrestrict(vegan, vegetarian, halal, diet_restrict.account_id)
         setSeafood("");
         setGluten("");
         setVegan("");
@@ -93,6 +114,8 @@ export default function CreateDietaryNeeds() {
     useEffect(() => {
         if (token) {
             fetchAccount()
+            fetchAllergies()
+            fetchDietRestrict()
         }
     }, [token]);
 
@@ -130,7 +153,7 @@ export default function CreateDietaryNeeds() {
                     <option value="false">No</option>
                 </select>
                 <div>
-                <button>Create Dietary Needs</button>
+                <button>Update Dietary Needs</button>
                 </div>
             </form>
         </div>
