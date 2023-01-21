@@ -28,7 +28,7 @@ export default function UpdateAccountInfo() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    update(first_name, last_name, email, zipcode);
+    update(first_name, last_name, email, zipcode,password);
     setEmail("");
     setFirst("");
     setLast("");
