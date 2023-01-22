@@ -1,4 +1,4 @@
-# Paw Wow
+# Plate-Mate
 
 _Designed and Created By_
 
