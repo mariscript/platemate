@@ -28,7 +28,8 @@ Plate-Mate was created for individuals that want to go out, either alone or with
   - at their profile page, users can update a multitude of profile details:
     - Name
     - Username
-    - Preferences
+    - Allergies
+    - Diet Restrictions
 - Users can logout and login through the navbar.
 
 ## Preview
