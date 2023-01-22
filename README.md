@@ -12,7 +12,7 @@ _Plate Mate_ - A fun little app that provides the user with a place to eat after
 
 ## Design
 
-- [API Design](To be added)
+- [API Design](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/api-design-user.md)
 - [Data Model](To be added)
 - [GHI](To be added)
 
