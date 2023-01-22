@@ -40,7 +40,7 @@ Plate-Mate was created for individuals that want to go out, either alone or with
 
 1. Clone the repository down to your local machine
 
-2. Make sure [Docker](https://www.docker.com/) is installed.
+2. Make sure [Docker Desktop](https://www.docker.com/) is installed.
 
 3. CD into the new project directory
 
