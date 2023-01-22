@@ -40,20 +40,22 @@ Plate-Mate was created for individuals that want to go out, either alone or with
 
 1. Clone the repository down to your local machine
 
-2. CD into the new project directory
+2. Make sure [Docker](https://www.docker.com/) is installed.
 
-3. Run `docker volume create platemate-data`
+3. CD into the new project directory
 
-4. Run `docker volume create pg-admin`
+4. Run `docker volume create platemate-data`
 
-5. Run `docker compose build`
+5. Run `docker volume create pg-admin`
 
-6. Run `docker compose up`
+6. Run `docker compose build`
 
-7. Run `docker exec -it platemate-ghi-1 bash`
+7. Run `docker compose up`
 
-8. Run `python -m migrations up`
+8. Run `docker exec -it platemate-ghi-1 bash`
 
-9. Exit the container's CLI
+9. Run `python -m migrations up`
 
-10. Get ready to find your new favorite restaurant on Plate-Mate!
+10. Exit the container's CLI
+
+11. Get ready to find your new favorite restaurant on Plate-Mate!
