@@ -9,6 +9,7 @@ export default function UpdateAccountInfo() {
   const [last_name, setLast] = useState("");
   const [zipcode, setZip] = useState("");
   const [, , , , update] = useToken();
+  const [cancelEdit, setCancelEdit] = useState(false);
   const navigate = useNavigate();
   const { token } = useAuthContext();
 
@@ -32,6 +33,11 @@ export default function UpdateAccountInfo() {
     setFirst("");
     setLast("");
     setZip("");
+    navigate("/me");
+  };
+
+  const handleCancelEdit = () => {
+    setCancelEdit(!cancelEdit);
     navigate("/me");
   };
 
@@ -84,14 +90,13 @@ export default function UpdateAccountInfo() {
                 defaultValue={account?.zipcode}
               />
               <div className="p-2 flex">
-                <a href="/me">
-                  <button
-                    className="font-bold ml-auto flex p-2.5 bg-[#BB5855] rounded-xl hover:rounded-3xl hover:bg-[#823e3d] transition-all duration-300 text-black"
-                    type="cancel"
-                  >
-                    Cancel
-                  </button>
-                </a>
+                <button
+                  className="font-bold ml-0 flex p-2.5 bg-[#BB5855] rounded-xl hover:rounded-3xl hover:bg-[#823e3d] transition-all duration-300 text-black"
+                  type="submit"
+                  onClick={handleCancelEdit}
+                >
+                  Cancel
+                </button>
                 <button
                   className="font-bold ml-auto flex p-2.5 bg-[#97D06B] rounded-xl hover:rounded-3xl hover:bg-[#6a934c] transition-all duration-300 text-black"
                   type="submit"
