@@ -22,7 +22,7 @@ export default function CreateDietaryNeeds() {
     setAccount(data);
   };
 
-  const handleChange1 = (e) => {
+  const seafoodChange = (e) => {
         let value = e.target.value;
         if (value==="true"){
             setSeafood(true)
@@ -33,7 +33,7 @@ export default function CreateDietaryNeeds() {
     }
   
 
-  const handleChange2 = (e) => {
+  const glutenChange = (e) => {
       let value = e.target.value;
       if (value==="true"){
           setGluten(true)
@@ -44,7 +44,7 @@ export default function CreateDietaryNeeds() {
   }
   
 
-  const handleChange3 = (e) => {
+  const veganChange = (e) => {
       let value = e.target.value;
       if (value==="true"){
           setVegan(true)
@@ -55,7 +55,7 @@ export default function CreateDietaryNeeds() {
   }
   
 
-  const handleChange4 = (e) => {
+  const vegetarianChange = (e) => {
       let value = e.target.value;
       if (value==="true"){
           setVegetarian(true)
@@ -66,7 +66,7 @@ export default function CreateDietaryNeeds() {
   }
   
 
-  const handleChange5 = (e) => {
+  const halalChange = (e) => {
       let value = e.target.value;
       if (value==="true"){
           setHalal(true)
@@ -116,8 +116,8 @@ export default function CreateDietaryNeeds() {
             <select
               required
               id="seafood"
-              onChange={handleChange1}
-              class="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
+              onChange={seafoodChange}
+              className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option selected>Seafood</option>
               <option value="true">Yes</option>
@@ -128,8 +128,8 @@ export default function CreateDietaryNeeds() {
             <select
               required
               id="gluten"
-              onChange={handleChange2}
-              class="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
+              onChange={glutenChange}
+              className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option selected>Gluten-Free</option>
               <option value="true">Yes</option>
@@ -139,8 +139,8 @@ export default function CreateDietaryNeeds() {
           <select
             required
             id="vegan"
-            onChange={handleChange3}
-            class="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
+            onChange={veganChange}
+            className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
           >
             <option>Vegan</option>
             <option value="true">Yes</option>
@@ -150,8 +150,8 @@ export default function CreateDietaryNeeds() {
             <select
               required
               id="vegetarian"
-              onChange={handleChange4}
-              class="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
+              onChange={vegetarianChange}
+              className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option>Vegetarian</option>
               <option value="true">Yes</option>
@@ -162,7 +162,7 @@ export default function CreateDietaryNeeds() {
             <select
               required
               id="halal"
-              onChange={handleChange5}
+              onChange={halalChange}
               class="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option>Halal</option>
