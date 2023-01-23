@@ -157,8 +157,8 @@ function QuestionModal() {
                     <div className="carousel-inner relative w-full overflow-hidden">
                       <div className="carousel-item active relative float-left w-full">
                         <img
-                          src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-                          className="block w-full"
+                          src={require("../images/plate1.jpg")}
+                          className="block w-full blur-sm"
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
@@ -184,12 +184,12 @@ function QuestionModal() {
                       </div>
                       <div className="carousel-item relative float-left w-full">
                         <img
-                          src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-                          className="block w-full"
+                          src={require("../images/plate2.jpg")}
+                          className="block w-full blur-sm"
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold mb-3 text-2xl">
+                          <h1 className="flex justify-center font-bold text-black mb-3 text-2xl">
                             Your Budget{" "}
                             <img
                               src={require("../images/dollars.png")}
@@ -208,19 +208,18 @@ function QuestionModal() {
                               <option value="2">💳 $$ ($11-30)</option>
                               <option value="3">💵 $$$ ($31-60)</option>
                               <option value="4">💰 $$$$ ($61+)</option>
-                              <option value="5">🤑 ANY I GOT MONEY</option>
                             </select>
                           </div>
                         </div>
                       </div>
                       <div className="carousel-item relative float-left w-full">
                         <img
-                          src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-                          className="block w-full"
+                          src={require("../images/plate3.jpg")}
+                          className="block w-full blur-sm"
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold mb-3 text-2xl">
+                          <h1 className="flex justify-center font-bold text-black mb-3 text-2xl">
                             Carry Out{" "}
                             <img
                               src={require("../images/takeout.png")}
@@ -248,8 +247,8 @@ function QuestionModal() {
                       </div>
                       <div className="carousel-item relative float-left w-full">
                         <img
-                          src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-                          className="block w-full"
+                          src={require("../images/plate4.jpg")}
+                          className="block w-full blur-sm"
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
@@ -273,8 +272,8 @@ function QuestionModal() {
                       </div>
                       <div className="carousel-item relative float-left w-full">
                         <img
-                          src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-                          className="block w-full"
+                          src={require("../images/plate5.jpg")}
+                          className="block w-full blur-sm"
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
@@ -301,8 +300,8 @@ function QuestionModal() {
                       </div>
                       <div className="carousel-item relative float-left w-full">
                         <img
-                          src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-                          className="block w-full"
+                          src={require("../images/plate6.jpg")}
+                          className="block w-full blur-sm"
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
