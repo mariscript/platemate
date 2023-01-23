@@ -219,7 +219,7 @@ function QuestionModal() {
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold text-black mb-3 text-2xl">
+                          <h1 className="flex justify-center font-bold text-grey mb-3 text-2xl">
                             Carry Out{" "}
                             <img
                               src={require("../images/takeout.png")}
