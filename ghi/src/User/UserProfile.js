@@ -8,7 +8,7 @@ function UserProfile() {
   const [allergy, setAllergy] = useState({});
   const [diet_restrict, setDiet] = useState({});
   const { token } = useAuthContext();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const fetchAccount = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
@@ -16,16 +16,15 @@ function UserProfile() {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await result.json();
-    console.log(data)
+    console.log(data);
     setAccount(data);
   };
 
-
   const updateUserState = () => {
     dispatch(storeUser({ account }));
-  }
-  console.log(account)
-  useEffect(() => updateUserState(),[dispatch,account])
+  };
+  console.log(account);
+  useEffect(() => updateUserState(), [dispatch, account]);
 
   const fetchAllergies = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me/`;
@@ -52,6 +51,7 @@ function UserProfile() {
       fetchDietRestrict();
     }
   }, [token]);
+
 
   if (account || account !== undefined) {
     return (
