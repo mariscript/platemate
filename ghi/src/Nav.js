@@ -6,7 +6,7 @@ function Nav() {
   const [, , logout] = useToken();
   const navigate = useNavigate();
   const { token } = useAuthContext();
-  const user = useSelector((state) => state.userSlice.name.account);
+  // const user = useSelector((state) => state.userSlice.name.account);
 
   let [nav, setNav] = useState(false);
   // nav = false
@@ -16,6 +16,7 @@ function Nav() {
 
   const restaurantListRoute = (e) => navigate("/restaurants");
   const questionnaireRoute = (e) => navigate("/questionnaire");
+  const userRoute = (e) => navigate("/me");
 
   if (!token) {
     return (
@@ -97,7 +98,7 @@ function Nav() {
     return (
       <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
         <div className="mx-auto">
-          <p>Hello {user.first_name} </p>
+          {/* <p>Hello {user.first_name} </p> */}
         </div>
         <button
           type="button"
@@ -112,6 +113,13 @@ function Nav() {
           className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
         >
           View your list
+        </button>
+        <button
+          type="button"
+          onClick={userRoute}
+          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
+        >
+          My Profile
         </button>
         <div className="mx-auto mr-25">
           <a href="/">

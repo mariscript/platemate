@@ -117,7 +117,7 @@ export default function CreateDietaryNeeds() {
               required
               id="seafood"
               onChange={seafoodChange}
-              class="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
+              className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option selected>Seafood</option>
               <option value="true">Yes</option>
@@ -129,7 +129,7 @@ export default function CreateDietaryNeeds() {
               required
               id="gluten"
               onChange={glutenChange}
-              class="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
+              className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option selected>Gluten-Free</option>
               <option value="true">Yes</option>
@@ -140,7 +140,7 @@ export default function CreateDietaryNeeds() {
             required
             id="vegan"
             onChange={veganChange}
-            class="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
+            className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
           >
             <option>Vegan</option>
             <option value="true">Yes</option>
@@ -151,7 +151,7 @@ export default function CreateDietaryNeeds() {
               required
               id="vegetarian"
               onChange={vegetarianChange}
-              class="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
+              className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option>Vegetarian</option>
               <option value="true">Yes</option>
