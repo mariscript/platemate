@@ -74,96 +74,103 @@ function QuestionModal() {
     }
   }, [token]);
 
-  return (
-    <>
-      <h1 className="flex justify-center items-center font-bold mt-5 text-3xl">
-        Let's Find Your Plate!
-      </h1>
-      <div className="flex justify-center items-center">
-        <div className="flex items-center justify-center shadow p-4 mt-10 mb-10">
-          <div className="flex items-center justify-center">
-            <form className="mx-auto" onSubmit={handleFormSubmit}>
-              <label htmlFor="location">
-                <p className="font-bold">Your Current Location</p>
-              </label>
-              <div className="mb-3">
-                <input
-                  onChange={handleChange}
-                  required
-                  type="search"
-                  name="zipcode"
-                  id="zipcode"
-                  className="form-control"
-                  defaultValue={account?.zipcode}
-                />
-              </div>
-              <label htmlFor="budget">
-                <p className="font-bold">Your Budget</p>
-              </label>
+  if (token) {
+    return (
+      <>
+        <h1 className="flex justify-center items-center font-bold mt-5 text-3xl">
+          Let's Find Your Plate!
+        </h1>
+        <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center shadow p-4 mt-10 mb-10">
+            <div className="flex items-center justify-center">
+              <form className="mx-auto" onSubmit={handleFormSubmit}>
+                <label htmlFor="location">
+                  <p className="font-bold">Your Current Location</p>
+                </label>
+                <div className="mb-3">
+                  <input
+                    onChange={handleChange}
+                    required
+                    type="search"
+                    name="zipcode"
+                    id="zipcode"
+                    className="form-control"
+                    defaultValue={account?.zipcode}
+                  />
+                </div>
+                <label htmlFor="budget">
+                  <p className="font-bold">Your Budget</p>
+                </label>
 
-              <div className="form-floating mb-3">
-                <select required value={budget} onChange={handleBudgetChange}>
-                  <option value="">Select One</option>
-                  <option value="1">💸 $ ($1-10)</option>
-                  <option value="2">💳 $$ ($11-30)</option>
-                  <option value="3">💵 $$$ ($31-60)</option>
-                  <option value="4">💰 $$$$ ($61+)</option>
-                  <option value="5">🤑 ANY I GOT MONEY</option>
-                </select>
-              </div>
-              <label htmlFor="takeInOut">
-                <p className="font-bold">Carryout or Delivery?</p>
-              </label>
-              <div className="items-center form-floating mb-3 mx-2">
-                <select
-                  required
-                  value={takeInOut}
-                  onChange={handleTakeInOutChange}
+                <div className="form-floating mb-3">
+                  <select required value={budget} onChange={handleBudgetChange}>
+                    <option value="">Select One</option>
+                    <option value="1">💸 $ ($1-10)</option>
+                    <option value="2">💳 $$ ($11-30)</option>
+                    <option value="3">💵 $$$ ($31-60)</option>
+                    <option value="4">💰 $$$$ ($61+)</option>
+                    <option value="5">🤑 ANY I GOT MONEY</option>
+                  </select>
+                </div>
+                <label htmlFor="takeInOut">
+                  <p className="font-bold">Carryout or Delivery?</p>
+                </label>
+                <div className="items-center form-floating mb-3 mx-2">
+                  <select
+                    required
+                    value={takeInOut}
+                    onChange={handleTakeInOutChange}
+                  >
+                    <option value="">Select One</option>
+                    <option value="pickup">🥡 Pickup</option>
+                    <option value="delivery">🚗 Delivery</option>
+                  </select>
+                </div>
+                <label htmlFor="location">
+                  <p className="font-bold">When are you eating?</p>
+                </label>
+                <div className="form-floating mb-3 mx-2">
+                  <input
+                    required
+                    type="datetime-local"
+                    value={datetime}
+                    onChange={handleDateTimeChange}
+                  />
+                </div>
+
+                <label htmlFor="categories">
+                  <p className="font-bold">Pick your preferences</p>
+                </label>
+                <div className="form-floating mb-3 mx-2">
+                  <Select
+                    value={categories}
+                    onChange={handleCategoriesChange}
+                    isMultiple={true}
+                    options={options}
+                    searchInputPlaceholder
+                  />
+                </div>
+                <button
+                  className="bg-[#C26866] hover:bg-[#FDECA9] text-white hover:text-black font-bold py-3 px-4 mb-2 rounded-full"
+                  type="submit"
                 >
-                  <option value="">Select One</option>
-                  <option value="pickup">🥡 Pickup</option>
-                  <option value="delivery">🚗 Delivery</option>
-                </select>
-              </div>
-              <label htmlFor="location">
-                <p className="font-bold">When are you eating?</p>
-              </label>
-              <div className="form-floating mb-3 mx-2">
-                <input
-                  required
-                  type="datetime-local"
-                  value={datetime}
-                  onChange={handleDateTimeChange}
-                />
-              </div>
-
-              <label htmlFor="categories">
-                <p className="font-bold">Pick your preferences</p>
-              </label>
-              <div className="form-floating mb-3 mx-2">
-                <Select
-                  value={categories}
-                  onChange={handleCategoriesChange}
-                  isMultiple={true}
-                  options={options}
-                  searchInputPlaceholder
-                />
-              </div>
-              <button
-                className="bg-[#C26866] hover:bg-[#FDECA9] text-white hover:text-black font-bold py-3 px-4 mb-2 rounded-full"
-                type="submit"
-              >
-                {" "}
-                Ready to Eat!
-              </button>
-            </form>
+                  {" "}
+                  Ready to Eat!
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  } else {
+    return (
+      <h1>
+        {" "}
+        Looks like you don't have an account yet! Please sign up or login, so we
+        can find your plate!{" "}
+      </h1>
+    );
+  }
 }
-
 export default QuestionModal;
-
-//dispatch(deleteCat(cat.id)

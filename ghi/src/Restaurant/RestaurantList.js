@@ -1,98 +1,95 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import { useSelector } from 'react-redux'
-import { useAuthContext } from '../Authentication/AuthenticateUser'
+import { useDispatch, useSelector } from "react-redux";
+import { useAuthContext } from "../Authentication/AuthenticateUser";
+import RestaurantDetailModal from "./RestaurantDetailModal";
+import { storeRestList } from "../store/restListState";
 
-function RestaurantList() {
+
+export default function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
-  const {token} = useAuthContext()
+  const [id, setId] = useState("");
+  const { token } = useAuthContext();
+  const dispatch = useDispatch()
 
   const getData = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp/?location=${location}&budget=${budget}&open_at=${openAt}`
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp/?location=${location}&budget=${budget}&open_at=${openAt}`;
     const fetchConfig = {
-      headers: {accept: 'application/json', "Content-Type": "application/json", Authorization: `Bearer ${token}`}}
-      const resp = await fetch(url,fetchConfig)
-      const data = await resp.json();
-      console.log(data)
-      setRestaurants(data.businesses.slice(0,4));
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    const resp = await fetch(url, fetchConfig);
+    const data = await resp.json();
+    setRestaurants(data.businesses.slice(0, 3));
   };
+  useEffect(() => {
+    if (token) {
+      getData();
+    }
+  }, [token]);
 
-    useEffect(() => {
-        if (token) {getData()}
-    }, [token])
+  console.log(restaurants)
+  dispatch(storeRestList({ restaurants }));
 
-    const yelpy = useSelector((state) => state.yelp.name)
-    console.log(yelpy)
-    const location = yelpy.zipcode
-    const budget = yelpy.budget
-    const openAt = yelpy.datetime
-    console.log(location,budget,openAt)
-  // const zipcode = useSelector((state) => state.zipcode.zipcode)
-  // console.log(zipcode)
+  const yelpResponse = useSelector((state) => state.yelp.name);
+  const location = yelpResponse.zipcode;
+  const budget = yelpResponse.budget;
+  const openAt = yelpResponse.datetime;
 
-
-//   const getFilteredList = () => {
-//     if (filter_person !== "") {
-//       return salesRecords.filter((salesRecord) =>
-//         salesRecord["sales_person"]["name"].includes(filter_person)
-//       );
-//     } else {
-//       return salesRecords;
-//     }
-//   };
+  const handleId = (e) => {
+    let value = e.target.value;
+    setId(value);
+  };
 
   return (
     <>
-      {/* <div>
-        <h3>Filter by Sales Person</h3>
-        <select onChange={handleSalesPersonChange} className="form-select">
-          <option value="">Choose a sales person</option>
-          {sales_person.map((salesperson) => {
-            return (
-              <option key={salesperson.id} value={salesperson.name}>
-                {salesperson.name}
-              </option>
-            );
-          })}
-        </select>
-      </div> */}
-      <div>
-        <h1 className="text-center">Restaurants</h1>
-        <table className="table table-hover table-striped">
-          <thead className="text-center">
-            <tr className="header">
-              <th>Id</th>
-              <th>Name</th>
-              <th>Phone Number</th>
-              <th>Photo</th>
-              <th>Address1</th>
-              <th>City</th>
-              <th>Zipcode</th>
-              <th>Price</th>
-              <th>Rating</th>
-            </tr>
-          </thead>
-          <tbody className="text-center">
-            {restaurants.map((restaurant) => {
-              return (
-                <tr className="align-middle" key={restaurant.id}>
-                  <td>{restaurant.id}</td>
-                  <td>{restaurant.name}</td>
-                  <td>{restaurant.display_phone}</td>
-                  <td><img src= {restaurant.image_url}/></td>
-                  <td>{restaurant.location.address1}</td>
-                  <td>{restaurant.location.city}</td>
-                  <td>{restaurant.location.zip_code}</td>
-                  <td>{restaurant.price}</td>
-                  <td>{restaurant.rating}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      <h1 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-600">
+        {" "}
+        Happy Plating!
+      </h1>
+      <div className="flex justify-center gap-6">
+        {restaurants.map((restaurant) => (
+          <div
+            className="rounded-lg shadow-lg bg-white max-w-sm"
+            key={restaurant.id}
+          >
+            <div className="w-96 h-96">
+              <img
+                src={restaurant.image_url}
+                className="rounded-t-lg object-contain"
+                alt=""
+              />
+            </div>
+            <div className="p-6 justify-center">
+              <h5 className="text-gray-900 text-xl font-medium mb-2 justify-center content-center">
+                {restaurant.name}{" "}
+              </h5>
+              <p className="text-gray-700 text-base mb-4">
+                {" "}
+                {restaurant.location.address1}
+              </p>
+              <p className="text-gray-700 text-base mb-4">
+                {restaurant.location.zipcode}
+              </p>
+              <p className="text-gray-700 text-base mb-4">
+                {restaurant.display_phone}
+              </p>
+              <p className="text-gray-700 text-base mb-4">
+                <a
+                  href={restaurant.url}
+                  className="underline hover:text-sky-700"
+                >
+                  Website
+                </a>
+              </p>
+            </div>
+            <RestaurantDetailModal />
+          </div>
+        ))}
       </div>
     </>
   );
 }
-
-export default RestaurantList;

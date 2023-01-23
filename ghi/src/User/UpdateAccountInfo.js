@@ -84,17 +84,6 @@ export default function UpdateAccountInfo() {
                 onChange={(e) => setZip(e.target.value)}
                 defaultValue={account?.zipcode}
               />
-              <h1 className="font-bold mb-2 text-lg">Password</h1>
-              <h3 className="font-bold text-sm text-red-500">
-                **Make sure to input password**{" "}
-              </h3>
-              <input
-                type="password"
-                className="block border border-grey-light w-full p-3 rounded mb-7 placeholder:text-sm"
-                placeholder="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-              />
 
               <button
                 className="font-bold ml-auto flex p-2.5 bg-[#97D06B] rounded-xl hover:rounded-3xl hover:bg-[#6a934c] transition-all duration-300 text-black"

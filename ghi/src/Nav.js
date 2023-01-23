@@ -1,14 +1,24 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useToken, useAuthContext } from "./Authentication/AuthenticateUser"
-
+import { useSelector
+ } from "react-redux";
 function Nav() {
   const [ ,,logout] = useToken()
+  const navigate = useNavigate()
   const {token} = useAuthContext()
+  const user = useSelector((state) => state.userSlice.name.account)
+
   let [nav, setNav] = useState(false);
   // nav = false
   function handleNav() {
     setNav(!nav);
   }
+
+  const restaurantListRoute = (e) =>
+    navigate("/restaurants")
+  const questionnaireRoute = (e) =>
+    navigate("/questionnaire")
 
 if (!token){
   return (
@@ -90,6 +100,23 @@ if (!token){
 else {
   return (
     <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
+      <div className="mx-auto">
+        <p>Hello {user.first_name} </p>
+      </div>
+      <button
+          type="button"
+          onClick= {questionnaireRoute}
+          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
+        >
+          Retake Questionnaire
+        </button>
+        <button
+          type="button"
+          onClick= {restaurantListRoute}
+          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
+        >
+          View your list
+        </button>
       <div className="mx-auto mr-25">
         <a href="/">
           <div className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
@@ -111,8 +138,9 @@ else {
         >
           LOGOUT
         </button>
-  </a>
-  </nav>
+      </a>
+
+        </nav>
   )
 }
 }

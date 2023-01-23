@@ -1,20 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    zipcode: "", budget: 0, datetime: "", takeInOut: "", categories: []
-}
+  zipcode: "",
+  budget: 0,
+  datetime: "",
+  takeInOut: "",
+  categories: [],
+};
 
 export const yelpVar = createSlice({
-    name: 'yelp',
-    initialState,
-    reducers: {
-        storeYelp : (state,action) => {
-            {state.name = action.payload}},
-        clearForm: () => { return initialState }
-        }
-    }
-)
+  name: "yelp",
+  initialState,
+  reducers: {
+    storeYelp: (state, action) => {
+      {
+        state.name = action.payload;
+      }
+    },
+    clearYelpForm: () => {
+      return initialState;
+    },
+  },
+});
 
-export const {storeYelp, clearForm} = yelpVar.actions;
+export const { storeYelp, clearYelpForm } = yelpVar.actions;
 
 export default yelpVar.reducer;

@@ -1,9 +1,4 @@
-import { getToken } from "./Authentication/AuthenticateUser";
-import { useAuthContext } from "./Authentication/AuthenticateUser";
-
-
 function MainPage() {
-
   return (
     <>
       <div className="flex justify-center mt-10">
@@ -18,6 +13,7 @@ function MainPage() {
         className="carousel slide carousel-fade carousel-dark relative"
         data-bs-ride="carousel"
       >
+        {/* indicators */}
         <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
           <button
             data-bs-target="#carouselDarkVariant"
@@ -48,7 +44,9 @@ function MainPage() {
           ></button>
         </div>
 
+        {/* inner */}
         <div className="carousel-inner relative w-full overflow-hidden">
+          {/* item 0 */}
           <div className="carousel-item active relative float-left w-full">
             <img
               src={require("./images/morimoto.jpg")}
@@ -60,7 +58,7 @@ function MainPage() {
               <p className="">PlateMate will help you choose!</p>
             </div>
           </div>
-
+          {/* item 1 */}
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/rebelcheese.jpg")}
@@ -72,7 +70,7 @@ function MainPage() {
               <p>We'll help you find the right plate.</p>
             </div>
           </div>
-
+          {/* item 2 */}
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/SUGARFISH.jpg")}
@@ -84,6 +82,7 @@ function MainPage() {
               <p>No problem, let us know in the questionnaire!</p>
             </div>
           </div>
+          {/* item 3 */}
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/gyukaku.jpg")}
@@ -95,22 +94,11 @@ function MainPage() {
               <p>We'll find the plate for you!</p>
             </div>
           </div>
+          {/* item 4 */}
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/italian.jpg")}
-              className="block w-screen scale-75"
-              alt="Italian Food"
-            />
-            <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
-              <h5 className="text-xl">Have restrictions or allergies?</h5>
-              <p>Sign up to edit your profile!</p>
-            </div>
-          </div>
-
-          <div className="carousel-item relative float-left w-full">
-            <img
-              src={require("./images/italian.jpg")}
-              className="block w-screen scale-75"
+              className="block w-screen scale-50"
               alt="Italian Food"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
@@ -120,6 +108,7 @@ function MainPage() {
           </div>
         </div>
 
+        {/* carousel controls */}
         <button
           className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
           type="button"
