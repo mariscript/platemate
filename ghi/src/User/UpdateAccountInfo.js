@@ -8,7 +8,6 @@ export default function UpdateAccountInfo() {
   const [first_name, setFirst] = useState("");
   const [last_name, setLast] = useState("");
   const [zipcode, setZip] = useState("");
-  const [password, setPassword] = useState("");
   const [, , , , update] = useToken();
   const navigate = useNavigate();
   const { token } = useAuthContext();
@@ -28,7 +27,7 @@ export default function UpdateAccountInfo() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    update(first_name, last_name, email, zipcode, password);
+    update(first_name, last_name, email, zipcode);
     setEmail("");
     setFirst("");
     setLast("");
@@ -69,7 +68,7 @@ export default function UpdateAccountInfo() {
               />
               <h1 className="font-bold mb-2 text-lg">Email</h1>
               <input
-                placeholder="email"
+                placeholder="Email"
                 required
                 type="email"
                 className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"

@@ -13,7 +13,6 @@ export default function Signup() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
-  const [emailExists, setEmailExists] = useState(false);
 
   const [, , , signup] = useToken();
 
@@ -37,8 +36,6 @@ export default function Signup() {
       navigate("me/createneeds");
     }, 3000);
   };
-
-  useEffect(() => {});
 
   function formValidation() {
     let blankInputs = 0;
