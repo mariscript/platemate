@@ -33,7 +33,6 @@ class AccountInUpdate(BaseModel):
     last_name: str
     email: str
     zipcode: str
-    password: str
 
 class AccountOut(BaseModel):
     id: int
