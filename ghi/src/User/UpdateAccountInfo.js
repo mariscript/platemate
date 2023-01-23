@@ -28,7 +28,7 @@ export default function UpdateAccountInfo() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    update(first_name, last_name, email, zipcode,password);
+    update(first_name, last_name, email, zipcode, password);
     setEmail("");
     setFirst("");
     setLast("");
@@ -84,13 +84,22 @@ export default function UpdateAccountInfo() {
                 onChange={(e) => setZip(e.target.value)}
                 defaultValue={account?.zipcode}
               />
-
-              <button
-                className="font-bold ml-auto flex p-2.5 bg-[#97D06B] rounded-xl hover:rounded-3xl hover:bg-[#6a934c] transition-all duration-300 text-black"
-                type="submit"
-              >
-                Save Changes
-              </button>
+              <div className="p-2 flex">
+                <a href="/me">
+                  <button
+                    className="font-bold ml-auto flex p-2.5 bg-[#BB5855] rounded-xl hover:rounded-3xl hover:bg-[#823e3d] transition-all duration-300 text-black"
+                    type="cancel"
+                  >
+                    Cancel
+                  </button>
+                </a>
+                <button
+                  className="font-bold ml-auto flex p-2.5 bg-[#97D06B] rounded-xl hover:rounded-3xl hover:bg-[#6a934c] transition-all duration-300 text-black"
+                  type="submit"
+                >
+                  Save Changes
+                </button>
+              </div>
             </form>
           </div>
         </div>
