@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
+import { storeUser } from "../store/userSlice";
+import { useDispatch } from "react-redux";
 
 function UserProfile() {
   const [account, setAccount] = useState({});
   const [allergy, setAllergy] = useState({});
   const [diet_restrict, setDiet] = useState({});
   const { token } = useAuthContext();
+  const dispatch = useDispatch()
 
   const fetchAccount = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
@@ -13,8 +16,16 @@ function UserProfile() {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await result.json();
+    console.log(data)
     setAccount(data);
   };
+
+
+  const updateUserState = () => {
+    dispatch(storeUser({ account }));
+  }
+  console.log(account)
+  useEffect(() => updateUserState(),[dispatch,account])
 
   const fetchAllergies = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me/`;
