@@ -8,7 +8,6 @@ export default function UpdateAccountInfo() {
   const [first_name, setFirst] = useState("");
   const [last_name, setLast] = useState("");
   const [zipcode, setZip] = useState("");
-  const [password, setPassword] = useState("");
   const [, , , , update] = useToken();
   const navigate = useNavigate();
   const { token } = useAuthContext();
@@ -28,7 +27,7 @@ export default function UpdateAccountInfo() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    update(first_name, last_name, email, zipcode,password);
+    update(first_name, last_name, email, zipcode);
     setEmail("");
     setFirst("");
     setLast("");
@@ -69,7 +68,7 @@ export default function UpdateAccountInfo() {
               />
               <h1 className="font-bold mb-2 text-lg">Email</h1>
               <input
-                placeholder="email"
+                placeholder="Email"
                 required
                 type="email"
                 className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
@@ -84,18 +83,6 @@ export default function UpdateAccountInfo() {
                 onChange={(e) => setZip(e.target.value)}
                 defaultValue={account?.zipcode}
               />
-              <h1 className="font-bold mb-2 text-lg">Password</h1>
-              <h3 className="font-bold text-sm text-red-500">
-                **Make sure to input password**{" "}
-              </h3>
-              <input
-                type="password"
-                className="block border border-grey-light w-full p-3 rounded mb-7 placeholder:text-sm"
-                placeholder="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-              />
-
               <button
                 className="font-bold ml-auto flex p-2.5 bg-[#97D06B] rounded-xl hover:rounded-3xl hover:bg-[#6a934c] transition-all duration-300 text-black"
                 type="submit"

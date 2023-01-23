@@ -98,7 +98,7 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/italian.jpg")}
-              className="block w-screen scale-50"
+              className="block w-screen scale-75"
               alt="Italian Food"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">

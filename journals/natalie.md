@@ -1,5 +1,13 @@
 # Week 4
 
+- was able to get the checkboxes to show for the allergy/diet needs
+
+### (Sat) 1/21/2023
+
+- designed create needs page and implemented a message that a user can continue without any inputs
+- designed the edit page for food preferences
+- designed logout page and edited the log out button
+
 ### (Fri) 1/20/2023
 
 - merge party!
