@@ -5,7 +5,7 @@ from .keys import YELP_KEY
 
 class YelpQueries:
     def get_yelp(self, location: str, budget: int, open_at: int):
-        url = f"https://api.yelp.com/v3/businesses/search?location={location}&term=restaurants&radius=25000&categories=fast%food&price={budget}&open_at={open_at}&attributes=&sort_by=best_match&limit=10"
+        url = f"https://api.yelp.com/v3/businesses/search?location={location}&term=restaurants&radius=40000&categories=fast%food&price={budget}&open_at={open_at}&attributes=&sort_by=best_match&limit=10"
         headers = {"Authorization": f"Bearer {YELP_KEY}"}
         res = requests.get(url, headers=headers)
         data = res.json()
