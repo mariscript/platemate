@@ -5,12 +5,11 @@ import { useAuthContext } from "../Authentication/AuthenticateUser";
 import RestaurantDetailModal from "./RestaurantDetailModal";
 import { storeRestList } from "../store/restListState";
 
-
 export default function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
   const [id, setId] = useState("");
   const { token } = useAuthContext();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const getData = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp/?location=${location}&budget=${budget}&open_at=${openAt}`;
@@ -31,7 +30,7 @@ export default function RestaurantList() {
     }
   }, [token]);
 
-  console.log(restaurants)
+  console.log(restaurants);
   dispatch(storeRestList({ restaurants }));
 
   const yelpResponse = useSelector((state) => state.yelp.name);
