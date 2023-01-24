@@ -5,6 +5,15 @@ import { useSelector } from "react-redux";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faList,
+  faUtensils,
+  faRightFromBracket,
+  faCircleInfo,
+  faScrewdriver,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Nav() {
   const [, , logout] = useToken();
@@ -101,53 +110,6 @@ function Nav() {
   } else {
     return (
       <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
-        {/* <div className="mx-auto">
-          <p>Hello {user.first_name} </p>
-        </div>
-        <button
-          type="button"
-          onClick={questionnaireRoute}
-          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
-        >
-          Retake Questionnaire
-        </button>
-        <button
-          type="button"
-          onClick={restaurantListRoute}
-          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
-        >
-          View your list
-        </button>
-        <button
-          type="button"
-          onClick={userRoute}
-          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
-        >
-          My Profile
-        </button>
-        <div className="mx-auto mr-25">
-          <a href="/">
-            <div className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
-              <span>PLATE</span>
-              <img
-                src={require("./images/plate.png")}
-                className="h-9"
-                alt="PlateMate Logo"
-              />
-              <span>MATE</span>
-            </div>
-          </a>
-        </div>
-        <a href="/logout">
-          <button
-            type="button"
-            onClick={logout}
-            className="bg-[#e64d48] mx-6 rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer"
-          >
-            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-            LOGOUT
-          </button>
-        </a> */}
         <Menu as="div" className="relative inline-block text-left ml-5">
           <div>
             <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-[#f6f2ed] px-4 py-2 text-sm font-medium text-gray-700 shadow-sm ">
@@ -156,7 +118,7 @@ function Nav() {
                 width="20"
                 className="mr-2"
               />
-              Hello {user.first_name}!
+              Hello, {user.first_name}!
               <ChevronDownIcon
                 className="-mr-1 ml-2 h-5 w-5"
                 aria-hidden="true"
@@ -184,6 +146,7 @@ function Nav() {
                         "block px-4 py-2 text-sm"
                       )}
                     >
+                      <FontAwesomeIcon icon={faUser} className="mr-2" />
                       My Profile
                     </a>
                   )}
@@ -197,11 +160,11 @@ function Nav() {
                         "block px-4 py-2 text-sm"
                       )}
                     >
+                      <FontAwesomeIcon icon={faList} className="mr-2" />
                       Your List of Restaurants
                     </a>
                   )}
                 </Menu.Item>
-
                 <Menu.Item>
                   {({ active }) => (
                     <a
@@ -211,7 +174,38 @@ function Nav() {
                         "block px-4 py-2 text-sm"
                       )}
                     >
+                      <FontAwesomeIcon icon={faUtensils} className="mr-2" />
                       Questionnaire
+                    </a>
+                  )}
+                </Menu.Item>
+              </div>
+              <div className="py-1">
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href="/about"
+                      className={classNames(
+                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      <FontAwesomeIcon icon={faCircleInfo} className="mr-2" />
+                      About
+                    </a>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href="/resources"
+                      className={classNames(
+                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      <FontAwesomeIcon icon={faScrewdriver} className="mr-2" />
+                      Resources
                     </a>
                   )}
                 </Menu.Item>
@@ -227,6 +221,10 @@ function Nav() {
                         "block px-4 py-2 text-sm"
                       )}
                     >
+                      <FontAwesomeIcon
+                        icon={faRightFromBracket}
+                        className="mr-2"
+                      />
                       Logout
                     </a>
                   )}
@@ -235,7 +233,6 @@ function Nav() {
             </Menu.Items>
           </Transition>
         </Menu>
-
         <a href="/">
           <div className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
             <span>PLATE</span>
