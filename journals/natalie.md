@@ -1,3 +1,14 @@
+# Week 5
+
+### (Mon) 1/23/2023
+
+- created dropdown menu for nav that includes profile, list of restaurants, questionnarie, about, resources, and logout
+- used Font Awesome for additional icons
+- created home button to navigate main page
+- added icons to the food preferences in the user page
+- centered modal title for questionnaire and added background color for the form titles
+- fixed questionnaire modal to click on main page and in the dropdown menu
+
 # Week 4
 
 ### (Sun) 1/22/2023

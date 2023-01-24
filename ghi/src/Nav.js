@@ -2,6 +2,19 @@ import { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useToken, useAuthContext } from "./Authentication/AuthenticateUser";
 import { useSelector } from "react-redux";
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faList,
+  faUtensils,
+  faRightFromBracket,
+  faCircleInfo,
+  faScrewdriver,
+} from "@fortawesome/free-solid-svg-icons";
+
 function Nav() {
   const [, , logout] = useToken();
   const navigate = useNavigate();
@@ -14,60 +27,13 @@ function Nav() {
     setNav(!nav);
   }
 
-  const restaurantListRoute = (e) => navigate("/restaurants");
-  const questionnaireRoute = (e) => navigate("/questionnaire");
-  const userRoute = (e) => navigate("/me");
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
 
   if (!token) {
     return (
-      <nav className="flex justify-center items-center bg-[#FDECA9] py-3">
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Inventory
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <NavLink className="dropdown-item" to="/manufacturers">
-                    Manufacturers
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="dropdown-item" to="/models">
-                    Models
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="dropdown-item" to="/automobiles">
-                    Automobiles
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="dropdown-item" to="/manufacturer/new">
-                    Create Manufacturer
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="dropdown-item" to="/models/new">
-                    Create A Model
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="dropdown-item" to="/automobiles/new">
-                    Create An Automobile
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
+      <nav className="sticky top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-3">
         <div className="mx-auto">
           <a href="/">
             <div className="flex justify-between tracking-[4px] text-xl font-semibold items-center">
@@ -144,51 +110,154 @@ function Nav() {
   } else {
     return (
       <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
-        <div className="mx-auto">
-          <p>Hello {user.first_name} </p>
-        </div>
-        <button
-          type="button"
-          onClick={questionnaireRoute}
-          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
-        >
-          Retake Questionnaire
-        </button>
-        <button
-          type="button"
-          onClick={restaurantListRoute}
-          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
-        >
-          View your list
-        </button>
-        <button
-          type="button"
-          onClick={userRoute}
-          className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
-        >
-          My Profile
-        </button>
-        <div className="mx-auto mr-25">
-          <a href="/">
-            <div className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
-              <span>PLATE</span>
+        <Menu as="div" className="relative inline-block text-left ml-5">
+          <div>
+            <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-[#f6f2ed] px-4 py-2 text-sm font-medium text-gray-700 shadow-sm ">
               <img
-                src={require("./images/plate.png")}
-                className="h-9"
-                alt="PlateMate Logo"
+                src={require("./images/burger.png")}
+                width="20"
+                className="mr-2"
               />
-              <span>MATE</span>
-            </div>
-          </a>
-        </div>
-        <a href="/logout">
+              Hello, {user.first_name}!
+              <ChevronDownIcon
+                className="-mr-1 ml-2 h-5 w-5"
+                aria-hidden="true"
+              />
+            </Menu.Button>
+          </div>
+
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-500 rounded-md bg-[#f6f2ed] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="py-1">
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href="/me"
+                      className={classNames(
+                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      <FontAwesomeIcon icon={faUser} className="mr-2" />
+                      My Profile
+                    </a>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href="/restaurants"
+                      className={classNames(
+                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      <FontAwesomeIcon icon={faList} className="mr-2" />
+                      Your List of Restaurants
+                    </a>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      data-bs-toggle="modal"
+                      data-bs-target="#questionnaire"
+                      className={classNames(
+                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm cursor-pointer"
+                      )}
+                    >
+                      <FontAwesomeIcon icon={faUtensils} className="mr-2" />
+                      Questionnaire
+                    </a>
+                  )}
+                </Menu.Item>
+              </div>
+              <div className="py-1">
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href="/about"
+                      className={classNames(
+                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      <FontAwesomeIcon icon={faCircleInfo} className="mr-2" />
+                      About
+                    </a>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href="/resources"
+                      className={classNames(
+                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      <FontAwesomeIcon icon={faScrewdriver} className="mr-2" />
+                      Resources
+                    </a>
+                  )}
+                </Menu.Item>
+              </div>
+              <div className="py-1">
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href="/logout"
+                      onClick={logout}
+                      className={classNames(
+                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      <FontAwesomeIcon
+                        icon={faRightFromBracket}
+                        className="mr-2"
+                      />
+                      Logout
+                    </a>
+                  )}
+                </Menu.Item>
+              </div>
+            </Menu.Items>
+          </Transition>
+        </Menu>
+        <a href="/">
+          <div className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
+            <span>PLATE</span>
+            <img
+              src={require("./images/plate.png")}
+              className="h-9"
+              alt="PlateMate Logo"
+            />
+            <span>MATE</span>
+          </div>
+        </a>
+
+        <a href="/">
           <button
             type="button"
-            onClick={logout}
-            className="bg-[#e64d48] mx-6 rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer"
+            className="bg-[#BB5855] mx-[40px] rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer"
           >
             <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-            LOGOUT
+            HOME
+            <img
+              src={require("./images/home.png")}
+              width="20"
+              className="ml-1.5"
+            />
           </button>
         </a>
       </nav>
