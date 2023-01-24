@@ -76,35 +76,49 @@ function QuestionModal() {
 
   return (
     <>
-      <div className="">
+      <div className="flex justify-center mt-10">
         <button
           type="button"
-          className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+          className="inline-block px-10 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg hover:text-black focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out"
           data-bs-toggle="modal"
-          data-bs-target="#exampleModalXl"
-        ></button>
+          data-bs-target="#questionnaire"
+        >
+          <span className="inline-block">Take The Questionnaire!</span>
+          <img
+            src={require("../images/form.png")}
+            alt="Loading..."
+            className="inline-block w-9 ml-2"
+          />
+        </button>
       </div>
 
       <div
         className="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
-        id="exampleModalXl"
+        id="questionnaire"
         tabIndex="-1"
-        aria-labelledby="exampleModalXlLabel"
+        aria-labelledby="questionnaire"
         aria-modal="true"
         role="dialog"
       >
-        <div className="modal-dialog modal-xl relative w-auto pointer-events-none">
+        <div className="modal-dialog modal-xl relative w-auto pointer-events-none max-w-screen-md">
           <div className="modal-content justify-center border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-[#FDECA9] bg-clip-padding rounded-md outline-none text-current">
-            <div className="modal-header flex flex-shrink-0 content-center items-center p-5 border-b border-[#C26866] rounded-t-md">
+            <div className="modal-header items-center p-2 border-b border-[#C26866] rounded-t-md">
               <h1 className="flex flex-col items-center font-bold mt-5 text-3xl mb-5">
                 Let's Find Your Plate!
               </h1>
-              <button
-                type="button"
-                className="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+              <svg
+                className="w-9 h-9 absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#FEF5ED] hover:text-white ease-linear transition-all duration-150 cursor-pointer"
+                fillRule="currentColor"
                 data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
             </div>
             <div className="modal-body relative p-4">
               <div>
@@ -154,15 +168,15 @@ function QuestionModal() {
                     ></button>
                   </div>
                   <form className="mx-auto" onSubmit={handleFormSubmit}>
-                    <div className="carousel-inner relative w-full overflow-hidden">
+                    <div className="carousel-inner relative overflow-y-auto overflow-hidden">
                       <div className="carousel-item active relative float-left w-full">
                         <img
                           src={require("../images/plate1.jpg")}
                           className="block w-full blur-sm"
                           alt="..."
                         />
-                        <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold mb-3 text-2xl">
+                        <div className="carousel-caption hidden md:block absolute text-center top-20 ">
+                          <h1 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[320px] items-center mx-auto rounded-lg">
                             Your Current Location{" "}
                             <img
                               src={require("../images/location.png")}
@@ -189,7 +203,7 @@ function QuestionModal() {
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold text-black mb-3 text-2xl">
+                          <h1 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[260px] items-center mx-auto rounded-lg">
                             Your Budget{" "}
                             <img
                               src={require("../images/dollars.png")}
@@ -219,7 +233,7 @@ function QuestionModal() {
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold text-[#] mb-3 text-2xl">
+                          <h1 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[400px] items-center mx-auto rounded-lg">
                             Carry Out{" "}
                             <img
                               src={require("../images/takeout.png")}
@@ -252,7 +266,7 @@ function QuestionModal() {
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold mb-3 text-2xl">
+                          <h1 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[320px] items-center mx-auto rounded-lg">
                             When are you eating?{" "}
                             <img
                               src={require("../images/clock.png")}
@@ -277,7 +291,7 @@ function QuestionModal() {
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold mb-3 text-2xl">
+                          <h1 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[320px] items-center mx-auto rounded-lg">
                             Pick Your Preferences
                             <img
                               src={require("../images/dinner.png")}
@@ -298,28 +312,27 @@ function QuestionModal() {
                           </div>
                         </div>
                       </div>
+
                       <div className="carousel-item relative float-left w-full">
                         <img
                           src={require("../images/plate6.jpg")}
-                          className="block w-full blur-sm"
+                          className="blur-sm"
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <div className="flex flex-col inline-flex py-2.5 px-5 mx-0 items-center">
-                            <button
-                              className="bg-[#C26866] hover:bg-[#FDECA9] text-white hover:text-black font-bold py-4 px-10 mb-3 w-60 rounded-full"
-                              type="submit"
-                            >
-                              {" "}
-                              Ready to Eat!
-                              <span className="inline-flex items-center justify-center">
-                                <img
-                                  src={require("../images/foodplate.png")}
-                                  className="h-15 m-2"
-                                ></img>
-                              </span>
-                            </button>
-                          </div>
+                          <button
+                            className="bg-[#C26866] hover:bg-[#FDECA9] text-white hover:text-black font-bold py-5 px-10 -mt-5 w-[200px] rounded-full"
+                            type="submit"
+                          >
+                            {" "}
+                            Ready to Eat!
+                            <span className="inline-flex items-center justify-center">
+                              <img
+                                src={require("../images/foodplate.png")}
+                                className="h-15 m-2"
+                              ></img>
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </div>

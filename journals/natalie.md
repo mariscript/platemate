@@ -6,6 +6,8 @@
 - used Font Awesome for additional icons
 - created home button to navigate main page
 - added icons to the food preferences in the user page
+- centered modal title for questionnaire and added background color for the form titles
+- fixed questionnaire modal to click on main page and in the dropdown menu
 
 # Week 4
 

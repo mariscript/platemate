@@ -32,6 +32,7 @@ function App() {
         <Signup />
         <Login />
         <Nav />
+        <QuestionModal />
         <div>
           <Routes>
             <Route path="/" element={<MainPage />} />
@@ -43,12 +44,12 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/me" element={<UserProfile />} />
-            <Route path="/questionnaire" element={<QuestionModal />} />
-            <Route path="/logout" element={<Logout/>}/>
+            <Route path="" element={<QuestionModal />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="me">
               <Route path="updateaccount" element={<UpdateAccountInfo />} />
               <Route path="updateneeds" element={<UpdateDietaryNeeds />} />
-              <Route path="createneeds" element={<CreateDietaryNeeds/>}/>
+              <Route path="createneeds" element={<CreateDietaryNeeds />} />
             </Route>
           </Routes>
           <Footer />

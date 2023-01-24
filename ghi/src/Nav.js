@@ -168,10 +168,11 @@ function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="/questionnaire"
+                      data-bs-toggle="modal"
+                      data-bs-target="#questionnaire"
                       className={classNames(
                         active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
-                        "block px-4 py-2 text-sm"
+                        "block px-4 py-2 text-sm cursor-pointer"
                       )}
                     >
                       <FontAwesomeIcon icon={faUtensils} className="mr-2" />
