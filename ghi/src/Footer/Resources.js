@@ -8,6 +8,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="Figma"
               href="https://www.figma.com/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -31,6 +32,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="Excalidraw"
               href="https://excalidraw.com/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -56,6 +58,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="PostgreSQL"
               href="https://www.postgresql.org/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -80,6 +83,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="React"
               href="https://reactjs.org/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -103,6 +107,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="Tailwind CSS"
               href="https://tailwindcss.com/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -127,6 +132,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="Tailwind Components"
               href="https://tailwindcomponents.com/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -151,6 +157,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="Tailwind Elements"
               href="https://tailwind-elements.com/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -175,6 +182,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="Fast API"
               href="https://fastapi.tiangolo.com/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -199,6 +207,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="Yelp API"
               href="https://www.yelp.com/developers"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -224,6 +233,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="FlatIcon"
               href="https://www.flaticon.com/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -249,6 +259,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="Redux"
               href="https://redux.js.org/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -276,6 +287,7 @@ function Resources() {
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a
               target="_blank"
+              title="Font Awesome"
               href="https://fontawesome.com/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
