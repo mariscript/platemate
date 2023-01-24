@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext, useToken } from "../Authentication/AuthenticateUser";
+// import { storeDietRestrict } from "../store/dietNeedsSlice";
 
 export default function UpdateDietaryNeeds() {
-  const [seafood, setSeafood] = useState(false);
-  const [gluten_free, setGluten] = useState(false);
-  const [vegan, setVegan] = useState(false);
-  const [vegetarian, setVegetarian] = useState(false);
-  const [halal, setHalal] = useState(false);
+  const [seafood, setSeafood] = useState("");
+  const [gluten_free, setGluten] = useState("");
+  const [vegan, setVegan] = useState("");
+  const [vegetarian, setVegetarian] = useState("");
+  const [halal, setHalal] = useState("");
   const { token } = useAuthContext();
   const navigate = useNavigate();
   const [cancelEdit, setCancelEdit] = useState(false);
@@ -33,6 +34,8 @@ export default function UpdateDietaryNeeds() {
     });
     const data = await result.json();
     setAllergy(data);
+    setSeafood(data.seafood)
+    setGluten(data.gluten_free)
   };
 
   const fetchDietRestrict = async () => {
@@ -42,7 +45,12 @@ export default function UpdateDietaryNeeds() {
     });
     const data = await result.json();
     setDiet(data);
+    setVegan(data.vegan)
+    setVegetarian(data.vegetarian)
+    setHalal(data.halal)
+    console.log(data)
   };
+
 
   const seafoodChange = (e) => {
     let value = e.target.value;
@@ -124,59 +132,64 @@ export default function UpdateDietaryNeeds() {
       <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto mb-16 w-[400px] ">
         <form onSubmit={handleFormSubmit}>
           <div>
+            <label>Seafood currently set to {seafood.toString()}</label>
             <select
               required
               id="seafood"
               onChange={seafoodChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
-              <option selected>Seafood</option>
+              <option selected>No Change</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
           </div>
           <div>
+            <label>Gluten-Free currently set to {gluten_free.toString()}</label>
             <select
               required
               id="gluten"
               onChange={glutenChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
-              <option selected>Gluten-Free</option>
+              <option selected>No Change</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
           </div>
+          <label>Vegan currently set to {vegan.toString()}</label>
           <select
             required
             id="vegan"
             onChange={veganChange}
             className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
           >
-            <option>Vegan</option>
+            <option>No Change</option>
             <option value="true">Yes</option>
             <option value="false">No</option>
           </select>
           <div>
+            <label>Vegetarian currently set to {vegetarian.toString()}</label>
             <select
               required
               id="vegetarian"
               onChange={vegetarianChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
-              <option>Vegetarian</option>
+              <option>No Change</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
           </div>
           <div>
+            <label>Halal currently set to {halal.toString()}</label>
             <select
               required
               id="halal"
               onChange={halalChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
-              <option>Halal</option>
+              <option>No Change</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>

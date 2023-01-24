@@ -10,6 +10,8 @@ import {
   faCarrot,
   faBowlFood,
 } from "@fortawesome/free-solid-svg-icons";
+import { storeDietNeeds } from "../store/dietNeedsSlice";
+
 
 function UserProfile() {
   const [account, setAccount] = useState({});
@@ -24,15 +26,14 @@ function UserProfile() {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await result.json();
-    console.log(data);
+    console.log(data)
     setAccount(data);
   };
 
-  const updateUserState = () => {
-    dispatch(storeUser({ account }));
-  };
-  console.log(account);
-  useEffect(() => updateUserState(), [dispatch, account]);
+  const updateState = () => {
+    dispatch(storeUser({ account }))
+    dispatch(storeDietNeeds({ allergy, diet_restrict  }));
+  }
 
   const fetchAllergies = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me/`;
@@ -59,6 +60,9 @@ function UserProfile() {
       fetchDietRestrict();
     }
   }, [token]);
+
+  useEffect(() => {
+    updateState()}, [allergy,diet_restrict])
 
   if (account || account !== undefined) {
     return (

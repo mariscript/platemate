@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useToken, useAuthContext } from "./Authentication/AuthenticateUser";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
@@ -12,20 +12,39 @@ import {
   faUtensils,
   faRightFromBracket,
   faCircleInfo,
-  faScrewdriver,
+  faTools,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Nav() {
+import { storeUser } from "./store/userSlice";
+import { setUseProxies } from "immer";
+
+export default function Nav() {
   const [, , logout] = useToken();
   const navigate = useNavigate();
   const { token } = useAuthContext();
-  const user = useSelector((state) => state.userSlice.name.account);
+  const dispatch = useDispatch();
+  const [user, setUser] = useState({});
 
   let [nav, setNav] = useState(false);
-  // nav = false
+
   function handleNav() {
-    setNav(!nav);
+    setNav(!nav)
   }
+
+  const fetchAccount = async () => {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
+    const result = await fetch(url, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await result.json();
+    setUser(data);
+  };
+
+  useEffect(() => {
+    if (token) {
+      fetchAccount();
+    }
+  }, [token]);
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -142,7 +161,9 @@ function Nav() {
                     <a
                       href="/me"
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-[gray-700]",
                         "block px-4 py-2 text-sm"
                       )}
                     >
@@ -156,12 +177,14 @@ function Nav() {
                     <a
                       href="/restaurants"
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm"
                       )}
                     >
                       <FontAwesomeIcon icon={faList} className="mr-2" />
-                      Your List of Restaurants
+                      My List of Restaurants
                     </a>
                   )}
                 </Menu.Item>
@@ -171,7 +194,9 @@ function Nav() {
                       data-bs-toggle="modal"
                       data-bs-target="#questionnaire"
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm cursor-pointer"
                       )}
                     >
@@ -187,7 +212,9 @@ function Nav() {
                     <a
                       href="/about"
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm"
                       )}
                     >
@@ -201,11 +228,13 @@ function Nav() {
                     <a
                       href="/resources"
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm"
                       )}
                     >
-                      <FontAwesomeIcon icon={faScrewdriver} className="mr-2" />
+                      <FontAwesomeIcon icon={faTools} className="mr-2" />
                       Resources
                     </a>
                   )}
@@ -218,7 +247,9 @@ function Nav() {
                       href="/logout"
                       onClick={logout}
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm"
                       )}
                     >
@@ -264,4 +295,3 @@ function Nav() {
     );
   }
 }
-export default Nav;

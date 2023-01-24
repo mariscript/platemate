@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
 import RestaurantDetailModal from "./RestaurantDetailModal";
 import { storeRestList } from "../store/restListState";
+import { storeDietNeeds } from "../store/dietNeedsSlice";
 
 export default function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
@@ -30,13 +31,14 @@ export default function RestaurantList() {
     }
   }, [token]);
 
-  console.log(restaurants);
-  dispatch(storeRestList({ restaurants }));
-
   const yelpResponse = useSelector((state) => state.yelp.name);
   const location = yelpResponse.zipcode;
   const budget = yelpResponse.budget;
   const openAt = yelpResponse.datetime;
+
+  const allergies = useSelector((state) => state.dietNeeds.allergy)
+  const diet_restrict = useSelector((state) => state.dietNeeds.diet_restrict)
+  console.log(allergies,diet_restrict)
 
   const handleId = (e) => {
     let value = e.target.value;
