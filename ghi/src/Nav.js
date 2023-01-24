@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { useToken, useAuthContext } from "./Authentication/AuthenticateUser";
 import { useSelector } from "react-redux";
 function Nav() {
   const [, , logout] = useToken();
   const navigate = useNavigate();
   const { token } = useAuthContext();
-  // const user = useSelector((state) => state.userSlice.name.account);
+  const user = useSelector((state) => state.userSlice.name.account);
 
   let [nav, setNav] = useState(false);
   // nav = false
@@ -21,6 +21,53 @@ function Nav() {
   if (!token) {
     return (
       <nav className="flex justify-center items-center bg-[#FDECA9] py-3">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Inventory
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <NavLink className="dropdown-item" to="/manufacturers">
+                    Manufacturers
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="dropdown-item" to="/models">
+                    Models
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="dropdown-item" to="/automobiles">
+                    Automobiles
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="dropdown-item" to="/manufacturer/new">
+                    Create Manufacturer
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="dropdown-item" to="/models/new">
+                    Create A Model
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="dropdown-item" to="/automobiles/new">
+                    Create An Automobile
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
         <div className="mx-auto">
           <a href="/">
             <div className="flex justify-between tracking-[4px] text-xl font-semibold items-center">
@@ -98,7 +145,7 @@ function Nav() {
     return (
       <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
         <div className="mx-auto">
-          {/* <p>Hello {user.first_name} </p> */}
+          <p>Hello {user.first_name} </p>
         </div>
         <button
           type="button"
