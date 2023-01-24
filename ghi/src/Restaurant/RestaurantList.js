@@ -36,9 +36,9 @@ export default function RestaurantList() {
   const budget = yelpResponse.budget;
   const openAt = yelpResponse.datetime;
 
-  const allergies = useSelector((state) => state.dietNeeds.allergy)
-  const diet_restrict = useSelector((state) => state.dietNeeds.diet_restrict)
-  console.log(allergies,diet_restrict)
+  const allergies = useSelector((state) => state.dietNeeds.allergy);
+  const diet_restrict = useSelector((state) => state.dietNeeds.diet_restrict);
+  console.log(allergies, diet_restrict);
 
   const handleId = (e) => {
     let value = e.target.value;
@@ -47,10 +47,6 @@ export default function RestaurantList() {
 
   return (
     <>
-      <h1 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-600">
-        {" "}
-        Happy Plating!
-      </h1>
       <div className="flex justify-center gap-6">
         {restaurants.length > 0 ? (
           restaurants.map((restaurant) => (
