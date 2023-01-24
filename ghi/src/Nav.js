@@ -18,7 +18,7 @@ import {
 import { storeUser } from "./store/userSlice";
 import { setUseProxies } from "immer";
 
-export default function Nav() {
+export default function Nav({ handleClick }) {
   const [, , logout] = useToken();
   const navigate = useNavigate();
   const { token } = useAuthContext();
@@ -28,7 +28,7 @@ export default function Nav() {
   let [nav, setNav] = useState(false);
 
   function handleNav() {
-    setNav(!nav)
+    setNav(!nav);
   }
 
   const fetchAccount = async () => {
@@ -52,7 +52,10 @@ export default function Nav() {
 
   if (!token) {
     return (
-      <nav className="top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-3">
+      <nav
+        id="test"
+        className="top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-3"
+      >
         <div className="mx-auto">
           <a href="/">
             <div className="flex justify-between tracking-[4px] ml-48 text-xl font-semibold items-center">
@@ -188,23 +191,19 @@ export default function Nav() {
                     </a>
                   )}
                 </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      data-bs-toggle="modal"
-                      data-bs-target="#questionnaire"
-                      className={classNames(
-                        active
-                          ? "bg-[#dad6d0] text-[#BB5855]"
-                          : "text-gray-700",
-                        "block px-4 py-2 text-sm cursor-pointer"
-                      )}
-                    >
-                      <FontAwesomeIcon icon={faUtensils} className="mr-2" />
-                      Questionnaire
-                    </a>
-                  )}
-                </Menu.Item>
+                <div>
+                  <a
+                    onClick={handleClick}
+                    data-bs-toggle="modal"
+                    data-bs-target="#questionnaire"
+                    className="
+                     hover:bg-[#dad6d0] hover:text-[#BB5855] text-gray-700
+                     block px-4 py-2 text-sm cursor-pointer"
+                  >
+                    <FontAwesomeIcon icon={faUtensils} className="mr-2" />
+                    Questionnaire
+                  </a>
+                </div>
               </div>
               <div className="py-1">
                 <Menu.Item>

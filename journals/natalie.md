@@ -1,5 +1,10 @@
 # Week 5
 
+### (Tues) 1/24/2023
+
+- changed the GitHub icon in About to GitLab icon
+- got the questionnaire button to only show on the main page and also able to toggle it in the dropdown menu
+
 ### (Mon) 1/23/2023
 
 - created dropdown menu for nav that includes profile, list of restaurants, questionnarie, about, resources, and logout
@@ -8,12 +13,17 @@
 - added icons to the food preferences in the user page
 - centered modal title for questionnaire and added background color for the form titles
 - fixed questionnaire modal to click on main page and in the dropdown menu
+- Zac worked on the resources page and fixed naming conventions of handle change functions for user profile forms
+- Marison added a cancel button to the allergies and dietary restrictions portion of the user profile and added an error message when user has no results after taking the questionnaire
 
 # Week 4
 
 ### (Sun) 1/22/2023
 
 - was able to get the checkboxes to show for the allergy/diet needs
+- Marison worked on putting the questionnaire carousel into a modal and added blurred photos to the background of each question in the questionnaire
+- Gina and Marison worked on the YelpAPI to work when a user inputs data in the questionnaire
+- Gina made multiple React slices including user, restaurant list, dietary needs and made cards for restaurant list and modals for restaurant detail. She also fixed the update dietary needs page to have default values as option values in drop down
 
 ### (Sat) 1/21/2023
 

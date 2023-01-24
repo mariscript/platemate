@@ -1,7 +1,7 @@
 function Resources() {
   return (
     <div className="text-center text-gray-800 py-20 px-6">
-      <h3 className="text-3xl font-bold mt-0 mb-6">Our Used Resources:</h3>
+      <h3 className="text-3xl font-bold -mt-10 mb-6">Resources</h3>
 
       <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-4 gap-2">
         <div className="flex justify-center drop-shadow-md">
