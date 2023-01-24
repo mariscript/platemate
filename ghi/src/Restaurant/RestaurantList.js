@@ -30,9 +30,6 @@ export default function RestaurantList() {
     }
   }, [token]);
 
-  console.log(restaurants);
-  dispatch(storeRestList({ restaurants }));
-
   const yelpResponse = useSelector((state) => state.yelp.name);
   const location = yelpResponse.zipcode;
   const budget = yelpResponse.budget;

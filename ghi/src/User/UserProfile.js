@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
 import { storeUser } from "../store/userSlice";
 import { useDispatch } from "react-redux";
+import { storeDietNeeds } from "../store/dietNeedsSlice";
+
 
 function UserProfile() {
   const [account, setAccount] = useState({});
@@ -20,11 +22,11 @@ function UserProfile() {
     setAccount(data);
   };
 
-  const updateUserState = () => {
-    dispatch(storeUser({ account }));
-  };
-  console.log(account);
-  useEffect(() => updateUserState(), [dispatch, account]);
+  const updateState = () => {
+    dispatch(storeUser({ account }))
+    dispatch(storeDietNeeds({ allergy, diet_restrict  }));
+
+  }
 
   const fetchAllergies = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me/`;
@@ -49,9 +51,9 @@ function UserProfile() {
       fetchAccount();
       fetchAllergies();
       fetchDietRestrict();
+      updateState()
     }
   }, [token]);
-
 
   if (account || account !== undefined) {
     return (

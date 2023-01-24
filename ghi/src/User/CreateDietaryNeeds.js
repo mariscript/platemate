@@ -31,7 +31,6 @@ export default function CreateDietaryNeeds() {
             setSeafood(false)
         }
     }
-  
 
   const glutenChange = (e) => {
       let value = e.target.value;
@@ -42,7 +41,7 @@ export default function CreateDietaryNeeds() {
           setGluten(false)
       }
   }
-  
+
 
   const veganChange = (e) => {
       let value = e.target.value;
@@ -53,7 +52,7 @@ export default function CreateDietaryNeeds() {
           setVegan(false)
       }
   }
-  
+
 
   const vegetarianChange = (e) => {
       let value = e.target.value;
@@ -64,7 +63,7 @@ export default function CreateDietaryNeeds() {
           setVegetarian(false)
       }
   }
-  
+
 
   const halalChange = (e) => {
       let value = e.target.value;
@@ -78,7 +77,6 @@ export default function CreateDietaryNeeds() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(seafood, gluten_free, vegan, vegetarian, halal, account.id);
     createallergy(seafood, gluten_free, account.id);
     createdietrestrict(vegan, vegetarian, halal, account.id);
     setSeafood("");
