@@ -1,4 +1,8 @@
 ## Week 5:
+### 1/24/2023
+- worked on learning how to unit test.
+- completed a unit test for listing all allergies.
+
 ### 1/23/2023
 - worked on Resources page
 - fixed naming conventions of handle change functions for user profile forms.
