@@ -1,24 +1,24 @@
 import RestaurantList from "./RestaurantList";
 import React, { useState } from "react";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { storeRestList } from "../store/restListState";
 
 const RestaurantDetailModal = () => {
   const [showModal, setShowModal] = useState(false);
-  const restaurants = useSelector((state) => state.restListState.restaurants)
-  console.log(restaurants)
+  const restaurants = useSelector((state) => state.restListState.restaurants);
+  console.log(restaurants);
   return (
     <>
-    <div className="items-center justify-center">
-      <button
-        type="button"
-        onClick={() => setShowModal(true)}
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModalCenteredScrollable"
-        className=" flex justify-center items-center inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-      >
-        Detail
-      </button>
+      <div className="items-center justify-center">
+        <button
+          type="button"
+          onClick={() => setShowModal(true)}
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModalCenteredScrollable"
+          className=" flex justify-center items-center px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+        >
+          Detail
+        </button>
       </div>
       {showModal ? (
         <>
@@ -41,7 +41,7 @@ const RestaurantDetailModal = () => {
                   </h5>
                   <button
                     type="button"
-                    onClick={()=>setShowModal(false)}
+                    onClick={() => setShowModal(false)}
                     className="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
                     data-bs-dismiss="modal"
                     aria-label="Close"
