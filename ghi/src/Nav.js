@@ -142,7 +142,9 @@ function Nav() {
                     <a
                       href="/me"
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-[gray-700]",
                         "block px-4 py-2 text-sm"
                       )}
                     >
@@ -156,7 +158,9 @@ function Nav() {
                     <a
                       href="/restaurants"
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm"
                       )}
                     >
@@ -171,7 +175,9 @@ function Nav() {
                       data-bs-toggle="modal"
                       data-bs-target="#questionnaire"
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm cursor-pointer"
                       )}
                     >
@@ -187,7 +193,9 @@ function Nav() {
                     <a
                       href="/about"
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm"
                       )}
                     >
@@ -201,7 +209,9 @@ function Nav() {
                     <a
                       href="/resources"
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm"
                       )}
                     >
@@ -218,7 +228,9 @@ function Nav() {
                       href="/logout"
                       onClick={logout}
                       className={classNames(
-                        active ? "bg-[#dad6d0] text-gray-900" : "text-gray-700",
+                        active
+                          ? "bg-[#dad6d0] text-[#BB5855]"
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm"
                       )}
                     >
