@@ -1,3 +1,10 @@
+## Week 5:
+### 1/23/2023
+- worked on Resources page
+- fixed naming conventions of handle change functions for user profile forms.
+- learned how to use Tailwind
+
+
 ## Week 4:
 ### 1/20/2023
 - sorted out merge conflicts, built an additional account update backend 
