@@ -86,28 +86,31 @@ class AccountsQueries:
     def create(self, account: AccountIn, hashed_password: str) -> Account:
         with pool.connection() as conn:
             with conn.cursor() as db:
-                result = db.execute(
-                    """
-                    INSERT INTO accounts (first_name, last_name, email, zipcode, hashed_password)
-                    VALUES (%s, %s, %s, %s, %s)
-                    RETURNING id;
-                    """,
-                    [account.first_name,
-                    account.last_name,
-                    account.email,
-                    account.zipcode,
-                    hashed_password]
-                )
-                id = result.fetchone()[0]
-                return Account(
-                    id=id,
-                    first_name=account.first_name,
-                    last_name=account.last_name,
-                    email=account.email,
-                    zipcode=account.zipcode,
-                    hashed_password=hashed_password,
-                )
-
+                try:
+                    result = db.execute(
+                        """
+                        INSERT INTO accounts (first_name, last_name, email, zipcode, hashed_password)
+                        VALUES (%s, %s, %s, %s, %s)
+                        RETURNING id;
+                        """,
+                        [account.first_name,
+                        account.last_name,
+                        account.email,
+                        account.zipcode,
+                        hashed_password]
+                    )
+                    id = result.fetchone()[0]
+                    return Account(
+                        id=id,
+                        first_name=account.first_name,
+                        last_name=account.last_name,
+                        email=account.email,
+                        zipcode=account.zipcode,
+                        hashed_password=hashed_password,
+                    )
+                except Exception as e:
+                    print(e)
+                    return False
 
     def get_all_accounts(self):
         with pool.connection() as conn:

@@ -25,7 +25,6 @@ function UserProfile() {
   const updateState = () => {
     dispatch(storeUser({ account }))
     dispatch(storeDietNeeds({ allergy, diet_restrict  }));
-
   }
 
   const fetchAllergies = async () => {
@@ -51,9 +50,11 @@ function UserProfile() {
       fetchAccount();
       fetchAllergies();
       fetchDietRestrict();
-      updateState()
     }
   }, [token]);
+
+  useEffect(() => {
+    updateState()}, [allergy,diet_restrict])
 
   if (account || account !== undefined) {
     return (

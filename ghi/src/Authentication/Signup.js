@@ -22,20 +22,29 @@ export default function Signup() {
     if (formValidation() === false) {
       return;
     }
-    signup(first_name, last_name, email, zipcode, password);
-    setEmail("");
-    setPassword("");
-    setFirst("");
-    setLast("");
-    setZip("");
-    setErrorMessage("");
-    setIsLoading(true);
+    const response = await signup(first_name, last_name, email, zipcode, password);
+    console.log(response)
+    if (response.ok){
+      setEmail("");
+      setPassword("");
+      setFirst("");
+      setLast("");
+      setZip("");
+      setErrorMessage("");
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsSubmit(true);
+        setIsLoading(false);
+        navigate("me/createneeds");
+      }, 3000);
+    }
+  else{
+    setErrorMessage("This email is already in use.")
     setTimeout(() => {
-      setIsSubmit(true);
-      setIsLoading(false);
-      navigate("me/createneeds");
-    }, 3000);
-  };
+      setErrorMessage("")
+    },3000)
+  }
+}
 
   function formValidation() {
     let blankInputs = 0;

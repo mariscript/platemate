@@ -120,12 +120,12 @@ export function useToken() {
         "Content-Type": "application/json",
       },
     });
-    if (response.ok)
+    if (response.ok){
       await login(email, password);
+      return response}
     else {
-      setDuplicateEmail(true);
+      return response;
     }
-    return false;
   }
 
   async function update(first_name, last_name, email, zipcode, password) {

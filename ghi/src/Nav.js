@@ -1,18 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToken, useAuthContext } from "./Authentication/AuthenticateUser";
-import { useSelector } from "react-redux";
-function Nav() {
+import { useDispatch, useSelector } from "react-redux";
+import { storeUser } from "./store/userSlice";
+import { setUseProxies } from "immer";
+
+export default function Nav() {
   const [, , logout] = useToken();
   const navigate = useNavigate();
   const { token } = useAuthContext();
-  // const user = useSelector((state) => state.userSlice.name.account);
+  const dispatch = useDispatch();
+  const [user, setUser] = useState({});
 
   let [nav, setNav] = useState(false);
-  // nav = false
+
   function handleNav() {
-    setNav(!nav);
+    setNav(!nav)
   }
+
+  const fetchAccount = async () => {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
+    const result = await fetch(url, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await result.json();
+    setUser(data);
+  };
+
+  useEffect(() => {
+    if (token) {
+      fetchAccount();
+    }
+  }, [token]);
 
   const restaurantListRoute = (e) => navigate("/restaurants");
   const questionnaireRoute = (e) => navigate("/questionnaire");
@@ -98,7 +117,7 @@ function Nav() {
     return (
       <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
         <div className="mx-auto">
-          {/* <p>Hello {user.first_name} </p> */}
+          <p>Hello {user.first_name} </p>
         </div>
         <button
           type="button"
@@ -148,4 +167,3 @@ function Nav() {
     );
   }
 }
-export default Nav;
