@@ -6,11 +6,13 @@ import thunk from "redux-thunk";
 import yelpReducer from "./yelpVar";
 import restListReducer from "./restListState";
 import userReducer from './userSlice'
+import dietNeedsReducer from "./dietNeedsSlice"
 
 const reducers = combineReducers({
   yelp: yelpReducer,
   restListState: restListReducer,
-  userSlice: userReducer
+  userSlice: userReducer,
+  dietNeeds: dietNeedsReducer,
 });
 
 const persistConfig = {

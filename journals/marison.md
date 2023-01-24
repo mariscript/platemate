@@ -1,8 +1,27 @@
 # Journal
 
+## Week 5
+
+### 1/24/2023 Tuesday
+
+### 1/23/2023 Monday
+
+I added the cancel button to the allergies and dietary restrictions portion of the user profile.\
+Had do change the functionality of "cancel" in user profile so the cancel button actually cancelled the update if the user changes their mind.\
+It was still updating the information when I first added the cancel button.\
+Helped Nat on the modal popping out for questionnaire from the original button.\
+Added the error when a user comes up with no results after the questionnaire.
+
 ## Weekend before project due
 
-### 1/21/2023 Saturday
+### 1/21/2023 Saturday & 1/22/2023 Sunday
+
+I started working on putting the questionnaire on a carousel. \
+On sunday, I worked on putting that carousel into a modal. \
+I added blurred photos (Nat's idea!) to the background of each question in the questionnaire.\
+Gina and I learned that the Yelp API breaks on sundays.\
+I helped Gina with having the Yelp API work when a user input data to the questionnaire.\
+I added a cancel button to the user profile.
 
 ## Week 4:
 

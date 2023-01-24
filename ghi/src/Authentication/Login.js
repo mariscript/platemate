@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useToken } from "./AuthenticateUser";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../Authentication/AuthenticateUser";
 
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [, login] = useToken();
+  const { token } = useAuthContext()
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -17,17 +19,31 @@ export default function LoginComponent() {
     if (loginValidation() === false) {
       return;
     }
-    login(email, password);
+    const response = await login(email, password)
+      if (response.ok){
+        setIsLoading(true)
+        setTimeout(() => {
+          setIsSubmit(true);
+          setIsLoading(false);
+        }, 3000);
+        navigate("/me")
+      }
+      else{
+        setErrorMessage("Incorrect email or password")
+        setTimeout(() => {
+          setErrorMessage("")
+        }, 3000);
+      }
+
     setEmail("");
     setPassword("");
-    setIsLoading(true);
 
-    setTimeout(() => {
-      setIsSubmit(true);
-      setIsLoading(false);
-      navigate("/me");
-    }, 3000);
   };
+
+  // if (token){
+  //   navigate("/me")
+  // }
+
 
   function loginValidation() {
     let blankInputs = 0;

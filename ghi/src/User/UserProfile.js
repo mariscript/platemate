@@ -2,13 +2,23 @@ import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
 import { storeUser } from "../store/userSlice";
 import { useDispatch } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFish,
+  faBreadSlice,
+  faLeaf,
+  faCarrot,
+  faBowlFood,
+} from "@fortawesome/free-solid-svg-icons";
+import { storeDietNeeds } from "../store/dietNeedsSlice";
+
 
 function UserProfile() {
   const [account, setAccount] = useState({});
   const [allergy, setAllergy] = useState({});
   const [diet_restrict, setDiet] = useState({});
   const { token } = useAuthContext();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const fetchAccount = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
@@ -20,12 +30,10 @@ function UserProfile() {
     setAccount(data);
   };
 
-
-  const updateUserState = () => {
-    dispatch(storeUser({ account }));
+  const updateState = () => {
+    dispatch(storeUser({ account }))
+    dispatch(storeDietNeeds({ allergy, diet_restrict  }));
   }
-  console.log(account)
-  useEffect(() => updateUserState(),[dispatch,account])
 
   const fetchAllergies = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me/`;
@@ -52,6 +60,9 @@ function UserProfile() {
       fetchDietRestrict();
     }
   }, [token]);
+
+  useEffect(() => {
+    updateState()}, [allergy,diet_restrict])
 
   if (account || account !== undefined) {
     return (
@@ -119,6 +130,7 @@ function UserProfile() {
                 <h1 className="font-bold mb-2 text-lg">Allergies</h1>
                 <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
                   <div className="flex items-center mt-2 mb-2 ml-3 mx-auto">
+                    <FontAwesomeIcon icon={faFish} className="mr-2" />
                     Seafood
                     {allergy?.seafood?.toString() === "true" ? (
                       <img
@@ -133,6 +145,7 @@ function UserProfile() {
                     )}
                   </div>
                   <div className="flex items-center mt-2 mb-2 ml-3">
+                    <FontAwesomeIcon icon={faBreadSlice} className="mr-2" />
                     Gluten-Free:
                     {allergy?.gluten_free?.toString() === "true" ? (
                       <img
@@ -152,6 +165,7 @@ function UserProfile() {
                 <h1 className="font-bold mb-2 text-lg">Dietary Restrictions</h1>
                 <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
                   <div className="flex items-center mt-2 mb-2 ml-3">
+                    <FontAwesomeIcon icon={faLeaf} className="mr-2" />
                     Vegan
                     {diet_restrict?.vegan?.toString() === "true" ? (
                       <img
@@ -166,6 +180,7 @@ function UserProfile() {
                     )}
                   </div>
                   <div className="flex items-center mt-2 mb-2 ml-3">
+                    <FontAwesomeIcon icon={faCarrot} className="mr-2" />
                     Vegetarian
                     {diet_restrict?.vegetarian?.toString() === "true" ? (
                       <img
@@ -180,6 +195,7 @@ function UserProfile() {
                     )}
                   </div>
                   <div className="flex items-center mt-2 mb-2 ml-3">
+                    <FontAwesomeIcon icon={faBowlFood} className="mr-2" />
                     Halal
                     {diet_restrict?.halal?.toString() === "true" ? (
                       <img
