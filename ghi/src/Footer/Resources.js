@@ -142,7 +142,7 @@ function Resources() {
             <div className="p-6">
               <h5 className="text-gray-900 text-xl font-medium mb-2">Redux and Redux-Persist</h5>
               <p className="text-gray-700 text-base mb-4">
-                We used Redux and Redux-Persist in order to
+                "Redux sets the initial state of your app upon launch. Soon after, Redux Persist fetches your persisted state, overriding any initial state in a process the Redux Persist team calls rehydration."
               </p>
             </div>
           </div>
@@ -155,7 +155,7 @@ function Resources() {
             <div className="p-6">
               <h5 className="text-gray-900 text-xl font-medium mb-2">Font Awesome</h5>
               <p className="text-gray-700 text-base mb-4">
-                We used Font Awesome to add additional icons
+                We used Font Awesome to add additional icons.
               </p>
             </div>
           </div>
