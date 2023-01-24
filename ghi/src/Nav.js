@@ -12,7 +12,7 @@ import {
   faUtensils,
   faRightFromBracket,
   faCircleInfo,
-  faScrewdriver,
+  faTools,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Nav() {
@@ -161,7 +161,7 @@ function Nav() {
                       )}
                     >
                       <FontAwesomeIcon icon={faList} className="mr-2" />
-                      Your List of Restaurants
+                      My List of Restaurants
                     </a>
                   )}
                 </Menu.Item>
@@ -205,7 +205,7 @@ function Nav() {
                         "block px-4 py-2 text-sm"
                       )}
                     >
-                      <FontAwesomeIcon icon={faScrewdriver} className="mr-2" />
+                      <FontAwesomeIcon icon={faTools} className="mr-2" />
                       Resources
                     </a>
                   )}
