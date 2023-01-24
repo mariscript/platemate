@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext, useToken } from "../Authentication/AuthenticateUser";
+import { useDispatch } from 'react-redux'
+import { storeUser } from '../store/userSlice'
 
 export default function CreateDietaryNeeds() {
   const [seafood, setSeafood] = useState(false);
@@ -9,6 +11,7 @@ export default function CreateDietaryNeeds() {
   const [vegetarian, setVegetarian] = useState(false);
   const [halal, setHalal] = useState(false);
   const { token } = useAuthContext();
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const [account, setAccount] = useState({});
   const [, , , , , , , createallergy, createdietrestrict] = useToken();
@@ -20,6 +23,8 @@ export default function CreateDietaryNeeds() {
     });
     const data = await result.json();
     setAccount(data);
+    dispatch(storeUser({ account }))
+    console.log(data)
   };
 
   const seafoodChange = (e) => {
@@ -31,7 +36,6 @@ export default function CreateDietaryNeeds() {
             setSeafood(false)
         }
     }
-  
 
   const glutenChange = (e) => {
       let value = e.target.value;
@@ -42,7 +46,7 @@ export default function CreateDietaryNeeds() {
           setGluten(false)
       }
   }
-  
+
 
   const veganChange = (e) => {
       let value = e.target.value;
@@ -53,7 +57,7 @@ export default function CreateDietaryNeeds() {
           setVegan(false)
       }
   }
-  
+
 
   const vegetarianChange = (e) => {
       let value = e.target.value;
@@ -64,7 +68,7 @@ export default function CreateDietaryNeeds() {
           setVegetarian(false)
       }
   }
-  
+
 
   const halalChange = (e) => {
       let value = e.target.value;
@@ -78,7 +82,6 @@ export default function CreateDietaryNeeds() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(seafood, gluten_free, vegan, vegetarian, halal, account.id);
     createallergy(seafood, gluten_free, account.id);
     createdietrestrict(vegan, vegetarian, halal, account.id);
     setSeafood("");
@@ -119,7 +122,7 @@ export default function CreateDietaryNeeds() {
               onChange={seafoodChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
-              <option selected>Seafood</option>
+              <option>Seafood</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
@@ -131,7 +134,7 @@ export default function CreateDietaryNeeds() {
               onChange={glutenChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
-              <option selected>Gluten-Free</option>
+              <option>Gluten-Free</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
@@ -163,7 +166,7 @@ export default function CreateDietaryNeeds() {
               required
               id="halal"
               onChange={halalChange}
-              class="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
+              className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option>Halal</option>
               <option value="true">Yes</option>

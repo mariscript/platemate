@@ -275,6 +275,7 @@ function QuestionModal() {
                           </h1>
                           <div className="form-floating mb-3 mx-2">
                             <input
+                              id="date"
                               required
                               type="datetime-local"
                               value={datetime}

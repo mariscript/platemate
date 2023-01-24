@@ -1,5 +1,20 @@
 # Journal
 
+## Week 5:
+
+### Monday 1/24/23
+Wow crunch week! I had a fairly productive weekend actually but I am grouping it all to keep things consistent. Over this weekend and today, I was able to complete the following:
+- make multiple react slices including for user, restaurant list, dietary needs
+- make cards for restaurant list
+- make modals for restaurant detail
+- fix update dietary needs page to have default values as option values in drop down
+- get the yelp API to work with Marison with actual user input data from questionnaire
+- figure out the Yelp Date/Time issue with why we couldn't get restaurants on Sunday (M-Su cycle for API) also with Marison
+- create validation checks for signup and login for duplicate email and incorrect credentials respectively
+- slice for allergies and diet restrictions
+- fix the Nav to have the "hello user"
+- made a Refresh User slice to autoupdate when profile is updated for Nav
+
 ## Week 4:
 
 ### Friday 1/20/23
