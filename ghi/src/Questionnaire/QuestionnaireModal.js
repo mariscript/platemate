@@ -54,6 +54,7 @@ function QuestionModal() {
       13
     )}%3A${datetime.slice(14)}`;
     dispatch(storeYelp({ zipcode, budget, datetime, takeInOut, categories }));
+
     navigate("/restaurants");
   };
 

@@ -100,7 +100,10 @@ function UserProfile() {
             </div>
           </div>
           <a href="/me/updateaccount">
-            <button className="ml-auto flex p-2.5 bg-[#FFB801] rounded-xl hover:rounded-3xl hover:bg-yellow-600 transition-all duration-300 text-white">
+            <button
+              title="Edit"
+              className="ml-auto flex p-2.5 bg-[#FFB801] rounded-xl hover:rounded-3xl hover:bg-yellow-600 transition-all duration-300 text-white"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -214,7 +217,10 @@ function UserProfile() {
             </div>
             <div className="flex flex-row ml-auto -mt-20">
               <a href="/me/updateneeds">
-                <button className="mt-20 p-2.5 bg-[#FFB801] rounded-xl hover:rounded-3xl hover:bg-yellow-600 transition-all duration-300 text-white">
+                <button
+                  title="Edit"
+                  className="mt-20 p-2.5 bg-[#FFB801] rounded-xl hover:rounded-3xl hover:bg-yellow-600 transition-all duration-300 text-white"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"

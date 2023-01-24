@@ -145,7 +145,6 @@ export default function CreateDietaryNeeds() {
             onChange={veganChange}
             className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
           >
-            <option>Vegan</option>
             <option value="true">Yes</option>
             <option value="false">No</option>
           </select>
