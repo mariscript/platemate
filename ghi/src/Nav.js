@@ -33,10 +33,10 @@ function Nav() {
 
   if (!token) {
     return (
-      <nav className="sticky top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-3">
+      <nav className="top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-3">
         <div className="mx-auto">
           <a href="/">
-            <div className="flex justify-between tracking-[4px] text-xl font-semibold items-center">
+            <div className="flex justify-between tracking-[4px] ml-48 text-xl font-semibold items-center">
               <span>PLATE</span>
               <img
                 src={require("./images/plate.png")}

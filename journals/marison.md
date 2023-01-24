@@ -4,13 +4,17 @@
 
 ### 1/24/2023 Tuesday
 
+FINALLY centered the nav PlateMate logo when user is logged out.\
+
 ### 1/23/2023 Monday
 
 I added the cancel button to the allergies and dietary restrictions portion of the user profile.\
 Had do change the functionality of "cancel" in user profile so the cancel button actually cancelled the update if the user changes their mind.\
 It was still updating the information when I first added the cancel button.\
 Helped Nat on the modal popping out for questionnaire from the original button.\
-Added the error when a user comes up with no results after the questionnaire.
+Added the error when a user comes up with no results after the questionnaire, edited it into a card.\
+Working on having a button on the card reroute to the questionnaire again.\
+Working on the questionnaire modal to dismiss after it has been submitted.
 
 ## Weekend before project due
 

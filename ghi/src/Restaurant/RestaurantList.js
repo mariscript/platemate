@@ -44,7 +44,7 @@ export default function RestaurantList() {
   };
 
   return (
-    <div>
+    <>
       <h1 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-600">
         {" "}
         Happy Plating!
@@ -90,20 +90,18 @@ export default function RestaurantList() {
             </div>
           ))
         ) : (
-          <div className="flex justify-center">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
-              <a href="#!">
-                <img
-                  className="rounded-t-lg"
-                  src={require("../images/chili.gif")}
-                  alt=""
-                />
-              </a>
+          <div className="relative justify-center">
+            <img
+              className="flex justify-center ml-16"
+              src={require("../images/chicken.gif")}
+              alt="Surprised Chicken"
+            />
+            <div className="rounded-lg shadow-xl bg-white max-w-sm">
               <div className="flex flex-col items-center p-6">
                 <h5 className="text-gray-900 text-xl font-medium mb-2">
                   Whoops!
                 </h5>
-                <h1>
+                <h1 className="mb-4">
                   We couldn't find restaurants with your answers. Make sure to
                   fill out every question! Try the questionnaire again, so we
                   can find your plate!
@@ -112,7 +110,7 @@ export default function RestaurantList() {
                   data-bs-toggle="modal"
                   data-bs-target="#questionnaire"
                   type="button"
-                  className="px-6 py-2.5 mt-2 bg-[#C26866] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:[#FDECA9] hover:shadow-lg hover:text-black focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                  className="px-6 py-2.5 mt-2 bg-[#C26866] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:[#FDECA9] hover:shadow-lg hover:text-black focus:[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-white active:shadow-lg transition duration-150 ease-in-out"
                 >
                   Try Another Plate!
                 </button>
@@ -121,6 +119,6 @@ export default function RestaurantList() {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }
