@@ -1,6 +1,6 @@
 import React from "react";
 import { useToken } from "./AuthenticateUser";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
@@ -13,7 +13,6 @@ export default function Signup() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
-  const [emailExists, setEmailExists] = useState(false);
 
   const [, , , signup] = useToken();
 
@@ -23,22 +22,34 @@ export default function Signup() {
     if (formValidation() === false) {
       return;
     }
-    signup(first_name, last_name, email, zipcode, password);
-    setEmail("");
-    setPassword("");
-    setFirst("");
-    setLast("");
-    setZip("");
-    setErrorMessage("");
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsSubmit(true);
-      setIsLoading(false);
-      navigate("me/createneeds");
-    }, 3000);
+    const response = await signup(
+      first_name,
+      last_name,
+      email,
+      zipcode,
+      password
+    );
+    console.log(response);
+    if (response.ok) {
+      setEmail("");
+      setPassword("");
+      setFirst("");
+      setLast("");
+      setZip("");
+      setErrorMessage("");
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsSubmit(true);
+        setIsLoading(false);
+        navigate("me/createneeds");
+      }, 3000);
+    } else {
+      setErrorMessage("This email is already in use.");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 3000);
+    }
   };
-
-  useEffect(() => {});
 
   function formValidation() {
     let blankInputs = 0;

@@ -34,21 +34,24 @@ function App() {
         <Nav />
         <div>
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/" element={[<QuestionModal />, <MainPage />]} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path="/restaurants" element={<RestaurantList />} />
+            <Route
+              path="/restaurants"
+              element={[<QuestionModal />, <RestaurantList />]}
+            />
             <Route path="/restaurant" element={<RestaurantDetailTest />} />
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/me" element={<UserProfile />} />
             <Route path="/questionnaire" element={<QuestionModal />} />
-            <Route path="/logout" element={<Logout/>}/>
+            <Route path="/logout" element={<Logout />} />
             <Route path="me">
               <Route path="updateaccount" element={<UpdateAccountInfo />} />
               <Route path="updateneeds" element={<UpdateDietaryNeeds />} />
-              <Route path="createneeds" element={<CreateDietaryNeeds/>}/>
+              <Route path="createneeds" element={<CreateDietaryNeeds />} />
             </Route>
           </Routes>
           <Footer />

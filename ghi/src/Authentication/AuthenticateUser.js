@@ -21,7 +21,7 @@ export async function getTokenInternal() {
   return false;
 }
 
-function handleErrorMessage(error) {
+export function handleErrorMessage(error) {
   if ("error" in error) {
     error = error.error;
     try {
@@ -61,6 +61,7 @@ export const useAuthContext = () => useContext(AuthContext);
 
 export function useToken() {
   const { token, setToken } = useAuthContext();
+  const [dupEmailError, setDuplicateEmail] = useState(false)
 
   useEffect(() => {
     async function fetchToken() {
@@ -85,7 +86,10 @@ export function useToken() {
     if (response.ok) {
       const token = await getTokenInternal();
       setToken(token);
-      return;
+      return response;
+    }
+    else{
+      return response
     }
     let error = await response.json();
     return handleErrorMessage(error);
@@ -116,10 +120,12 @@ export function useToken() {
         "Content-Type": "application/json",
       },
     });
-    if (response.ok) {
+    if (response.ok){
       await login(email, password);
+      return response}
+    else {
+      return response;
     }
-    return false;
   }
 
   async function update(first_name, last_name, email, zipcode, password) {
@@ -215,5 +221,5 @@ export function useToken() {
     return;
   }
 
-  return [token, login, logout, signup, update, updateallergy, updatedietrestrict, createallergy, createdietrestrict];
+  return [token, login, logout, signup, update, updateallergy, updatedietrestrict, createallergy, createdietrestrict,dupEmailError];
 }
