@@ -10,7 +10,6 @@ const options = [
   { value: "pizza", label: "🍕 Pizza" },
   { value: "fast food", label: "🍔 Fast Food" },
   { value: "indian", label: "🍛 Indian" },
-  { value: "italian", label: "🍝 Italian" },
   { value: "mexican", label: "🌮 Mexican" },
   { value: "japanese", label: "🍣 Japanese" },
 ];
@@ -25,8 +24,6 @@ function QuestionModal() {
   let [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const { token } = useAuthContext();
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -378,3 +375,5 @@ function QuestionModal() {
 }
 
 export default QuestionModal;
+
+//dispatch(deleteCat(cat.id)
