@@ -3,7 +3,12 @@
 ### (Tues) 1/24/2023
 
 - changed the GitHub icon in About to GitLab icon
-- got the questionnaire button to only show on the main page and also able to toggle it in the dropdown menu
+- unit test for Diet Restrictions
+- Zac did unit test for Allergies and Marison did unit test for Get a single Account
+- removed questionnaire modal from dropdown menu and just have the button on the main page instead
+- edited the update allergies/diet restrict titles
+- edited titles for each page with a related icon
+- Marison added links to each resource along with opening the link to a new page and added alternate captions if images don't populate
 
 ### (Mon) 1/23/2023
 
@@ -75,7 +80,7 @@
 
 ### (Thurs) 1/12/2023
 
-## Driver: Jason (morning)
+Driver: Jason (morning)
 
 - fixed skeleton sign up form to work
 - updated accounts queries and accounts routers files to CRUD correctly if account does/does not exist
@@ -87,7 +92,7 @@
 
 ### (Wed) 1/11/2023
 
-## Driver: Jason (morning) & split (afternoon)
+Driver: Jason (morning) & split (afternoon)
 
 - worked on creating routes for front-end with App.js and main.js
 - created skeleton files/folders for front-end
@@ -99,7 +104,7 @@
 
 ### (Tues) 1/10/2023
 
-## Driver: Zac(morning) & Gina(afternoon)
+Driver: Zac(morning) & Gina(afternoon)
 
 - completed the create function for allergies and was able to get it to work
 - changed child tables to unique to match the one-to-one relationship with accounts, allergies, and diet restrict
@@ -111,7 +116,7 @@
 
 ### (Mon) 1/9/2023
 
-## Driver: Natalie (Me)
+Driver: Natalie (Me)
 
 - completed update for accounts
 - was able to get a call back from Yelp using the imported YelpAPI, had to make two separate files in both queries and routers
@@ -125,13 +130,13 @@
 
 ### (Fri) 1/6/2023
 
-## Driver: Marison (morning) & Jason (afternoon)
+Driver: Marison (morning) & Jason (afternoon)
 
 - changed 'users' table to 'accounts' table
 - completed sign up for new accounts with hash password & authenticator
 - completed login & logout
 - completed CRD for accounts
-  💡 Learned to create data for table through FastAPI
+- Learned to create data for table through FastAPI
 
 ### (Thurs) 1/5/2023
 
@@ -142,7 +147,7 @@ Driver: Marison
 - inside UserQueries, we created retrieve function of CRUD to see users data
 - created first user & added another migration to update zipcode to VARCHAR
 - started authentication
-  💡 Learned to alter the table, create pydantic models & insert data manually in pgAdmin
+- Learned to alter the table, create pydantic models & insert data manually in pgAdmin
 
 ### (Wed) 1/4/2023
 
@@ -155,7 +160,7 @@ Driver: Zac
 - added another volume and service in the docker compose file with the installation of pgAdmin to interact with PostgresSQL servers
 - used SqlDBM to visualize tables
 - created our first migration
-  💡 Learned to create a yaml file from scratch
+- Learned to create a yaml file from scratch
 
 ### (Tues) 1/3/2023
 

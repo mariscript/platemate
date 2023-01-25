@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useAuthContext, useToken } from "../Authentication/AuthenticateUser";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFish,
+  faBreadSlice,
+  faLeaf,
+  faCarrot,
+  faBowlFood,
+  faLocationDot,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
 
 export default function UpdateAccountInfo() {
   const [account, setAccount] = useState({});
@@ -11,7 +21,8 @@ export default function UpdateAccountInfo() {
   const [zipcode, setZip] = useState("");
   const [, , , , update] = useToken();
   const [cancelEdit, setCancelEdit] = useState(false);
-  const [refresh, setRefresh] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("");
+  const [refresh, setRefresh] = useState(false);
   const navigate = useNavigate();
   const { token } = useAuthContext();
 
@@ -30,12 +41,15 @@ export default function UpdateAccountInfo() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    if (formValidation() === false) {
+      return;
+    }
     update(first_name, last_name, email, zipcode);
     setEmail("");
     setFirst("");
     setLast("");
     setZip("");
-    navigate("/me")
+    navigate("/me");
   };
 
   const handleCancelEdit = () => {
@@ -49,12 +63,59 @@ export default function UpdateAccountInfo() {
     }
   }, [token]);
 
+  function formValidation() {
+    let blankInputs = 0;
+    if (email.length === 0) {
+      blankInputs++;
+    }
+    if (first_name.length === 0) {
+      blankInputs++;
+    }
+    if (last_name.length === 0) {
+      blankInputs++;
+    }
+    if (zipcode.length === 0) {
+      blankInputs++;
+    }
+    if (first_name.length < 1) {
+      setErrorMessage("Whoops! You erased your first name!");
+      return false;
+    }
+    if (last_name.length < 1) {
+      setErrorMessage("Whoops! You erased your last name!");
+      return false;
+    }
+    if (!validateEmail()) {
+      setErrorMessage("Whoops! Email format is invalid.");
+      return false;
+    }
+    if (zipcode.length < 5) {
+      setErrorMessage("Whoops! Zipcode needs to be at least 5 characters");
+      return false;
+    }
+    return true;
+  }
+
+  function validateEmail() {
+    const regex =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(String(email).toLowerCase());
+  }
+
   if (account || account !== undefined) {
     return (
       <div>
         <h2 className="max-w-screen-sm mx-auto font-bold mt-12 text-xl">
-          Edit Account Details
+          Edit Account Details{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 inline-block mb-2"
+            viewBox="0 0 448 512"
+          >
+            <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+          </svg>
         </h2>
+
         <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto mb-24">
           <div className="mr-10 ml-10">
             <form onSubmit={handleFormSubmit}>
@@ -74,16 +135,20 @@ export default function UpdateAccountInfo() {
                 onChange={(e) => setLast(e.target.value)}
                 defaultValue={account?.last_name}
               />
-              <h1 className="font-bold mb-2 text-lg">Email</h1>
+              <h1 className="font-bold mb-2 text-lg">
+                Email <FontAwesomeIcon icon={faEnvelope} className="ml-0" />
+              </h1>
               <input
                 placeholder="Email"
-                required
-                type="email"
+                type="text"
                 className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
                 defaultValue={account?.email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <h1 className="font-bold mb-2 text-lg">Zipcode</h1>
+              <h1 className="font-bold mb-2 text-lg">
+                Zipcode{" "}
+                <FontAwesomeIcon icon={faLocationDot} className="ml-0" />
+              </h1>
               <input
                 type="text"
                 className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
@@ -91,6 +156,16 @@ export default function UpdateAccountInfo() {
                 onChange={(e) => setZip(e.target.value)}
                 defaultValue={account?.zipcode}
               />
+              {errorMessage ? (
+                <div className="flex p-4 mb-4 text-sm text-red-700 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800 items-center">
+                  <img
+                    src={require("../images/warning.png")}
+                    width="30px"
+                    style={{ marginRight: "15px" }}
+                  />
+                  {errorMessage}
+                </div>
+              ) : null}
               <div className="p-2 flex">
                 <button
                   className="font-bold ml-0 flex p-2.5 bg-[#BB5855] rounded-xl hover:rounded-3xl hover:bg-[#823e3d] transition-all duration-300 text-black"

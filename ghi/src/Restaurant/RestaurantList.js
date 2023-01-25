@@ -47,6 +47,14 @@ export default function RestaurantList() {
 
   return (
     <>
+      <img
+        src={require("../images/restaurant.png")}
+        width="70px"
+        className="mx-auto mt-10"
+      />
+      <h1 className="text-center font-bold mt-7 text-2xl mb-8">
+        List of Restaurants
+      </h1>
       <div className="flex justify-center gap-6">
         {restaurants.length > 0 ? (
           restaurants.map((restaurant) => (

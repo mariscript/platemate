@@ -2,6 +2,14 @@
 
 ## Week 5
 
+### 1/27/2023 Friday DUE DATE DAY!
+
+### 1/26/2023 Thursday
+
+### 1/25/2023 Wednesday
+
+Working on UserProfile page to show error messages if a user incorrectly updates their profile.\
+
 ### 1/24/2023 Tuesday
 
 Rewatched Riley's lecture on unit testing.\
