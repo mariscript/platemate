@@ -24,6 +24,7 @@ export default function RestaurantList() {
   const budget = yelpResponse.budget;
   const openAt = yelpResponse.datetime;
   const yelpCat = yelpResponse.categories
+  console.log(yelpCat)
 
   function dietNeedsFilter(){
     let dietRestrictEntries = (Object.entries(diet_restrict)).filter((entry) =>  entry[1] === true)
@@ -34,19 +35,17 @@ export default function RestaurantList() {
 
     function changeCatString(){
       let finalString = ""
-      for (let category of yelpCat){
-        let stringCategory = `&categories=${category.toString()}`
-        finalString += stringCategory
-      }
+      let randomCat = Math.floor(Math.random() * (yelpCat.length + 1))
+      finalString = yelpCat[randomCat]
       return finalString
     }
-    console.log(categories)
 
     const getRestaurants = async () => {
-      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}${changeCatString()}`;
+      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${changeCatString()}`;
       console.log(url)
       // const url = 'http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-24%2018%3A44&categories=chinese'
                       // http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-25%2012%3A00&categories=chinese
+
       const fetchConfig = {
         headers: {
           accept: "application/json",
@@ -64,8 +63,11 @@ export default function RestaurantList() {
     useEffect(() => {
         changeCatString()
         console.log("inside useEffect call", changeCatString())
+        console.log(yelpCat)
+        if (yelpCat !== undefined){
         getRestaurants();
         dispatch(storeRestList({ restaurants }));
+        }
 
     }, [token]);
 
