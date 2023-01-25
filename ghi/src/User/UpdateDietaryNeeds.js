@@ -2,6 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext, useToken } from "../Authentication/AuthenticateUser";
 // import { storeDietRestrict } from "../store/dietNeedsSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFish,
+  faBreadSlice,
+  faLeaf,
+  faCarrot,
+  faBowlFood,
+} from "@fortawesome/free-solid-svg-icons";
+import { storeDietNeeds } from "../store/dietNeedsSlice";
 
 export default function UpdateDietaryNeeds() {
   const [seafood, setSeafood] = useState("");
@@ -34,8 +43,8 @@ export default function UpdateDietaryNeeds() {
     });
     const data = await result.json();
     setAllergy(data);
-    setSeafood(data.seafood)
-    setGluten(data.gluten_free)
+    setSeafood(data.seafood);
+    setGluten(data.gluten_free);
   };
 
   const fetchDietRestrict = async () => {
@@ -45,12 +54,11 @@ export default function UpdateDietaryNeeds() {
     });
     const data = await result.json();
     setDiet(data);
-    setVegan(data.vegan)
-    setVegetarian(data.vegetarian)
-    setHalal(data.halal)
-    console.log(data)
+    setVegan(data.vegan);
+    setVegetarian(data.vegetarian);
+    setHalal(data.halal);
+    console.log(data);
   };
-
 
   const seafoodChange = (e) => {
     let value = e.target.value;
@@ -131,21 +139,26 @@ export default function UpdateDietaryNeeds() {
 
       <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto mb-16 w-[400px] ">
         <form onSubmit={handleFormSubmit}>
-          <div>
-            <label>Seafood currently set to {seafood.toString()}</label>
-            <select
-              required
-              id="seafood"
-              onChange={seafoodChange}
-              className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
-            >
-              <option selected>No Change</option>
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
+          <div className="font-bold text-center mb-2 text-[#a24d4a]">
+            <FontAwesomeIcon icon={faFish} className="mr-2" />
+            Seafood
           </div>
+          <select
+            required
+            id="seafood"
+            onChange={seafoodChange}
+            className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
+          >
+            <option selected>No Change</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+
           <div>
-            <label>Gluten-Free currently set to {gluten_free.toString()}</label>
+            <div className="font-bold text-center mb-2 text-[#a24d4a]">
+              <FontAwesomeIcon icon={faBreadSlice} className="mr-2" />
+              Gluten-Free
+            </div>
             <select
               required
               id="gluten"
@@ -157,7 +170,10 @@ export default function UpdateDietaryNeeds() {
               <option value="false">No</option>
             </select>
           </div>
-          <label>Vegan currently set to {vegan.toString()}</label>
+          <div className="font-bold text-center mb-2 text-[#a24d4a]">
+            <FontAwesomeIcon icon={faLeaf} className="mr-2" />
+            Vegan
+          </div>
           <select
             required
             id="vegan"
@@ -169,7 +185,10 @@ export default function UpdateDietaryNeeds() {
             <option value="false">No</option>
           </select>
           <div>
-            <label>Vegetarian currently set to {vegetarian.toString()}</label>
+            <div className="font-bold text-center mb-2 text-[#a24d4a]">
+              <FontAwesomeIcon icon={faCarrot} className="mr-2" />
+              Vegetarian
+            </div>
             <select
               required
               id="vegetarian"
@@ -182,7 +201,10 @@ export default function UpdateDietaryNeeds() {
             </select>
           </div>
           <div>
-            <label>Halal currently set to {halal.toString()}</label>
+            <div className="font-bold text-center mb-2 text-[#a24d4a]">
+              <FontAwesomeIcon icon={faBowlFood} className="mr-2" />
+              Halal
+            </div>
             <select
               required
               id="halal"

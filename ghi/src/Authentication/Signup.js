@@ -1,6 +1,6 @@
 import React from "react";
 import { useToken } from "./AuthenticateUser";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
@@ -22,9 +22,15 @@ export default function Signup() {
     if (formValidation() === false) {
       return;
     }
-    const response = await signup(first_name, last_name, email, zipcode, password);
-    console.log(response)
-    if (response.ok){
+    const response = await signup(
+      first_name,
+      last_name,
+      email,
+      zipcode,
+      password
+    );
+    console.log(response);
+    if (response.ok) {
       setEmail("");
       setPassword("");
       setFirst("");
@@ -37,14 +43,13 @@ export default function Signup() {
         setIsLoading(false);
         navigate("me/createneeds");
       }, 3000);
+    } else {
+      setErrorMessage("This email is already in use.");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 3000);
     }
-  else{
-    setErrorMessage("This email is already in use.")
-    setTimeout(() => {
-      setErrorMessage("")
-    },3000)
-  }
-}
+  };
 
   function formValidation() {
     let blankInputs = 0;

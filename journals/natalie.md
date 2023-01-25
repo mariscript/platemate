@@ -3,7 +3,11 @@
 ### (Tues) 1/24/2023
 
 - changed the GitHub icon in About to GitLab icon
-- got the questionnaire button to only show on the main page and also able to toggle it in the dropdown menu
+- unit test for Diet Restrictions
+- Zac did unit test for Allergies and Marison did unit test for Get a single Account
+- removed questionnaire modal from dropdown menu and just have the button on the main page instead
+- edited the update allergies/diet restrict titles
+- edited titles for each page with a related icon
 
 ### (Mon) 1/23/2023
 
