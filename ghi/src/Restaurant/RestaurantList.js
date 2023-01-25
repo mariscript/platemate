@@ -13,6 +13,7 @@ export default function RestaurantList() {
   const [categories,setCategories] = useState("")
   const [allergyEntry, setAllergies] = useState("")
   const [dietRestrictEntry, setDietRestrict] = useState("")
+  const dispatch = useDispatch()
 
 
 
@@ -41,7 +42,7 @@ export default function RestaurantList() {
     }
     console.log(categories)
 
-    const getData = async () => {
+    const getRestaurants = async () => {
       const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}${changeCatString()}`;
       console.log(url)
       // const url = 'http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-24%2018%3A44&categories=chinese'
@@ -61,17 +62,18 @@ export default function RestaurantList() {
 
 
     useEffect(() => {
-      if (token) {
         changeCatString()
         console.log("inside useEffect call", changeCatString())
-        getData();
-      }
-    }, []);
+        getRestaurants();
+        dispatch(storeRestList({ restaurants }));
+
+    }, [token]);
 
     //   const handleId = (e) => {
   //     let value = e.target.value;
   //     setId(value)
   // }
+
 
 
 

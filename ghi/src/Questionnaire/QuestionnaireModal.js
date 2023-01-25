@@ -8,7 +8,7 @@ import Select from "react-tailwindcss-select";
 const options = [
   { value: "chinese", label: "🥢 Chinese" },
   { value: "pizza", label: "🍕 Pizza" },
-  { value: "fast food", label: "🍔 Fast Food" },
+  { value: "fast%food", label: "🍔 Fast Food" },
   { value: "indian", label: "🍛 Indian" },
   { value: "italian", label: "🍝 Italian" },
   { value: "mexican", label: "🌮 Mexican" },
@@ -52,6 +52,7 @@ function QuestionModal() {
     e.preventDefault();
     setIsSubmit(true);
     categories = categories.map((x) => x.value);
+    console.log(categories)
     datetime = `${datetime.slice(0, 10)}%20${datetime.slice(11,13)}%3A${datetime.slice(14)}`;
     console.log(datetime)
     dispatch(storeYelp({ zipcode, budget, datetime, takeInOut, categories }));
