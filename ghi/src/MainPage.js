@@ -1,6 +1,23 @@
 function MainPage() {
   return (
     <>
+      <div className="flex justify-center mt-10 mb-5">
+        <button
+          type="button"
+          className="inline-block px-10 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg hover:text-black focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out"
+          data-bs-toggle="modal"
+          data-bs-target="#questionnaire"
+        >
+          <span className="inline-block font-bold">
+            Take The Questionnaire!
+          </span>
+          <img
+            src={require("./images/form.png")}
+            alt="Loading..."
+            className="inline-block w-9 ml-2"
+          />
+        </button>
+      </div>
       <div
         id="carouselDarkVariant"
         className="carousel slide carousel-fade carousel-dark relative -mt-10"
@@ -47,7 +64,9 @@ function MainPage() {
               alt="Morimotos"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
-              <h5 className="text-xl font-bold">Don't know where to eat?</h5>
+              <h5 className="text-xl font-bold -mt-3">
+                Don't know where to eat?
+              </h5>
               <p className="">PlateMate will help you choose!</p>
             </div>
           </div>
@@ -59,7 +78,9 @@ function MainPage() {
               alt="Rebel Cheese"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
-              <h5 className="text-xl font-bold">Take the Questionnaire!</h5>
+              <h5 className="text-xl font-bold -mt-3">
+                Sign up to take the Questionnaire!
+              </h5>
               <p>We'll help you find the right plate.</p>
             </div>
           </div>
@@ -71,7 +92,9 @@ function MainPage() {
               alt="Sugarfish Sushi"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
-              <h5 className="text-xl font-bold">Eating now? Eating later?</h5>
+              <h5 className="text-xl font-bold -mt-3">
+                Eating now? Eating later?
+              </h5>
               <p>No problem, let us know in the questionnaire!</p>
             </div>
           </div>
@@ -79,11 +102,11 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/gyukaku.jpg")}
-              className="box w-screen scale-75"
+              className="box w-screen scale-75 -mt-3"
               alt="Gyukaku"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
-              <h5 className="text-xl font-bold">Eating on a budget?</h5>
+              <h5 className="text-xl font-bold -mt-3">Eating on a budget?</h5>
               <p>We'll find the plate for you!</p>
             </div>
           </div>
@@ -91,11 +114,13 @@ function MainPage() {
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/italian.jpg")}
-              className="block w-screen scale-75"
+              className="block w-screen scale-75 -mt-3"
               alt="Italian Food"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
-              <h5 className="text-xl">Have restrictions or allergies?</h5>
+              <h5 className="text-xl font-bold -mt-3">
+                Have restrictions or allergies?
+              </h5>
               <p>Sign up to edit your profile!</p>
             </div>
           </div>
