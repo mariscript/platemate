@@ -8,6 +8,7 @@
 - removed questionnaire modal from dropdown menu and just have the button on the main page instead
 - edited the update allergies/diet restrict titles
 - edited titles for each page with a related icon
+- Marison added links to each resource along with opening the link to a new page and added alternate captions if images don't populate
 
 ### (Mon) 1/23/2023
 
