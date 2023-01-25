@@ -79,7 +79,7 @@
 
 ### (Thurs) 1/12/2023
 
-## Driver: Jason (morning)
+Driver: Jason (morning)
 
 - fixed skeleton sign up form to work
 - updated accounts queries and accounts routers files to CRUD correctly if account does/does not exist
@@ -91,7 +91,7 @@
 
 ### (Wed) 1/11/2023
 
-## Driver: Jason (morning) & split (afternoon)
+Driver: Jason (morning) & split (afternoon)
 
 - worked on creating routes for front-end with App.js and main.js
 - created skeleton files/folders for front-end
@@ -103,7 +103,7 @@
 
 ### (Tues) 1/10/2023
 
-## Driver: Zac(morning) & Gina(afternoon)
+Driver: Zac(morning) & Gina(afternoon)
 
 - completed the create function for allergies and was able to get it to work
 - changed child tables to unique to match the one-to-one relationship with accounts, allergies, and diet restrict
@@ -115,7 +115,7 @@
 
 ### (Mon) 1/9/2023
 
-## Driver: Natalie (Me)
+Driver: Natalie (Me)
 
 - completed update for accounts
 - was able to get a call back from Yelp using the imported YelpAPI, had to make two separate files in both queries and routers
@@ -129,13 +129,13 @@
 
 ### (Fri) 1/6/2023
 
-## Driver: Marison (morning) & Jason (afternoon)
+Driver: Marison (morning) & Jason (afternoon)
 
 - changed 'users' table to 'accounts' table
 - completed sign up for new accounts with hash password & authenticator
 - completed login & logout
 - completed CRD for accounts
-  💡 Learned to create data for table through FastAPI
+- Learned to create data for table through FastAPI
 
 ### (Thurs) 1/5/2023
 
@@ -146,7 +146,7 @@ Driver: Marison
 - inside UserQueries, we created retrieve function of CRUD to see users data
 - created first user & added another migration to update zipcode to VARCHAR
 - started authentication
-  💡 Learned to alter the table, create pydantic models & insert data manually in pgAdmin
+- Learned to alter the table, create pydantic models & insert data manually in pgAdmin
 
 ### (Wed) 1/4/2023
 
@@ -159,7 +159,7 @@ Driver: Zac
 - added another volume and service in the docker compose file with the installation of pgAdmin to interact with PostgresSQL servers
 - used SqlDBM to visualize tables
 - created our first migration
-  💡 Learned to create a yaml file from scratch
+- Learned to create a yaml file from scratch
 
 ### (Tues) 1/3/2023
 
