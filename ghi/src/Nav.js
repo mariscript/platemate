@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faList,
-  faUtensils,
   faRightFromBracket,
   faCircleInfo,
   faTools,
@@ -18,7 +17,7 @@ import {
 import { storeUser } from "./store/userSlice";
 import { setUseProxies } from "immer";
 
-export default function Nav({ handleClick }) {
+export default function Nav() {
   const [, , logout] = useToken();
   const navigate = useNavigate();
   const { token } = useAuthContext();

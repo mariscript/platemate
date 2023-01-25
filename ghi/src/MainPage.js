@@ -47,7 +47,7 @@ function MainPage() {
               alt="Morimotos"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
-              <h5 className="text-xl">Don't know where to eat?</h5>
+              <h5 className="text-xl font-bold">Don't know where to eat?</h5>
               <p className="">PlateMate will help you choose!</p>
             </div>
           </div>
@@ -59,7 +59,7 @@ function MainPage() {
               alt="Rebel Cheese"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
-              <h5 className="text-xl">Take the Questionnaire!</h5>
+              <h5 className="text-xl font-bold">Take the Questionnaire!</h5>
               <p>We'll help you find the right plate.</p>
             </div>
           </div>
@@ -71,7 +71,7 @@ function MainPage() {
               alt="Sugarfish Sushi"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
-              <h5 className="text-xl">Eating now? Eating later?</h5>
+              <h5 className="text-xl font-bold">Eating now? Eating later?</h5>
               <p>No problem, let us know in the questionnaire!</p>
             </div>
           </div>
@@ -83,7 +83,7 @@ function MainPage() {
               alt="Gyukaku"
             />
             <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9]">
-              <h5 className="text-xl">Eating on a budget?</h5>
+              <h5 className="text-xl font-bold">Eating on a budget?</h5>
               <p>We'll find the plate for you!</p>
             </div>
           </div>
