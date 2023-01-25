@@ -45,16 +45,15 @@ function App() {
       <BrowserRouter>
         <GetToken />
         <Signup />
-        <Nav handleClick={handleClick} />
-        {clicked && <TestQuestionnaire test={test} />}
+        <Nav/>
         <Login />
         <div>
           <Routes>
-            <Route path="/" element={[<QuestionModal />, <MainPage />]} />
+            <Route path="/" element={[<QuestionModal/>,<MainPage />]} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path="/restaurants" element={<RestaurantList />} />
+            <Route path="/restaurants" element={[<QuestionModal/>, <RestaurantList />]} />
             <Route path="/restaurant" element={<RestaurantDetailTest />} />
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />
