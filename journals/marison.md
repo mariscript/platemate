@@ -11,7 +11,8 @@
 Working on UserProfile page to show error messages if a user incorrectly updates their profile for each input.\
 Added icons to match allergies and dietary restrictions.\
 Added icons and headers to when you create allergies and dietary restrictions after signing in.\
-Was a second eye to Nat when trying to update the questionnaire modal and restaurant list.
+Was a second eye to Nat when trying to update the questionnaire modal and restaurant list.\
+Collaborated with overall last minute design ideas to implement with Nat.
 
 ### 1/24/2023 Tuesday
 
