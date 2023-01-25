@@ -6,7 +6,13 @@ module.exports = {
     "./node_modules/react-tailwindcss-select/dist/index.esm.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '1/2': '50%',
+        '1/3': '33.333333%',
+        '2/3': '66.666667%',
+      }
+    },
   },
   plugins: [require("tw-elements/dist/plugin")],
 };
