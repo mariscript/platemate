@@ -11,8 +11,9 @@ import {
   faBowlFood,
   faLocationDot,
   faEnvelope,
-  faUser,
+  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { storeDietNeeds } from "../store/dietNeedsSlice";
 
 function UserProfile() {
@@ -86,12 +87,15 @@ function UserProfile() {
         <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto">
           <div className="mr-10 ml-10">
             <h1 className="font-bold mb-2 text-lg">
-              First Name <FontAwesomeIcon icon={faUser} className="ml-0" />
+              First Name{" "}
+              <FontAwesomeIcon icon={faUserCircle} className="ml-0" />
             </h1>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.first_name}
             </div>
-            <h1 className="font-bold mb-2 text-lg">Last Name</h1>
+            <h1 className="font-bold mb-2 text-lg">
+              Last Name <FontAwesomeIcon icon={faCircleUser} className="ml-0" />
+            </h1>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.last_name}
             </div>
@@ -158,7 +162,7 @@ function UserProfile() {
                   </div>
                   <div className="flex items-center mt-2 mb-2 ml-3">
                     <FontAwesomeIcon icon={faBreadSlice} className="mr-2" />
-                    Gluten-Free:
+                    Gluten-Free
                     {allergy?.gluten_free?.toString() === "true" ? (
                       <img
                         src={require("../images/checkbox.png")}

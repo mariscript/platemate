@@ -10,7 +10,10 @@ import {
   faBowlFood,
   faLocationDot,
   faEnvelope,
+  faUser,
+  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch } from "react-redux";
 
 export default function UpdateAccountInfo() {
@@ -77,6 +80,10 @@ export default function UpdateAccountInfo() {
     if (zipcode.length === 0) {
       blankInputs++;
     }
+    if (blankInputs > 1) {
+      setErrorMessage("Form has multiple blank inputs.");
+      return false;
+    }
     if (first_name.length < 1) {
       setErrorMessage("Whoops! You erased your first name!");
       return false;
@@ -107,19 +114,15 @@ export default function UpdateAccountInfo() {
       <div>
         <h2 className="max-w-screen-sm mx-auto font-bold mt-12 text-xl">
           Edit Account Details{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 inline-block mb-2"
-            viewBox="0 0 448 512"
-          >
-            <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
-          </svg>
         </h2>
 
         <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto mb-24">
           <div className="mr-10 ml-10">
             <form onSubmit={handleFormSubmit}>
-              <h1 className="font-bold mb-2 text-lg">First Name</h1>
+              <h1 className="font-bold mb-2 text-lg">
+                First Name{" "}
+                <FontAwesomeIcon icon={faUserCircle} className="ml-0" />
+              </h1>
               <input
                 type="text"
                 className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
@@ -127,7 +130,10 @@ export default function UpdateAccountInfo() {
                 defaultValue={account?.first_name}
                 onChange={(e) => setFirst(e.target.value)}
               />
-              <h1 className="font-bold mb-2 text-lg">Last Name</h1>
+              <h1 className="font-bold mb-2 text-lg">
+                Last Name{" "}
+                <FontAwesomeIcon icon={faCircleUser} className="ml-0" />
+              </h1>
               <input
                 type="text"
                 className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
