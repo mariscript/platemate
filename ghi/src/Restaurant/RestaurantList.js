@@ -6,30 +6,41 @@ import RestaurantDetailModal from "./RestaurantDetailModal";
 import { storeRestList } from "../store/restListState";
 import { storeDietNeeds } from "../store/dietNeedsSlice";
 
-export default function RestaurantList() {
+export default function RestaurantList({ test }) {
   const [restaurants, setRestaurants] = useState([]);
   const [id, setId] = useState("");
   const { token } = useAuthContext();
   const dispatch = useDispatch();
+  const [tern, setTern] = useState(false);
 
   const getData = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp/?location=${location}&budget=${budget}&open_at=${openAt}`;
-    const fetchConfig = {
-      headers: {
-        accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    };
-    const resp = await fetch(url, fetchConfig);
-    const data = await resp.json();
-    setRestaurants(data.businesses.slice(0, 3));
+    try {
+      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp/?location=${location}&budget=${budget}&open_at=${openAt}`;
+      const fetchConfig = {
+        headers: {
+          accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const resp = await fetch(url, fetchConfig);
+      const data = await resp.json();
+      setRestaurants(data.businesses.slice(0, 3));
+      setTern(true);
+    } catch (e) {
+      setTern(false);
+    }
   };
   useEffect(() => {
     if (token) {
       getData();
     }
   }, [token]);
+  useEffect(() => {
+    if (test) {
+      getData();
+    }
+  }, [test]);
 
   const yelpResponse = useSelector((state) => state.yelp.name);
   const location = yelpResponse.zipcode;
@@ -47,6 +58,23 @@ export default function RestaurantList() {
 
   return (
     <>
+      <div className="flex justify-center mt-10 mb-5">
+        <button
+          type="button"
+          className="inline-block px-10 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg hover:text-black focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out"
+          data-bs-toggle="modal"
+          data-bs-target="#questionnaire"
+        >
+          <span className="inline-block font-bold">
+            Retake The Questionnaire!
+          </span>
+          <img
+            src={require("../images/form.png")}
+            alt="Loading..."
+            className="inline-block w-9 ml-2"
+          />
+        </button>
+      </div>
       <img
         src={require("../images/restaurant.png")}
         width="70px"
@@ -56,7 +84,7 @@ export default function RestaurantList() {
         List of Restaurants
       </h1>
       <div className="flex justify-center gap-6">
-        {restaurants.length > 0 ? (
+        {tern ? (
           restaurants.map((restaurant) => (
             <div
               className="rounded-lg shadow-lg bg-white max-w-sm"
@@ -112,14 +140,6 @@ export default function RestaurantList() {
                   fill out every question! Try the questionnaire again, so we
                   can find your plate!
                 </h1>
-                <button
-                  data-bs-toggle="modal"
-                  data-bs-target="#questionnaire"
-                  type="button"
-                  className="px-6 py-2.5 mt-2 bg-[#C26866] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:[#FDECA9] hover:shadow-lg hover:text-black focus:[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-white active:shadow-lg transition duration-150 ease-in-out"
-                >
-                  Try Another Plate!
-                </button>
               </div>
             </div>
           </div>
