@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuthContext, useToken } from "../Authentication/AuthenticateUser";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 
 export default function UpdateAccountInfo() {
   const [account, setAccount] = useState({});
@@ -11,7 +11,7 @@ export default function UpdateAccountInfo() {
   const [zipcode, setZip] = useState("");
   const [, , , , update] = useToken();
   const [cancelEdit, setCancelEdit] = useState(false);
-  const [refresh, setRefresh] = useState(false)
+  const [refresh, setRefresh] = useState(false);
   const navigate = useNavigate();
   const { token } = useAuthContext();
 
@@ -35,7 +35,7 @@ export default function UpdateAccountInfo() {
     setFirst("");
     setLast("");
     setZip("");
-    navigate("/me")
+    navigate("/me");
   };
 
   const handleCancelEdit = () => {

@@ -17,8 +17,6 @@ import UserProfile from "./User/UserProfile";
 import UpdateAccountInfo from "./User/UpdateAccountInfo";
 import CreateDietaryNeeds from "./User/CreateDietaryNeeds";
 import UpdateDietaryNeeds from "./User/UpdateDietaryNeeds";
-import { useState, useEffect } from "react";
-import TestQuestionnaire from "./Questionnaire/TestQuestionnaire";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -27,33 +25,24 @@ function GetToken() {
 }
 
 function App() {
-  const [test, setTest] = useState(false);
-  const [clicked, setClicked] = useState(false);
-
-  useEffect(() => {
-    if (test) {
-      setTest(false);
-      setClicked(true);
-    }
-  });
-  function handleClick() {
-    setTest(true);
-  }
-
   return (
     <AuthProvider>
       <BrowserRouter>
         <GetToken />
         <Signup />
-        <Nav/>
         <Login />
+        <Nav />
+
         <div>
           <Routes>
             <Route path="/" element={[<QuestionModal/>,<MainPage />]} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path="/restaurants" element={[<QuestionModal/>, <RestaurantList />]} />
+            <Route
+              path="/restaurants"
+              element={[<QuestionModal />, <RestaurantList />]}
+            />
             <Route path="/restaurant" element={<RestaurantDetailTest />} />
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />

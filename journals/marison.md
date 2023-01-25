@@ -4,7 +4,10 @@
 
 ### 1/24/2023 Tuesday
 
-FINALLY centered the nav PlateMate logo when user is logged out.\
+Rewatched Riley's lecture on unit testing.\
+Wrote a unit test for get an account. Zac steered me in the write direction as to why my tests were failing.\
+Added links to each resource along with opening the link to a new page, added alternate captions if images don't populate.\
+FINALLY centered the nav PlateMate logo when user is logged out.
 
 ### 1/23/2023 Monday
 

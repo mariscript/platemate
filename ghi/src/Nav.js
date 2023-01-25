@@ -134,7 +134,7 @@ export default function Nav({ handleClick }) {
       <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
         <Menu as="div" className="relative inline-block text-left ml-5">
           <div>
-            <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-[#f6f2ed] px-4 py-2 text-sm font-medium text-gray-700 shadow-sm ">
+            <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-sm font-medium text-gray-700 ">
               <img
                 src={require("./images/burger.png")}
                 width="20"
@@ -166,7 +166,7 @@ export default function Nav({ handleClick }) {
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
-                          : "text-[gray-700]",
+                          : "text-gray-700",
                         "block px-4 py-2 text-sm"
                       )}
                     >
@@ -191,19 +191,6 @@ export default function Nav({ handleClick }) {
                     </a>
                   )}
                 </Menu.Item>
-                <div>
-                  <a
-                    onClick={handleClick}
-                    data-bs-toggle="modal"
-                    data-bs-target="#questionnaire"
-                    className="
-                     hover:bg-[#dad6d0] hover:text-[#BB5855] text-gray-700
-                     block px-4 py-2 text-sm cursor-pointer"
-                  >
-                    <FontAwesomeIcon icon={faUtensils} className="mr-2" />
-                    Questionnaire
-                  </a>
-                </div>
               </div>
               <div className="py-1">
                 <Menu.Item>
