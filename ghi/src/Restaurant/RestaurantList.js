@@ -66,7 +66,7 @@ export default function RestaurantList({ test }) {
           data-bs-target="#questionnaire"
         >
           <span className="inline-block font-bold">
-            Retake The Questionnaire!
+            Take The Questionnaire!
           </span>
           <img
             src={require("../images/form.png")}

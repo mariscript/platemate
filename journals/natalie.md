@@ -1,5 +1,10 @@
 # Week 5
 
+### (Wed) 1/25/2023
+
+- was able to get questionnaire to refresh when taking it the second time in restaurants list
+- added a retake the questionnaire button on the restaurants list so that users can retake if needed
+
 ### (Tues) 1/24/2023
 
 - changed the GitHub icon in About to GitLab icon
