@@ -17,6 +17,7 @@ import UserProfile from "./User/UserProfile";
 import UpdateAccountInfo from "./User/UpdateAccountInfo";
 import CreateDietaryNeeds from "./User/CreateDietaryNeeds";
 import UpdateDietaryNeeds from "./User/UpdateDietaryNeeds";
+import { useState } from "react";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -25,6 +26,10 @@ function GetToken() {
 }
 
 function App() {
+  const [test, setTest] = useState(false);
+  setTimeout(() => {
+    setTest(false);
+  }, 5000);
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -34,19 +39,31 @@ function App() {
         <Nav />
         <div>
           <Routes>
-            <Route path="/" element={[<QuestionModal />, <MainPage />]} />
+            <Route
+              path="/"
+              element={[
+                <QuestionModal test={test} setTest={setTest} />,
+                <MainPage />,
+              ]}
+            />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route
               path="/restaurants"
-              element={[<QuestionModal />, <RestaurantList />]}
+              element={[
+                <QuestionModal test={test} setTest={setTest} />,
+                <RestaurantList test={test} />,
+              ]}
             />
             <Route path="/restaurant" element={<RestaurantDetailTest />} />
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/me" element={<UserProfile />} />
-            <Route path="/questionnaire" element={<QuestionModal />} />
+            <Route
+              path="/questionnaire"
+              element={<QuestionModal test={test} setTest={setTest} />}
+            />
             <Route path="/logout" element={<Logout />} />
             <Route path="me">
               <Route path="updateaccount" element={<UpdateAccountInfo />} />

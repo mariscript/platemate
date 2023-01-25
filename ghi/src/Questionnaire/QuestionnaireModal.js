@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { storeYelp } from "../store/yelpVar";
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Select from "react-tailwindcss-select";
 
 const options = [
@@ -14,7 +14,7 @@ const options = [
   { value: "japanese", label: "🍣 Japanese" },
 ];
 
-function QuestionModal() {
+function QuestionModal({ test, setTest }) {
   const [account, setAccount] = useState({});
   const dispatch = useDispatch();
   const [zipcode, setZipcode] = useState("");
@@ -24,7 +24,6 @@ function QuestionModal() {
   let [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const { token } = useAuthContext();
-  const [test, setTest] = useState(false);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -47,6 +46,8 @@ function QuestionModal() {
     setCategories(value);
   };
 
+  const location = useLocation();
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     categories = categories.map((x) => x.value);
@@ -56,7 +57,10 @@ function QuestionModal() {
     )}%3A${datetime.slice(14)}`;
     dispatch(storeYelp({ zipcode, budget, datetime, takeInOut, categories }));
     setTest(true);
+    if (location.pathname === "/restaurants") {
+    }
     navigate("/restaurants");
+    console.log(location.pathname);
   };
 
   const fetchAccount = async () => {
@@ -78,24 +82,6 @@ function QuestionModal() {
 
   return (
     <>
-      <div className="flex justify-center mt-10 mb-5">
-        <button
-          type="button"
-          className="inline-block px-10 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg hover:text-black focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out"
-          data-bs-toggle="modal"
-          data-bs-target="#questionnaire"
-        >
-          <span className="inline-block font-bold">
-            Take The Questionnaire!
-          </span>
-          <img
-            src={require("../images/form.png")}
-            alt="Loading..."
-            className="inline-block w-9 ml-2"
-          />
-        </button>
-      </div>
-
       <div
         className="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
         id="questionnaire"
@@ -110,7 +96,20 @@ function QuestionModal() {
               <h1 className="flex flex-col items-center font-bold mt-5 text-3xl mb-5">
                 Let's Find Your Plate!
               </h1>
-              {test && <div>you can now close this window</div>}
+              {test && (
+                <div
+                  className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3"
+                  role="alert"
+                >
+                  <img
+                    src={require("../images/warning.png")}
+                    width="30px"
+                    style={{ marginRight: "15px" }}
+                  />
+
+                  <p className="text-sm">test</p>
+                </div>
+              )}
               <svg
                 className="w-9 h-9 absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#FEF5ED] hover:text-white ease-linear transition-all duration-150 cursor-pointer"
                 fillRule="currentColor"
