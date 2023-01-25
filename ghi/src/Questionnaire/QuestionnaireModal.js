@@ -10,6 +10,7 @@ const options = [
   { value: "pizza", label: "🍕 Pizza" },
   { value: "fast food", label: "🍔 Fast Food" },
   { value: "indian", label: "🍛 Indian" },
+  { value: "italian", label: "🍝 Italian" },
   { value: "mexican", label: "🌮 Mexican" },
   { value: "japanese", label: "🍣 Japanese" },
 ];
@@ -417,5 +418,3 @@ function QuestionModal() {
 }
 
 export default QuestionModal;
-
-//dispatch(deleteCat(cat.id)
