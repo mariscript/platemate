@@ -2,6 +2,12 @@
 
 ## Week 5:
 
+### Wednesday 1/26/23
+The first thing I did today was get a unit test done for get all accounts. I would really like to do one for Yelp, but I want to finish the filters first since that is such a big functionality piece.
+
+### Tuesday 1/25/23
+Today was a really long day. The group started working on unit tests, and I didn't get a chance to because I was working on filters. After all the merges in the morning, I noticed that redux was NOT working as intended, so I messed with that for a while. However, most of my day was spent trying to get the categories filter to work. I learned that FastAPI does not allow a list as an input, so I converted it to a string on the front end and passed it back to FastAPI. It took a long time to get the link working correctly. Now I am having issues with the API not returning results as expected, but I think that is an issue with the API itself and not with our code. Other than that, today was a lot of tedious testing, but we are making progress. Tomorrow my goal is to get my unit test done, just to get that out of the way!
+
 ### Monday 1/24/23
 Wow crunch week! I had a fairly productive weekend actually but I am grouping it all to keep things consistent. Over this weekend and today, I was able to complete the following:
 - make multiple react slices including for user, restaurant list, dietary needs
