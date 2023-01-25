@@ -10,40 +10,70 @@ export default function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
   const [id, setId] = useState("");
   const { token } = useAuthContext();
-  const dispatch = useDispatch();
+  const [categories,setCategories] = useState("")
+  const [allergyEntry, setAllergies] = useState("")
+  const [dietRestrictEntry, setDietRestrict] = useState("")
 
-  const getData = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp/?location=${location}&budget=${budget}&open_at=${openAt}`;
-    const fetchConfig = {
-      headers: {
-        accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    };
-    const resp = await fetch(url, fetchConfig);
-    const data = await resp.json();
-    setRestaurants(data.businesses.slice(0, 3));
-  };
-  useEffect(() => {
-    if (token) {
-      getData();
-    }
-  }, [token]);
 
+
+  const allergies = useSelector((state) => state.dietNeeds.name.allergy);
+  const diet_restrict = useSelector((state) => state.dietNeeds.name.diet_restrict);
   const yelpResponse = useSelector((state) => state.yelp.name);
   const location = yelpResponse.zipcode;
   const budget = yelpResponse.budget;
   const openAt = yelpResponse.datetime;
+  const yelpCat = yelpResponse.categories
 
-  const allergies = useSelector((state) => state.dietNeeds.allergy);
-  const diet_restrict = useSelector((state) => state.dietNeeds.diet_restrict);
-  console.log(allergies, diet_restrict);
+  function dietNeedsFilter(){
+    let dietRestrictEntries = (Object.entries(diet_restrict)).filter((entry) =>  entry[1] === true)
+    let allergiesEntries = (Object.entries(allergies)).filter((entry) =>  entry[1] === true)
+    setAllergies(allergiesEntries)
+    setDietRestrict(dietRestrictEntries)
+  }
 
-  const handleId = (e) => {
-    let value = e.target.value;
-    setId(value);
-  };
+    function changeCatString(){
+      let finalString = ""
+      for (let category of yelpCat){
+        let stringCategory = `&categories=${category.toString()}`
+        finalString += stringCategory
+      }
+      return finalString
+    }
+    console.log(categories)
+
+    const getData = async () => {
+      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}${changeCatString()}`;
+      console.log(url)
+      // const url = 'http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-24%2018%3A44&categories=chinese'
+                      // http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-25%2012%3A00&categories=chinese
+      const fetchConfig = {
+        headers: {
+          accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const resp = await fetch(url, fetchConfig);
+      const data = await resp.json();
+      console.log(data)
+      setRestaurants(data?.businesses.slice(0,3));
+    };
+
+
+    useEffect(() => {
+      if (token) {
+        changeCatString()
+        console.log("inside useEffect call", changeCatString())
+        getData();
+      }
+    }, []);
+
+    //   const handleId = (e) => {
+  //     let value = e.target.value;
+  //     setId(value)
+  // }
+
+
 
   return (
     <>

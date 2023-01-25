@@ -2,7 +2,6 @@ function Resources() {
   return (
     <div className="text-center text-gray-800 py-20 px-6">
     <h3 className="text-3xl font-bold mt-0 mb-6">Our used Resources:</h3>
-
       <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-4 gap-2">
         <div className="flex justify-center drop-shadow-md">
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
@@ -103,7 +102,7 @@ function Resources() {
             <div className="p-6">
               <h5 className="text-gray-900 text-xl font-medium mb-2">Fast API</h5>
               <p className="text-gray-700 text-base mb-4">
-                We used Fast API in order to build the backend of our website. 
+                We used Fast API in order to build the backend of our website.
               </p>
             </div>
           </div>

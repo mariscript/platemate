@@ -108,6 +108,7 @@ export default function LoginComponent() {
                     className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
                     placeholder="Password"
                     type="password"
+                    autoComplete="on"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                   />

@@ -6,7 +6,6 @@ import { storeRestList } from "../store/restListState";
 const RestaurantDetailModal = () => {
   const [showModal, setShowModal] = useState(false);
   const restaurants = useSelector((state) => state.restListState.restaurants);
-  console.log(restaurants);
   return (
     <>
       <div className="items-center justify-center">

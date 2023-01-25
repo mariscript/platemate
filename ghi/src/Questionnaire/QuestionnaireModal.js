@@ -49,10 +49,8 @@ function QuestionModal() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     categories = categories.map((x) => x.value);
-    datetime = `${datetime.slice(0, 10)} ${datetime.slice(
-      11,
-      13
-    )}%3A${datetime.slice(14)}`;
+    datetime = `${datetime.slice(0, 10)}%20${datetime.slice(11,13)}%3A${datetime.slice(14)}`;
+    console.log(datetime)
     dispatch(storeYelp({ zipcode, budget, datetime, takeInOut, categories }));
 
     navigate("/restaurants");
