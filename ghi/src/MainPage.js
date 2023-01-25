@@ -3,7 +3,7 @@ function MainPage() {
     <>
       <div
         id="carouselDarkVariant"
-        className="carousel slide carousel-fade carousel-dark relative"
+        className="carousel slide carousel-fade carousel-dark relative -mt-10"
         data-bs-ride="carousel"
       >
         {/* indicators */}
