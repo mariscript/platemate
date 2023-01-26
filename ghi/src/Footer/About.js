@@ -47,6 +47,8 @@ export default function About() {
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/zachary-macek/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -93,6 +95,8 @@ export default function About() {
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/gina-john/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -139,6 +143,8 @@ export default function About() {
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/natalientang/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -182,15 +188,17 @@ export default function About() {
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Marison Muñoz</h5>
                   <p className="mb-6">
-                    My favorite challenging portion of this app that I worked on
-                    was putting the questionnaire onto a carousel and onto a
+                    "My favorite challenging portion of this app that I worked
+                    on was putting the questionnaire onto a carousel and onto a
                     modal. I also enjoyed error handling with the chicken. I
                     hate when I get asked, "What's your favorite food?" I love
-                    food in general.{" "}
+                    food in general."{" "}
                   </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/marisonmunoz/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -204,7 +212,11 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="git" className="px-2">
+                    <a
+                      href="https://gitlab.com/marisonmunoz"
+                      target="_blank"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
