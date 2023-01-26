@@ -6,13 +6,24 @@
 
 ### 1/26/2023 Thursday
 
+CI/CD deployment
+
 ### 1/25/2023 Wednesday
 
 Working on UserProfile page to show error messages if a user incorrectly updates their profile for each input.\
 Added icons to match allergies and dietary restrictions.\
 Added icons and headers to when you create allergies and dietary restrictions after signing in.\
 Was a second eye to Nat when trying to update the questionnaire modal and restaurant list.\
-Collaborated with overall last minute design ideas to implement with Nat.
+Collaborated with overall design to implement with Nat.\
+Designed the mainpage even more with carousel background and caption background edit.\
+Background was set to moving food, Nat found a plate to come into view and I edited the animation of the plate to spin and come from the top right.\
+Nat picked a font and I helped her update the other headings that needed the font.\
+Updated other font sizes and spacing.\
+Pretty much focused on design today.\
+Gina continued to work on filtering through the results.\
+I have learned that the Yelp API is picky.\
+Added my about blurb in the about section.\
+Note to Gina: Clear the stored info at logout. REDUX
 
 ### 1/24/2023 Tuesday
 

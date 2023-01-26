@@ -181,7 +181,13 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Marison Muñoz</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">
+                    My favorite challenging portion of this app that I worked on
+                    was putting the questionnaire onto a carousel and onto a
+                    modal. I also enjoyed error handling with the chicken. I
+                    hate when I get asked, "What's your favorite food?" I love
+                    food in general.{" "}
+                  </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/marisonmunoz/"
