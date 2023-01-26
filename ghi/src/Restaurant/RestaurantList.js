@@ -188,7 +188,7 @@ export default function RestaurantList({ refresh }) {
             width="70px"
             className="mx-auto mt-10"
           />
-          <h1 className="text-center font-bold mt-7 text-2xl mb-8">
+          <h1 className="text-center font-md mt-7 text-5xl mb-8">
             List of Restaurants
           </h1>
           <div className="flex justify-center gap-6">
