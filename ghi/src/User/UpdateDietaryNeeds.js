@@ -130,9 +130,9 @@ export default function UpdateDietaryNeeds() {
 
   return (
     <>
-      <h1 className="text-center font-bold mt-10 text-xl mb-8">
+      <h2 className="text-center font-bold mt-10 text-xl mb-8">
         Edit Allergies & Dietary Restrictions
-      </h1>
+      </h2>
 
       <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto mb-16 w-[400px] ">
         <form onSubmit={handleFormSubmit}>

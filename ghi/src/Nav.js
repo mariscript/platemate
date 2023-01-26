@@ -50,11 +50,11 @@ export default function Nav() {
       >
         <div className="mx-auto">
           <a href="/">
-            <div className="flex justify-between tracking-[6px] ml-44 text-4xl font-md items-center">
-              <h1>Plate</h1>
+            <div className="flex justify-between tracking-[8px] ml-44 text-4xl font-md items-center">
+              <h1 className="-mr-1">Plate</h1>
               <img
                 src={require("./images/plate.png")}
-                className="h-10 mx-2"
+                className="h-10 mx-2 ml-1"
                 alt="PlateMate Logo"
               />
               <h1>Mate</h1>
@@ -68,7 +68,7 @@ export default function Nav() {
             data-bs-toggle="modal"
             data-bs-target="#signup"
           >
-            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-24 group-hover:h-16 opacity-10"></span>
             SIGNUP
           </button>
         </div>
@@ -125,13 +125,15 @@ export default function Nav() {
       <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
         <Menu as="div" className="relative inline-block text-left ml-5">
           <div>
-            <Menu.Button className="inline-flex w-full items-center justify-center px-4 py-2 text-lg font-medium text-gray-700 ">
+            <Menu.Button className="inline-flex w-full items-center justify-center px-4 py-2 font-medium text-gray-700 ">
               <img
                 src={require("./images/burger.png")}
                 width="20"
-                className="mr-2"
+                className="mr-2 mb-1"
               />
-              Hello, {user.first_name}!
+              <h1 className="dropdown font-md text-xl">
+                Hello, {user.first_name}!
+              </h1>
               <ChevronDownIcon
                 className="-mr-1 ml-2 h-5 w-5"
                 aria-hidden="true"
@@ -244,11 +246,11 @@ export default function Nav() {
         </Menu>
         <div className="mx-auto">
           <a href="/">
-            <div className="flex justify-between tracking-[6px] text-4xl font-md items-center">
+            <div className="flex justify-between tracking-[7px] text-3xl items-center mr-10">
               <h1>Plate</h1>
               <img
                 src={require("./images/plate.png")}
-                className="h-10 mx-2"
+                className="h-10 mx-2 ml-0 mr-2"
                 alt="PlateMate Logo"
               />
               <h1>Mate</h1>
@@ -260,7 +262,7 @@ export default function Nav() {
             type="button"
             className="bg-[#BB5855] mx-[40px] rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer"
           >
-            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-28 group-hover:h-16 opacity-10"></span>
             HOME
             <img
               src={require("./images/home.png")}

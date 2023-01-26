@@ -107,8 +107,14 @@ export default function QuestionModal({ refresh, setRefresh }) {
         <div className="modal-dialog modal-xl relative w-auto pointer-events-none max-w-screen-md">
           <div className="modal-content justify-center border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-[#FDECA9] bg-clip-padding rounded-md outline-none text-current">
             <div className="modal-header items-center p-2 border-b border-[#C26866] rounded-t-md">
-              <h1 className="flex flex-col items-center font-bold mt-5 text-3xl mb-5">
-                Let's Find Your Plate!
+              <h1 className="text-center mt-6 text-[40px] mr-2 mb-6 tracking-[4px]">
+                Let
+                <img
+                  src={require("../images/apost.png")}
+                  width="20px"
+                  className="inline-block -mt-7 -ml-2 -mr-1"
+                />
+                s Find Your Plate!
               </h1>
               {refresh && (
                 <div
@@ -205,13 +211,13 @@ export default function QuestionModal({ refresh, setRefresh }) {
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20 ">
-                          <h1 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[320px] items-center mx-auto rounded-lg">
+                          <h2 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[320px] items-center mx-auto rounded-lg">
                             Your Current Location{" "}
                             <img
                               src={require("../images/location.png")}
                               className="h-10 mx-2"
                             ></img>
-                          </h1>
+                          </h2>
                           <div className="mb-3">
                             <input
                               onChange={handleChange}
@@ -232,13 +238,13 @@ export default function QuestionModal({ refresh, setRefresh }) {
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[260px] items-center mx-auto rounded-lg">
+                          <h2 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[260px] items-center mx-auto rounded-lg">
                             Your Budget{" "}
                             <img
                               src={require("../images/dollars.png")}
                               className="h-10 mx-2"
                             ></img>
-                          </h1>
+                          </h2>
                           <div className="form-floating mb-3">
                             <select
                               required
@@ -262,7 +268,7 @@ export default function QuestionModal({ refresh, setRefresh }) {
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[400px] items-center mx-auto rounded-lg">
+                          <h2 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[400px] items-center mx-auto rounded-lg">
                             Carry Out{" "}
                             <img
                               src={require("../images/takeout.png")}
@@ -273,7 +279,7 @@ export default function QuestionModal({ refresh, setRefresh }) {
                               src={require("../images/car.png")}
                               className="h-12 mx-2"
                             ></img>
-                          </h1>
+                          </h2>
                           <div className="items-center form-floating mb-3 mx-2">
                             <select
                               required
@@ -295,13 +301,13 @@ export default function QuestionModal({ refresh, setRefresh }) {
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[320px] items-center mx-auto rounded-lg">
+                          <h2 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[320px] items-center mx-auto rounded-lg">
                             When are you eating?{" "}
                             <img
                               src={require("../images/clock.png")}
                               className="h-10 mx-2"
                             ></img>
-                          </h1>
+                          </h2>
                           <div className="form-floating mb-3 mx-2">
                             <input
                               id="date"
@@ -321,13 +327,13 @@ export default function QuestionModal({ refresh, setRefresh }) {
                           alt="..."
                         />
                         <div className="carousel-caption hidden md:block absolute text-center top-20">
-                          <h1 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[320px] items-center mx-auto rounded-lg">
+                          <h2 className="flex justify-center font-bold mb-3 text-2xl bg-[#F6F2ED] text-black py-2 w-[320px] items-center mx-auto rounded-lg">
                             Pick Your Preferences
                             <img
                               src={require("../images/dinner.png")}
                               className="h-10 mx-2"
                             ></img>
-                          </h1>
+                          </h2>
                           <div className="form-floating mb-3 mx-2">
                             <div className="">
                               <Select

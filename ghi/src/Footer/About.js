@@ -11,10 +11,11 @@ export default function About() {
     <>
       <img
         src={require("../images/idea.png")}
+        alt="pic"
         width="70px"
         className="mx-auto mt-10"
       />
-      <h1 className="text-center font-md mt-7 text-5xl mb-8">
+      <h1 className="text-center mt-7 mb-8 text-[40px] tracking-[4px]">
         About PlateMate{" "}
       </h1>
       <div className="flex items-center">
@@ -62,7 +63,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="git" className="px-2">
+                    <a
+                      href="git"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -91,7 +97,12 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Gina John</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">
+                    "The toughest part of this project was working with the
+                    external API to display data in the way we wanted. It was a
+                    fun challenge and the results were fruitful (pun intended).
+                    My favorite food is tofu tikka masala with basmati rice!"
+                  </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/gina-john/"
@@ -110,7 +121,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="git" className="px-2">
+                    <a
+                      href="git"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -140,11 +156,10 @@ export default function About() {
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Natalie Tang</h5>
                   <p className="mb-6">
-                    "Hello! I'm Nat and based in DFW. I started my SWE journey
-                    last summer of 2022. Building this app has solidified my
-                    interest in front-end development and design. I am always on
-                    the lookout for new food experiences and believe food brings
-                    people together!"
+                    "Building this app has solidified my interest in front-end
+                    development and design. I am always on the lookout for new
+                    food experiences and believe food brings people together!
+                    Also, my favorite food is sushi!"
                   </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
@@ -164,7 +179,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="https://gitlab.com/natalientang" className="px-2">
+                    <a
+                      href="https://gitlab.com/natalientang"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -221,6 +241,7 @@ export default function About() {
                     <a
                       href="https://gitlab.com/marisonmunoz"
                       target="_blank"
+                      title="Gitlab"
                       className="px-2"
                     >
                       <svg
@@ -251,10 +272,18 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Jason Olefson</h5>
-                  <p className="mb-6">Blurb</p>
+                  <p className="mb-6">
+                    "I started my coding journey in late 2021. This project
+                    helped solidify my knowledge of React, and how its
+                    components work. One interesting thing I learned throughout
+                    this project is how to convert UNIX time, as well as
+                    structure RMDBS."{" "}
+                  </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/jason-olefson/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -268,7 +297,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="#!" className="px-2">
+                    <a
+                      href="#!"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
