@@ -87,13 +87,15 @@ export default function RestaurantList({ refresh }) {
             />
           </button>
         </div>
-        <div className="relative justify-center flex">
-          <img
-            className="flex justify-center ml-16"
-            src={require("../images/chicken.gif")}
-            alt="Surprised Chicken"
-          />
-          <div className="rounded-lg shadow-xl bg-white max-w-[400px]">
+        <div className="relative justify-center flex-col">
+          <div className="relative justify-center flex">
+            <img
+              className="flex justify-center mx-auto mb-2"
+              src={require("../images/chicken.gif")}
+              alt="Surprised Chicken"
+            />
+          </div>
+          <div className="rounded-3xl shadow-xl bg-white max-w-[400px] h-[230px] mx-auto">
             <div className="flex flex-col items-center p-6">
               <h5 className="text-gray-900 text-xl font-bold mb-8">
                 Whoops Mate!
