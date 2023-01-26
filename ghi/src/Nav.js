@@ -71,6 +71,8 @@ export default function Nav() {
             <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
             SIGNUP
           </button>
+        </div>
+        <div className="hidden md:flex items-center">
           <button
             type="button"
             className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
