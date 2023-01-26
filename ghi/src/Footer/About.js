@@ -11,6 +11,7 @@ export default function About() {
     <>
       <img
         src={require("../images/idea.png")}
+        alt="pic"
         width="70px"
         className="mx-auto mt-10"
       />

@@ -10,6 +10,8 @@ _Designed and Created By_
 
 _Plate Mate_ - A fun little app that provides the user with a place to eat after asking personal questions!
 
+**_ The accuracy of the results are dependent on the status of yelp's api. Results may vary. _**
+
 ## Design
 
 - [API Design](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/api-design.md)
@@ -58,3 +60,11 @@ Plate-Mate was created for individuals that want to go out, either alone or with
 10. Exit the container's CLI
 
 11. Get ready to find your new favorite restaurant on Plate-Mate!
+
+## Test [Should provide location of tests with test author]:
+
+- [get_allergy_by_id] / [Jason Olefson]
+- [get_all_allergiese] / [Zac Macek]
+- [get_account_by_id] / [Marison Munoz]
+- [get_all_diet_restricts] / [Natalie Tang]
+- [get_all_accounts] / [Gina John]
