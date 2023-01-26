@@ -30,6 +30,7 @@ export default function RestaurantList({ refresh }) {
   const budget = yelpResponse.budget;
   const openAt = yelpResponse.datetime;
   const yelpCat = yelpResponse.categories;
+  console.log(yelpCat);
 
   const handleId = (e) => {
     let value = e.target.value;
@@ -47,25 +48,21 @@ export default function RestaurantList({ refresh }) {
     setDietRestrict(dietRestrictEntries);
   }
 
-  function changeCatString() {
-    console.log(yelpCat);
-    if (yelpCat.length > 1) {
-      let randomCat = Math.floor(Math.random() * (yelpCat.length + 1));
-      finalString = yelpCat[randomCat];
-      console.log(finalString);
-      setFinalString(finalString);
-    } else {
-      setFinalString(yelpCat);
-    }
-    console.log(finalString);
-  }
-  console.log(finalString);
+  // function changeCatString() {
+  //   if (yelpCat.length > 1) {
+  //     let randomCat = Math.floor(Math.random() * (yelpCat.length + 1));
+  //     setFinalString(yelpCat[randomCat]);
+  //   } else if (yelpCat.length === 1) {
+  //     setFinalString(yelpCat.toString());
+  //   }
+  // }
+  // console.log(finalString);
 
   const getRestaurants = async () => {
     console.log("I am being called");
     let errorFound = false;
     try {
-      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${finalString}`;
+      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${yelpCat}`;
       console.log(url);
       // const url = 'http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-24%2018%3A44&categories=chinese'
       // http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-25%2012%3A00&categories=chinese
@@ -91,22 +88,18 @@ export default function RestaurantList({ refresh }) {
 
   useEffect(() => {
     if (token) {
-      console.log("final string function called");
-      changeCatString();
-      console.log(finalString);
-      if (finalString) {
-        getRestaurants();
-        dispatch(storeRestList({ restaurants }));
-      }
-    }
-  }, [finalString]);
-
-  useEffect(() => {
-    if (refresh) {
-      console.log("cooper's refresh code");
+      console.log("useeffect to get restaurants after string exists");
       getRestaurants();
+      dispatch(storeRestList({ restaurants }));
     }
-  }, [refresh]);
+  }, [token, yelpResponse]);
+
+  // useEffect(() => {
+  //   if (refresh) {
+  //     console.log("cooper's refresh code");
+  //     getRestaurants();
+  //   }
+  // }, [refresh, yelpCat]);
 
   if (!load.completed) {
     return;
