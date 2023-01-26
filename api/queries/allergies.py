@@ -127,4 +127,5 @@ class AllergiesQueries(BaseModel):
                     """,
                     [id]
                 )
+
                 return True

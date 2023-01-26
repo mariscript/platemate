@@ -22,12 +22,20 @@ body::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 150%;
   background-size: contain;
   background-image: url("./images/bg-float.png");
   background-position: center center;
   animation: float-bg 5s ease-in-out infinite alternate;
   z-index: -1;
+}
+@keyframes float-bg {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-10%);
+  }
 }
 body::after {
   content: "";
@@ -39,11 +47,11 @@ body::after {
   background-size: contain;
   background-image: url("./images/fruit.png");
   background-position: right bottom;
-  animation: slide-in 4s forwards;
+  animation: fruit 4s forwards;
   z-index: -2;
   position: fixed;
 }
-@keyframes slide-in {
+@keyframes fruit {
   from {
     right: -200px;
     transform: translateX(100px) rotate(360deg);
@@ -52,16 +60,8 @@ body::after {
     right: 0;
   }
 }
-@keyframes float-bg {
-  from {
-    transform: translateY(0%);
-  }
-  to {
-    transform: translateY(-10%);
-  }
-}
 
-@keyframes slideDownFadeIn {
+@keyframes title {
   0% {
     opacity: 0;
     transform: translateY(-50px);
@@ -72,13 +72,27 @@ body::after {
   }
 }
 .animated {
-  animation: slideDownFadeIn 2s;
+  animation: title 2s;
 }
 
 @font-face {
   font-family: "MainTitleFont";
-  src: url("./fonts/restaurant.ttf") format("truetype");
+  src: url("./fonts/platemate.otf") format("truetype");
 }
 h1 {
   font-family: "MainTitleFont", sans-serif;
+}
+@font-face {
+  font-family: "UserTitle";
+  src: url("./fonts/user.otf") format("truetype");
+}
+.dropdown {
+  font-family: "UserTitle", sans-serif;
+}
+@font-face {
+  font-family: "WelcomeFont";
+  src: url("./fonts/welcome.otf") format("truetype");
+}
+.welcome {
+  font-family: "WelcomeFont", sans-serif;
 }
