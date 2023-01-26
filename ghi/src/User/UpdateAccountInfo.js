@@ -25,7 +25,6 @@ export default function UpdateAccountInfo() {
   const [, , , , update] = useToken();
   const [cancelEdit, setCancelEdit] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [refresh, setRefresh] = useState(false);
   const navigate = useNavigate();
   const { token } = useAuthContext();
 

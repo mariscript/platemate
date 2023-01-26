@@ -1,5 +1,11 @@
 # Week 5
 
+### (Wed) 1/25/2023
+
+- was able to get questionnaire to refresh when taking it the second time in restaurants list (questionnaire buttons are now only on main page and restaurant list)
+- created a message after submitting the questionnaire
+- fixed error page to not show slightly before submitting the questionnaire
+
 ### (Tues) 1/24/2023
 
 - changed the GitHub icon in About to GitLab icon

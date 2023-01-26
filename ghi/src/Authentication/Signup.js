@@ -29,7 +29,6 @@ export default function Signup() {
       zipcode,
       password
     );
-    console.log(response);
     if (response.ok) {
       setEmail("");
       setPassword("");

@@ -20,16 +20,15 @@ import UpdateDietaryNeeds from "./User/UpdateDietaryNeeds";
 import { useState } from "react";
 
 function GetToken() {
-  // Get token from JWT cookie (if already logged in)
   useToken();
   return null;
 }
 
-function App() {
-  const [test, setTest] = useState(false);
+export default function App() {
+  const [refresh, setRefresh] = useState(false);
   setTimeout(() => {
-    setTest(false);
-  }, 5000);
+    setRefresh(false);
+  }, 10000);
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -43,7 +42,7 @@ function App() {
             <Route
               path="/"
               element={[
-                <QuestionModal test={test} setTest={setTest} />,
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
                 <MainPage />,
               ]}
             />
@@ -53,8 +52,8 @@ function App() {
             <Route
               path="/restaurants"
               element={[
-                <QuestionModal test={test} setTest={setTest} />,
-                <RestaurantList test={test} />,
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+                <RestaurantList refresh={refresh} />,
               ]}
             />
             <Route path="/restaurant" element={<RestaurantDetailTest />} />
@@ -63,7 +62,9 @@ function App() {
             <Route path="/me" element={<UserProfile />} />
             <Route
               path="/questionnaire"
-              element={<QuestionModal test={test} setTest={setTest} />}
+              element={
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />
+              }
             />
             <Route path="/logout" element={<Logout />} />
             <Route path="me">
@@ -78,5 +79,3 @@ function App() {
     </AuthProvider>
   );
 }
-
-export default App;
