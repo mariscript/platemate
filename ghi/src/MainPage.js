@@ -180,7 +180,7 @@ export default function MainPage() {
         <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-7xl max-h-lg">
           <div
             id="carouselDarkVariant"
-            className="carousel slide carousel-fade carousel-dark relative -mt-10"
+            className="mx-auto max-w-6xl carousel slide carousel-fade carousel-dark relative -mt-10"
             data-bs-ride="carousel"
           >
             {/* indicators */}
@@ -215,7 +215,7 @@ export default function MainPage() {
             </div>
 
             {/* inner */}
-            <div className="carousel-inner relative w-full overflow-hidden">
+            <div className="carousel-inner relative w-full overflow-hidden h-2/4">
               {/* item 0 */}
               <div className="carousel-item active relative float-left w-full">
                 <img
@@ -234,7 +234,7 @@ export default function MainPage() {
               <div className="carousel-item relative float-left w-full">
                 <img
                   src={require("./images/rebelcheese.jpg")}
-                  className="block w-screen scale-75 rounded-3xl"
+                  className="block w-screen scale-75 rounded-3xl shadow-2xl"
                   alt="Rebel Cheese"
                 />
                 <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
