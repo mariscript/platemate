@@ -6,17 +6,18 @@ export default function MainPage() {
   if (!token) {
     return (
       <>
-        <div className="flex justify-center mx-auto px-auto mt-2">
-          <h1 className="font-bold text-4xl font-sans mt-10">
-            Welcome to PlateMate!
-          </h1>
-        </div>
-        <div className="flex justify-center mx-auto px-auto mt-2 mb-20">
-          <h2 className="font-bold text-m font-sans">
-            Sign up to be a Mate, so we can help you find your Plate!
-          </h2>
-        </div>
-        <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-5xl shadow-xl">
+        <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-7xl">
+          <div className="flex justify-center mx-auto px-auto mt-10">
+            <h1 className="font-medium text-5xl font-montserrat animated">
+              Welcome to PlateMate
+            </h1>
+          </div>
+          <div className="flex justify-center mx-auto px-auto mt-2">
+            <h2 className="font-bold text-m font-sans">
+              Sign up to be a Mate, so we can help you find your Plate!
+            </h2>
+          </div>
+
           <div
             id="carouselDarkVariant"
             className="mx-auto max-w-6xl carousel slide carousel-fade carousel-dark relative -mt-10"

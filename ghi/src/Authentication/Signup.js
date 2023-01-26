@@ -121,7 +121,7 @@ export default function Signup() {
             <div className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-[#F0C797] bg-clip-padding rounded-md outline-none text-current">
               <div className="modal-header p-6 mt-2 text-center">
                 <div className="flex justify-center items-center">
-                  <h1 className="text-3xl font-bold mr-4">SIGN UP</h1>
+                  <h1 className="text-5xl font-medium mr-4">Sign Up</h1>
                   <img src={require("../images/checklist.png")} width="50px" />
                 </div>
                 <svg
@@ -200,7 +200,7 @@ export default function Signup() {
                         />
                       </div>
                       <div className="text-center mt-3">
-                        <h1 className="font-bold">Making your plate now...</h1>
+                        <h2 className="font-bold">Making your plate now...</h2>
                       </div>
                     </div>
                   ) : (
@@ -247,16 +247,16 @@ export default function Signup() {
                     className="mx-auto"
                   />
 
-                  <h1 className="text-lg font-bold mr-4 mt-6">
+                  <h2 className="text-lg font-bold mr-4 mt-6">
                     <img
                       src={require("../images/success.png")}
                       width="50px"
                       className="mx-auto -mt-10 mb-5"
                     />
                     You are all signed up! Happy plating!
-                  </h1>
+                  </h2>
                 </div>
-                <h1 className="text-sm mt-5">You may now close this window.</h1>
+                <h2 className="text-sm mt-5">You may now close this window.</h2>
                 <svg
                   className="w-9 h-9 absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#ddd3ca] hover:text-white ease-linear transition-all duration-150 cursor-pointer"
                   fillRule="currentColor"

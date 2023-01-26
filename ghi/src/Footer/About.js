@@ -14,7 +14,7 @@ export default function About() {
         width="70px"
         className="mx-auto mt-10"
       />
-      <h1 className="text-center font-bold mt-7 text-2xl mb-8">
+      <h1 className="text-center font-md mt-7 text-5xl mb-8">
         About PlateMate{" "}
       </h1>
       <div className="flex items-center">
@@ -43,10 +43,12 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Zachary Macek</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">My favorite food is crab legs</p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/zachary-macek/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -60,7 +62,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="git" className="px-2">
+                    <a
+                      href="git"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -98,6 +105,8 @@ export default function About() {
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/gina-john/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -111,7 +120,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="git" className="px-2">
+                    <a
+                      href="git"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -140,10 +154,18 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Natalie Tang</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">
+                    "Hello! I'm Nat and based in DFW. I started my SWE journey
+                    last summer of 2022. Building this app has solidified my
+                    interest in front-end development and design. I am always on
+                    the lookout for new food experiences and believe food brings
+                    people together!"
+                  </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/natalientang/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -157,7 +179,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="https://gitlab.com/natalientang" className="px-2">
+                    <a
+                      href="https://gitlab.com/natalientang"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -187,15 +214,17 @@ export default function About() {
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Marison Muñoz</h5>
                   <p className="mb-6">
-                    My favorite challenging portion of this app that I worked on
-                    was putting the questionnaire onto a carousel and onto a
+                    "My favorite challenging portion of this app that I worked
+                    on was putting the questionnaire onto a carousel and onto a
                     modal. I also enjoyed error handling with the chicken. I
                     hate when I get asked, "What's your favorite food?" I love
-                    food in general.{" "}
+                    food in general."{" "}
                   </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/marisonmunoz/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -209,7 +238,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="git" className="px-2">
+                    <a
+                      href="https://gitlab.com/marisonmunoz"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -242,6 +276,8 @@ export default function About() {
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/jason-olefson/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -255,7 +291,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="#!" className="px-2">
+                    <a
+                      href="#!"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
