@@ -68,7 +68,7 @@ export default function Nav() {
             data-bs-toggle="modal"
             data-bs-target="#signup"
           >
-            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-24 group-hover:h-16 opacity-10"></span>
             SIGNUP
           </button>
         </div>
