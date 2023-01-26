@@ -26,9 +26,9 @@ function GetToken() {
 }
 
 function App() {
-  const [test, setTest] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   setTimeout(() => {
-    setTest(false);
+    setRefresh(false);
   }, 10000);
   return (
     <AuthProvider>
@@ -42,7 +42,7 @@ function App() {
             <Route
               path="/"
               element={[
-                <QuestionModal test={test} setTest={setTest} />,
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
                 <MainPage />,
               ]}
             />
@@ -52,8 +52,8 @@ function App() {
             <Route
               path="/restaurants"
               element={[
-                <QuestionModal test={test} setTest={setTest} />,
-                <RestaurantList test={test} />,
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+                <RestaurantList refresh={refresh} />,
               ]}
             />
             <Route path="/restaurant" element={<RestaurantDetailTest />} />
@@ -62,7 +62,9 @@ function App() {
             <Route path="/me" element={<UserProfile />} />
             <Route
               path="/questionnaire"
-              element={<QuestionModal test={test} setTest={setTest} />}
+              element={
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />
+              }
             />
             <Route path="/logout" element={<Logout />} />
             <Route path="me">

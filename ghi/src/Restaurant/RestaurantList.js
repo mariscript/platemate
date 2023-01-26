@@ -6,7 +6,7 @@ import RestaurantDetailModal from "./RestaurantDetailModal";
 import { storeRestList } from "../store/restListState";
 import { storeDietNeeds } from "../store/dietNeedsSlice";
 
-export default function RestaurantList({ test }) {
+export default function RestaurantList({ refresh }) {
   const [restaurants, setRestaurants] = useState([]);
   const [id, setId] = useState("");
   const { token } = useAuthContext();
@@ -44,10 +44,10 @@ export default function RestaurantList({ test }) {
     }
   }, [token]);
   useEffect(() => {
-    if (test) {
+    if (refresh) {
       getData();
     }
-  }, [test]);
+  }, [refresh]);
 
   const yelpResponse = useSelector((state) => state.yelp.name);
   const location = yelpResponse.zipcode;

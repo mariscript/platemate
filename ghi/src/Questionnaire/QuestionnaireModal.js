@@ -14,7 +14,7 @@ const options = [
   { value: "japanese", label: "🍣 Japanese" },
 ];
 
-function QuestionModal({ test, setTest }) {
+function QuestionModal({ refresh, setRefresh }) {
   const [account, setAccount] = useState({});
   const dispatch = useDispatch();
   const [zipcode, setZipcode] = useState("");
@@ -56,7 +56,7 @@ function QuestionModal({ test, setTest }) {
       13
     )}%3A${datetime.slice(14)}`;
     dispatch(storeYelp({ zipcode, budget, datetime, takeInOut, categories }));
-    setTest(true);
+    setRefresh(true);
     if (location.pathname === "/restaurants") {
     }
     navigate("/restaurants");
@@ -97,7 +97,7 @@ function QuestionModal({ test, setTest }) {
                 Let's Find Your Plate!
               </h1>
 
-              {test && (
+              {refresh && (
                 <div
                   class="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md mt-4 w-[450px] mx-auto"
                   role="alert"

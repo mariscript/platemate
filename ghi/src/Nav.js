@@ -52,7 +52,7 @@ export default function Nav() {
   if (!token) {
     return (
       <nav
-        id="test"
+        id="nav"
         className="top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-3"
       >
         <div className="mx-auto">
