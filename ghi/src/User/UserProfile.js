@@ -75,7 +75,7 @@ export default function UserProfile() {
           width="70px"
           className="mx-auto mt-10"
         />
-        <h1 className="text-center font-bold mt-7 text-2xl">
+        <h1 className="text-center font-md mt-7 text-5xl">
           {account.first_name}'s Profile Page
         </h1>
         <h2 className="max-w-screen-sm mx-auto font-bold mt-12 text-xl">
@@ -83,31 +83,31 @@ export default function UserProfile() {
         </h2>
         <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto">
           <div className="mr-10 ml-10">
-            <h1 className="font-bold mb-2 text-lg">
+            <h2 className="font-bold mb-2 text-lg">
               <FontAwesomeIcon icon={faUserCircle} className="mr-2" />
               First Name{" "}
-            </h1>
+            </h2>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.first_name}
             </div>
-            <h1 className="font-bold mb-2 text-lg">
+            <h2 className="font-bold mb-2 text-lg">
               <FontAwesomeIcon icon={faCircleUser} className="mr-2" />
               Last Name
-            </h1>
+            </h2>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.last_name}
             </div>
-            <h1 className="font-bold mb-2 text-lg">
+            <h2 className="font-bold mb-2 text-lg">
               <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
               Email
-            </h1>
+            </h2>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.email}
             </div>
-            <h1 className="font-bold mb-2 text-lg">
+            <h2 className="font-bold mb-2 text-lg">
               <FontAwesomeIcon icon={faLocationDot} className="mr-2" />
               Zipcode
-            </h1>
+            </h2>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.zipcode}
             </div>
@@ -141,7 +141,7 @@ export default function UserProfile() {
           <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto flex flex-col mb-20">
             <div className="flex flex-row">
               <div className="w-1/2 mr-10 ml-10">
-                <h1 className="font-bold mb-2 text-lg">Allergies</h1>
+                <h2 className="font-bold mb-2 text-lg">Allergies</h2>
                 <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
                   <div className="flex items-center mt-2 mb-2 ml-3 mx-auto">
                     <FontAwesomeIcon icon={faFish} className="mr-2" />
@@ -176,7 +176,7 @@ export default function UserProfile() {
                 </div>
               </div>
               <div className="w-1/2 mr-10 ml-10">
-                <h1 className="font-bold mb-2 text-lg">Dietary Restrictions</h1>
+                <h2 className="font-bold mb-2 text-lg">Dietary Restrictions</h2>
                 <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
                   <div className="flex items-center mt-2 mb-2 ml-3">
                     <FontAwesomeIcon icon={faLeaf} className="mr-2" />

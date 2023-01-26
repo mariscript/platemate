@@ -14,7 +14,7 @@ export default function About() {
         width="70px"
         className="mx-auto mt-10"
       />
-      <h1 className="text-center font-bold mt-7 text-2xl mb-8">
+      <h1 className="text-center font-md mt-7 text-5xl mb-8">
         About PlateMate{" "}
       </h1>
       <div className="flex items-center">

@@ -125,7 +125,7 @@ export default function Nav() {
       <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
         <Menu as="div" className="relative inline-block text-left ml-5">
           <div>
-            <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-sm font-medium text-gray-700 ">
+            <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-md font-medium text-gray-700 ">
               <img
                 src={require("./images/burger.png")}
                 width="20"

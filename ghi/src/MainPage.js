@@ -8,8 +8,8 @@ export default function MainPage() {
       <>
         <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-7xl">
           <div className="flex justify-center mx-auto px-auto mt-10">
-            <h1 className="font-bold text-4xl font-sans mt-10">
-              Welcome to PlateMate!
+            <h1 className="font-medium text-5xl font-montserrat animated">
+              Welcome to PlateMate
             </h1>
           </div>
           <div className="flex justify-center mx-auto px-auto mt-2">
