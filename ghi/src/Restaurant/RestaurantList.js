@@ -14,6 +14,7 @@ export default function RestaurantList() {
   const [allergyEntry, setAllergies] = useState("")
   const [dietRestrictEntry, setDietRestrict] = useState("")
   const dispatch = useDispatch()
+  const [finalString,setFinalString] = useState("")
 
 
 
@@ -37,6 +38,7 @@ export default function RestaurantList() {
       let finalString = ""
       let randomCat = Math.floor(Math.random() * (yelpCat.length + 1))
       finalString = yelpCat[randomCat]
+      setFinalString(finalString)
       return finalString
     }
 
@@ -62,14 +64,13 @@ export default function RestaurantList() {
 
     useEffect(() => {
         changeCatString()
-        console.log("inside useEffect call", changeCatString())
-        console.log(yelpCat)
-        if (yelpCat !== undefined){
+        console.log(finalString)
+        if (finalString){
         getRestaurants();
         dispatch(storeRestList({ restaurants }));
         }
 
-    }, [token]);
+    }, [token,finalString]);
 
     //   const handleId = (e) => {
   //     let value = e.target.value;
