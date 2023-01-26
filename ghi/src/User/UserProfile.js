@@ -84,26 +84,29 @@ export default function UserProfile() {
         <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto">
           <div className="mr-10 ml-10">
             <h1 className="font-bold mb-2 text-lg">
+              <FontAwesomeIcon icon={faUserCircle} className="mr-2" />
               First Name{" "}
-              <FontAwesomeIcon icon={faUserCircle} className="ml-0" />
             </h1>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.first_name}
             </div>
             <h1 className="font-bold mb-2 text-lg">
-              Last Name <FontAwesomeIcon icon={faCircleUser} className="ml-0" />
+              <FontAwesomeIcon icon={faCircleUser} className="mr-2" />
+              Last Name
             </h1>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.last_name}
             </div>
             <h1 className="font-bold mb-2 text-lg">
-              Email <FontAwesomeIcon icon={faEnvelope} className="ml-0" />
+              <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+              Email
             </h1>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.email}
             </div>
             <h1 className="font-bold mb-2 text-lg">
-              Zipcode <FontAwesomeIcon icon={faLocationDot} className="ml-0" />
+              <FontAwesomeIcon icon={faLocationDot} className="mr-2" />
+              Zipcode
             </h1>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.zipcode}
