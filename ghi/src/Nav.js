@@ -50,7 +50,7 @@ export default function Nav() {
       >
         <div className="mx-auto">
           <a href="/">
-            <div className="flex justify-between tracking-[6px] ml-44 text-4xl font-md items-center">
+            <div className="flex justify-between tracking-[6px] ml-40 text-4xl font-md items-center">
               <h1>Plate</h1>
               <img
                 src={require("./images/plate.png")}
