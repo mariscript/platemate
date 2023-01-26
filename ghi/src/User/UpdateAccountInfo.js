@@ -120,8 +120,8 @@ export default function UpdateAccountInfo() {
           <div className="mr-10 ml-10">
             <form onSubmit={handleFormSubmit}>
               <h1 className="font-bold mb-2 text-lg">
+                <FontAwesomeIcon icon={faUserCircle} className="mr-2" />
                 First Name{" "}
-                <FontAwesomeIcon icon={faUserCircle} className="ml-0" />
               </h1>
               <input
                 type="text"
@@ -131,8 +131,8 @@ export default function UpdateAccountInfo() {
                 onChange={(e) => setFirst(e.target.value)}
               />
               <h1 className="font-bold mb-2 text-lg">
+                <FontAwesomeIcon icon={faCircleUser} className="mr-2" />
                 Last Name{" "}
-                <FontAwesomeIcon icon={faCircleUser} className="ml-0" />
               </h1>
               <input
                 type="text"
@@ -142,7 +142,8 @@ export default function UpdateAccountInfo() {
                 defaultValue={account?.last_name}
               />
               <h1 className="font-bold mb-2 text-lg">
-                Email <FontAwesomeIcon icon={faEnvelope} className="ml-0" />
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                Email
               </h1>
               <input
                 placeholder="Email"
@@ -152,8 +153,8 @@ export default function UpdateAccountInfo() {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <h1 className="font-bold mb-2 text-lg">
+                <FontAwesomeIcon icon={faLocationDot} className="mr-2" />
                 Zipcode{" "}
-                <FontAwesomeIcon icon={faLocationDot} className="ml-0" />
               </h1>
               <input
                 type="text"

@@ -13,8 +13,16 @@ import { redirect } from "react-router-dom";
 export default function Logout() {
   return (
     <>
-      <h1 className="text-center font-bold text-xl mt-14">
-        You've been logged out.
+      <h1 className="justify-center text-center font-bold text-xl mt-14">
+        You've been logged out.{" "}
+        <img
+          src={require("../images/home.png")}
+          className="inline-block w-[50px]"
+        ></img>
+        <img
+          src={require("../images/right-arrow.png")}
+          className="inline-block w-[30px] ml-2"
+        ></img>
       </h1>
       <h1 className="text-center font-bold text-xl">
         Thank you for using PlateMate!
