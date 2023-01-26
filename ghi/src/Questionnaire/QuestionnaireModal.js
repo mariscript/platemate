@@ -57,7 +57,9 @@ export default function QuestionModal({ refresh, setRefresh }) {
         categories = categories.toString();
       } else if (categories.length > 1) {
         let randomCat = Math.floor(Math.random() * (categories.length + 1));
+        console.log(randomCat);
         categories = categories[randomCat];
+        console.log(categories);
       }
     } else {
       categories = "";
