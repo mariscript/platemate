@@ -11,11 +11,12 @@ import {
   faBowlFood,
   faLocationDot,
   faEnvelope,
-  faUser,
+  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { storeDietNeeds } from "../store/dietNeedsSlice";
 
-function UserProfile() {
+export default function UserProfile() {
   const [account, setAccount] = useState({});
   const [allergy, setAllergy] = useState({});
   const [diet_restrict, setDiet] = useState({});
@@ -28,7 +29,6 @@ function UserProfile() {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await result.json();
-    console.log(data);
     setAccount(data);
   };
 
@@ -75,35 +75,39 @@ function UserProfile() {
           width="70px"
           className="mx-auto mt-10"
         />
-        <h1 className="text-center font-bold mt-7 text-2xl">
+        <h1 className="text-center font-md mt-7 text-5xl">
           {account.first_name}'s Profile Page
         </h1>
-
-        {/* Account Details */}
         <h2 className="max-w-screen-sm mx-auto font-bold mt-12 text-xl">
           Account Details
         </h2>
         <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto">
           <div className="mr-10 ml-10">
-            <h1 className="font-bold mb-2 text-lg">
-              First Name <FontAwesomeIcon icon={faUser} className="ml-0" />
-            </h1>
+            <h2 className="font-bold mb-2 text-lg">
+              <FontAwesomeIcon icon={faUserCircle} className="mr-2" />
+              First Name{" "}
+            </h2>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.first_name}
             </div>
-            <h1 className="font-bold mb-2 text-lg">Last Name</h1>
+            <h2 className="font-bold mb-2 text-lg">
+              <FontAwesomeIcon icon={faCircleUser} className="mr-2" />
+              Last Name
+            </h2>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.last_name}
             </div>
-            <h1 className="font-bold mb-2 text-lg">
-              Email <FontAwesomeIcon icon={faEnvelope} className="ml-0" />
-            </h1>
+            <h2 className="font-bold mb-2 text-lg">
+              <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+              Email
+            </h2>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.email}
             </div>
-            <h1 className="font-bold mb-2 text-lg">
-              Zipcode <FontAwesomeIcon icon={faLocationDot} className="ml-0" />
-            </h1>
+            <h2 className="font-bold mb-2 text-lg">
+              <FontAwesomeIcon icon={faLocationDot} className="mr-2" />
+              Zipcode
+            </h2>
             <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
               {account.zipcode}
             </div>
@@ -130,8 +134,6 @@ function UserProfile() {
             </button>
           </a>
         </div>
-
-        {/* Food Preferences */}
         <h2 className="max-w-screen-sm mx-auto font-bold mt-12 text-xl">
           Food Preferences
         </h2>
@@ -139,7 +141,7 @@ function UserProfile() {
           <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto flex flex-col mb-20">
             <div className="flex flex-row">
               <div className="w-1/2 mr-10 ml-10">
-                <h1 className="font-bold mb-2 text-lg">Allergies</h1>
+                <h2 className="font-bold mb-2 text-lg">Allergies</h2>
                 <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
                   <div className="flex items-center mt-2 mb-2 ml-3 mx-auto">
                     <FontAwesomeIcon icon={faFish} className="mr-2" />
@@ -158,7 +160,7 @@ function UserProfile() {
                   </div>
                   <div className="flex items-center mt-2 mb-2 ml-3">
                     <FontAwesomeIcon icon={faBreadSlice} className="mr-2" />
-                    Gluten-Free:
+                    Gluten-Free
                     {allergy?.gluten_free?.toString() === "true" ? (
                       <img
                         src={require("../images/checkbox.png")}
@@ -174,7 +176,7 @@ function UserProfile() {
                 </div>
               </div>
               <div className="w-1/2 mr-10 ml-10">
-                <h1 className="font-bold mb-2 text-lg">Dietary Restrictions</h1>
+                <h2 className="font-bold mb-2 text-lg">Dietary Restrictions</h2>
                 <div className="bg-[#D9D9D9] rounded-lg p-2 flex flex-col mb-10">
                   <div className="flex items-center mt-2 mb-2 ml-3">
                     <FontAwesomeIcon icon={faLeaf} className="mr-2" />
@@ -253,5 +255,3 @@ function UserProfile() {
     );
   }
 }
-
-export default UserProfile;

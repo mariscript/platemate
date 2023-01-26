@@ -3,28 +3,32 @@ import plateLogo from "../images/plate.png";
 
 const Footer = () => {
   return (
-    <footer className="w-1/2 mx-auto h-8 transparent 0 bottom-0 items-center inset-x-0 bg-[#fef5ed] mt-20">
+    <footer className="w-1/2 mx-auto h-8 transparent 0 bottom-0 items-center inset-x-0 bottom-0 bg-[#fef5ed] mt-10">
       <div className="flex justify-center text-gray-600 dark:text-black">
-        <div className="mb-4 col-end-7 col-span-2">
-          <a href="./about" className="hover:underline font-semibold text-xs">
+        <div className="mb-2 col-end-7 col-span-2">
+          <a href="./about" className="hover:underline font-semibold text-s">
             About
           </a>
         </div>
-        <div className="justify-center mx-14">
+        <div className="justify-center mx-16">
           <a href="/" className="flex items-center">
-            <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
-              PLATE
-            </span>
-            <img src={plateLogo} className="h-9 mr-1" alt="PlateMate Logo" />
-            <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
-              MATE
-            </span>
+            <h1 className="flex space-x-1 tracking-[4px] text-3xl font-md items-center">
+              Plate
+            </h1>
+            <img
+              src={plateLogo}
+              className="h-9 mr-1 mx-2"
+              alt="PlateMate Logo"
+            />
+            <h1 className="flex space-x-1 tracking-[4px] text-3xl font-md items-center">
+              Mate
+            </h1>
           </a>
         </div>
-        <div className="mb-4 col-end-7 col-span-2">
+        <div className="mb-2 col-end-7 col-span-2">
           <a
             href="./resources"
-            className="hover:underline font-semibold text-xs"
+            className="hover:underline font-semibold text-s"
           >
             Resources
           </a>
@@ -34,7 +38,7 @@ const Footer = () => {
 
       <div className="justify-items-center">
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-2 min-w-fit justify-items-center">
-          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2 place-self-center">
+          <div className="-mr-48 border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2 place-self-center">
             <a target="_blank" href="https://www.linkedin.com/in/marisonmunoz/">
               <img
                 src={require("../images/marison_icon.png")}
@@ -45,7 +49,7 @@ const Footer = () => {
               <span className="sr-only">Marison Munoz</span>
             </a>
           </div>
-          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
+          <div className="-mr-24 border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
             <a
               target="_blank"
               href="https://www.linkedin.com/in/gina-john/"
@@ -71,7 +75,7 @@ const Footer = () => {
               <span className="sr-only">Natalie Tang</span>
             </a>
           </div>
-          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
+          <div className="-ml-24 border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
             <a
               target="_blank"
               href="https://www.linkedin.com/in/jason-olefson/"
@@ -86,7 +90,7 @@ const Footer = () => {
               <span className="sr-only">Jason Olefson</span>
             </a>
           </div>
-          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
+          <div className="-ml-48 border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
             <a
               target="_blank"
               href="https://www.linkedin.com/in/zachary-macek/"
@@ -105,7 +109,7 @@ const Footer = () => {
       </div>
 
       <div className="flex items-center justify-center pt-6 pb-3">
-        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 mb-0">
           © 2023{" "}
           <a
             target="_blank"

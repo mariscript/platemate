@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext, useToken } from "../Authentication/AuthenticateUser";
-// import { storeDietRestrict } from "../store/dietNeedsSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFish,
@@ -10,7 +9,6 @@ import {
   faCarrot,
   faBowlFood,
 } from "@fortawesome/free-solid-svg-icons";
-import { storeDietNeeds } from "../store/dietNeedsSlice";
 
 export default function UpdateDietaryNeeds() {
   const [seafood, setSeafood] = useState("");
@@ -57,7 +55,6 @@ export default function UpdateDietaryNeeds() {
     setVegan(data.vegan);
     setVegetarian(data.vegetarian);
     setHalal(data.halal);
-    console.log(data);
   };
 
   const seafoodChange = (e) => {
@@ -134,7 +131,7 @@ export default function UpdateDietaryNeeds() {
   return (
     <>
       <h1 className="text-center font-bold mt-10 text-xl mb-8">
-        Edit Allergies/Dietary Needs
+        Edit Allergies & Dietary Restrictions
       </h1>
 
       <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto mb-16 w-[400px] ">

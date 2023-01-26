@@ -1,24 +1,20 @@
-import { useToken } from "./AuthenticateUser";
-import { redirect } from "react-router-dom";
-
-// export default function Logout() {
-//   const [, , logout] = useToken();
-
-//   const handleClick = async (e) => {
-//     e.preventDefault();
-//     logout();
-//   };
-// }
-
 export default function Logout() {
   return (
     <>
-      <h1 className="text-center font-bold text-xl mt-14">
-        You've been logged out.
-      </h1>
-      <h1 className="text-center font-bold text-xl">
+      <h2 className="justify-center text-center font-bold text-xl mt-14">
+        You've been logged out.{" "}
+        <img
+          src={require("../images/home.png")}
+          className="inline-block w-[50px]"
+        ></img>
+        <img
+          src={require("../images/right-arrow.png")}
+          className="inline-block w-[30px] ml-2"
+        ></img>
+      </h2>
+      <h2 className="text-center font-bold text-xl">
         Thank you for using PlateMate!
-      </h1>
+      </h2>
       <div className="flex justify-center items-center">
         <img
           src={require("../images/pizza-dance.gif")}

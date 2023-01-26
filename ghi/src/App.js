@@ -17,14 +17,18 @@ import UserProfile from "./User/UserProfile";
 import UpdateAccountInfo from "./User/UpdateAccountInfo";
 import CreateDietaryNeeds from "./User/CreateDietaryNeeds";
 import UpdateDietaryNeeds from "./User/UpdateDietaryNeeds";
+import { useState } from "react";
 
 function GetToken() {
-  // Get token from JWT cookie (if already logged in)
   useToken();
   return null;
 }
 
-function App() {
+export default function App() {
+  const [refresh, setRefresh] = useState(false);
+  setTimeout(() => {
+    setRefresh(false);
+  }, 10000);
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -32,21 +36,36 @@ function App() {
         <Signup />
         <Login />
         <Nav />
+
         <div>
           <Routes>
-            <Route path="/" element={[<QuestionModal />, <MainPage />]} />
+            <Route
+              path="/"
+              element={[
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+                <MainPage />,
+              ]}
+            />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route
               path="/restaurants"
-              element={[<QuestionModal />, <RestaurantList />]}
+              element={[
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+                <RestaurantList refresh={refresh} />,
+              ]}
             />
             <Route path="/restaurant" element={<RestaurantDetailTest />} />
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/me" element={<UserProfile />} />
-            <Route path="/questionnaire" element={<QuestionModal />} />
+            <Route
+              path="/questionnaire"
+              element={
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />
+              }
+            />
             <Route path="/logout" element={<Logout />} />
             <Route path="me">
               <Route path="updateaccount" element={<UpdateAccountInfo />} />
@@ -60,5 +79,3 @@ function App() {
     </AuthProvider>
   );
 }
-
-export default App;

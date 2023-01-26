@@ -1,20 +1,20 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { storeYelp } from "../store/yelpVar";
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Select from "react-tailwindcss-select";
 
 const options = [
   { value: "chinese", label: "🥢 Chinese" },
   { value: "pizza", label: "🍕 Pizza" },
-  { value: "fast food", label: "🍔 Fast Food" },
+  { value: "fast%food", label: "🍔 Fast Food" },
   { value: "indian", label: "🍛 Indian" },
   { value: "mexican", label: "🌮 Mexican" },
   { value: "japanese", label: "🍣 Japanese" },
 ];
 
-function QuestionModal() {
+export default function QuestionModal({ refresh, setRefresh }) {
   const [account, setAccount] = useState({});
   const dispatch = useDispatch();
   const [zipcode, setZipcode] = useState("");
@@ -24,7 +24,6 @@ function QuestionModal() {
   let [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const { token } = useAuthContext();
-  const [test, setTest] = useState(false);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -47,15 +46,34 @@ function QuestionModal() {
     setCategories(value);
   };
 
+  const location = useLocation();
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    categories = categories.map((x) => x.value);
-    datetime = `${datetime.slice(0, 10)} ${datetime.slice(
+    if (categories) {
+      console.log(categories);
+      categories = categories.map((category) => category.value);
+      if (categories.length === 1) {
+        categories = categories.toString();
+      } else if (categories.length > 1) {
+        let randomCat = Math.floor(Math.random() * (categories.length + 1));
+        console.log(randomCat);
+        categories = categories[randomCat];
+        console.log(categories);
+      }
+    } else {
+      categories = "";
+    }
+    console.log(categories);
+    datetime = `${datetime.slice(0, 10)}%20${datetime.slice(
       11,
       13
     )}%3A${datetime.slice(14)}`;
+    console.log(datetime);
     dispatch(storeYelp({ zipcode, budget, datetime, takeInOut, categories }));
-    setTest(true);
+    setRefresh(true);
+    if (location.pathname === "/restaurants") {
+    }
     navigate("/restaurants");
   };
 
@@ -78,24 +96,6 @@ function QuestionModal() {
 
   return (
     <>
-      <div className="flex justify-center mt-10 mb-5">
-        <button
-          type="button"
-          className="inline-block px-10 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg hover:text-black focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out"
-          data-bs-toggle="modal"
-          data-bs-target="#questionnaire"
-        >
-          <span className="inline-block font-bold">
-            Take The Questionnaire!
-          </span>
-          <img
-            src={require("../images/form.png")}
-            alt="Loading..."
-            className="inline-block w-9 ml-2"
-          />
-        </button>
-      </div>
-
       <div
         className="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
         id="questionnaire"
@@ -110,7 +110,31 @@ function QuestionModal() {
               <h1 className="flex flex-col items-center font-bold mt-5 text-3xl mb-5">
                 Let's Find Your Plate!
               </h1>
-              {test && <div>you can now close this window</div>}
+              {refresh && (
+                <div
+                  class="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md mt-4 w-[450px] mx-auto"
+                  role="alert"
+                >
+                  <div className="flex">
+                    <div className="py-1">
+                      <img
+                        src={require("../images/bell.png")}
+                        width="100px"
+                        className="mr-3"
+                      />
+                    </div>
+                    <div>
+                      <h2 className="font-bold text-[20px] mr-2 ml-3">
+                        Order Up!
+                      </h2>
+                      <h3 className="text-sm ml-3">
+                        You may now close this window to see what tasty plates
+                        await or might find the chicken of despair…
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              )}
               <svg
                 className="w-9 h-9 absolute top-3 right-2.5 text-black bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-[#FEF5ED] hover:text-white ease-linear transition-all duration-150 cursor-pointer"
                 fillRule="currentColor"
@@ -377,7 +401,3 @@ function QuestionModal() {
     </>
   );
 }
-
-export default QuestionModal;
-
-//dispatch(deleteCat(cat.id)
