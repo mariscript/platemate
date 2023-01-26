@@ -47,7 +47,7 @@ function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Zachary Macek</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">My favorite food is crab legs</p>
                   <ul className="list-inside flex mx-auto justify-center">
                     {/* LinkedIn */}
                     <a
