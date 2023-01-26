@@ -81,7 +81,7 @@ export default function Signup() {
       setErrorMessage("Whoops! Email format is invalid.");
       return false;
     }
-    if (zipcode.length < 5) {
+    if (zipcode.length < 5 || zipcode.length === 0) {
       setErrorMessage("Whoops! Zipcode needs to be at least 5 characters");
       return false;
     }

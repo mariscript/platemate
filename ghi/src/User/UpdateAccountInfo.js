@@ -83,11 +83,11 @@ export default function UpdateAccountInfo() {
       setErrorMessage("Form has multiple blank inputs.");
       return false;
     }
-    if (first_name.length < 1) {
+    if (first_name.length === 0) {
       setErrorMessage("Whoops! You erased your first name!");
       return false;
     }
-    if (last_name.length < 1) {
+    if (last_name.length === 0) {
       setErrorMessage("Whoops! You erased your last name!");
       return false;
     }

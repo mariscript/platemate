@@ -26,7 +26,7 @@ export default function LoginComponent() {
       }, 3000);
       navigate("/me");
     } else {
-      setErrorMessage("Incorrect email or password");
+      setErrorMessage("Incorrect email or password.");
       setTimeout(() => {
         setErrorMessage("");
       }, 3000);
