@@ -6,21 +6,20 @@ export default function MainPage() {
   if (!token) {
     return (
       <>
-        <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-7xl">
-          <div className="flex justify-center mx-auto px-auto mt-10">
-            <h1 className="font-bold text-4xl font-sans mt-10">
-              Welcome to PlateMate!
-            </h1>
-          </div>
-          <div className="flex justify-center mx-auto px-auto mt-2">
-            <h2 className="font-bold text-m font-sans">
-              Sign up to be a Mate, so we can help you find your Plate!
-            </h2>
-          </div>
-
+        <div className="flex justify-center mx-auto px-auto mt-2">
+          <h1 className="font-bold text-4xl font-sans mt-10">
+            Welcome to PlateMate!
+          </h1>
+        </div>
+        <div className="flex justify-center mx-auto px-auto mt-2 mb-20">
+          <h2 className="font-bold text-m font-sans">
+            Sign up to be a Mate, so we can help you find your Plate!
+          </h2>
+        </div>
+        <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-5xl shadow-xl">
           <div
             id="carouselDarkVariant"
-            className="mx-auto max-w-7xl carousel slide carousel-fade carousel-dark relative -mt-10"
+            className="mx-auto max-w-6xl carousel slide carousel-fade carousel-dark relative -mt-10"
             data-bs-ride="carousel"
           >
             {/* indicators */}
@@ -55,7 +54,7 @@ export default function MainPage() {
             </div>
 
             {/* inner */}
-            <div className="carousel-inner relative w-full overflow-hidden">
+            <div className="carousel-inner relative w-full overflow-hidden h-2/4">
               {/* item 0 */}
               <div className="carousel-item active relative float-left w-full">
                 <img
@@ -177,7 +176,7 @@ export default function MainPage() {
             />
           </button>
         </div>
-        <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-7xl">
+        <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-7xl max-h-lg">
           <div
             id="carouselDarkVariant"
             className="carousel slide carousel-fade carousel-dark relative -mt-10"
