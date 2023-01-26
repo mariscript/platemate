@@ -68,7 +68,7 @@ export default function Nav() {
             data-bs-toggle="modal"
             data-bs-target="#signup"
           >
-            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-24 group-hover:h-16 opacity-10"></span>
             SIGNUP
           </button>
         </div>
@@ -260,7 +260,7 @@ export default function Nav() {
             type="button"
             className="bg-[#BB5855] mx-[40px] rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer"
           >
-            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-28 group-hover:h-16 opacity-10"></span>
             HOME
             <img
               src={require("./images/home.png")}

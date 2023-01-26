@@ -118,10 +118,10 @@ export default function UpdateAccountInfo() {
         <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto mb-24">
           <div className="mr-10 ml-10">
             <form onSubmit={handleFormSubmit}>
-              <h1 className="font-bold mb-2 text-lg">
+              <h2 className="font-bold mb-2 text-lg">
                 <FontAwesomeIcon icon={faUserCircle} className="mr-2" />
                 First Name{" "}
-              </h1>
+              </h2>
               <input
                 type="text"
                 className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
@@ -129,10 +129,10 @@ export default function UpdateAccountInfo() {
                 defaultValue={account?.first_name}
                 onChange={(e) => setFirst(e.target.value)}
               />
-              <h1 className="font-bold mb-2 text-lg">
+              <h2 className="font-bold mb-2 text-lg">
                 <FontAwesomeIcon icon={faCircleUser} className="mr-2" />
                 Last Name{" "}
-              </h1>
+              </h2>
               <input
                 type="text"
                 className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
@@ -140,10 +140,10 @@ export default function UpdateAccountInfo() {
                 onChange={(e) => setLast(e.target.value)}
                 defaultValue={account?.last_name}
               />
-              <h1 className="font-bold mb-2 text-lg">
+              <h2 className="font-bold mb-2 text-lg">
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
                 Email
-              </h1>
+              </h2>
               <input
                 placeholder="Email"
                 type="text"
@@ -151,10 +151,10 @@ export default function UpdateAccountInfo() {
                 defaultValue={account?.email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <h1 className="font-bold mb-2 text-lg">
+              <h2 className="font-bold mb-2 text-lg">
                 <FontAwesomeIcon icon={faLocationDot} className="mr-2" />
                 Zipcode{" "}
-              </h1>
+              </h2>
               <input
                 type="text"
                 className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
