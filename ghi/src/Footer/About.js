@@ -1,5 +1,4 @@
-function About() {
-  // image styling start
+export default function About() {
   const imgStyle1 = {
     "margin-top": "-75px",
   };
@@ -7,7 +6,6 @@ function About() {
   const imgStyle2 = {
     width: "150px",
   };
-  // image styling end
 
   return (
     <>
@@ -20,19 +18,17 @@ function About() {
         About PlateMate{" "}
       </h1>
       <div className="flex items-center">
-        {/* meet the team start */}
         <section className="mb-32 text-gray-800 text-center">
           <h3 className="text-lg mb-12 bg-[#EEE5DD] rounded-lg p-10 mx-auto">
-            PlateMate is an app created by five aspiring software engineers for
-            people who are struggling to make a dining decision. Whether you're
-            unsure of what's around, can't agree on a restaurant, or are
-            overwhelmed by options, PlateMate makes it easy to find a great
-            place to eat. Happy Plating!
+            PlateMate is an app created by five software engineers for people
+            who are struggling to make a dining decision. Whether you're unsure
+            of what's around, can't agree on a restaurant, or are overwhelmed by
+            options, PlateMate makes it easy to find a great place to eat. Happy
+            Plating!
           </h3>
           <h2 className="text-2xl font-bold mb-32">Meet the Mates!</h2>
 
           <div className="grid gap-x-6 lg:gap-x-12 md:grid-cols-5">
-            {/* engineer start */}
             <div className="mb-24 md:mb-0">
               <div className="rounded-lg shadow-2xl h-full block bg-[#D9D9D9] border-2 border-black">
                 <div className="flex justify-center">
@@ -49,7 +45,6 @@ function About() {
                   <h5 className="text-lg font-bold mb-4">Zachary Macek</h5>
                   <p className="mb-6">blurb</p>
                   <ul className="list-inside flex mx-auto justify-center">
-                    {/* LinkedIn */}
                     <a
                       href="https://www.linkedin.com/in/zachary-macek/"
                       className="px-2"
@@ -65,7 +60,6 @@ function About() {
                         />
                       </svg>
                     </a>
-                    {/* Git */}
                     <a href="git" className="px-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +75,6 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* engineer start */}
             <div className="mb-24 md:mb-0">
               <div className="rounded-lg shadow-2xl h-full block bg-[#D9D9D9] border-2 border-black">
                 <div className="flex justify-center">
@@ -98,7 +91,6 @@ function About() {
                   <h5 className="text-lg font-bold mb-4">Gina John</h5>
                   <p className="mb-6">blurb</p>
                   <ul className="list-inside flex mx-auto justify-center">
-                    {/* LinkedIn */}
                     <a
                       href="https://www.linkedin.com/in/gina-john/"
                       className="px-2"
@@ -114,7 +106,6 @@ function About() {
                         />
                       </svg>
                     </a>
-                    {/* Git */}
                     <a href="git" className="px-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -130,8 +121,6 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* engineer end */}
-            {/* engineer start */}
             <div className="mb-24 md:mb-0">
               <div className="rounded-lg shadow-2xl h-full block bg-[#D9D9D9] border-2 border-black">
                 <div className="flex justify-center">
@@ -148,7 +137,6 @@ function About() {
                   <h5 className="text-lg font-bold mb-4">Natalie Tang</h5>
                   <p className="mb-6">blurb</p>
                   <ul className="list-inside flex mx-auto justify-center">
-                    {/* LinkedIn */}
                     <a
                       href="https://www.linkedin.com/in/natalientang/"
                       className="px-2"
@@ -164,7 +152,6 @@ function About() {
                         />
                       </svg>
                     </a>
-                    {/* Git */}
                     <a href="https://gitlab.com/natalientang" className="px-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -180,8 +167,6 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* engineer end */}
-            {/* engineer start */}
             <div className="mb-24 md:mb-0">
               <div className="rounded-lg shadow-2xl h-full block bg-[#D9D9D9] border-2 border-black">
                 <div className="flex justify-center">
@@ -198,7 +183,6 @@ function About() {
                   <h5 className="text-lg font-bold mb-4">Marison Muñoz</h5>
                   <p className="mb-6">blurb</p>
                   <ul className="list-inside flex mx-auto justify-center">
-                    {/* LinkedIn */}
                     <a
                       href="https://www.linkedin.com/in/marisonmunoz/"
                       className="px-2"
@@ -214,7 +198,6 @@ function About() {
                         />
                       </svg>
                     </a>
-                    {/* Git */}
                     <a href="git" className="px-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -230,8 +213,6 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* engineer end */}
-            {/* engineer start */}
             <div className="">
               <div className="rounded-lg shadow-2xl h-full block bg-[#D9D9D9] border-2 border-black">
                 <div className="flex justify-center">
@@ -278,14 +259,9 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* engineer end */}
-            {/* all engineers end */}
           </div>
         </section>
-        {/* meet the team end */}
       </div>
     </>
   );
 }
-
-export default About;

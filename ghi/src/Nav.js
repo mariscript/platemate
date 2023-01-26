@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, NavLink } from "react-router-dom";
 import { useToken, useAuthContext } from "./Authentication/AuthenticateUser";
-import { useDispatch, useSelector } from "react-redux";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
@@ -14,14 +12,9 @@ import {
   faTools,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { storeUser } from "./store/userSlice";
-import { setUseProxies } from "immer";
-
 export default function Nav() {
   const [, , logout] = useToken();
-  const navigate = useNavigate();
   const { token } = useAuthContext();
-  const dispatch = useDispatch();
   const [user, setUser] = useState({});
 
   let [nav, setNav] = useState(false);
@@ -52,8 +45,8 @@ export default function Nav() {
   if (!token) {
     return (
       <nav
-        id="test"
-        className="top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-4"
+        id="nav"
+        className="top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-3"
       >
         <div className="mx-auto">
           <a href="/">
@@ -90,15 +83,12 @@ export default function Nav() {
           </button>
         </div>
         <div className="block md:hidden">
-          {/* Mobile Hamburger Icon */}
           <button
             onClick={handleNav}
             className="inline-flex items-center p-2 ml-3 text-sm md:hidden "
           >
             <img src={require("../src/images/hamburger.png")} width="30px" />
           </button>
-
-          {/* Dropdown menu */}
           <div
             className={
               nav

@@ -16,7 +16,7 @@ import {
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { storeDietNeeds } from "../store/dietNeedsSlice";
 
-function UserProfile() {
+export default function UserProfile() {
   const [account, setAccount] = useState({});
   const [allergy, setAllergy] = useState({});
   const [diet_restrict, setDiet] = useState({});
@@ -29,7 +29,6 @@ function UserProfile() {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await result.json();
-    console.log(data);
     setAccount(data);
   };
 
@@ -79,8 +78,6 @@ function UserProfile() {
         <h1 className="text-center font-bold mt-7 text-2xl">
           {account.first_name}'s Profile Page
         </h1>
-
-        {/* Account Details */}
         <h2 className="max-w-screen-sm mx-auto font-bold mt-12 text-xl">
           Account Details
         </h2>
@@ -137,8 +134,6 @@ function UserProfile() {
             </button>
           </a>
         </div>
-
-        {/* Food Preferences */}
         <h2 className="max-w-screen-sm mx-auto font-bold mt-12 text-xl">
           Food Preferences
         </h2>
@@ -260,5 +255,3 @@ function UserProfile() {
     );
   }
 }
-
-export default UserProfile;

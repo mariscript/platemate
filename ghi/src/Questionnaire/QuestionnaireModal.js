@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { storeYelp } from "../store/yelpVar";
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
@@ -14,7 +14,7 @@ const options = [
   { value: "japanese", label: "🍣 Japanese" },
 ];
 
-function QuestionModal({ test, setTest }) {
+export default function QuestionModal({ refresh, setRefresh }) {
   const [account, setAccount] = useState({});
   const dispatch = useDispatch();
   const [zipcode, setZipcode] = useState("");
@@ -56,11 +56,10 @@ function QuestionModal({ test, setTest }) {
       13
     )}%3A${datetime.slice(14)}`;
     dispatch(storeYelp({ zipcode, budget, datetime, takeInOut, categories }));
-    setTest(true);
+    setRefresh(true);
     if (location.pathname === "/restaurants") {
     }
     navigate("/restaurants");
-    console.log(location.pathname);
   };
 
   const fetchAccount = async () => {
@@ -96,18 +95,29 @@ function QuestionModal({ test, setTest }) {
               <h1 className="flex flex-col items-center font-bold mt-5 text-3xl mb-5">
                 Let's Find Your Plate!
               </h1>
-              {test && (
+              {refresh && (
                 <div
-                  className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3"
+                  class="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md mt-4 w-[450px] mx-auto"
                   role="alert"
                 >
-                  <img
-                    src={require("../images/warning.png")}
-                    width="30px"
-                    style={{ marginRight: "15px" }}
-                  />
-
-                  <p className="text-sm">test</p>
+                  <div className="flex">
+                    <div className="py-1">
+                      <img
+                        src={require("../images/bell.png")}
+                        width="100px"
+                        className="mr-3"
+                      />
+                    </div>
+                    <div>
+                      <h2 className="font-bold text-[20px] mr-2 ml-3">
+                        Order Up!
+                      </h2>
+                      <h3 className="text-sm ml-3">
+                        You may now close this window to see what tasty plates
+                        await or might find the chicken of despair…
+                      </h3>
+                    </div>
+                  </div>
                 </div>
               )}
               <svg
@@ -376,7 +386,3 @@ function QuestionModal({ test, setTest }) {
     </>
   );
 }
-
-export default QuestionModal;
-
-//dispatch(deleteCat(cat.id)
