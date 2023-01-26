@@ -154,11 +154,11 @@ export default function RestaurantList({ refresh }) {
                   className="inline-block w-10 ml-2"
                 />
               </h5>
-              <h1 className="text-center">
+              <h2 className="text-center">
                 We couldn't find restaurants with your answers. Make sure to
                 fill out every question! Try the questionnaire again, so we can
                 find your plate!
-              </h1>
+              </h2>
             </div>
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function RestaurantList({ refresh }) {
               width="70px"
               className="mx-auto mt-10"
             />
-            <h1 className="text-center font-bold mt-7 text-2xl mb-8">
+            <h1 className="text-center font-md mt-7 text-5xl mb-8">
               List of Restaurants
             </h1>
             <div className="flex justify-center gap-6">
