@@ -18,34 +18,6 @@ export default function RestaurantList({ test }) {
 
   const [tern, setTern] = useState(false);
 
-  const getData = async () => {
-    try {
-      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp/?location=${location}&budget=${budget}&open_at=${openAt}`;
-      const fetchConfig = {
-        headers: {
-          accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      };
-      const resp = await fetch(url, fetchConfig);
-      const data = await resp.json();
-      setRestaurants(data.businesses.slice(0, 3));
-      setTern(true);
-    } catch (e) {
-      setTern(false);
-    }
-  };
-  useEffect(() => {
-    if (token) {
-      getData();
-    }
-  }, [token]);
-  useEffect(() => {
-    if (test) {
-      getData();
-    }
-  }, [test]);
 
   const allergies = useSelector((state) => state.dietNeeds.name.allergy);
   const diet_restrict = useSelector((state) => state.dietNeeds.name.diet_restrict);
@@ -72,6 +44,7 @@ export default function RestaurantList({ test }) {
     }
 
     const getRestaurants = async () => {
+      try{
       const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${changeCatString()}`;
       console.log(url)
       // const url = 'http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-24%2018%3A44&categories=chinese'
@@ -88,25 +61,34 @@ export default function RestaurantList({ test }) {
       const data = await resp.json();
       console.log(data)
       setRestaurants(data?.businesses.slice(0,3));
+      setTern(true);
+    } catch (e) {
+      setTern(false);
+    }
     };
 
 
     useEffect(() => {
+        if (token){
         changeCatString()
         console.log(finalString)
         if (finalString){
         getRestaurants();
         dispatch(storeRestList({ restaurants }));
-        }
+        }}
+    }, [finalString]);
 
-    }, [token,finalString]);
+    useEffect(() => {
+      if (test) {
+        getRestaurants();
+      }
+    }, [test]);
 
-    //   const handleId = (e) => {
-  //     let value = e.target.value;
-  //     setId(value)
-  // }
 
-
+      const handleId = (e) => {
+      let value = e.target.value;
+      setId(value)
+  }
 
 
   return (
