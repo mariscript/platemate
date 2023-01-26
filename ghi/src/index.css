@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -11,8 +16,46 @@ body {
   -moz-osx-font-smoothing: grayscale;
   @apply bg-[#FEF5ED];
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-image: url("./images/bg-float.png");
+  background-position: center center;
+  animation: float-bg 5s ease-in-out infinite alternate;
+  z-index: -1;
+}
+body::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-image: url("./images/fruit.png");
+  background-position: right bottom;
+  animation: slide-in 4s ease-in-out;
+  z-index: -2;
+  position: fixed;
+}
+@keyframes slide-in {
+  from {
+    right: -200px;
+  }
+  to {
+    right: 0;
+  }
+}
+@keyframes float-bg {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-10%);
+  }
 }
