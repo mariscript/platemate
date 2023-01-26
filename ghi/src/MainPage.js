@@ -7,8 +7,8 @@ export default function MainPage() {
     return (
       <>
         <div className="flex justify-center mx-auto px-auto mt-10">
-          <h1 className="font-bold text-4xl font-sans">
-            Welcome to PlateMate!
+          <h1 className="font-medium text-5xl font-montserrat animated">
+            Welcome to PlateMate
           </h1>
         </div>
         <div

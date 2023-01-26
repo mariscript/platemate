@@ -59,3 +59,25 @@ body::after {
     transform: translateY(-10%);
   }
 }
+
+@keyframes slideDownFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animated {
+  animation: slideDownFadeIn 2s;
+}
+
+@font-face {
+  font-family: "MainTitleFont";
+  src: url("./fonts/restaurant.ttf") format("truetype");
+}
+h1 {
+  font-family: "MainTitleFont", sans-serif;
+}
