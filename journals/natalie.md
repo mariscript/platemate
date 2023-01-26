@@ -4,6 +4,7 @@
 
 - was able to get questionnaire to refresh when taking it the second time in restaurants list
 - added a retake the questionnaire button on the restaurants list so that users can retake if needed
+- created a message after submitting the questionnaire
 
 ### (Tues) 1/24/2023
 

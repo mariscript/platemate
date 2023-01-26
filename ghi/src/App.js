@@ -29,7 +29,7 @@ function App() {
   const [test, setTest] = useState(false);
   setTimeout(() => {
     setTest(false);
-  }, 5000);
+  }, 10000);
   return (
     <AuthProvider>
       <BrowserRouter>
