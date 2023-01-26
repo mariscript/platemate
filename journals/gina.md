@@ -3,13 +3,16 @@
 ## Week 5:
 
 ### Wednesday 1/26/23
-The first thing I did today was get a unit test done for get all accounts. I would really like to do one for Yelp, but I want to finish the filters first since that is such a big functionality piece.
+
+The first thing I did today was get a unit test done for get all accounts. I would really like to do one for Yelp, but I want to finish the filters first since that is such a big functionality piece. The rest of today feels like a blur. I mostly worked on the one category filter ALL DAY. I learned yesterday that the categories filter does not work as intended, and it actually needs to be in terms. I was having SO many issues with state especially with the new refresh page function Marison and Nat used to get the modal dismissal to work correctly. Originally I had the function to change term to string on the restaurant detail page, but I instead added some logic on the questionnaire page instead to get the string to populate directly into the term field correctly formatted. This way I could bypass all the state issues I was having. I also helped fix the cards so they are appropriately sized! Tomorrow I will work on the additional filters and adding the redux clear functions when someone logs out.
 
 ### Tuesday 1/25/23
-Today was a really long day. The group started working on unit tests, and I didn't get a chance to because I was working on filters. After all the merges in the morning, I noticed that redux was NOT working as intended, so I messed with that for a while. However, most of my day was spent trying to get the categories filter to work. I learned that FastAPI does not allow a list as an input, so I converted it to a string on the front end and passed it back to FastAPI. It took a long time to get the link working correctly. Now I am having issues with the API not returning results as expected, but I think that is an issue with the API itself and not with our code. Other than that, today was a lot of tedious testing, but we are making progress. Tomorrow my goal is to get my unit test done, just to get that out of the way!
+
+Today was a really long day. The group started working on unit tests, and I didn't get a chance to because I was working on filters. After all the merges in the morning, I noticed that redux was NOT working as intended, s I messed with that for a while. However, most of my day was spent trying to get the categories filter to work. I learned that FastAPI does not allow a list as an input, so I converted it to a string on the front end and passed it back to FastAPI. It took a long time to get the link working correctly. Now I am having issues with the API not returning results as expected, but I think that is an issue with the API itself and not with our code. Other than that, today was a lot of tedious testing, but we are making progress. Tomorrow my goal is to get my unit test done, just to get that out of the way!
 
 ### Monday 1/24/23
 Wow crunch week! I had a fairly productive weekend actually but I am grouping it all to keep things consistent. Over this weekend and today, I was able to complete the following:
+
 - make multiple react slices including for user, restaurant list, dietary needs
 - make cards for restaurant list
 - make modals for restaurant detail
@@ -24,15 +27,19 @@ Wow crunch week! I had a fairly productive weekend actually but I am grouping it
 ## Week 4:
 
 ### Friday 1/20/23
+
 We started off our day with another merge party which would you believe led to some merge issues. We resolved those by correcting a pydantic model on the back end and creating a new one specifically for updateMarison and I completed the questionnaire form and will work later tonight to make sure everything gets into redux store. We also have the questionnaire page redirecting to the restaurant list which still has the tester API on it. As soon as we get redux store working, we can test the actual API call. Marison worked her magic on the form and it looks amazing! We did have to download an additional dependency for multi select which looks great. Nat finished designing the user profile page which looks amazing and also fixed the footer. Zac worked on updating the tables for allergies and dietary restrictions while Jason worked on getting functioning checkboxes for toggling on the user profile.
 
 ### Thursday 1/19/23
+
 Today was a busy day! Instead of having the modal dismiss after submission of the sign up/login form, she altered the onSubmit to just pop up a message saying the form has been submitted. She also implemented a rotating pizza spinner to load after submission of the sign up form. Marison and I learned that we had to use redux-persist for persistent data storage that we can access from the redux store on other pages/when the page is refreshed. Marison and I worked on getting that set up, and we should officially have persisted state! Fun thing we learned today is that state can be rehydrated? Need to read up more on that! Zac, Jason and I troubleshooted the update form and fixed an issue we were having with the backend update function. Marison additionally worked on a carousel for the main page. Zac and Jason worked on the updated profile form and are working on checkboxes to turn off and on allergies.
 
 ### Wednesday 1/18/23
+
 We started off our day trying to help Nat with a few design bugs with the modals. Once we had reached a stopping point there, we split up into groups. Nat was able to get sign up and login modals working with each other on the main page. She also changed the login submit button to handle through form submit and not an onClick on the button. Marison and I started implementation of redux for questionnaire variables. We created out first slice for question 1 and can see the variable in the redux store. We started testing using "default value" in the form we created for questionnaire to see if we could pull directly from the logged in users table. Most of our day was redux research. Zac and Jason worked on the user profile page including the user profile update form.
 
 ### Tuesday 1/17/23
+
 Over the weekend, I completed front end auth and tested it on the restaurant list page and restaurant detail page which both now have front end authenticated API calls. I also worked on the restuarant list and restaurant detail page API calls to see if those would work. Jason completed the unix code conversion on the backend. Marison completed the footer. Nat completed the signup modal as well as worked on login modal.
 
 Today we spent our morning merging all the changes from this weekend (can you say merge party?). Jason and Zac worked on the user profile pages. While doing that, they corrected the get_by_id router calls, since we changed the account_id to come from login instead of user input. Nat was able to get Tailwind Elements downloaded correctly and work on transitions for our modals. Marison and I are changing some components over to Redux to access Redux Toolkit store for variables that we are getting from the questionnaire page.
@@ -40,12 +47,15 @@ Today we spent our morning merging all the changes from this weekend (can you sa
 ## Week 3:
 
 ### Friday 1/13/23
+
 Zac, Jason, and I worked on front end authentication. We created the Authenticator.js file with most of the needed Account CRUD functions. We were able to make the Login.js function generate a token. The next tasks are to require a token for other authenticated pages as well as set up the routes to note which routes need to be authenticated. Two things we learned are that in JS, array destructuring allows you to use a "," to skip over any values in a list that you might not want to pull. We also learned that for an onSubmit, you want to put any functions you are calling with parameters inside a separate handleSubmit function instead of inside the onSubmit. Nat fixed some issues with sign up form and added error messages to show if email or zipcode was not properly formatted. She is almost complete with the design for that. Marison worked on and is almost done with the footer!
 
 ### Thursday 1/12/2023
+
 Zac and I were split up again working on auth. We originally thought we would need specific error handling for get one, put and delete functions. We then learned that we can use the account_data dictionary that is created when a user is authenticated to pull the "id" value from there. This means we don't have to input the userid manually which removes the need for id error handling since only active ids can access those CRUD functions. Nat and Marison worked on design and were able to get a signup modal working! Jason was able to complete a login form without the authentication piece which we are working on tomorrow.
 
 ### Wednesday 1/11/2023
+
 Before we split up into groups, we created skeleton files and folders for our front end. We set up MainPage.js and app.js as a group to have a template, and then we split into groups. Zac and I are worked on completing backend authorization and finished authorizing all routes except for the external API. We also updated the accounts table to make email a unique entry. We also noticed that the put and delete fields need some error handling which we will handle tomorrow. Marison and Jason worked on the signup form which we are very close to completing. Nat was able to download TailWind which we are using instead of Bootstrap and she finished our unauthenticatd user Nav.
 
 ### Tuesday 1/10/2023
