@@ -63,7 +63,7 @@ export default function MainPage() {
                   className="block w-screen scale-75 rounded-3xl"
                   alt="Morimotos"
                 />
-                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
+                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl drop-shadow-md">
                   <h5 className="text-xl font-bold -mt-3">
                     Don't know where to eat?
                   </h5>
@@ -77,7 +77,7 @@ export default function MainPage() {
                   className="block w-screen scale-75 rounded-3xl shadow-2xl"
                   alt="Rebel Cheese"
                 />
-                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
+                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl drop-shadow-md">
                   <h5 className="text-xl font-bold -mt-3">
                     Sign up to take the Questionnaire!
                   </h5>
@@ -91,7 +91,7 @@ export default function MainPage() {
                   className="block w-screen scale-75 rounded-3xl"
                   alt="Sugarfish Sushi"
                 />
-                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
+                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl drop-shadow-md">
                   <h5 className="text-xl font-bold -mt-3">
                     Eating now? Eating later?
                   </h5>
@@ -105,7 +105,7 @@ export default function MainPage() {
                   className="box w-screen scale-75 rounded-3xl"
                   alt="Gyukaku"
                 />
-                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
+                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl drop-shadow-md">
                   <h5 className="text-xl font-bold -mt-3">
                     Eating on a budget?
                   </h5>
@@ -119,7 +119,7 @@ export default function MainPage() {
                   className="block w-screen scale-75 rounded-3xl"
                   alt="Italian Food"
                 />
-                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
+                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl drop-shadow-md">
                   <h5 className="text-xl font-bold -mt-3">
                     Have restrictions or allergies?
                   </h5>
