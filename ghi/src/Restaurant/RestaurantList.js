@@ -10,45 +10,52 @@ export default function RestaurantList({ test }) {
   const [restaurants, setRestaurants] = useState([]);
   const [id, setId] = useState("");
   const { token } = useAuthContext();
-  const [categories,setCategories] = useState("")
-  const [allergyEntry, setAllergies] = useState("")
-  const [dietRestrictEntry, setDietRestrict] = useState("")
-  const dispatch = useDispatch()
-  const [finalString,setFinalString] = useState("")
+  const [categories, setCategories] = useState("");
+  const [allergyEntry, setAllergies] = useState("");
+  const [dietRestrictEntry, setDietRestrict] = useState("");
+  const dispatch = useDispatch();
+  const [finalString, setFinalString] = useState("");
 
   const [tern, setTern] = useState(false);
 
-
   const allergies = useSelector((state) => state.dietNeeds.name.allergy);
-  const diet_restrict = useSelector((state) => state.dietNeeds.name.diet_restrict);
+  const diet_restrict = useSelector(
+    (state) => state.dietNeeds.name.diet_restrict
+  );
   const yelpResponse = useSelector((state) => state.yelp.name);
   const location = yelpResponse.zipcode;
   const budget = yelpResponse.budget;
   const openAt = yelpResponse.datetime;
-  const yelpCat = yelpResponse.categories
-  console.log(yelpCat)
+  const yelpCat = yelpResponse.categories;
+  console.log(yelpCat);
 
-  function dietNeedsFilter(){
-    let dietRestrictEntries = (Object.entries(diet_restrict)).filter((entry) =>  entry[1] === true)
-    let allergiesEntries = (Object.entries(allergies)).filter((entry) =>  entry[1] === true)
-    setAllergies(allergiesEntries)
-    setDietRestrict(dietRestrictEntries)
+  function dietNeedsFilter() {
+    let dietRestrictEntries = Object.entries(diet_restrict).filter(
+      (entry) => entry[1] === true
+    );
+    let allergiesEntries = Object.entries(allergies).filter(
+      (entry) => entry[1] === true
+    );
+    setAllergies(allergiesEntries);
+    setDietRestrict(dietRestrictEntries);
   }
 
-    function changeCatString(){
-      let finalString = ""
-      let randomCat = Math.floor(Math.random() * (yelpCat.length + 1))
-      finalString = yelpCat[randomCat]
-      setFinalString(finalString)
-      return finalString
-    }
+  function changeCatString() {
+    let finalString = "";
+    let randomCat = Math.floor(Math.random() * (yelpCat.length + 1));
+    finalString = yelpCat[randomCat];
+    setFinalString(finalString);
+    return finalString;
+  }
 
-    const getRestaurants = async () => {
-      try{
-      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${changeCatString()}`;
-      console.log(url)
+  const getRestaurants = async () => {
+    try {
+      const url = `${
+        process.env.REACT_APP_PLATEMATE_API_HOST
+      }/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${changeCatString()}`;
+      console.log(url);
       // const url = 'http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-24%2018%3A44&categories=chinese'
-                      // http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-25%2012%3A00&categories=chinese
+      // http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-25%2012%3A00&categories=chinese
 
       const fetchConfig = {
         headers: {
@@ -59,37 +66,29 @@ export default function RestaurantList({ test }) {
       };
       const resp = await fetch(url, fetchConfig);
       const data = await resp.json();
-      console.log(data)
-      setRestaurants(data?.businesses.slice(0,3));
+      console.log(data);
+      setRestaurants(data?.businesses.slice(0, 3));
       setTern(true);
     } catch (e) {
       setTern(false);
     }
-    };
+  };
 
-
-    useEffect(() => {
-        if (token){
-        changeCatString()
-        console.log(finalString)
-        if (finalString){
+  useEffect(() => {
+    if (token) {
+      changeCatString();
+      console.log(finalString);
+      if (finalString !== undefined && test) {
         getRestaurants();
         dispatch(storeRestList({ restaurants }));
-        }}
-    }, [finalString]);
-
-    useEffect(() => {
-      if (test) {
-        getRestaurants();
       }
-    }, [test]);
+    }
+  }, [test]);
 
-
-      const handleId = (e) => {
-      let value = e.target.value;
-      setId(value)
-  }
-
+  const handleId = (e) => {
+    let value = e.target.value;
+    setId(value);
+  };
 
   return (
     <>
@@ -121,7 +120,10 @@ export default function RestaurantList({ test }) {
       <div className="flex justify-center gap-6">
         {tern ? (
           restaurants.map((restaurant) => (
-            <div className="flex justify-center drop-shadow-md" key={restaurant.id}>
+            <div
+              className="flex justify-center drop-shadow-md"
+              key={restaurant.id}
+            >
               <div className="rounded-lg shadow-lg bg-white max-w-sm">
                 <div className="relative rounded-lg bg-red-500 pb-2/3">
                   <img
@@ -135,23 +137,23 @@ export default function RestaurantList({ test }) {
                     {restaurant.name}
                   </h5>
                   <p className="text-gray-700 text-base mb-4">
-                    {restaurant.location.address1}, {restaurant.location.zip_code}
+                    {restaurant.location.address1},{" "}
+                    {restaurant.location.zip_code}
                   </p>
                   <p className="text-gray-700 text-base mb-4">
                     {restaurant.display_phone}
                   </p>
                   <p className="text-gray-700 text-base mb-4">
-                  <a
-                    href={restaurant.url}
-                    className="underline hover:text-sky-700"
-                  >
-                    Website
-                  </a>
-                </p>
+                    <a
+                      href={restaurant.url}
+                      className="underline hover:text-sky-700"
+                    >
+                      Website
+                    </a>
+                  </p>
                 </div>
                 <RestaurantDetailModal />
               </div>
-
             </div>
           ))
         ) : (
