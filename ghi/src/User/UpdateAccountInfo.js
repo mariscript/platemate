@@ -2,16 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAuthContext, useToken } from "../Authentication/AuthenticateUser";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFish,
-  faBreadSlice,
-  faLeaf,
-  faCarrot,
-  faBowlFood,
-  faLocationDot,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
-import { useDispatch } from "react-redux";
+import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function UpdateAccountInfo() {
   const [account, setAccount] = useState({});
@@ -22,7 +13,6 @@ export default function UpdateAccountInfo() {
   const [, , , , update] = useToken();
   const [cancelEdit, setCancelEdit] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [refresh, setRefresh] = useState(false);
   const navigate = useNavigate();
   const { token } = useAuthContext();
 

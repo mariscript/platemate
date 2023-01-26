@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { storeYelp } from "../store/yelpVar";
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
@@ -14,7 +14,7 @@ const options = [
   { value: "japanese", label: "🍣 Japanese" },
 ];
 
-function QuestionModal({ refresh, setRefresh }) {
+export default function QuestionModal({ refresh, setRefresh }) {
   const [account, setAccount] = useState({});
   const dispatch = useDispatch();
   const [zipcode, setZipcode] = useState("");
@@ -60,7 +60,6 @@ function QuestionModal({ refresh, setRefresh }) {
     if (location.pathname === "/restaurants") {
     }
     navigate("/restaurants");
-    console.log(location.pathname);
   };
 
   const fetchAccount = async () => {
@@ -96,7 +95,6 @@ function QuestionModal({ refresh, setRefresh }) {
               <h1 className="flex flex-col items-center font-bold mt-5 text-3xl mb-5">
                 Let's Find Your Plate!
               </h1>
-
               {refresh && (
                 <div
                   class="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md mt-4 w-[450px] mx-auto"
@@ -388,7 +386,3 @@ function QuestionModal({ refresh, setRefresh }) {
     </>
   );
 }
-
-export default QuestionModal;
-
-//dispatch(deleteCat(cat.id)

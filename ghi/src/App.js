@@ -20,12 +20,11 @@ import UpdateDietaryNeeds from "./User/UpdateDietaryNeeds";
 import { useState } from "react";
 
 function GetToken() {
-  // Get token from JWT cookie (if already logged in)
   useToken();
   return null;
 }
 
-function App() {
+export default function App() {
   const [refresh, setRefresh] = useState(false);
   setTimeout(() => {
     setRefresh(false);
@@ -79,5 +78,3 @@ function App() {
     </AuthProvider>
   );
 }
-
-export default App;

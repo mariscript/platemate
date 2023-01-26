@@ -1,4 +1,4 @@
-function Resources() {
+export default function Resources() {
   return (
     <>
       <img
@@ -323,5 +323,3 @@ function Resources() {
     </>
   );
 }
-
-export default Resources;

@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useToken } from "./AuthenticateUser";
 import { useNavigate } from "react-router-dom";
-import { useAuthContext } from "../Authentication/AuthenticateUser";
 
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [, login] = useToken();
-  const { token } = useAuthContext();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -37,10 +35,6 @@ export default function LoginComponent() {
     setEmail("");
     setPassword("");
   };
-
-  // if (token){
-  //   navigate("/me")
-  // }
 
   function loginValidation() {
     let blankInputs = 0;

@@ -1,4 +1,4 @@
-function MainPage() {
+export default function MainPage() {
   return (
     <>
       <div className="flex justify-center mt-10 mb-5">
@@ -23,7 +23,6 @@ function MainPage() {
         className="carousel slide carousel-fade carousel-dark relative -mt-10"
         data-bs-ride="carousel"
       >
-        {/* indicators */}
         <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
           <button
             data-bs-target="#carouselDarkVariant"
@@ -53,10 +52,7 @@ function MainPage() {
             aria-label="Slide 1"
           ></button>
         </div>
-
-        {/* inner */}
         <div className="carousel-inner relative w-full overflow-hidden">
-          {/* item 0 */}
           <div className="carousel-item active relative float-left w-full">
             <img
               src={require("./images/morimoto.jpg")}
@@ -70,7 +66,6 @@ function MainPage() {
               <p className="">PlateMate will help you choose!</p>
             </div>
           </div>
-          {/* item 1 */}
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/rebelcheese.jpg")}
@@ -84,7 +79,6 @@ function MainPage() {
               <p>We'll help you find the right plate.</p>
             </div>
           </div>
-          {/* item 2 */}
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/SUGARFISH.jpg")}
@@ -98,7 +92,6 @@ function MainPage() {
               <p>No problem, let us know in the questionnaire!</p>
             </div>
           </div>
-          {/* item 3 */}
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/gyukaku.jpg")}
@@ -110,7 +103,6 @@ function MainPage() {
               <p>We'll find the plate for you!</p>
             </div>
           </div>
-          {/* item 4 */}
           <div className="carousel-item relative float-left w-full">
             <img
               src={require("./images/italian.jpg")}
@@ -125,8 +117,6 @@ function MainPage() {
             </div>
           </div>
         </div>
-
-        {/* carousel controls */}
         <button
           className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
           type="button"
@@ -155,5 +145,3 @@ function MainPage() {
     </>
   );
 }
-
-export default MainPage;
