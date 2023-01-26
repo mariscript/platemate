@@ -61,7 +61,7 @@ export default function MainPage() {
                   className="block w-screen scale-75 rounded-3xl"
                   alt="Morimotos"
                 />
-                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
+                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl drop-shadow-md">
                   <h5 className="text-xl font-bold -mt-3">
                     Don't know where to eat?
                   </h5>
@@ -75,7 +75,7 @@ export default function MainPage() {
                   className="block w-screen scale-75 rounded-3xl shadow-2xl"
                   alt="Rebel Cheese"
                 />
-                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
+                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl drop-shadow-md">
                   <h5 className="text-xl font-bold -mt-3">
                     Sign up to take the Questionnaire!
                   </h5>
@@ -89,7 +89,7 @@ export default function MainPage() {
                   className="block w-screen scale-75 rounded-3xl"
                   alt="Sugarfish Sushi"
                 />
-                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
+                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl drop-shadow-md">
                   <h5 className="text-xl font-bold -mt-3">
                     Eating now? Eating later?
                   </h5>
@@ -103,7 +103,7 @@ export default function MainPage() {
                   className="box w-screen scale-75 rounded-3xl"
                   alt="Gyukaku"
                 />
-                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
+                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl drop-shadow-md">
                   <h5 className="text-xl font-bold -mt-3">
                     Eating on a budget?
                   </h5>
@@ -117,7 +117,7 @@ export default function MainPage() {
                   className="block w-screen scale-75 rounded-3xl"
                   alt="Italian Food"
                 />
-                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">
+                <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl drop-shadow-md">
                   <h5 className="text-xl font-bold -mt-3">
                     Have restrictions or allergies?
                   </h5>
@@ -182,7 +182,7 @@ export default function MainPage() {
         <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-5xl max-h-lg">
           <div
             id="carouselDarkVariant"
-            className="carousel slide carousel-fade carousel-dark relative -mt-10"
+            className="mx-auto max-w-6xl carousel slide carousel-fade carousel-dark relative -mt-10"
             data-bs-ride="carousel"
           >
             {/* indicators */}
@@ -217,7 +217,7 @@ export default function MainPage() {
             </div>
 
             {/* inner */}
-            <div className="carousel-inner relative w-full overflow-hidden">
+            <div className="carousel-inner relative w-full overflow-hidden h-2/4">
               {/* item 0 */}
               <div className="carousel-item active relative float-left w-full">
                 <img
@@ -236,7 +236,7 @@ export default function MainPage() {
               <div className="carousel-item relative float-left w-full">
                 <img
                   src={require("./images/rebelcheese.jpg")}
-                  className="block w-screen scale-75 rounded-3xl"
+                  className="block w-screen scale-75 rounded-3xl shadow-2xl"
                   alt="Rebel Cheese"
                 />
                 <div className="carousel-caption hidden md:block absolute text-center bg-[#FDECA9] mx-auto w-96 rounded-3xl">

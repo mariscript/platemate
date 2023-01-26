@@ -13,7 +13,7 @@ export default function Resources() {
       <div className="text-center text-gray-800 py-20 px-6">
         <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-4 gap-2">
           <div className="flex justify-center drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50 max-w-sm">
               <a
                 target="_blank"
                 title="Figma"
@@ -39,7 +39,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="Excalidraw"
@@ -65,7 +65,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="PostgreSQL"
@@ -90,7 +90,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="React"
@@ -116,7 +116,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="Tailwind CSS"
@@ -141,7 +141,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center col-auto drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="Tailwind Components"
@@ -166,7 +166,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center col-auto drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="Tailwind Elements"
@@ -191,7 +191,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center col-auto drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="Fast API"
@@ -216,7 +216,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center col-auto drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="Yelp API"
@@ -242,7 +242,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center col-auto drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="FlatIcon"
@@ -268,7 +268,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center col-auto drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="Redux"
@@ -296,7 +296,7 @@ export default function Resources() {
             </div>
           </div>
           <div className="flex justify-center col-auto drop-shadow-md">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="rounded-lg shadow-lg bg-[#EEE5DD] border-2 border-[#d5beaa] hover:shadow-lg hover:shadow-emerald-200/50  max-w-sm">
               <a
                 target="_blank"
                 title="Font Awesome"

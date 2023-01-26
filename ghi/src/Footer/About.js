@@ -11,6 +11,7 @@ export default function About() {
     <>
       <img
         src={require("../images/idea.png")}
+        alt="pic"
         width="70px"
         className="mx-auto mt-10"
       />
@@ -271,7 +272,13 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Jason Olefson</h5>
-                  <p className="mb-6">Blurb</p>
+                  <p className="mb-6">
+                    "I started my coding journey in late 2021. This project
+                    helped solidify my knowledge of React, and how its
+                    components work. One interesting thing I learned throughout
+                    this project is how to convert UNIX time, as well as
+                    structure RMDBS."{" "}
+                  </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/jason-olefson/"
