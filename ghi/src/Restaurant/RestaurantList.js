@@ -86,32 +86,26 @@ export default function RestaurantList({ test }) {
       <div className="flex justify-center gap-6">
         {tern ? (
           restaurants.map((restaurant) => (
-            <div
-              className="rounded-lg shadow-lg bg-white max-w-sm"
-              key={restaurant.id}
-            >
-              <div className="w-96 h-96">
-                <img
-                  src={restaurant.image_url}
-                  className="rounded-t-lg object-contain"
-                  alt=""
-                />
-              </div>
-              <div className="p-6 justify-center">
-                <h5 className="text-gray-900 text-xl font-medium mb-2 justify-center content-center">
-                  {restaurant.name}{" "}
-                </h5>
-                <p className="text-gray-700 text-base mb-4">
-                  {" "}
-                  {restaurant.location.address1}
-                </p>
-                <p className="text-gray-700 text-base mb-4">
-                  {restaurant.location.zipcode}
-                </p>
-                <p className="text-gray-700 text-base mb-4">
-                  {restaurant.display_phone}
-                </p>
-                <p className="text-gray-700 text-base mb-4">
+            <div className="flex justify-center drop-shadow-md" key={restaurant.id}>
+              <div className="rounded-lg shadow-lg bg-white max-w-sm">
+                <div className="relative rounded-lg bg-red-500 pb-2/3">
+                  <img
+                    className="absolute h-full w-full rounded-t-lg object-cover"
+                    src={restaurant.image_url}
+                    alt=""
+                  />
+                </div>
+                <div className="p-6">
+                  <h5 className="text-gray-900 text-xl font-medium mb-2">
+                    {restaurant.name}
+                  </h5>
+                  <p className="text-gray-700 text-base mb-4">
+                    {restaurant.location.address1}, {restaurant.location.zip_code}
+                  </p>
+                  <p className="text-gray-700 text-base mb-4">
+                    {restaurant.display_phone}
+                  </p>
+                  <p className="text-gray-700 text-base mb-4">
                   <a
                     href={restaurant.url}
                     className="underline hover:text-sky-700"
@@ -119,8 +113,10 @@ export default function RestaurantList({ test }) {
                     Website
                   </a>
                 </p>
+                </div>
+                <RestaurantDetailModal />
               </div>
-              <RestaurantDetailModal />
+              
             </div>
           ))
         ) : (

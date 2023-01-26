@@ -1,4 +1,8 @@
 ## Week 5:
+### 1/25/2023
+- fixed the card formatting on Restaurant List
+- attempted to help Gina with the Questionnaire and Restaurant List calls
+
 ### 1/24/2023
 - worked on learning how to unit test.
 - completed a unit test for listing all allergies.
