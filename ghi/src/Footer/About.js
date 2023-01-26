@@ -23,11 +23,11 @@ function About() {
         {/* meet the team start */}
         <section className="mb-32 text-gray-800 text-center">
           <h3 className="text-lg mb-12 bg-[#EEE5DD] rounded-lg p-10 mx-auto">
-            PlateMate is an app created by five aspiring software engineers for
-            people who are struggling to make a dining decision. Whether you're
-            unsure of what's around, can't agree on a restaurant, or are
-            overwhelmed by options, PlateMate makes it easy to find a great
-            place to eat. Happy Plating!
+            PlateMate is an app created by five software engineers for people
+            who are struggling to make a dining decision. Whether you're unsure
+            of what's around, can't agree on a restaurant, or are overwhelmed by
+            options, PlateMate makes it easy to find a great place to eat. Happy
+            Plating!
           </h3>
           <h2 className="text-2xl font-bold mb-32">Meet the Mates!</h2>
 
