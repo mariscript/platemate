@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
-import RestaurantDetailModal from "./RestaurantDetailModal";
+import RestaurantDetail from "./RestaurantDetail";
 import { storeRestList } from "../store/restListState";
 import { storeDietNeeds } from "../store/dietNeedsSlice";
 
@@ -14,15 +14,16 @@ export default function RestaurantList({ refresh }) {
   const [allergyEntry, setAllergies] = useState("");
   const [dietRestrictEntry, setDietRestrict] = useState("");
   const dispatch = useDispatch();
-  const [selection, setSelectionMade] = useState("");
+  const [selection, setSelectionMade] = useState(false);
 
-  function selectionMade() {
+  const selectionMade = (e) => {
     if (selection) {
       setSelectionMade(false);
     } else {
       setSelectionMade(true);
+      setId(e.target.value);
     }
-  }
+  };
 
   const [load, setLoad] = useState({
     completed: false,
@@ -39,11 +40,6 @@ export default function RestaurantList({ refresh }) {
   const openAt = yelpResponse.datetime;
   const yelpCat = yelpResponse.categories;
   console.log(yelpCat);
-
-  const handleId = (e) => {
-    let value = e.target.value;
-    setId(value);
-  };
 
   function dietNeedsFilter() {
     let dietRestrictEntries = Object.entries(diet_restrict).filter(
@@ -231,6 +227,7 @@ export default function RestaurantList({ refresh }) {
                       <button
                         className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c]"
                         onClick={selectionMade}
+                        value={restaurant.id}
                       >
                         PICK ME
                       </button>
@@ -242,7 +239,9 @@ export default function RestaurantList({ refresh }) {
           </>
         ) : (
           <>
-            <div>YAY YOU DID IT!</div>
+            <div>
+              <RestaurantDetail idData={id} />
+            </div>
             <button
               onClick={selectionMade}
               className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c]"
