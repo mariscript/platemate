@@ -14,7 +14,7 @@ export default function About() {
         width="70px"
         className="mx-auto mt-10"
       />
-      <h1 className="text-center font-bold mt-7 text-2xl mb-8">
+      <h1 className="text-center font-md mt-7 text-5xl mb-8">
         About PlateMate{" "}
       </h1>
       <div className="flex items-center">
@@ -43,7 +43,7 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Zachary Macek</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">My favorite food is crab legs</p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/zachary-macek/"
@@ -149,7 +149,13 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Natalie Tang</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">
+                    "Hello! I'm Nat and based in DFW. I started my SWE journey
+                    last summer of 2022. Building this app has solidified my
+                    interest in front-end development and design. I am always on
+                    the lookout for new food experiences and believe food brings
+                    people together!"
+                  </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/natalientang/"
