@@ -50,11 +50,11 @@ export default function Nav() {
       >
         <div className="mx-auto">
           <a href="/">
-            <div className="flex justify-between tracking-[4px] ml-48 text-xl font-semibold items-center">
+            <div className="flex justify-between tracking-[6px] ml-48 text-4xl font-semibold items-center">
               <span>PLATE</span>
               <img
                 src={require("./images/plate.png")}
-                className="h-9"
+                className="h-10"
                 alt="PlateMate Logo"
               />
               <span>MATE</span>

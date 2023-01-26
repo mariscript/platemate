@@ -3,28 +3,28 @@ import plateLogo from "../images/plate.png";
 
 const Footer = () => {
   return (
-    <footer className="w-1/2 mx-auto h-8 transparent 0 bottom-0 items-center inset-x-0 bg-[#fef5ed] mt-20">
+    <footer className="w-1/2 mx-auto h-8 transparent 0 bottom-0 items-center inset-x-0 bottom-0 bg-[#fef5ed] mt-10">
       <div className="flex justify-center text-gray-600 dark:text-black">
-        <div className="mb-4 col-end-7 col-span-2">
-          <a href="./about" className="hover:underline font-semibold text-xs">
+        <div className="mb-2 col-end-7 col-span-2">
+          <a href="./about" className="hover:underline font-semibold text-s">
             About
           </a>
         </div>
-        <div className="justify-center mx-14">
+        <div className="justify-center mx-16">
           <a href="/" className="flex items-center">
-            <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
+            <span className="flex space-x-1 tracking-[4px] text-2xl font-semibold items-center">
               PLATE
             </span>
             <img src={plateLogo} className="h-9 mr-1" alt="PlateMate Logo" />
-            <span className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
+            <span className="flex space-x-1 tracking-[4px] text-2xl font-semibold items-center">
               MATE
             </span>
           </a>
         </div>
-        <div className="mb-4 col-end-7 col-span-2">
+        <div className="mb-2 col-end-7 col-span-2">
           <a
             href="./resources"
-            className="hover:underline font-semibold text-xs"
+            className="hover:underline font-semibold text-s"
           >
             Resources
           </a>
@@ -105,7 +105,7 @@ const Footer = () => {
       </div>
 
       <div className="flex items-center justify-center pt-6 pb-3">
-        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 mb-0">
           © 2023{" "}
           <a
             target="_blank"
