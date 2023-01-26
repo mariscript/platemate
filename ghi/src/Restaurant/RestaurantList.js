@@ -84,9 +84,13 @@ export default function RestaurantList({ refresh }) {
       const resp = await fetch(url, fetchConfig);
       const data = await resp.json();
       setRestaurants(data.businesses.slice(0, 3));
+      if (data.businesses.length === 0) {
+        errorFound = true;
+      }
     } catch (e) {
       errorFound = true;
     }
+
     setLoad({
       completed: true,
       issue: errorFound,
