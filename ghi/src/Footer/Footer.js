@@ -34,7 +34,7 @@ const Footer = () => {
 
       <div className="justify-items-center">
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-2 min-w-fit justify-items-center">
-          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2 place-self-center">
+          <div className="-mr-48 border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2 place-self-center">
             <a target="_blank" href="https://www.linkedin.com/in/marisonmunoz/">
               <img
                 src={require("../images/marison_icon.png")}
@@ -45,7 +45,7 @@ const Footer = () => {
               <span className="sr-only">Marison Munoz</span>
             </a>
           </div>
-          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
+          <div className="-mr-24 border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
             <a
               target="_blank"
               href="https://www.linkedin.com/in/gina-john/"
@@ -71,7 +71,7 @@ const Footer = () => {
               <span className="sr-only">Natalie Tang</span>
             </a>
           </div>
-          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
+          <div className="-ml-24 border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
             <a
               target="_blank"
               href="https://www.linkedin.com/in/jason-olefson/"
@@ -86,7 +86,7 @@ const Footer = () => {
               <span className="sr-only">Jason Olefson</span>
             </a>
           </div>
-          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
+          <div className="-ml-48 border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
             <a
               target="_blank"
               href="https://www.linkedin.com/in/zachary-macek/"
