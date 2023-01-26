@@ -6,17 +6,15 @@ export default function MainPage() {
   if (!token) {
     return (
       <>
-        <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-7xl">
-          <div className="flex justify-center mx-auto px-auto mt-10">
-            <h1 className="font-medium text-5xl font-montserrat animated">
-              Welcome to PlateMate
-            </h1>
-          </div>
-          <div className="flex justify-center mx-auto px-auto mt-2">
-            <h2 className="font-bold text-m font-sans">
-              Sign up to be a Mate, so we can help you find your Plate!
-            </h2>
-          </div>
+        <h1 className="welcome font-bold text-5xl font-montserrat animated text-center mt-14 mb-5 tracking-[7px]">
+          Welcome to PlateMate
+        </h1>
+        <h2 className="font-md text-2xl font-sans text-center dropdown">
+          Sign up to be a mate, so we can help you find your plate!
+        </h2>
+        <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-5xl">
+          <div className="flex justify-center mx-auto px-auto mt-10"></div>
+          <div className="flex justify-center mx-auto px-auto mt-2"></div>
 
           <div
             id="carouselDarkVariant"
@@ -163,21 +161,25 @@ export default function MainPage() {
         <div className="flex justify-center mt-10 mb-5">
           <button
             type="button"
-            className="inline-block px-10 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg hover:text-black focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out"
             data-bs-toggle="modal"
             data-bs-target="#questionnaire"
+            className="relative inline-flex items-center justify-start px-10 py-6 overflow-hidden font-bold transition-all bg-[#C26866] rounded-2xl group text-xl"
           >
-            <span className="inline-block font-bold">
-              Take The Questionnaire!
+            <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#FDECA9] rounded group-hover:-mr-4 group-hover:-mt-4">
+              <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
             </span>
-            <img
-              src={require("./images/form.png")}
-              alt="Loading..."
-              className="inline-block w-9 ml-2"
-            />
+            <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-[#FDECA9] rounded-2xl group-hover:mb-20 group-hover:translate-x-0"></span>
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-black">
+              TAKE THE QUESTIONNAIRE!
+              <img
+                src={require("./images/form.png")}
+                alt="Loading..."
+                className="inline-block w-9 ml-2"
+              />
+            </span>
           </button>
         </div>
-        <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-7xl max-h-lg">
+        <div className="bg-[#C6D3BE] mx-auto rounded-3xl max-w-5xl max-h-lg">
           <div
             id="carouselDarkVariant"
             className="carousel slide carousel-fade carousel-dark relative -mt-10"

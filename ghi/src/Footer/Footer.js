@@ -3,7 +3,7 @@ import plateLogo from "../images/plate.png";
 
 const Footer = () => {
   return (
-    <footer className="w-1/2 mx-auto h-8 transparent 0 bottom-0 items-center inset-x-0 bottom-0 bg-[#fef5ed] mt-10">
+    <footer className="w-1/2 mx-auto h-8 transparent 0 bottom-0 items-center inset-x-0 bg-[#fef5ed] mt-10">
       <div className="flex justify-center text-gray-600 dark:text-black">
         <div className="mb-2 col-end-7 col-span-2">
           <a href="./about" className="hover:underline font-semibold text-s">
@@ -12,15 +12,15 @@ const Footer = () => {
         </div>
         <div className="justify-center mx-16">
           <a href="/" className="flex items-center">
-            <h1 className="flex space-x-1 tracking-[4px] text-3xl font-md items-center">
+            <h1 className="flex space-x-1 tracking-[7px] text-3xl font-md items-center">
               Plate
             </h1>
             <img
               src={plateLogo}
-              className="h-9 mr-1 mx-2"
+              className="h-9 mr-2 mx-2 -ml-0 "
               alt="PlateMate Logo"
             />
-            <h1 className="flex space-x-1 tracking-[4px] text-3xl font-md items-center">
+            <h1 className="flex space-x-1 tracking-[7px] text-3xl font-md items-center">
               Mate
             </h1>
           </a>

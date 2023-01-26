@@ -73,18 +73,22 @@ export default function UserProfile() {
         <div className="flex justify-center mt-10 mb-5">
           <button
             type="button"
-            className="inline-block px-10 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg hover:text-black focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out"
             data-bs-toggle="modal"
             data-bs-target="#questionnaire"
+            className="relative inline-flex items-center justify-start px-10 py-6 overflow-hidden font-bold transition-all bg-[#C26866] rounded-2xl group text-xl"
           >
-            <span className="inline-block font-bold">
-              Take The Questionnaire!
+            <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#FDECA9] rounded group-hover:-mr-4 group-hover:-mt-4">
+              <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
             </span>
-            <img
-              src={require("../images/form.png")}
-              alt="Loading..."
-              className="inline-block w-9 ml-2"
-            />
+            <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-[#FDECA9] rounded-2xl group-hover:mb-20 group-hover:translate-x-0"></span>
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-black">
+              TAKE THE QUESTIONNAIRE!
+              <img
+                src={require("../images/form.png")}
+                alt="Loading..."
+                className="inline-block w-9 ml-2"
+              />
+            </span>
           </button>
         </div>
         <img
@@ -92,8 +96,14 @@ export default function UserProfile() {
           width="70px"
           className="mx-auto mt-10"
         />
-        <h1 className="text-center font-md mt-7 text-5xl">
-          {account.first_name}'s Profile Page
+        <h1 className="text-center mt-7 text-[40px] mr-2 tracking-[4px]">
+          {account.first_name}
+          <img
+            src={require("../images/apost.png")}
+            width="20px"
+            className="inline-block -mt-7 -ml-2 -mr-1"
+          />
+          s Profile Page
         </h1>
         <h2 className="max-w-screen-sm mx-auto font-bold mt-12 text-xl">
           Account Details

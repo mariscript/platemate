@@ -107,8 +107,14 @@ export default function QuestionModal({ refresh, setRefresh }) {
         <div className="modal-dialog modal-xl relative w-auto pointer-events-none max-w-screen-md">
           <div className="modal-content justify-center border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-[#FDECA9] bg-clip-padding rounded-md outline-none text-current">
             <div className="modal-header items-center p-2 border-b border-[#C26866] rounded-t-md">
-              <h1 className="flex flex-col items-center font-md mt-5 text-5xl mb-5">
-                Let's Find Your Plate
+              <h1 className="text-center mt-6 text-[40px] mr-2 mb-6 tracking-[4px]">
+                Let
+                <img
+                  src={require("../images/apost.png")}
+                  width="20px"
+                  className="inline-block -mt-7 -ml-2 -mr-1"
+                />
+                s Find Your Plate!
               </h1>
               {refresh && (
                 <div

@@ -1,5 +1,10 @@
 # Week 5
 
+### (Thurs) 1/26/2023
+
+- changed font styles throughout pages
+- edited the about page with information
+
 ### (Wed) 1/25/2023
 
 - was able to get questionnaire to refresh when taking it the second time in restaurants list (questionnaire buttons are now only on main page and restaurant list)
