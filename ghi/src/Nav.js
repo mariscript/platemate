@@ -54,7 +54,7 @@ export default function Nav() {
               <h1>Plate</h1>
               <img
                 src={require("./images/plate.png")}
-                className="h-10 mx-2"
+                className="h-10 mx-2 ml-1"
                 alt="PlateMate Logo"
               />
               <h1>Mate</h1>
@@ -248,7 +248,7 @@ export default function Nav() {
               <h1>Plate</h1>
               <img
                 src={require("./images/plate.png")}
-                className="h-10 mx-2"
+                className="h-10 mx-2 ml-1"
                 alt="PlateMate Logo"
               />
               <h1>Mate</h1>
