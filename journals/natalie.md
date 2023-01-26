@@ -5,6 +5,7 @@
 - was able to get questionnaire to refresh when taking it the second time in restaurants list (questionnaire buttons are now only on main page and restaurant list)
 - created a message after submitting the questionnaire
 - fixed error page to not show slightly before submitting the questionnaire
+- added design to background of application as well as incorporated a different font design for titles and logo title
 
 ### (Tues) 1/24/2023
 
