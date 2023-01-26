@@ -1,4 +1,4 @@
-function Resources() {
+export default function Resources() {
   return (
     <>
       <img
@@ -6,7 +6,7 @@ function Resources() {
         width="70px"
         className="mx-auto mt-10"
       />
-      <h1 className="text-center font-bold mt-7 text-2xl -mb-10">Resources</h1>
+      <h1 className="text-center font-md mt-7 text-5xl -mb-10">Resources</h1>
 
       <div className="text-center text-gray-800 py-20 px-6">
         <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-4 gap-2">
@@ -323,5 +323,3 @@ function Resources() {
     </>
   );
 }
-
-export default Resources;

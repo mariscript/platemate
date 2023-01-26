@@ -1,5 +1,4 @@
-function About() {
-  // image styling start
+export default function About() {
   const imgStyle1 = {
     "margin-top": "-75px",
   };
@@ -7,7 +6,6 @@ function About() {
   const imgStyle2 = {
     width: "150px",
   };
-  // image styling end
 
   return (
     <>
@@ -16,23 +14,21 @@ function About() {
         width="70px"
         className="mx-auto mt-10"
       />
-      <h1 className="text-center font-bold mt-7 text-2xl mb-8">
+      <h1 className="text-center font-md mt-7 text-5xl mb-8">
         About PlateMate{" "}
       </h1>
       <div className="flex items-center">
-        {/* meet the team start */}
         <section className="mb-32 text-gray-800 text-center">
           <h3 className="text-lg mb-12 bg-[#EEE5DD] rounded-lg p-10 mx-auto">
-            PlateMate is an app created by five aspiring software engineers for
-            people who are struggling to make a dining decision. Whether you're
-            unsure of what's around, can't agree on a restaurant, or are
-            overwhelmed by options, PlateMate makes it easy to find a great
-            place to eat. Happy Plating!
+            PlateMate is an app created by five software engineers for people
+            who are struggling to make a dining decision. Whether you're unsure
+            of what's around, can't agree on a restaurant, or are overwhelmed by
+            options, PlateMate makes it easy to find a great place to eat. Happy
+            Plating!
           </h3>
           <h2 className="text-2xl font-bold mb-32">Meet the Mates!</h2>
 
           <div className="grid gap-x-6 lg:gap-x-12 md:grid-cols-5">
-            {/* engineer start */}
             <div className="mb-24 md:mb-0">
               <div className="rounded-lg shadow-2xl h-full block bg-[#D9D9D9] border-2 border-black">
                 <div className="flex justify-center">
@@ -49,9 +45,10 @@ function About() {
                   <h5 className="text-lg font-bold mb-4">Zachary Macek</h5>
                   <p className="mb-6">My favorite food is crab legs</p>
                   <ul className="list-inside flex mx-auto justify-center">
-                    {/* LinkedIn */}
                     <a
                       href="https://www.linkedin.com/in/zachary-macek/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -65,7 +62,6 @@ function About() {
                         />
                       </svg>
                     </a>
-                    {/* Git */}
                     <a href="git" className="px-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +77,6 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* engineer start */}
             <div className="mb-24 md:mb-0">
               <div className="rounded-lg shadow-2xl h-full block bg-[#D9D9D9] border-2 border-black">
                 <div className="flex justify-center">
@@ -98,9 +93,10 @@ function About() {
                   <h5 className="text-lg font-bold mb-4">Gina John</h5>
                   <p className="mb-6">blurb</p>
                   <ul className="list-inside flex mx-auto justify-center">
-                    {/* LinkedIn */}
                     <a
                       href="https://www.linkedin.com/in/gina-john/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -114,7 +110,6 @@ function About() {
                         />
                       </svg>
                     </a>
-                    {/* Git */}
                     <a href="git" className="px-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -130,8 +125,6 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* engineer end */}
-            {/* engineer start */}
             <div className="mb-24 md:mb-0">
               <div className="rounded-lg shadow-2xl h-full block bg-[#D9D9D9] border-2 border-black">
                 <div className="flex justify-center">
@@ -146,11 +139,18 @@ function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Natalie Tang</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">
+                    "Hello! I'm Nat and based in DFW. I started my SWE journey
+                    last summer of 2022. Building this app has solidified my
+                    interest in front-end development and design. I am always on
+                    the lookout for new food experiences and believe food brings
+                    people together!"
+                  </p>
                   <ul className="list-inside flex mx-auto justify-center">
-                    {/* LinkedIn */}
                     <a
                       href="https://www.linkedin.com/in/natalientang/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -164,7 +164,6 @@ function About() {
                         />
                       </svg>
                     </a>
-                    {/* Git */}
                     <a href="https://gitlab.com/natalientang" className="px-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -180,8 +179,6 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* engineer end */}
-            {/* engineer start */}
             <div className="mb-24 md:mb-0">
               <div className="rounded-lg shadow-2xl h-full block bg-[#D9D9D9] border-2 border-black">
                 <div className="flex justify-center">
@@ -196,11 +193,18 @@ function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Marison Muñoz</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">
+                    "My favorite challenging portion of this app that I worked
+                    on was putting the questionnaire onto a carousel and onto a
+                    modal. I also enjoyed error handling with the chicken. I
+                    hate when I get asked, "What's your favorite food?" I love
+                    food in general."{" "}
+                  </p>
                   <ul className="list-inside flex mx-auto justify-center">
-                    {/* LinkedIn */}
                     <a
                       href="https://www.linkedin.com/in/marisonmunoz/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -214,8 +218,11 @@ function About() {
                         />
                       </svg>
                     </a>
-                    {/* Git */}
-                    <a href="git" className="px-2">
+                    <a
+                      href="https://gitlab.com/marisonmunoz"
+                      target="_blank"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -230,8 +237,6 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* engineer end */}
-            {/* engineer start */}
             <div className="">
               <div className="rounded-lg shadow-2xl h-full block bg-[#D9D9D9] border-2 border-black">
                 <div className="flex justify-center">
@@ -278,14 +283,9 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* engineer end */}
-            {/* all engineers end */}
           </div>
         </section>
-        {/* meet the team end */}
       </div>
     </>
   );
 }
-
-export default About;

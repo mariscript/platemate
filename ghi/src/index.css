@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -11,8 +16,69 @@ body {
   -moz-osx-font-smoothing: grayscale;
   @apply bg-[#FEF5ED];
 }
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-image: url("./images/bg-float.png");
+  background-position: center center;
+  animation: float-bg 5s ease-in-out infinite alternate;
+  z-index: -1;
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: -5rem;
+  right: -30rem;
+  width: 400px;
+  height: 400px;
+  background-size: contain;
+  background-image: url("./images/fruit.png");
+  background-position: right bottom;
+  animation: slide-in 4s forwards;
+  z-index: -2;
+  position: fixed;
+}
+@keyframes slide-in {
+  from {
+    right: -200px;
+    transform: translateX(100px) rotate(360deg);
+  }
+  to {
+    right: 0;
+  }
+}
+@keyframes float-bg {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@keyframes slideDownFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animated {
+  animation: slideDownFadeIn 2s;
+}
+
+@font-face {
+  font-family: "MainTitleFont";
+  src: url("./fonts/restaurant.ttf") format("truetype");
+}
+h1 {
+  font-family: "MainTitleFont", sans-serif;
 }

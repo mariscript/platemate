@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, NavLink } from "react-router-dom";
 import { useToken, useAuthContext } from "./Authentication/AuthenticateUser";
-import { useDispatch, useSelector } from "react-redux";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
@@ -14,14 +12,9 @@ import {
   faTools,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { storeUser } from "./store/userSlice";
-import { setUseProxies } from "immer";
-
 export default function Nav() {
   const [, , logout] = useToken();
-  const navigate = useNavigate();
   const { token } = useAuthContext();
-  const dispatch = useDispatch();
   const [user, setUser] = useState({});
 
   let [nav, setNav] = useState(false);
@@ -52,19 +45,19 @@ export default function Nav() {
   if (!token) {
     return (
       <nav
-        id="test"
+        id="nav"
         className="top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-3"
       >
         <div className="mx-auto">
           <a href="/">
-            <div className="flex justify-between tracking-[4px] ml-48 text-xl font-semibold items-center">
-              <span>PLATE</span>
+            <div className="flex justify-between tracking-[6px] ml-44 text-4xl font-md items-center">
+              <h1>Plate</h1>
               <img
                 src={require("./images/plate.png")}
-                className="h-9"
+                className="h-10 mx-2"
                 alt="PlateMate Logo"
               />
-              <span>MATE</span>
+              <h1>Mate</h1>
             </div>
           </a>
         </div>
@@ -78,6 +71,8 @@ export default function Nav() {
             <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
             SIGNUP
           </button>
+        </div>
+        <div className="hidden md:flex items-center">
           <button
             type="button"
             className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c] "
@@ -88,15 +83,12 @@ export default function Nav() {
           </button>
         </div>
         <div className="block md:hidden">
-          {/* Mobile Hamburger Icon */}
           <button
             onClick={handleNav}
             className="inline-flex items-center p-2 ml-3 text-sm md:hidden "
           >
             <img src={require("../src/images/hamburger.png")} width="30px" />
           </button>
-
-          {/* Dropdown menu */}
           <div
             className={
               nav
@@ -133,7 +125,7 @@ export default function Nav() {
       <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
         <Menu as="div" className="relative inline-block text-left ml-5">
           <div>
-            <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-sm font-medium text-gray-700 ">
+            <Menu.Button className="inline-flex w-full items-center justify-center px-4 py-2 text-lg font-medium text-gray-700 ">
               <img
                 src={require("./images/burger.png")}
                 width="20"
@@ -250,18 +242,19 @@ export default function Nav() {
             </Menu.Items>
           </Transition>
         </Menu>
-        <a href="/">
-          <div className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
-            <span>PLATE</span>
-            <img
-              src={require("./images/plate.png")}
-              className="h-9"
-              alt="PlateMate Logo"
-            />
-            <span>MATE</span>
-          </div>
-        </a>
-
+        <div className="mx-auto">
+          <a href="/">
+            <div className="flex justify-between tracking-[6px] text-4xl font-md items-center">
+              <h1>Plate</h1>
+              <img
+                src={require("./images/plate.png")}
+                className="h-10 mx-2"
+                alt="PlateMate Logo"
+              />
+              <h1>Mate</h1>
+            </div>
+          </a>
+        </div>
         <a href="/">
           <button
             type="button"

@@ -1,4 +1,32 @@
-1/15/23
+1/25/23
+Today, I met with Riley and discussed that the unit test I picked was one of the more difficult ones. I decided to switch my test to get_allergy_by_id. I completed the test, and I started wrapping my head around the concept.
+Later, I fixed formatting issues the team had with the footer.
+
+1/24/23
+Today I worked on unit testing. I decided to do Create Account. It took me most of the day to grasp, and I still don't have any progress.
+
+1/23/23
+The morning started with a stand-up and catching the team up with everything everybody did on the weekend. I further flushed out the about page, and started ironing out some kinks in design.
+
+1/22/23
+On Sunday, I made changes to the API documentation to reflect the current capabilities of our app.
+
+1/21/23
+For the weekend, I further formatted the about page and updated the README to reflect the work done in our project.
+
+1/20/23
+The group found that the checkboxes did not provide an elegant UX. We decided to work on developing a form to submit instead. After, I started work on the About page.
+
+1/19/23
+Today, I started working with checkboxes in the user profile. The solution I found revolved having the checkboxes toggle true or false. I linked them through state, and passed them through to have toggle functionallity.
+
+1/18/23
+Implementing all of the utilities we have had planned for the profile page came with much more confusion than we originally thought. Today, Zac and I researched how to use checkboxes and how to have them stay constant with stored data.
+
+1/17/23
+After stand up, we merged all our changes from the previous day. After, I worrked on setting up the user profile page.
+
+1/16/23
 Today started with a 'merge party'. The group merged all our changes we did this weekend. Zac and I pair programmed and deployed the profile detail page, and started mapping the tables to the front end.
 
 1/15/23
