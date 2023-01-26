@@ -12,13 +12,17 @@ const Footer = () => {
         </div>
         <div className="justify-center mx-16">
           <a href="/" className="flex items-center">
-            <span className="flex space-x-1 tracking-[4px] text-2xl font-semibold items-center">
-              PLATE
-            </span>
-            <img src={plateLogo} className="h-9 mr-1" alt="PlateMate Logo" />
-            <span className="flex space-x-1 tracking-[4px] text-2xl font-semibold items-center">
-              MATE
-            </span>
+            <h1 className="flex space-x-1 tracking-[4px] text-3xl font-md items-center">
+              Plate
+            </h1>
+            <img
+              src={plateLogo}
+              className="h-9 mr-1 mx-2"
+              alt="PlateMate Logo"
+            />
+            <h1 className="flex space-x-1 tracking-[4px] text-3xl font-md items-center">
+              Mate
+            </h1>
           </a>
         </div>
         <div className="mb-2 col-end-7 col-span-2">

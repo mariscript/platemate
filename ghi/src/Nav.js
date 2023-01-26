@@ -50,14 +50,14 @@ export default function Nav() {
       >
         <div className="mx-auto">
           <a href="/">
-            <div className="flex justify-between tracking-[6px] ml-48 text-4xl font-semibold items-center">
-              <span>PLATE</span>
+            <div className="flex justify-between tracking-[6px] ml-44 text-4xl font-md items-center">
+              <h1>Plate</h1>
               <img
                 src={require("./images/plate.png")}
-                className="h-10"
+                className="h-10 mx-2"
                 alt="PlateMate Logo"
               />
-              <span>MATE</span>
+              <h1>Mate</h1>
             </div>
           </a>
         </div>
@@ -125,7 +125,7 @@ export default function Nav() {
       <nav className="flex justify-between items-center bg-[#FDECA9] py-3">
         <Menu as="div" className="relative inline-block text-left ml-5">
           <div>
-            <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-md font-medium text-gray-700 ">
+            <Menu.Button className="inline-flex w-full items-center justify-center px-4 py-2 text-lg font-medium text-gray-700 ">
               <img
                 src={require("./images/burger.png")}
                 width="20"
@@ -242,18 +242,19 @@ export default function Nav() {
             </Menu.Items>
           </Transition>
         </Menu>
-        <a href="/">
-          <div className="flex space-x-1 tracking-[4px] text-xl font-semibold items-center">
-            <span>PLATE</span>
-            <img
-              src={require("./images/plate.png")}
-              className="h-9"
-              alt="PlateMate Logo"
-            />
-            <span>MATE</span>
-          </div>
-        </a>
-
+        <div className="mx-auto">
+          <a href="/">
+            <div className="flex justify-between tracking-[6px] text-4xl font-md items-center">
+              <h1>Plate</h1>
+              <img
+                src={require("./images/plate.png")}
+                className="h-10 mx-2"
+                alt="PlateMate Logo"
+              />
+              <h1>Mate</h1>
+            </div>
+          </a>
+        </div>
         <a href="/">
           <button
             type="button"

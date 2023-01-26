@@ -32,20 +32,21 @@ body::before {
 body::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 200px;
-  height: 200px;
+  top: -5rem;
+  right: -30rem;
+  width: 400px;
+  height: 400px;
   background-size: contain;
   background-image: url("./images/fruit.png");
   background-position: right bottom;
-  animation: slide-in 4s ease-in-out;
+  animation: slide-in 4s forwards;
   z-index: -2;
   position: fixed;
 }
 @keyframes slide-in {
   from {
     right: -200px;
+    transform: translateX(100px) rotate(360deg);
   }
   to {
     right: 0;

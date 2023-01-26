@@ -8,7 +8,7 @@ import Select from "react-tailwindcss-select";
 const options = [
   { value: "chinese", label: "🥢 Chinese" },
   { value: "pizza", label: "🍕 Pizza" },
-  { value: "fast food", label: "🍔 Fast Food" },
+  { value: "fast%food", label: "🍔 Fast Food" },
   { value: "indian", label: "🍛 Indian" },
   { value: "mexican", label: "🌮 Mexican" },
   { value: "japanese", label: "🍣 Japanese" },
@@ -50,11 +50,26 @@ export default function QuestionModal({ refresh, setRefresh }) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    categories = categories.map((x) => x.value);
-    datetime = `${datetime.slice(0, 10)} ${datetime.slice(
+    if (categories) {
+      console.log(categories);
+      categories = categories.map((category) => category.value);
+      if (categories.length === 1) {
+        categories = categories.toString();
+      } else if (categories.length > 1) {
+        let randomCat = Math.floor(Math.random() * (categories.length + 1));
+        console.log(randomCat);
+        categories = categories[randomCat];
+        console.log(categories);
+      }
+    } else {
+      categories = "";
+    }
+    console.log(categories);
+    datetime = `${datetime.slice(0, 10)}%20${datetime.slice(
       11,
       13
     )}%3A${datetime.slice(14)}`;
+    console.log(datetime);
     dispatch(storeYelp({ zipcode, budget, datetime, takeInOut, categories }));
     setRefresh(true);
     if (location.pathname === "/restaurants") {

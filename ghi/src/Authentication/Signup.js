@@ -175,6 +175,7 @@ export default function Signup() {
                     type="password"
                     className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
                     placeholder="Password"
+                    autoComplete="on"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                   />
