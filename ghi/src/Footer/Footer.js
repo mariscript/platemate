@@ -32,75 +32,75 @@ const Footer = () => {
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
-      <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3"></div>
-
-      <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-        <div className="border-2 border-black rounded-full my-2 p-2">
-          <a target="_blank" href="https://www.linkedin.com/in/marisonmunoz/">
-            <img
-              src={require("../images/marison_icon.png")}
-              className="h-10"
-              alt="Marison"
-              title="Marison Munoz"
-            ></img>
-            <span className="sr-only">Marison Munoz</span>
-          </a>
-        </div>
-        <div className="border-2 border-black rounded-full my-2 p-2">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/gina-john/"
-            className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-          >
-            <img
-              src={require("../images/gina_icon.png")}
-              className="h-10"
-              alt="Gina"
-              title="Gina John"
-            ></img>
-            <span className="sr-only">Gina John</span>
-          </a>
-        </div>
-        <div className="border-2 border-black rounded-full my-2 p-2">
-          <a target="_blank" href="https://www.linkedin.com/in/natalientang/">
-            <img
-              src={require("../images/nat_icon.png")}
-              className="h-10"
-              alt="Natalie"
-              title="Natalie Tang"
-            ></img>
-            <span className="sr-only">Natalie Tang</span>
-          </a>
-        </div>
-        <div className="border-2 border-black rounded-full my-2 p-2">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/jason-olefson/"
-            className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-          >
-            <img
-              src={require("../images/jason_icon.png")}
-              className="h-10"
-              alt="Jason"
-              title="Jason Olefson"
-            ></img>
-            <span className="sr-only">Jason Olefson</span>
-          </a>
-        </div>
-        <div className="border-2 border-black rounded-full my-2 p-2">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/zachary-macek/"
-            className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-          >
-            <img
-              src={require("../images/zac_icon.png")}
-              className="h-10"
-              alt="Zachary"
-              title="Zachary Macek"
-            ></img>
-            <span className="sr-only">Zachary Macek</span>
-          </a>
+      <div className="justify-items-center">
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-2 min-w-fit justify-items-center">
+          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2 place-self-center">
+            <a target="_blank" href="https://www.linkedin.com/in/marisonmunoz/">
+              <img
+                src={require("../images/marison_icon.png")}
+                className="h-10"
+                alt="Marison"
+                title="Marison Munoz"
+              ></img>
+              <span className="sr-only">Marison Munoz</span>
+            </a>
+          </div>
+          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/gina-john/"
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <img
+                src={require("../images/gina_icon.png")}
+                className="h-10"
+                alt="Gina"
+                title="Gina John"
+              ></img>
+              <span className="sr-only">Gina John</span>
+            </a>
+          </div>
+          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
+            <a target="_blank" href="https://www.linkedin.com/in/natalientang/">
+              <img
+                src={require("../images/nat_icon.png")}
+                className="h-10"
+                alt="Natalie"
+                title="Natalie Tang"
+              ></img>
+              <span className="sr-only">Natalie Tang</span>
+            </a>
+          </div>
+          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/jason-olefson/"
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <img
+                src={require("../images/jason_icon.png")}
+                className="h-10"
+                alt="Jason"
+                title="Jason Olefson"
+              ></img>
+              <span className="sr-only">Jason Olefson</span>
+            </a>
+          </div>
+          <div className="border-2 box-content border-black max-w-fit min-w-fit rounded-full my-2 p-2">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/zachary-macek/"
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <img
+                src={require("../images/zac_icon.png")}
+                className="h-10"
+                alt="Zachary"
+                title="Zachary Macek"
+              ></img>
+              <span className="sr-only">Zachary Macek</span>
+            </a>
+          </div>
         </div>
       </div>
 

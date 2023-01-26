@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext, useToken } from "../Authentication/AuthenticateUser";
-import { useDispatch } from 'react-redux'
-import { storeUser } from '../store/userSlice'
+import { useDispatch } from "react-redux";
+import { storeUser } from "../store/userSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFish,
+  faBreadSlice,
+  faLeaf,
+  faCarrot,
+  faBowlFood,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function CreateDietaryNeeds() {
   const [seafood, setSeafood] = useState(false);
@@ -11,7 +19,7 @@ export default function CreateDietaryNeeds() {
   const [vegetarian, setVegetarian] = useState(false);
   const [halal, setHalal] = useState(false);
   const { token } = useAuthContext();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [account, setAccount] = useState({});
   const [, , , , , , , createallergy, createdietrestrict] = useToken();
@@ -23,62 +31,54 @@ export default function CreateDietaryNeeds() {
     });
     const data = await result.json();
     setAccount(data);
-    dispatch(storeUser({ account }))
-    console.log(data)
+    dispatch(storeUser({ account }));
+    console.log(data);
   };
 
   const seafoodChange = (e) => {
-        let value = e.target.value;
-        if (value==="true"){
-            setSeafood(true)
-        }
-        else{
-            setSeafood(false)
-        }
+    let value = e.target.value;
+    if (value === "true") {
+      setSeafood(true);
+    } else {
+      setSeafood(false);
     }
+  };
 
   const glutenChange = (e) => {
-      let value = e.target.value;
-      if (value==="true"){
-          setGluten(true)
-      }
-      else{
-          setGluten(false)
-      }
-  }
-
+    let value = e.target.value;
+    if (value === "true") {
+      setGluten(true);
+    } else {
+      setGluten(false);
+    }
+  };
 
   const veganChange = (e) => {
-      let value = e.target.value;
-      if (value==="true"){
-          setVegan(true)
-      }
-      else{
-          setVegan(false)
-      }
-  }
-
+    let value = e.target.value;
+    if (value === "true") {
+      setVegan(true);
+    } else {
+      setVegan(false);
+    }
+  };
 
   const vegetarianChange = (e) => {
-      let value = e.target.value;
-      if (value==="true"){
-          setVegetarian(true)
-      }
-      else{
-          setVegetarian(false)
-      }
-  }
-
+    let value = e.target.value;
+    if (value === "true") {
+      setVegetarian(true);
+    } else {
+      setVegetarian(false);
+    }
+  };
 
   const halalChange = (e) => {
-      let value = e.target.value;
-      if (value==="true"){
-          setHalal(true)
-      }
-      else{
-          setHalal(false)
-      }
-  }
+    let value = e.target.value;
+    if (value === "true") {
+      setHalal(true);
+    } else {
+      setHalal(false);
+    }
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -116,28 +116,38 @@ export default function CreateDietaryNeeds() {
         </h3>
         <form onSubmit={handleFormSubmit}>
           <div>
+            <div className="font-bold text-center mb-2 text-[#a24d4a]">
+              <FontAwesomeIcon icon={faFish} className="mr-2" />
+              Seafood
+            </div>
             <select
               required
               id="seafood"
               onChange={seafoodChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
-              <option>Seafood</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
           </div>
           <div>
+            <div className="font-bold text-center mb-2 text-[#a24d4a]">
+              <FontAwesomeIcon icon={faBreadSlice} className="mr-2" />
+              Gluten-Free
+            </div>
             <select
               required
               id="gluten"
               onChange={glutenChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
-              <option>Gluten-Free</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
+          </div>
+          <div className="font-bold text-center mb-2 text-[#a24d4a]">
+            <FontAwesomeIcon icon={faLeaf} className="mr-2" />
+            Vegan
           </div>
           <select
             required
@@ -149,25 +159,31 @@ export default function CreateDietaryNeeds() {
             <option value="false">No</option>
           </select>
           <div>
+            <div className="font-bold text-center mb-2 text-[#a24d4a]">
+              <FontAwesomeIcon icon={faCarrot} className="mr-2" />
+              Vegetarian
+            </div>
             <select
               required
               id="vegetarian"
               onChange={vegetarianChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
-              <option>Vegetarian</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
           </div>
           <div>
+            <div className="font-bold text-center mb-2 text-[#a24d4a]">
+              <FontAwesomeIcon icon={faBowlFood} className="mr-2" />
+              Halal
+            </div>
             <select
               required
               id="halal"
               onChange={halalChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
-              <option>Halal</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
