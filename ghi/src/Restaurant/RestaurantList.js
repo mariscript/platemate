@@ -150,11 +150,11 @@ export default function RestaurantList({ refresh }) {
                   className="inline-block w-10 ml-2"
                 />
               </h5>
-              <h1 className="text-center">
+              <h2 className="text-center">
                 We couldn't find restaurants with your answers. Make sure to
                 fill out every question! Try the questionnaire again, so we can
                 find your plate!
-              </h1>
+              </h2>
             </div>
           </div>
         </div>
