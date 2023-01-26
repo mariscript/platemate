@@ -1,4 +1,7 @@
 ## Week 5:
+### 1/26/2023
+- updated about page blurb
+
 ### 1/25/2023
 - fixed the card formatting on Restaurant List
 - attempted to help Gina with the Questionnaire and Restaurant List calls

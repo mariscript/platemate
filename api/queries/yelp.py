@@ -22,9 +22,20 @@ class YelpQueries:
     def get_yelp_by_id(self, id):
         url = f"https://api.yelp.com/v3/businesses/{id}"
         headers = {"Authorization": f"Bearer {YELP_KEY}"}
+        print(url)
         res = requests.get(url, headers=headers)
         data = res.json()
         return data
+
+    def get_yelp_by_review(self, id):
+        url = f"https://api.yelp.com/v3/businesses/{id}/reviews?limit=20&sort_by=yelp_sort"
+        headers = {"Authorization": f"Bearer {YELP_KEY}"}
+        print(url)
+        res = requests.get(url, headers=headers)
+        data = res.json()
+        return data
+
+
 
     def yelp_test(self):
         url = f"https://api.yelp.com/v3/businesses/search?location=nyc&term=restaurants&sort_by=best_match&limit=20"

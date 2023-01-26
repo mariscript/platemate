@@ -44,7 +44,7 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Zachary Macek</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">"My favorite food is crab legs."</p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/zachary-macek/"
@@ -63,7 +63,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="git" className="px-2">
+                    <a
+                      href="git"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -92,7 +97,12 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Gina John</h5>
-                  <p className="mb-6">blurb</p>
+                  <p className="mb-6">
+                    "The toughest part of this project was working with the
+                    external API to display data in the way we wanted. It was a
+                    fun challenge and the results were fruitful (pun intended).
+                    My favorite food is tofu tikka masala with basmati rice!"
+                  </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/gina-john/"
@@ -111,7 +121,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="git" className="px-2">
+                    <a
+                      href="git"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -165,7 +180,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="https://gitlab.com/natalientang" className="px-2">
+                    <a
+                      href="https://gitlab.com/natalientang"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"
@@ -222,6 +242,7 @@ export default function About() {
                     <a
                       href="https://gitlab.com/marisonmunoz"
                       target="_blank"
+                      title="Gitlab"
                       className="px-2"
                     >
                       <svg
@@ -262,6 +283,8 @@ export default function About() {
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/jason-olefson/"
+                      target="_blank"
+                      title="LinkedIn"
                       className="px-2"
                     >
                       <svg
@@ -275,7 +298,12 @@ export default function About() {
                         />
                       </svg>
                     </a>
-                    <a href="#!" className="px-2">
+                    <a
+                      href="#!"
+                      target="_blank"
+                      title="Gitlab"
+                      className="px-2"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="#BB5855"

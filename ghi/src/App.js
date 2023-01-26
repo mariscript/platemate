@@ -59,7 +59,13 @@ export default function App() {
             <Route path="/restaurant" element={<RestaurantDetailTest />} />
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />
-            <Route path="/me" element={<UserProfile />} />
+            <Route
+              path="/me"
+              element={[
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+                <UserProfile />,
+              ]}
+            />
             <Route
               path="/questionnaire"
               element={

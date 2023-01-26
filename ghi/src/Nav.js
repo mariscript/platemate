@@ -50,11 +50,11 @@ export default function Nav() {
       >
         <div className="mx-auto">
           <a href="/">
-            <div className="flex justify-between tracking-[6px] ml-44 text-4xl font-md items-center">
+            <div className="flex justify-between tracking-[6px] ml-40 text-4xl font-md items-center">
               <h1>Plate</h1>
               <img
                 src={require("./images/plate.png")}
-                className="h-10 mx-2"
+                className="h-10 mx-2 ml-1"
                 alt="PlateMate Logo"
               />
               <h1>Mate</h1>
@@ -68,7 +68,7 @@ export default function Nav() {
             data-bs-toggle="modal"
             data-bs-target="#signup"
           >
-            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-24 group-hover:h-16 opacity-10"></span>
             SIGNUP
           </button>
         </div>
@@ -248,7 +248,7 @@ export default function Nav() {
               <h1>Plate</h1>
               <img
                 src={require("./images/plate.png")}
-                className="h-10 mx-2"
+                className="h-10 mx-2 ml-1"
                 alt="PlateMate Logo"
               />
               <h1>Mate</h1>
@@ -260,7 +260,7 @@ export default function Nav() {
             type="button"
             className="bg-[#BB5855] mx-[40px] rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer"
           >
-            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-28 group-hover:h-16 opacity-10"></span>
             HOME
             <img
               src={require("./images/home.png")}
