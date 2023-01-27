@@ -14,6 +14,7 @@
 
 - [API Design](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/api-design.md)
 - [Data Models (to be added)](url goes here)
+- [GHI](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/GHI.md)
 
 ## Intended Market
 
