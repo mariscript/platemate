@@ -41,7 +41,7 @@ Once a user is logged in, the landing page becomes "HOME". From here, you are ab
 
 A user who is logged in may use the questionnaire. It will ask multiple questions to determine the best place to eat.
 
-![questionnaire]./images/Questionnaire.png){width=50%}
+![questionnaire](./images/Questionnaire.png){width=50%}
 
 ## Restaurants List
 
