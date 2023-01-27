@@ -194,15 +194,15 @@ export default function RestaurantList() {
             <h1 className="text-center mt-7 mb-8 text-[40px] mr-2 tracking-[4px]">
               List of Restaurants
             </h1>
-            <div className="flex justify-center gap-6 ">
+            <div className="flex justify-center gap-6">
               {restaurants.map((restaurant) => (
                 <div className="flex justify-center drop-shadow-md shadow-2xl inset-0 rounded-lg border-4 border-[#C26866] hover:translate-x-0 hover:translate-y-0">
                   <div
-                    className="transition duration-300 inset-0 ease-out transform -translate-x-3 -translate-y-3 hover:translate-x-0 hover:translate-y-0"
+                    className="transition duration-300 rounded-lg inset-0 ease-out transform -translate-x-3 -translate-y-3 hover:translate-x-0 hover:translate-y-0"
                     key={restaurant?.id}
                   >
                     <div className="text-center rounded-lg shadow-lg bg-[#f2efef] w-[400px]">
-                      <div className="relative rounded-lg bg-black pb-2/3">
+                      <div className="relative rounded-lg bg-[#f2efef] pb-2/3">
                         <img
                           className="absolute h-full w-full rounded-t-lg object-cover"
                           src={restaurant?.image_url}
