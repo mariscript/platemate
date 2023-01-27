@@ -53,15 +53,12 @@ export default function QuestionModal({ refresh, setRefresh }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (categories) {
-      console.log(categories);
       categories = categories.map((category) => category.value);
       if (categories.length === 1) {
         categories = categories.toString();
       } else if (categories.length > 1) {
         let randomCat = Math.floor(Math.random() * (categories.length + 1));
-        console.log(randomCat);
         categories = categories[randomCat];
-        console.log(categories);
       }
     } else {
       categories = "";
@@ -119,7 +116,7 @@ export default function QuestionModal({ refresh, setRefresh }) {
               </h1>
               {refresh && (
                 <div
-                  class="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md mt-4 w-[450px] mx-auto"
+                  className="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md mt-4 w-[450px] mx-auto"
                   role="alert"
                 >
                   <div className="flex">

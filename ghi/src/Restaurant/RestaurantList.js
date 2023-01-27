@@ -12,11 +12,12 @@ export default function RestaurantList() {
   const [id, setId] = useState("");
   const { token } = useAuthContext();
   const [dietNeeds, setDietNeeds] = useState("");
-  const [noDietNeeds, setNoDietNeeds] = useState("&categories=");
+  const [noDietNeeds] = useState("&categories=");
   const dispatch = useDispatch();
   const [selection, setSelectionMade] = useState(false);
 
   const selectionMade = (e) => {
+    console.log(e.target.value);
     if (selection) {
       setSelectionMade(false);
     } else {
@@ -41,7 +42,6 @@ export default function RestaurantList() {
   const yelpCat = yelpResponse.categories;
 
   function dietNeedsFilter() {
-    console.log("dietRestrict being called");
     if (token) {
       let dietRestrictEntries = Object.entries(dietRestrict).filter(
         (entry) => entry[1] === true
@@ -50,7 +50,6 @@ export default function RestaurantList() {
         (entry) => entry[1] === true
       );
       let concatDietNeeds = dietRestrictEntries.concat(allergiesEntries);
-      console.log(concatDietNeeds);
       let dietNeeds = concatDietNeeds.filter(
         (notSeafood) => notSeafood[0] !== "seafood"
       );
@@ -70,7 +69,6 @@ export default function RestaurantList() {
   }, [token, allergies, dietRestrict]);
 
   const getRestaurants = async () => {
-    console.log("I am being called");
     let errorFound = false;
     try {
       let url = "";
@@ -79,7 +77,6 @@ export default function RestaurantList() {
       } else {
         url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${yelpCat}&diet_needs=${noDietNeeds}`;
       }
-      console.log(url);
       const fetchConfig = {
         headers: {
           accept: "application/json",
@@ -244,11 +241,30 @@ export default function RestaurantList() {
           <>
             <div style={{ display: "grid", placeItems: "center" }}>
               <RestaurantDetail idData={id} />
-              <button
-                onClick={selectionMade}
-                className="mb-10 mt-20 text-[#BB5855] rounded text-md outline outline-offset-4 outline-2 font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c]"
-              >
-                Back to Results
+              <button onClick={selectionMade}>
+                <a className="relative inline-flex items-center justify-center p-5 px-2 py-2 overflow-hidden font-medium text-[#C26866] transition duration-300 ease-out border-2 border-[#C26866] rounded-full shadow-md group">
+                  <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 translate-x-full bg-[#C26866] group-hover:-translate-x-0 ease">
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        transform="rotate(180 12 12)"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 -transform group-hover:translate-x-full ease">
+                    <img src={require("../images/arrow.png")} className="w-5" />
+                  </span>
+                  <span className="relative invisible">Button Text</span>
+                </a>
               </button>
             </div>
           </>

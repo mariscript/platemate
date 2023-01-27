@@ -8,13 +8,6 @@ from queries.accounts import Account
 class Error(BaseModel):
     message: str
 
-# class DietRestrict(BaseModel):
-#     id: int
-#     vegan: bool
-#     vegetarian: bool
-#     halal: bool
-#     account_id: int
-
 class DietRestrictIn(BaseModel):
     vegan: bool
     vegetarian: bool
