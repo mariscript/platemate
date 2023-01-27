@@ -10,7 +10,6 @@ import Signup from "./Authentication/Signup";
 import Login from "./Authentication/Login";
 import Logout from "./Authentication/Logout";
 import RestaurantList from "./Restaurant/RestaurantList";
-import RestaurantDetailTest from "./Restaurant/RestaurantDetailTest";
 import { AuthProvider, useToken } from "./Authentication/AuthenticateUser";
 import QuestionModal from "./Questionnaire/QuestionnaireModal";
 import UserProfile from "./User/UserProfile";
@@ -55,7 +54,6 @@ export default function App() {
                 <RestaurantList refresh={refresh} />,
               ]}
             />
-            <Route path="/restaurant" element={<RestaurantDetailTest />} />
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />
             <Route
