@@ -57,8 +57,8 @@ Plate-Mate was created for individuals that want to go out, either alone or with
 
 10. Exit the container's CLI
 
-11. Create a new file in queries/ named "keys.py", and insert a yelp fusion key from the dev website. Additionally, you may use the key:
-    **_YELP_KEY = 'PNzIq6uOZAQTE_H3PMaWuSM9I8w1FfDbleMeaOSu2Iq8gqmxw93GuZh_chrmYzZ405-VvOQEkH20KRQ0S7dJi4bnbsYFFays4wxG8kDRlOko0eafGJc5gSmWIC_DY3Yx' _**
+11. Create a new file in queries/ named "keys.py", and insert a yelp fusion key from the dev website. Additionally, you may use:
+    **YELP_KEY = 'PNzIq6uOZAQTE_H3PMaWuSM9I8w1FfDbleMeaOSu2Iq8gqmxw93GuZh_chrmYzZ405-VvOQEkH20KRQ0S7dJi4bnbsYFFays4wxG8kDRlOko0eafGJc5gSmWIC_DY3Yx'**
 
 12. Get ready to find your new favorite restaurant on Plate-Mate!
 
