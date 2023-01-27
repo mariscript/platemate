@@ -1,10 +1,15 @@
 # Graphical Human Interface
 
+## Wireframe
+
+An outline of the wireframe that the team created on Figma.
+![wireframe](./images/Wireframe.png =100x20)
+
 ## Landing Page
 
 This is the landing page, where a user can log in. Or if they do not have an account, they can navigate to the sign up page from here.
 
-![Landing](./images/LandingPage.png)
+![landing](./images/LandingPage.png)
 
 ## Sign Up Page
 
