@@ -196,13 +196,13 @@ export default function RestaurantList() {
             </h1>
             <div className="flex justify-center gap-6">
               {restaurants.map((restaurant) => (
-                <div className="flex justify-center drop-shadow-md shadow-2xl inset-0 rounded-lg border-4 border-[#C26866] hover:translate-x-0 hover:translate-y-0">
-                  <div
-                    className="transition duration-300 rounded-lg inset-0 ease-out transform -translate-x-3 -translate-y-3 hover:translate-x-0 hover:translate-y-0"
-                    key={restaurant?.id}
-                  >
+                <div
+                  className="flex justify-center drop-shadow-md shadow-2xl inset-0 rounded-lg border-4 border-[#C26866] hover:translate-x-0 hover:translate-y-0"
+                  key={restaurant?.id}
+                >
+                  <div className="transition duration-300 rounded-lg inset-0 ease-out transform -translate-x-3 -translate-y-3 hover:translate-x-0 hover:translate-y-0">
                     <div className="text-center rounded-lg shadow-lg bg-[#f2efef] w-[400px]">
-                      <div className="relative rounded-lg bg-[#f2efef] pb-2/3">
+                      <div className="relative rounded-lg bg-black pb-2/3">
                         <img
                           className="absolute h-full w-full rounded-t-lg object-cover"
                           src={restaurant?.image_url}
@@ -236,30 +236,11 @@ export default function RestaurantList() {
           <>
             <div style={{ display: "grid", placeItems: "center" }}>
               <RestaurantDetail idData={id} />
-              <button onClick={selectionMade}>
-                <a class="relative inline-flex items-center justify-center p-5 px-2 py-2 overflow-hidden font-medium text-[#C26866] transition duration-300 ease-out border-2 border-[#C26866] rounded-full shadow-md group">
-                  <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 translate-x-full bg-[#C26866] group-hover:-translate-x-0 ease">
-                    <svg
-                      class="w-6 h-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        transform="rotate(180 12 12)"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span class="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 -transform group-hover:translate-x-full ease">
-                    <img src={require("../images/arrow.png")} className="w-5" />
-                  </span>
-                  <span class="relative invisible">Button Text</span>
-                </a>
+              <button
+                onClick={selectionMade}
+                className="mb-10 mt-20 text-[#BB5855] rounded text-md outline outline-offset-4 outline-2 font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c]"
+              >
+                Back to Results
               </button>
             </div>
           </>

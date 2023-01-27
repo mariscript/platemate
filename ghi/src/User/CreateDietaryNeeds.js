@@ -32,7 +32,6 @@ export default function CreateDietaryNeeds() {
     const data = await result.json();
     setAccount(data);
     dispatch(storeUser({ account }));
-    console.log(data);
   };
 
   const seafoodChange = (e) => {
