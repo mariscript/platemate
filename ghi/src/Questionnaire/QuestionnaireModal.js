@@ -115,7 +115,7 @@ export default function QuestionModal({ refresh, setRefresh }) {
                   width="20px"
                   className="inline-block -mt-7 -ml-2 -mr-1"
                 />
-                Find Your Plate!
+                s Find Your Plate!
               </h1>
               {refresh && (
                 <div
