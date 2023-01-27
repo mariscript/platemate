@@ -35,7 +35,7 @@ Plate-Mate was created for individuals that want to go out, either alone or with
 
 ## Preview
 
-![Demo](docs\PlateMate.gif)
+![Demo](.docs\PlateMate.gif)
 
 ## Installation
 
