@@ -129,7 +129,7 @@ export default function RestaurantDetail({ idData }) {
               <h2 className="text-gray-700 text-base mb-6">
                 {restaurant?.display_phone}
               </h2>
-              <div className="flex items-center ml-[60px] -mt-2">
+              <div className="flex items-center ml-[80px] -mt-2">
                 {Array.from({ length: restaurant.rating }, (_, i) => (
                   <svg
                     key={i}
