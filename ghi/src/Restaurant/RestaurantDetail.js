@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
 
 export default function RestaurantDetail({ idData }) {
-  console.log(idData);
   const { token } = useAuthContext();
   const [restaurant, setRestaurant] = useState("");
   const [review, setReview] = useState("");
@@ -37,15 +36,15 @@ export default function RestaurantDetail({ idData }) {
   console.log(restaurant);
   console.log(review);
 
-  if (restaurant) {
+  if (restaurant && review) {
     return (
       <>
-        <div className="flex justify-center drop-shadow-md ">
+        <div className="flex justify-center drop-shadow-md">
           <div className="rounded-lg shadow-lg bg-white w-[400px]">
             <div className="relative rounded-lg bg-[#C26866]-500">
               <div
                 id="carouselExampleIndicators"
-                className="carousel slide relative"
+                class="carousel slide relative"
                 data-bs-ride="carousel"
               >
                 <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
@@ -53,7 +52,7 @@ export default function RestaurantDetail({ idData }) {
                     type="button"
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide-to="0"
-                    className="active"
+                    class="active"
                     aria-current="true"
                     aria-label="Slide 1"
                   ></button>
@@ -70,67 +69,67 @@ export default function RestaurantDetail({ idData }) {
                     aria-label="Slide 0"
                   ></button>
                 </div>
-                <div className="carousel-inner relative w-full overflow-hidden">
-                  <div classNameName="carousel-item active float-left w-full">
+                <div class="carousel-inner relative w-full overflow-hidden">
+                  <div class="carousel-item active float-left w-full">
                     <img
-                      src={restaurant.photos[0]}
-                      className="block w-full rounded-lg"
-                      alt="Restaurant Photo 1"
+                      src={restaurant?.photos[0]}
+                      class="block w-full rounded-lg"
+                      alt="#"
                     />
                   </div>
-                  <div className="carousel-item float-left w-full">
+                  <div class="carousel-item float-left w-full">
                     <img
-                      src={restaurant.photos[1]}
-                      className="block w-full rounded-lg"
-                      alt="Restaurant Photo 2"
+                      src={restaurant?.photos[1]}
+                      class="block w-full rounded-lg"
+                      alt="#"
                     />
                   </div>
-                  <div className="carousel-item float-left w-full">
+                  <div class="carousel-item float-left w-full">
                     <img
-                      src={restaurant.photos[2]}
-                      className="block w-full rounded-lg"
-                      alt="Restaurant Photo 3"
+                      src={restaurant?.photos[2]}
+                      class="block w-full rounded-lg"
+                      alt="#"
                     />
                   </div>
                 </div>
                 <button
-                  className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                  class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
                   type="button"
                   data-bs-target="#carouselExampleIndicators"
                   data-bs-slide="prev"
                 >
                   <span
-                    className="carousel-control-prev-icon inline-block bg-no-repeat"
+                    class="carousel-control-prev-icon inline-block bg-no-repeat"
                     aria-hidden="true"
                   ></span>
-                  <span className="visually-hidden">Previous</span>
+                  <span class="visually-hidden">Previous</span>
                 </button>
                 <button
-                  className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                  class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
                   type="button"
                   data-bs-target="#carouselExampleIndicators"
                   data-bs-slide="next"
                 >
                   <span
-                    className="carousel-control-next-icon inline-block bg-no-repeat"
+                    class="carousel-control-next-icon inline-block bg-no-repeat"
                     aria-hidden="true"
                   ></span>
-                  <span className="visually-hidden">Next</span>
+                  <span class="visually-hidden">Next</span>
                 </button>
               </div>
             </div>
           </div>
 
-          <div className="text-center rounded-lg shadow-lg bg-white w-[500px] ml-20">
-            <h5 className="text-center text-gray-900 text-xl font-medium mt-3">
+          <div
+            className="text-center 
+          rounded-lg shadow-lg bg-white w-[500px] ml-10"
+          >
+            <h5 className="text-gray-900 text-xl font-medium mb-2">
               {restaurant.name}
             </h5>
-            <br />
             <p> Rating: {restaurant.rating} </p>
-            <br />
-            <p className="text-center">Open Hours</p>
-            <div className="mx-auto">
-              <table className="content-center">
+            {/* <div className="mx-auto">
+              <table>
                 <thead>
                   <tr>
                     <th>Monday</th>
@@ -163,20 +162,22 @@ export default function RestaurantDetail({ idData }) {
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <br />
-            <div className="pl-2">
-              <p> Reviews: {review.reviews[0].text} </p>
-            </div>
-            <br />
-            <div className="pl-2">
+            </div> */}
+            <div className="pl-2 mb-2">
+              <p>Reviews:</p>
+
+              {review.reviews[0].text}
+
+              <br />
+
               <p> {review.reviews[1].text} </p>
-            </div>
-            <br />
-            <div className="pl-2">
+
+              <br />
+
               <p> {review.reviews[2].text}</p>
+
+              <br />
             </div>
-            <br />
             <div className="mx-auto">
               <button className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c]">
                 PICK ME
