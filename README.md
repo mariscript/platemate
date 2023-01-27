@@ -1,6 +1,6 @@
 # PlateMate
 
-\_Designed and Created By:
+\Designed and Created By:
 
 - Zachary Macek
 - Gina John
@@ -8,7 +8,7 @@
 - Marison Munoz
 - Jason Olefson
 
-**_ The accuracy of the results are dependent on the status of yelp's api. Results may vary. _**
+**The accuracy of the results are dependent on the status of Yelp's API. Results may vary.**
 
 ## Design
 
@@ -18,7 +18,7 @@
 
 ## Intended Market
 
-Plate-Mate was created for individuals that want to go out, either alone or with a friend, and cannot decide where to eat. Whether they do not know what is around, can't agree on where to go, or there are just too many options, this app will help remedy that.
+PlateMate was created for individuals that want to go out, either alone or with a friend, and cannot decide where to eat. Whether they do not know what is around, can't agree on where to go, or there are just too many options, this app will help remedy that.
 
 ## Functionality of MVP
 
@@ -58,15 +58,15 @@ Plate-Mate was created for individuals that want to go out, either alone or with
 
 10. Exit the container's CLI
 
-11. Create a new file in queries/ named "keys.py", and insert a yelp fusion key from the dev website. Additionally, you may use:
-    `YELP_KEY = 'PNzIq6uOZAQTE_H3PMaWuSM9I8w1FfDbleMeaOSu2Iq8gqmxw93GuZh_chrmYzZ405-VvOQEkH20KRQ0S7dJi4bnbsYFFays4wxG8kDRlOko0eafGJc5gSmWIC_DY3Yx'`
+11. Create a new file in queries/ named "keys.py", and insert a Yelp fusion key from the dev website. Additionally, you may use:
+    `Yelp_KEY = 'PNzIq6uOZAQTE_H3PMaWuSM9I8w1FfDbleMeaOSu2Iq8gqmxw93GuZh_chrmYzZ405-VvOQEkH20KRQ0S7dJi4bnbsYFFays4wxG8kDRlOko0eafGJc5gSmWIC_DY3Yx'`
 
-12. Get ready to find your new favorite restaurant on Plate-Mate!
+12. Get ready to find your new favorite restaurant on PlateMate!
 
 ## Test [Should provide location of tests with test author]:
 
 - [get_allergy_by_id] / [Jason Olefson]
-- [get_all_allergiese] / [Zac Macek]
+- [get_all_allergies] / [Zac Macek]
 - [get_account_by_id] / [Marison Munoz]
 - [get_all_diet_restricts] / [Natalie Tang]
 - [get_all_accounts] / [Gina John]
