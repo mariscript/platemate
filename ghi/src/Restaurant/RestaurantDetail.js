@@ -4,6 +4,7 @@ import { useAuthContext } from "../Authentication/AuthenticateUser";
 
 export default function RestaurantDetail({ idData }) {
   const { token } = useAuthContext();
+  console.log(idData)
   const [restaurant, setRestaurant] = useState("");
   const [review, setReview] = useState("");
 
