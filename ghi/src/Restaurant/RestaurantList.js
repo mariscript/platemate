@@ -6,7 +6,7 @@ import RestaurantDetail from "./RestaurantDetail";
 import { storeRestList } from "../store/restListState";
 import { storeDietNeeds } from "../store/dietNeedsSlice";
 
-export default function RestaurantList({ refresh }) {
+export default function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
   const [id, setId] = useState("");
   const { token } = useAuthContext();
@@ -17,8 +17,6 @@ export default function RestaurantList({ refresh }) {
   const [selection, setSelectionMade] = useState(false);
 
   const selectionMade = (e) => {
-    console.log("selectionMade getting called");
-    console.log(e.target.value);
     if (selection) {
       setSelectionMade(false);
     } else {
@@ -55,16 +53,6 @@ export default function RestaurantList({ refresh }) {
     setDietRestrict(dietRestrictEntries);
   }
 
-  // function changeCatString() {
-  //   if (yelpCat.length > 1) {
-  //     let randomCat = Math.floor(Math.random() * (yelpCat.length + 1));
-  //     setFinalString(yelpCat[randomCat]);
-  //   } else if (yelpCat.length === 1) {
-  //     setFinalString(yelpCat.toString());
-  //   }
-  // }
-  // console.log(finalString);
-
   const getRestaurants = async () => {
     console.log("I am being called");
     let errorFound = false;
@@ -82,7 +70,9 @@ export default function RestaurantList({ refresh }) {
       };
       const resp = await fetch(url, fetchConfig);
       const data = await resp.json();
+      console.log(data);
       setRestaurants(data.businesses.slice(0, 3));
+
       if (data.businesses.length === 0) {
         errorFound = true;
       }
