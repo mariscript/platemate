@@ -1,14 +1,12 @@
-# Plate-Mate
+# PlateMate
 
-_Designed and Created By_
+\_Designed and Created By:
 
 - Zachary Macek
 - Gina John
 - Natalie Tang
 - Marison Munoz
 - Jason Olefson
-
-_Plate Mate_ - A fun little app that provides the user with a place to eat after asking personal questions!
 
 **_ The accuracy of the results are dependent on the status of yelp's api. Results may vary. _**
 
@@ -19,7 +17,7 @@ _Plate Mate_ - A fun little app that provides the user with a place to eat after
 
 ## Intended Market
 
-Plate-Mate was created for individuals that want to go out, either alone or with a friend, and cannot decide where to eat. Whether they do not know what is around, can't aggree on where to go, or there are just too many options, this app will help remedy that.
+Plate-Mate was created for individuals that want to go out, either alone or with a friend, and cannot decide where to eat. Whether they do not know what is around, can't agree on where to go, or there are just too many options, this app will help remedy that.
 
 ## Functionality of MVP
 
@@ -59,7 +57,10 @@ Plate-Mate was created for individuals that want to go out, either alone or with
 
 10. Exit the container's CLI
 
-11. Get ready to find your new favorite restaurant on Plate-Mate!
+11. Create a new file in queries/ named "keys.py", and insert a yelp fusion key from the dev website. Additionally, you may use the key:
+    **_YELP_KEY = 'PNzIq6uOZAQTE_H3PMaWuSM9I8w1FfDbleMeaOSu2Iq8gqmxw93GuZh_chrmYzZ405-VvOQEkH20KRQ0S7dJi4bnbsYFFays4wxG8kDRlOko0eafGJc5gSmWIC_DY3Yx' _**
+
+12. Get ready to find your new favorite restaurant on Plate-Mate!
 
 ## Test [Should provide location of tests with test author]:
 
