@@ -15,7 +15,7 @@ PlateMate streamlines the search for the perfect dining experience by allowing u
 ## Design
 
 - [API Design](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/api-design.md)
-- [Data Models](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/DataModel.MD)
+- [Data Models](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/DataModel.md)
 - [GHI](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/GHI.md)
 
 ## Intended Market
