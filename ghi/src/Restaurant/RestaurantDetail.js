@@ -121,7 +121,7 @@ export default function RestaurantDetail({ idData }) {
           </div>
 
           <div
-            className="text-center 
+            className="text-center
           rounded-lg shadow-lg bg-white w-[500px] ml-10"
           >
             <h5 className="text-gray-900 text-xl font-medium mb-2">
@@ -160,9 +160,9 @@ export default function RestaurantDetail({ idData }) {
                     <td>{restaurant.hours[0].open[5].end}</td>
                     <td>{restaurant.hours[0].open[6].end}</td>
                   </tr> */}
-                </tbody>
-              </table>
-            </div> */}
+            {/* </tbody>
+              </table> */}
+            {/* </div> */}
             <div className="pl-2 mb-2">
               <p>Reviews:</p>
 
