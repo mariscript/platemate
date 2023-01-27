@@ -1,6 +1,6 @@
-# Plate-Mate
+# PlateMate
 
-_Designed and Created By_
+_Designed and Created By:_
 
 - Zachary Macek
 - Gina John
@@ -8,18 +8,19 @@ _Designed and Created By_
 - Marison Munoz
 - Jason Olefson
 
-_Plate Mate_ - A fun little app that provides the user with a place to eat after asking personal questions!
+PlateMate streamlines the search for the perfect dining experience by allowing users to easily find a restaurant that meets their preferences and requirements. By answering a few questions about price range, cuisine, location and atmosphere, users are presented with a tailored list of options. With PlateMate, users can explore reviews and menus, and make a reservation or order food for pickup or delivery with just a few clicks.
 
-**_ The accuracy of the results are dependent on the status of yelp's api. Results may vary. _**
+**The accuracy of the results are dependent on the status of Yelp's API. Results may vary.**
 
 ## Design
 
 - [API Design](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/api-design.md)
-- [Data Models (to be added)](url goes here)
+- [Data Models](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/DataModel.md)
+- [GHI](https://gitlab.com/team-4-hack-n-snack/platemate/-/blob/jason/docs/GHI.md)
 
 ## Intended Market
 
-Plate-Mate was created for individuals that want to go out, either alone or with a friend, and cannot decide where to eat. Whether they do not know what is around, can't aggree on where to go, or there are just too many options, this app will help remedy that.
+PlateMate was created for individuals that want to go out, either alone or with a friend, and cannot decide where to eat. Whether they do not know what is around, can't agree on where to go, or there are just too many options, this app will help remedy that.
 
 ## Functionality of MVP
 
@@ -35,7 +36,7 @@ Plate-Mate was created for individuals that want to go out, either alone or with
 
 ## Preview
 
-![placeholder for gif](placeholder for gif)
+![](docs/images/PlateMate.gif)
 
 ## Installation
 
@@ -59,12 +60,15 @@ Plate-Mate was created for individuals that want to go out, either alone or with
 
 10. Exit the container's CLI
 
-11. Get ready to find your new favorite restaurant on Plate-Mate!
+11. Create a new file in queries/ named "keys.py", and insert a Yelp fusion key from the dev website. Additionally, you may use:
+    `Yelp_KEY = 'PNzIq6uOZAQTE_H3PMaWuSM9I8w1FfDbleMeaOSu2Iq8gqmxw93GuZh_chrmYzZ405-VvOQEkH20KRQ0S7dJi4bnbsYFFays4wxG8kDRlOko0eafGJc5gSmWIC_DY3Yx'`
+
+12. Get ready to find your new favorite restaurant on PlateMate!
 
 ## Test [Should provide location of tests with test author]:
 
 - [get_allergy_by_id] / [Jason Olefson]
-- [get_all_allergiese] / [Zac Macek]
+- [get_all_allergies] / [Zac Macek]
 - [get_account_by_id] / [Marison Munoz]
 - [get_all_diet_restricts] / [Natalie Tang]
 - [get_all_accounts] / [Gina John]

@@ -4,8 +4,8 @@ from .keys import YELP_KEY
 
 
 class YelpQueries:
-    def get_yelp(self, location: str, budget: int, open_at: int, term : str):
-        url = f"https://api.yelp.com/v3/businesses/search?location={location}&term={term}&radius=40000&categories=&price={budget}&open_at={open_at}&sort_by=best_match&limit=20"
+    def get_yelp(self, location: str, budget: int, open_at: int, term : str, diet_needs: str):
+        url = f"https://api.yelp.com/v3/businesses/search?location={location}&term={term}&radius=40000&price={budget}&open_at={open_at}{diet_needs}&sort_by=best_match&limit=20"
         headers = {"Authorization": f"Bearer {YELP_KEY}"}
         print(url)
         res = requests.get(url, headers=headers)
