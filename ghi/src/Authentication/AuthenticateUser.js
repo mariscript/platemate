@@ -61,7 +61,7 @@ export const useAuthContext = () => useContext(AuthContext);
 
 export function useToken() {
   const { token, setToken } = useAuthContext();
-  const [dupEmailError, setDuplicateEmail] = useState(false)
+  const [dupEmailError, setDuplicateEmail] = useState(false);
 
   useEffect(() => {
     async function fetchToken() {
@@ -87,12 +87,9 @@ export function useToken() {
       const token = await getTokenInternal();
       setToken(token);
       return response;
+    } else {
+      return response;
     }
-    else{
-      return response
-    }
-    let error = await response.json();
-    return handleErrorMessage(error);
   }
 
   async function logout() {
@@ -120,10 +117,10 @@ export function useToken() {
         "Content-Type": "application/json",
       },
     });
-    if (response.ok){
+    if (response.ok) {
       await login(email, password);
-      return response}
-    else {
+      return response;
+    } else {
       return response;
     }
   }
@@ -157,42 +154,7 @@ export function useToken() {
       body: JSON.stringify({
         seafood,
         gluten_free,
-        account_id
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      },
-    });
-    return;
-  }
-
-    async function updatedietrestrict(vegan, vegetarian, halal, account_id) {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restrict/me`;
-    const response = await fetch(url, {
-      method: "put",
-      body: JSON.stringify({
-        vegan,
-        vegetarian,
-        halal,
-        account_id
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      },
-    });
-    return;
-  }
-
-  async function createallergy(seafood, gluten_free, account_id) {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies`
-    const response = await fetch(url, {
-      method: "post",
-      body: JSON.stringify({
-        seafood,
-        gluten_free,
-        account_id
+        account_id,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -200,26 +162,71 @@ export function useToken() {
       },
     });
     return;
+  }
 
+  async function updatedietrestrict(vegan, vegetarian, halal, account_id) {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restrict/me`;
+    const response = await fetch(url, {
+      method: "put",
+      body: JSON.stringify({
+        vegan,
+        vegetarian,
+        halal,
+        account_id,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return;
+  }
+
+  async function createallergy(seafood, gluten_free, account_id) {
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies`;
+    const response = await fetch(url, {
+      method: "post",
+      body: JSON.stringify({
+        seafood,
+        gluten_free,
+        account_id,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return;
   }
 
   async function createdietrestrict(vegan, vegetarian, halal, account_id) {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restrict`
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restrict`;
     const response = await fetch(url, {
       method: "post",
       body: JSON.stringify({
         vegan,
         vegetarian,
         halal,
-        account_id
+        account_id,
       }),
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
     });
     return;
   }
 
-  return [token, login, logout, signup, update, updateallergy, updatedietrestrict, createallergy, createdietrestrict,dupEmailError];
+  return [
+    token,
+    login,
+    logout,
+    signup,
+    update,
+    updateallergy,
+    updatedietrestrict,
+    createallergy,
+    createdietrestrict,
+    dupEmailError,
+  ];
 }
