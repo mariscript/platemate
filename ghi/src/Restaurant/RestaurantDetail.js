@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
 
 export default function RestaurantDetail({ idData }) {
+  console.log(idData);
   const { token } = useAuthContext();
   const [restaurant, setRestaurant] = useState("");
   const [review, setReview] = useState("");
@@ -30,10 +31,7 @@ export default function RestaurantDetail({ idData }) {
     getReview();
   }, [idData]);
 
-  console.log(restaurant);
-  console.log(review);
-
-  if (restaurant && review) {
+  if (restaurant.photos && review) {
     return (
       <>
         <div className="flex mb-5">
@@ -45,7 +43,7 @@ export default function RestaurantDetail({ idData }) {
                   className="carousel slide relative"
                   data-bs-ride="carousel"
                 >
-                  <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+                  <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
                     <button
                       type="button"
                       data-bs-target="#carouselExampleIndicators"
@@ -179,45 +177,4 @@ export default function RestaurantDetail({ idData }) {
       </>
     );
   }
-}
-{
-  /* <div className="mx-auto">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                    <th>Sunday</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {/* <tr>
-                    <td>{restaurant.hours[0].open[0].start} -</td>
-                    <td>{restaurant.hours[0].open[1].start} -</td>
-                    <td>{restaurant.hours[0].open[2].start} -</td>
-                    <td>{restaurant.hours[0].open[3].start} -</td>
-                    <td>{restaurant.hours[0].open[4].start} -</td>
-                    <td>{restaurant.hours[0].open[5].start} -</td>
-                    <td>{restaurant.hours[0].open[6].start} -</td>
-                  </tr>
-                  <tr>
-                    <td>{restaurant.hours[0].open[0].end}</td>
-                    <td>{restaurant.hours[0].open[1].end}</td>
-                    <td>{restaurant.hours[0].open[2].end}</td>
-                    <td>{restaurant.hours[0].open[3].end}</td>
-                    <td>{restaurant.hours[0].open[4].end}</td>
-                    <td>{restaurant.hours[0].open[5].end}</td>
-                    <td>{restaurant.hours[0].open[6].end}</td>
-                  </tr> */
-}
-{
-  /* </tbody>
-              </table> */
-}
-{
-  /* </div> */
 }
