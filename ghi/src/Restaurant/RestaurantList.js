@@ -5,6 +5,8 @@ import { useAuthContext } from "../Authentication/AuthenticateUser";
 import RestaurantDetail from "./RestaurantDetail";
 import { storeRestList } from "../store/restListState";
 import { storeDietNeeds } from "../store/dietNeedsSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 export default function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
@@ -192,39 +194,38 @@ export default function RestaurantList() {
             <h1 className="text-center mt-7 mb-8 text-[40px] mr-2 tracking-[4px]">
               List of Restaurants
             </h1>
-            <div className="flex justify-center gap-6">
+            <div className="flex justify-center gap-6 ">
               {restaurants.map((restaurant) => (
-                <div
-                  className="flex justify-center border-black drop-shadow-md"
-                  key={restaurant?.id}
-                >
-                  <div className="text-center rounded-lg shadow-lg bg-[#f2efef] w-[400px]">
-                    <div className="relative rounded-lg bg-black pb-2/3">
-                      <img
-                        className="absolute h-full w-full rounded-t-lg object-cover"
-                        src={restaurant?.image_url}
-                        alt=""
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h5 className="text-gray-900 text-xl font-medium mb-2">
-                        {restaurant?.name}
-                      </h5>
-                      <p className="text-gray-700 text-base mb-2">
-                        {restaurant?.location.address1},{" "}
-                        {restaurant?.location.zip_code}
-                      </p>
-                      <p className="text-gray-700 text-base mb-6">
-                        {restaurant?.display_phone}
-                      </p>
+                <div className="flex justify-center drop-shadow-md shadow-2xl inset-0 rounded-lg border-4 border-[#C26866] hover:translate-x-0 hover:translate-y-0">
+                  <div
+                    className="transition duration-300 inset-0 ease-out transform -translate-x-3 -translate-y-3 hover:translate-x-0 hover:translate-y-0"
+                    key={restaurant?.id}
+                  >
+                    <div className="text-center rounded-lg shadow-lg bg-[#f2efef] w-[400px]">
+                      <div className="relative rounded-lg bg-black pb-2/3">
+                        <img
+                          className="absolute h-full w-full rounded-t-lg object-cover"
+                          src={restaurant?.image_url}
+                          alt=""
+                        />
+                      </div>
+                      <div className="p-6">
+                        <h5 className="text-gray-900 text-2xl font-bold mb-4">
+                          {restaurant?.name}
+                        </h5>
 
-                      <button
-                        className="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-[#F0C797] hover:bg-black hover:text-white border border-gray-100 rounded-lg shadow-inner group"
-                        onClick={selectionMade}
-                        value={restaurant?.id}
-                      >
-                        DETAILS
-                      </button>
+                        <button
+                          className="relative px-5 py-3 overflow-hidden font-medium text-black bg-[#F0C797] hover:bg-[#c26866] hover:text-white border border-gray-100 rounded-lg shadow-inner group"
+                          onClick={selectionMade}
+                          value={restaurant?.id}
+                        >
+                          DETAILS{" "}
+                          <FontAwesomeIcon
+                            icon={faCircleInfo}
+                            className="ml-2 fa-lg"
+                          />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
