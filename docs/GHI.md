@@ -3,7 +3,7 @@
 ## Wireframe
 
 An outline of the wireframe that the team created on Figma.
-![wireframe](<img src="./images/Wireframe.png" width="200"/>)
+![wireframe](./images/Wireframe.png){width=50%}
 
 ## Landing Page
 
