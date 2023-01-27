@@ -1,4 +1,7 @@
 ## Week 5:
+### 1/27/2023
+- worked on cleaning up all pages, removing commented out code or code blocks
+
 ### 1/26/2023
 - updated about page blurb
 - tried to help with Restaurant Detail page and restaurant list page
