@@ -126,15 +126,14 @@ export default function CreateDietaryNeeds() {
               Seafood
             </div>
             <select
+              defaultValue="false"
               required
               id="seafood"
               onChange={seafoodChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option value="true">Yes</option>
-              <option value="false" selected>
-                No
-              </option>
+              <option value="false">No</option>
             </select>
           </div>
           <div>
@@ -143,15 +142,14 @@ export default function CreateDietaryNeeds() {
               Gluten-Free
             </div>
             <select
+              defaultValue="false"
               required
               id="gluten"
               onChange={glutenChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option value="true">Yes</option>
-              <option value="false" selected>
-                No
-              </option>
+              <option value="false">No</option>
             </select>
           </div>
           <div className="font-bold text-center mb-2 text-[#a24d4a]">
@@ -159,15 +157,14 @@ export default function CreateDietaryNeeds() {
             Vegan
           </div>
           <select
+            defaultValue="false"
             required
             id="vegan"
             onChange={veganChange}
             className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
           >
             <option value="true">Yes</option>
-            <option value="false" selected>
-              No
-            </option>
+            <option value="false">No</option>
           </select>
           <div>
             <div className="font-bold text-center mb-2 text-[#a24d4a]">
@@ -175,15 +172,14 @@ export default function CreateDietaryNeeds() {
               Vegetarian
             </div>
             <select
+              defaultValue="false"
               required
               id="vegetarian"
               onChange={vegetarianChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option value="true">Yes</option>
-              <option value="false" selected>
-                No
-              </option>
+              <option value="false">No</option>
             </select>
           </div>
           <div>
@@ -192,15 +188,14 @@ export default function CreateDietaryNeeds() {
               Halal
             </div>
             <select
+              defaultValue="false"
               required
               id="halal"
               onChange={halalChange}
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option value="true">Yes</option>
-              <option value="false" selected>
-                No
-              </option>
+              <option value="false">No</option>
             </select>
           </div>
 

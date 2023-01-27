@@ -1,5 +1,9 @@
 # Week 5
 
+### (Fri) 1/27/2023
+
+- fixed errors on the console and merge party!
+
 ### (Thurs) 1/26/2023
 
 - changed font styles throughout pages
