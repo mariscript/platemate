@@ -303,3 +303,73 @@ true
     ]
   }
   ```
+
+#### YELP FUSION
+
+### Get Yelp
+
+- Endpoint path: /api/yelp
+- Endpoint method: GET
+
+- Request body:
+
+```json
+{
+"location": string,
+"budget": int,
+"open_at": string($date-time),
+"term": string,
+"diet_needs": string
+}
+```
+
+- Response: Yelp Restaurant List
+
+### Get Yelp Guest
+
+- Endpoint path: /api/yelp
+- Endpoint method: GET
+
+- Request body:
+
+```json
+{
+  "location": string
+}
+```
+
+- Response: Yelp list of businesses in target area.
+
+### Get Yelp by One
+
+- Endpoint path: /api/yelp/{id}
+- Endpoint method: GET
+
+- Request body:
+
+```json
+{
+  "id": path,
+  "session_getter": query,
+  "fastapi_token": string
+}
+```
+
+- Response: A single yelp business.
+
+### Get Yelp by Review
+
+- Endpoint path: /api/yelp/review/{id}
+- Endpoint method: GET
+
+- Request body:
+
+```json
+{
+  "id": path,
+  "session_getter": query,
+  "fastapi_token": string
+}
+```
+
+- Response: Reviews of target business.

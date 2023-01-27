@@ -63,14 +63,6 @@ class AccountsQueries:
                     [email]
                 )
 
-                # record = None
-                # row = db.fetchone()
-                # if row is not None:
-                #     record = {}
-                #     for i, column in enumerate(db.description):
-                #         record[column.name] = row[i]
-                # return record
-
                 record = result.fetchone()
                 if record is None:
                     return None
