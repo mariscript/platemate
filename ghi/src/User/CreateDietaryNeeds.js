@@ -107,7 +107,7 @@ export default function CreateDietaryNeeds() {
         className="mx-auto mt-10"
       />
       <h1 className="text-center font-md mt-7 text-5xl mb-12">
-        Allergies/Dietary Needs
+        Allergies and Dietary Needs
       </h1>
 
       <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto mb-16 w-[400px]">
