@@ -46,7 +46,7 @@ export default function LoginComponent() {
     }
 
     if (blankInputs === 2) {
-      setErrorMessage("Login form is completely blank.");
+      setErrorMessage("Login form is missing an email and/or a passord.");
       return false;
     }
   }
@@ -91,7 +91,7 @@ export default function LoginComponent() {
                   <input
                     className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
                     placeholder="Email"
-                    type="email"
+                    type="text"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                   />
