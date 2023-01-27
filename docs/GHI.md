@@ -2,7 +2,7 @@
 
 ## Wireframe
 
-An outline of the wireframe that the team created on Figma.
+An outline of the wireframe that the team created on Figma.\
 ![wireframe](./images/Wireframe.png){width=50%}
 
 ## Landing Page
