@@ -6,7 +6,17 @@
 
 ### 1/26/2023 Thursday
 
-CI/CD deployment
+Today was the last day to really work on the project.\
+We did a lot of design, trial and error. Font changes done by Nat,\
+I worked on the design on the Restaurant List page cards.\
+Zac and Gina worked on filtering more of the API to show details to restaurants that populte on the list.\
+I took the night to test the code and tweak anything that needed to be fixed.\
+Sign up and login forms still showed error messages from the browser, I changed the type to text instead of email.\
+Had someone else test the sign up function of the site, with some feedback, \
+I rerouted the site to go to the homepage from after signing up and after setting the dietary needs and allergies.\
+Tried to figure out where the key prop error in the console was, Gina fixed it! I almost had it.\
+I learned about key props and their error in the console for sure.\
+Took screengrabs of the final product to put into the readme.
 
 ### 1/25/2023 Wednesday
 

@@ -68,9 +68,9 @@ export default function App() {
             />
             <Route
               path="/questionnaire"
-              element={
-                <QuestionModal refresh={refresh} setRefresh={setRefresh} />
-              }
+              element={[
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+              ]}
             />
             <Route path="/logout" element={<Logout />} />
             <Route path="me">

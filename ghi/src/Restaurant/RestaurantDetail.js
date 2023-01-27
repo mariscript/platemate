@@ -21,20 +21,14 @@ export default function RestaurantDetail({ idData }) {
     const resp = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log(url);
     const data = await resp.json();
-    console.log(data);
     setReview(data);
   };
 
   useEffect(() => {
-    console.log("I am being called");
     getDataById();
     getReview();
   }, [idData]);
-
-  console.log(restaurant);
-  console.log(review);
 
   if (restaurant && review) {
     return (
