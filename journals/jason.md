@@ -1,3 +1,9 @@
+1/27/23
+Today is the big day. I finished up the ReadMe.md while other members polished the site up. As we were winding down, I decided to make an advertisement GIF to go along with the ReadMe so the team can have something to put on their portfolio. As a team, we handled the last few errors on the site to get it ready for deployment.
+
+1/26/23
+Today I finished up styling the resources and the about page to get the site ready to launch.
+
 1/25/23
 Today, I met with Riley and discussed that the unit test I picked was one of the more difficult ones. I decided to switch my test to get_allergy_by_id. I completed the test, and I started wrapping my head around the concept.
 Later, I fixed formatting issues the team had with the footer.

@@ -4,6 +4,14 @@
 
 ### 1/27/2023 Friday DUE DATE DAY!
 
+FINALLY! But we do plan on working on some stretch goals.\
+
+We got to debut our website to Candice this morning shortly after attendance.\
+After lunch, we were informed to check errors in the console on all pages.\
+Edited multiple console errors that showed up to the log.\
+Couldn't get the key prop error to go away sadly.\
+We will ask Candice about this at our next informal code review after grades have posted.
+
 ### 1/26/2023 Thursday
 
 Today was the last day to really work on the project.\
