@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
 import RestaurantDetail from "./RestaurantDetail";
 import { storeRestList } from "../store/restListState";
-import { storeDietNeeds } from "../store/dietNeedsSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,9 +11,6 @@ export default function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
   const [id, setId] = useState("");
   const { token } = useAuthContext();
-  const [categories, setCategories] = useState("");
-  // const [allergies, setAllergies] = useState("");
-  // const [dietRestrictEntry, setDietRestrict] = useState("");
   const [dietNeeds, setDietNeeds] = useState("");
   const [noDietNeeds, setNoDietNeeds] = useState("&categories=");
   const dispatch = useDispatch();
@@ -27,7 +23,6 @@ export default function RestaurantList() {
       setSelectionMade(true);
       setId(e.target.value);
     }
-    console.log(id);
   };
 
   const [load, setLoad] = useState({
@@ -44,7 +39,6 @@ export default function RestaurantList() {
   const budget = yelpResponse.budget;
   const openAt = yelpResponse.datetime;
   const yelpCat = yelpResponse.categories;
-  console.log(yelpCat);
 
   function dietNeedsFilter() {
     console.log("dietRestrict being called");
@@ -74,7 +68,6 @@ export default function RestaurantList() {
   useEffect(() => {
     dietNeedsFilter();
   }, [token, allergies, dietRestrict]);
-  console.log(dietNeeds);
 
   const getRestaurants = async () => {
     console.log("I am being called");
@@ -117,13 +110,6 @@ export default function RestaurantList() {
       dispatch(storeRestList({ restaurants }));
     }
   }, [token, dietNeeds, yelpResponse]);
-
-  // useEffect(() => {
-  //   if (refresh) {
-  //     console.log("cooper's refresh code");
-  //     getRestaurants();
-  //   }
-  // }, [refresh, yelpCat]);
 
   if (!load.completed) {
     return;

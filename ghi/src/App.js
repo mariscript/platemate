@@ -51,12 +51,8 @@ export default function App() {
             <Route
               path="/restaurants"
               element={[
-                <QuestionModal
-                  refresh={refresh}
-                  setRefresh={setRefresh}
-                  key="0"
-                />,
-                <RestaurantList refresh={refresh} key="1" />,
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+                <RestaurantList refresh={refresh} />,
               ]}
             />
             <Route path="/restaurant" element={<RestaurantDetailTest />} />
@@ -65,12 +61,8 @@ export default function App() {
             <Route
               path="/me"
               element={[
-                <QuestionModal
-                  refresh={refresh}
-                  setRefresh={setRefresh}
-                  key="2"
-                />,
-                <UserProfile key="3" />,
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+                <UserProfile />,
               ]}
             />
             <Route
