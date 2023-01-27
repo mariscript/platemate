@@ -158,7 +158,7 @@ export default function Signup() {
                     value={last_name}
                   />
                   <input
-                    type="email"
+                    type="text"
                     className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm"
                     placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}

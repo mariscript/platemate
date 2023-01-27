@@ -9,9 +9,11 @@ const options = [
   { value: "chinese", label: "🥢 Chinese" },
   { value: "pizza", label: "🍕 Pizza" },
   { value: "fast%food", label: "🍔 Fast Food" },
+  { value: "italian", label: "🍝 Italian" },
   { value: "indian", label: "🍛 Indian" },
   { value: "mexican", label: "🌮 Mexican" },
   { value: "japanese", label: "🍣 Japanese" },
+  { value: "deli", label: "🥪 Sandwiches" },
 ];
 
 export default function QuestionModal({ refresh, setRefresh }) {

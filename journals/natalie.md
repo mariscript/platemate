@@ -4,6 +4,8 @@
 
 - changed font styles throughout pages
 - edited the about page with information
+- changed questionnaire button
+- designed restaurant details page and got the rating stars to show
 
 ### (Wed) 1/25/2023
 

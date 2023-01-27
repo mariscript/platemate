@@ -32,7 +32,6 @@ export default function CreateDietaryNeeds() {
     const data = await result.json();
     setAccount(data);
     dispatch(storeUser({ account }));
-    console.log(data);
   };
 
   const seafoodChange = (e) => {
@@ -90,7 +89,7 @@ export default function CreateDietaryNeeds() {
     setVegetarian("");
     setHalal("");
 
-    navigate("/me");
+    navigate("/");
   };
 
   useEffect(() => {
@@ -107,7 +106,7 @@ export default function CreateDietaryNeeds() {
         className="mx-auto mt-10"
       />
       <h1 className="text-center font-md mt-7 text-5xl mb-12">
-        Allergies/Dietary Needs
+        Allergies and Dietary Needs
       </h1>
 
       <div className="bg-[#EEE5DD] rounded-lg p-10 max-w-screen-sm mx-auto mb-16 w-[400px]">
@@ -127,7 +126,9 @@ export default function CreateDietaryNeeds() {
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option value="true">Yes</option>
-              <option value="false">No</option>
+              <option value="false" selected>
+                No
+              </option>
             </select>
           </div>
           <div>
@@ -142,7 +143,9 @@ export default function CreateDietaryNeeds() {
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option value="true">Yes</option>
-              <option value="false">No</option>
+              <option value="false" selected>
+                No
+              </option>
             </select>
           </div>
           <div className="font-bold text-center mb-2 text-[#a24d4a]">
@@ -156,7 +159,9 @@ export default function CreateDietaryNeeds() {
             className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
           >
             <option value="true">Yes</option>
-            <option value="false">No</option>
+            <option value="false" selected>
+              No
+            </option>
           </select>
           <div>
             <div className="font-bold text-center mb-2 text-[#a24d4a]">
@@ -170,7 +175,9 @@ export default function CreateDietaryNeeds() {
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option value="true">Yes</option>
-              <option value="false">No</option>
+              <option value="false" selected>
+                No
+              </option>
             </select>
           </div>
           <div>
@@ -185,7 +192,9 @@ export default function CreateDietaryNeeds() {
               className="border border-gray-300 text-sm rounded-lg block w-32 p-2.5 bg-[#D9D9D9] text-black font-bold mb-6 mx-auto"
             >
               <option value="true">Yes</option>
-              <option value="false">No</option>
+              <option value="false" selected>
+                No
+              </option>
             </select>
           </div>
 
