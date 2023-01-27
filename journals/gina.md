@@ -6,7 +6,7 @@
 
 Due date! Today was mostly error handling and getting the project ready for submission. We did show Candice the project, and she thought it looked great! I let her know about some paint points for us like clearing the redux store and some of the API limitations. She was super understanding and actually glad that we experienced some issues of that scale because that is how the working world is. I am really glad we had this experience. I learned a lot by self teaching and from some members of my group, but I am excited to have a code review with Candice next week to improve our code.
 
-### Thuesday 1/27/23
+### Thursday 1/27/23
 
 Last day before due date! Today I mostly worked on the restaurant detail page fetches including getById and getReview, getting data from those pages, and finishing the dietNeedsFilters. Zac and I had some trouble with the restaurant detail page fetches because we weren't passing "id" into the routers url. As soon as we fixed that though, we were good to go. The data is extremely nested, so some of it is extremely challenging to get out. I also am almost finished with the filters for the dietaryNeeds. Originally I was trying to filter through all the data, but I realized that I could also pass the dietNeeds as categories. I am going to pivot to that tomorrow to see if that works better than trying to get data that is nested 5 layers deep that I have multiple sets of.
 
@@ -99,7 +99,7 @@ We completed our Figma to include the endpoints for our Routers. We also worked 
 
 ## Week 1
 
-###Thursday 12/22/22
+### Thursday 12/22/22
 We learned we had to change our name last night because Foodify is already taken. We updated our name to PlateMate instead! We don't have too much information on the backend yet, but we are going to use some of the break to map out more of what the yelp API can give us. We also found out yesterday that an existing app called Restaurant Roulette is also using the Yelp API, so I am definitely curious to look more into the filtering capabilities that they tapped into that we can as well. We also started working on the API framework for our app.
 
 ### Wednesday 12/21/22
