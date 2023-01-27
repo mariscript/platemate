@@ -31,10 +31,6 @@ export default function Nav() {
 
   const clearData = () => {
     logout();
-    dispatch(storeDietNeeds({}));
-    dispatch(storeRestList({}));
-    dispatch(storeUser({}));
-    dispatch(storeYelp({}));
   };
 
   const fetchAccount = async () => {

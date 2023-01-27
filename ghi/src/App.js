@@ -10,7 +10,6 @@ import Signup from "./Authentication/Signup";
 import Login from "./Authentication/Login";
 import Logout from "./Authentication/Logout";
 import RestaurantList from "./Restaurant/RestaurantList";
-import RestaurantDetailTest from "./Restaurant/RestaurantDetailTest";
 import { AuthProvider, useToken } from "./Authentication/AuthenticateUser";
 import QuestionModal from "./Questionnaire/QuestionnaireModal";
 import UserProfile from "./User/UserProfile";
@@ -36,49 +35,49 @@ export default function App() {
         <Signup />
         <Login />
         <Nav />
-
-        <Routes>
-          <Route
-            path="/"
-            element={[
-              <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
-              <MainPage />,
-            ]}
-          />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route
-            path="/restaurants"
-            element={[
-              <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
-              <RestaurantList refresh={refresh} />,
-            ]}
-          />
-          <Route path="/restaurant" element={<RestaurantDetailTest />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route
-            path="/me"
-            element={[
-              <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
-              <UserProfile />,
-            ]}
-          />
-          <Route
-            path="/questionnaire"
-            element={[
-              <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
-            ]}
-          />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/me">
-            <Route path="updateaccount" element={<UpdateAccountInfo />} />
-            <Route path="updateneeds" element={<UpdateDietaryNeeds />} />
-            <Route path="createneeds" element={<CreateDietaryNeeds />} />
-          </Route>
-        </Routes>
-        <Footer />
+        <div>
+          <Routes>
+            <Route
+              path="/"
+              element={[
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+                <MainPage />,
+              ]}
+            />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route
+              path="/restaurants"
+              element={[
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+                <RestaurantList refresh={refresh} />,
+              ]}
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route
+              path="/me"
+              element={[
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+                <UserProfile />,
+              ]}
+            />
+            <Route
+              path="/questionnaire"
+              element={[
+                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+              ]}
+            />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="me">
+              <Route path="updateaccount" element={<UpdateAccountInfo />} />
+              <Route path="updateneeds" element={<UpdateDietaryNeeds />} />
+              <Route path="createneeds" element={<CreateDietaryNeeds />} />
+            </Route>
+          </Routes>
+          <Footer />
+        </div>
       </BrowserRouter>
     </AuthProvider>
   );

@@ -30,6 +30,9 @@ export default function RestaurantDetail({ idData }) {
     getReview();
   }, [idData]);
 
+  console.log(restaurant);
+  console.log(review);
+
   if (restaurant && review) {
     return (
       <>
