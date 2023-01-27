@@ -53,15 +53,12 @@ export default function QuestionModal({ refresh, setRefresh }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (categories) {
-      console.log(categories);
       categories = categories.map((category) => category.value);
       if (categories.length === 1) {
         categories = categories.toString();
       } else if (categories.length > 1) {
         let randomCat = Math.floor(Math.random() * (categories.length + 1));
-        console.log(randomCat);
         categories = categories[randomCat];
-        console.log(categories);
       }
     } else {
       categories = "";

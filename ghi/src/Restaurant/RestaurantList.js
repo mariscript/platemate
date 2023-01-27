@@ -12,11 +12,12 @@ export default function RestaurantList() {
   const [id, setId] = useState("");
   const { token } = useAuthContext();
   const [dietNeeds, setDietNeeds] = useState("");
-  const [noDietNeeds, setNoDietNeeds] = useState("&categories=");
+  const [noDietNeeds] = useState("&categories=");
   const dispatch = useDispatch();
   const [selection, setSelectionMade] = useState(false);
 
   const selectionMade = (e) => {
+    console.log(e.target.value);
     if (selection) {
       setSelectionMade(false);
     } else {
@@ -41,7 +42,6 @@ export default function RestaurantList() {
   const yelpCat = yelpResponse.categories;
 
   function dietNeedsFilter() {
-    console.log("dietRestrict being called");
     if (token) {
       let dietRestrictEntries = Object.entries(dietRestrict).filter(
         (entry) => entry[1] === true
@@ -50,7 +50,6 @@ export default function RestaurantList() {
         (entry) => entry[1] === true
       );
       let concatDietNeeds = dietRestrictEntries.concat(allergiesEntries);
-      console.log(concatDietNeeds);
       let dietNeeds = concatDietNeeds.filter(
         (notSeafood) => notSeafood[0] !== "seafood"
       );
@@ -70,7 +69,6 @@ export default function RestaurantList() {
   }, [token, allergies, dietRestrict]);
 
   const getRestaurants = async () => {
-    console.log("I am being called");
     let errorFound = false;
     try {
       let url = "";
@@ -79,7 +77,6 @@ export default function RestaurantList() {
       } else {
         url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${yelpCat}&diet_needs=${noDietNeeds}`;
       }
-      console.log(url);
       const fetchConfig = {
         headers: {
           accept: "application/json",

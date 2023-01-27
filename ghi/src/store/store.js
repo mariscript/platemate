@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
-import { PURGE, persistReducer } from "redux-persist";
+import { persistReducer } from "redux-persist";
 import thunk from "redux-thunk";
 import yelpReducer from "./yelpVar";
 import restListReducer from "./restListState";
