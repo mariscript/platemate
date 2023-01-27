@@ -36,7 +36,6 @@ export default function App() {
         <Signup />
         <Login />
         <Nav />
-
         <div>
           <Routes>
             <Route
@@ -52,8 +51,12 @@ export default function App() {
             <Route
               path="/restaurants"
               element={[
-                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
-                <RestaurantList refresh={refresh} />,
+                <QuestionModal
+                  refresh={refresh}
+                  setRefresh={setRefresh}
+                  key="0"
+                />,
+                <RestaurantList refresh={refresh} key="1" />,
               ]}
             />
             <Route path="/restaurant" element={<RestaurantDetailTest />} />
@@ -62,8 +65,12 @@ export default function App() {
             <Route
               path="/me"
               element={[
-                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
-                <UserProfile />,
+                <QuestionModal
+                  refresh={refresh}
+                  setRefresh={setRefresh}
+                  key="2"
+                />,
+                <UserProfile key="3" />,
               ]}
             />
             <Route

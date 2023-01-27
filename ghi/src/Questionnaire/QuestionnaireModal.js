@@ -64,12 +64,11 @@ export default function QuestionModal({ refresh, setRefresh }) {
     } else {
       categories = "";
     }
-    console.log(categories);
     datetime = `${datetime.slice(0, 10)}%20${datetime.slice(
       11,
       13
     )}%3A${datetime.slice(14)}`;
-    console.log(datetime);
+
     dispatch(storeYelp({ zipcode, budget, datetime, takeInOut, categories }));
     setRefresh(true);
     if (location.pathname === "/restaurants") {
@@ -114,7 +113,7 @@ export default function QuestionModal({ refresh, setRefresh }) {
                   width="20px"
                   className="inline-block -mt-7 -ml-2 -mr-1"
                 />
-                s Find Your Plate!
+                Find Your Plate!
               </h1>
               {refresh && (
                 <div
@@ -227,6 +226,7 @@ export default function QuestionModal({ refresh, setRefresh }) {
                               id="zipcode"
                               className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-sm text-black"
                               defaultValue={account?.zipcode}
+                              key={account.id}
                             />
                           </div>
                         </div>

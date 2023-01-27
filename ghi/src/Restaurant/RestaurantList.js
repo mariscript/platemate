@@ -11,8 +11,10 @@ export default function RestaurantList() {
   const [id, setId] = useState("");
   const { token } = useAuthContext();
   const [categories, setCategories] = useState("");
-  const [allergyEntry, setAllergies] = useState("");
-  const [dietRestrictEntry, setDietRestrict] = useState("");
+  // const [allergies, setAllergies] = useState("");
+  // const [dietRestrictEntry, setDietRestrict] = useState("");
+  const [dietNeeds, setDietNeeds] = useState("");
+  const [noDietNeeds, setNoDietNeeds] = useState("&categories=");
   const dispatch = useDispatch();
   const [selection, setSelectionMade] = useState(false);
 
@@ -32,7 +34,7 @@ export default function RestaurantList() {
   });
 
   const allergies = useSelector((state) => state.dietNeeds.name.allergy);
-  const diet_restrict = useSelector(
+  const dietRestrict = useSelector(
     (state) => state.dietNeeds.name.diet_restrict
   );
   const yelpResponse = useSelector((state) => state.yelp.name);
@@ -43,24 +45,46 @@ export default function RestaurantList() {
   console.log(yelpCat);
 
   function dietNeedsFilter() {
-    let dietRestrictEntries = Object.entries(diet_restrict).filter(
-      (entry) => entry[1] === true
-    );
-    let allergiesEntries = Object.entries(allergies).filter(
-      (entry) => entry[1] === true
-    );
-    setAllergies(allergiesEntries);
-    setDietRestrict(dietRestrictEntries);
+    console.log("dietRestrict being called");
+    if (token) {
+      let dietRestrictEntries = Object.entries(dietRestrict).filter(
+        (entry) => entry[1] === true
+      );
+      let allergiesEntries = Object.entries(allergies).filter(
+        (entry) => entry[1] === true
+      );
+      let concatDietNeeds = dietRestrictEntries.concat(allergiesEntries);
+      console.log(concatDietNeeds);
+      let dietNeeds = concatDietNeeds.filter(
+        (notSeafood) => notSeafood[0] !== "seafood"
+      );
+      let filterString = "";
+      let finalFilterString = "";
+      for (let stringNeed of dietNeeds) {
+        let need = stringNeed[0].toString();
+        filterString = `%26categories%3D${need}`;
+        finalFilterString += filterString;
+      }
+      setDietNeeds(finalFilterString);
+    }
   }
+
+  useEffect(() => {
+    dietNeedsFilter();
+  }, [token, allergies, dietRestrict]);
+  console.log(dietNeeds);
 
   const getRestaurants = async () => {
     console.log("I am being called");
     let errorFound = false;
     try {
-      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${yelpCat}`;
+      let url = "";
+      if (dietNeeds) {
+        url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${yelpCat}&diet_needs=${dietNeeds}`;
+      } else {
+        url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/yelp?location=${location}&budget=${budget}&open_at=${openAt}&term=${yelpCat}&diet_needs=${noDietNeeds}`;
+      }
       console.log(url);
-      // const url = 'http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-24%2018%3A44&categories=chinese'
-      // http://localhost:8000/api/yelp?location=78664&budget=1&open_at=2023-01-25%2012%3A00&categories=chinese
       const fetchConfig = {
         headers: {
           accept: "application/json",
@@ -70,7 +94,6 @@ export default function RestaurantList() {
       };
       const resp = await fetch(url, fetchConfig);
       const data = await resp.json();
-      console.log(data);
       setRestaurants(data.businesses.slice(0, 3));
 
       if (data.businesses.length === 0) {
@@ -88,11 +111,10 @@ export default function RestaurantList() {
 
   useEffect(() => {
     if (token) {
-      console.log("useeffect to get restaurants after string exists");
       getRestaurants();
       dispatch(storeRestList({ restaurants }));
     }
-  }, [token, yelpResponse]);
+  }, [token, dietNeeds, yelpResponse]);
 
   // useEffect(() => {
   //   if (refresh) {

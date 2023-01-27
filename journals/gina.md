@@ -2,6 +2,14 @@
 
 ## Week 5:
 
+### Friday 1/28/2023
+
+Due date!
+
+### Thuesday 1/27/23
+
+Last day before due date! Today I mostly worked on the restaurant detail page fetches including getById and getReview, getting data from those pages, and finishing the dietNeedsFilters. Zac and I had some trouble with the restaurant detail page fetches because we weren't passing "id" into the routers url. As soon as we fixed that though, we were good to go. The data is extremely nested, so some of it is extremely challenging to get out. I also am almost finished with the filters for the dietaryNeeds. Originally I was trying to filter through all the data, but I realized that I could also pass the dietNeeds as categories. I am going to pivot to that tomorrow to see if that works better than trying to get data that is nested 5 layers deep that I have multiple sets of.
+
 ### Wednesday 1/26/23
 
 The first thing I did today was get a unit test done for get all accounts. I would really like to do one for Yelp, but I want to finish the filters first since that is such a big functionality piece. The rest of today feels like a blur. I mostly worked on the one category filter ALL DAY. I learned yesterday that the categories filter does not work as intended, and it actually needs to be in terms. I was having SO many issues with state especially with the new refresh page function Marison and Nat used to get the modal dismissal to work correctly. Originally I had the function to change term to string on the restaurant detail page, but I instead added some logic on the questionnaire page instead to get the string to populate directly into the term field correctly formatted. This way I could bypass all the state issues I was having. I also helped fix the cards so they are appropriately sized! Tomorrow I will work on the additional filters and adding the redux clear functions when someone logs out.
@@ -11,6 +19,7 @@ The first thing I did today was get a unit test done for get all accounts. I wou
 Today was a really long day. The group started working on unit tests, and I didn't get a chance to because I was working on filters. After all the merges in the morning, I noticed that redux was NOT working as intended, s I messed with that for a while. However, most of my day was spent trying to get the categories filter to work. I learned that FastAPI does not allow a list as an input, so I converted it to a string on the front end and passed it back to FastAPI. It took a long time to get the link working correctly. Now I am having issues with the API not returning results as expected, but I think that is an issue with the API itself and not with our code. Other than that, today was a lot of tedious testing, but we are making progress. Tomorrow my goal is to get my unit test done, just to get that out of the way!
 
 ### Monday 1/24/23
+
 Wow crunch week! I had a fairly productive weekend actually but I am grouping it all to keep things consistent. Over this weekend and today, I was able to complete the following:
 
 - make multiple react slices including for user, restaurant list, dietary needs

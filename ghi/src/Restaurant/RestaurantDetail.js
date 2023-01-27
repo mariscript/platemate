@@ -37,7 +37,7 @@ export default function RestaurantDetail({ idData }) {
   console.log(restaurant);
   console.log(review);
 
-  if (restaurant) {
+  if (restaurant && review) {
     return (
       <>
         <div className="flex justify-center drop-shadow-md ">
@@ -143,7 +143,7 @@ export default function RestaurantDetail({ idData }) {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  {/* <tr>
                     <td>{restaurant.hours[0].open[0].start} -</td>
                     <td>{restaurant.hours[0].open[1].start} -</td>
                     <td>{restaurant.hours[0].open[2].start} -</td>
@@ -160,7 +160,7 @@ export default function RestaurantDetail({ idData }) {
                     <td>{restaurant.hours[0].open[4].end}</td>
                     <td>{restaurant.hours[0].open[5].end}</td>
                     <td>{restaurant.hours[0].open[6].end}</td>
-                  </tr>
+                  </tr> */}
                 </tbody>
               </table>
             </div>
