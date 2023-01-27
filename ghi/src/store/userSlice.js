@@ -7,7 +7,9 @@ export const userState = createSlice({
   initialState,
   reducers: {
     storeUser: (state, action) => {
-        {state.name = action.payload}
+      {
+        state.name = action.payload;
+      }
     },
     clearUserForm: () => {
       return initialState;
@@ -15,6 +17,6 @@ export const userState = createSlice({
   },
 });
 
-export const { storeUser, clearUSerForm } = userState.actions;
+export const { storeUser, clearUserForm } = userState.actions;
 
 export default userState.reducer;

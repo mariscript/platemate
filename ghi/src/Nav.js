@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+import { useDispatch, persistor } from "react-redux";
+import storeDietNeeds from "./store/dietNeedsSlice";
+import storeRestList from "./store/restListState";
+import storeUser from "./store/userSlice.js";
+import storeYelp from "./store/yelpVar";
 import { useToken, useAuthContext } from "./Authentication/AuthenticateUser";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
@@ -16,12 +21,21 @@ export default function Nav() {
   const [, , logout] = useToken();
   const { token } = useAuthContext();
   const [user, setUser] = useState({});
+  const dispatch = useDispatch();
 
   let [nav, setNav] = useState(false);
 
   function handleNav() {
     setNav(!nav);
   }
+
+  const clearData = () => {
+    logout();
+    dispatch(storeDietNeeds({}));
+    dispatch(storeRestList({}));
+    dispatch(storeUser({}));
+    dispatch(storeYelp({}));
+  };
 
   const fetchAccount = async () => {
     const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
@@ -222,7 +236,7 @@ export default function Nav() {
                   {({ active }) => (
                     <a
                       href="/logout"
-                      onClick={logout}
+                      onClick={clearData}
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"

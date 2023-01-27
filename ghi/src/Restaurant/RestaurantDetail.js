@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useAuthContext } from "../Authentication/AuthenticateUser";
 
 export default function RestaurantDetail({ idData }) {
+  console.log(idData);
   const { token } = useAuthContext();
   const [restaurant, setRestaurant] = useState("");
   const [review, setReview] = useState("");
@@ -72,17 +73,17 @@ export default function RestaurantDetail({ idData }) {
                 <div class="carousel-inner relative w-full overflow-hidden">
                   <div class="carousel-item active float-left w-full">
                     <img
-                      src={restaurant?.photos[0]}
+                      src={restaurant.photos[0]}
                       class="block w-full"
                       alt="Wild Landscape"
                     />
                   </div>
                   <div class="carousel-item float-left w-full">
-                    <img src={restaurant?.photos[1]} alt="Camera" />
+                    <img src={restaurant.photos[1]} alt="Camera" />
                   </div>
                   <div class="carousel-item float-left w-full">
                     <img
-                      src={restaurant?.photos[2]}
+                      src={restaurant.photos[2]}
                       class="block w-full"
                       alt="Exotic Fruits"
                     />
