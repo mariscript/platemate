@@ -17,13 +17,13 @@ export default function RestaurantList() {
   const [selection, setSelectionMade] = useState(false);
 
   const selectionMade = (e) => {
-    console.log(e.target.value);
     if (selection) {
       setSelectionMade(false);
     } else {
       setSelectionMade(true);
       setId(e.target.value);
     }
+    console.log(id);
   };
 
   const [load, setLoad] = useState({
@@ -111,18 +111,22 @@ export default function RestaurantList() {
         <div className="flex justify-center mt-10 mb-5">
           <button
             type="button"
-            className="inline-block px-10 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg hover:text-black focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out mb-10"
             data-bs-toggle="modal"
             data-bs-target="#questionnaire"
+            className="relative inline-flex items-center justify-start px-10 py-6 overflow-hidden font-bold transition-all bg-[#C26866] rounded-2xl group text-xl"
           >
-            <span className="inline-block font-bold">
-              Take The Questionnaire!
+            <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#FDECA9] rounded group-hover:-mr-4 group-hover:-mt-4">
+              <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
             </span>
-            <img
-              src={require("../images/form.png")}
-              alt="Loading..."
-              className="inline-block w-9 ml-2"
-            />
+            <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-[#FDECA9] rounded-2xl group-hover:mb-20 group-hover:translate-x-0"></span>
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-black">
+              TAKE THE QUESTIONNAIRE!
+              <img
+                src={require("../images/form.png")}
+                alt="Loading..."
+                className="inline-block w-9 ml-2"
+              />
+            </span>
           </button>
         </div>
         <div className="relative justify-center flex-col">
@@ -160,18 +164,22 @@ export default function RestaurantList() {
         <div className="flex justify-center mt-10 mb-5">
           <button
             type="button"
-            className="inline-block px-10 py-6 bg-[#C26866] text-white font-medium text-xl leading-tight uppercase rounded-full shadow-md hover:bg-[#FDECA9] hover:shadow-lg hover:text-black focus:bg-[#C26866] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C26866] active:shadow-lg transition duration-150 ease-in-out"
             data-bs-toggle="modal"
             data-bs-target="#questionnaire"
+            className="relative inline-flex items-center justify-start px-10 py-6 overflow-hidden font-bold transition-all bg-[#C26866] rounded-2xl group text-xl"
           >
-            <span className="inline-block font-bold">
-              Take The Questionnaire!
+            <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#FDECA9] rounded group-hover:-mr-4 group-hover:-mt-4">
+              <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
             </span>
-            <img
-              src={require("../images/form.png")}
-              alt="Loading..."
-              className="inline-block w-9 ml-2"
-            />
+            <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-[#FDECA9] rounded-2xl group-hover:mb-20 group-hover:translate-x-0"></span>
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-black">
+              TAKE THE QUESTIONNAIRE!
+              <img
+                src={require("../images/form.png")}
+                alt="Loading..."
+                className="inline-block w-9 ml-2"
+              />
+            </span>
           </button>
         </div>
         {!selection ? (
@@ -181,51 +189,42 @@ export default function RestaurantList() {
               width="70px"
               className="mx-auto mt-10"
             />
-            <h1 className="text-center font-md mt-7 text-5xl mb-8">
+            <h1 className="text-center mt-7 mb-8 text-[40px] mr-2 tracking-[4px]">
               List of Restaurants
             </h1>
             <div className="flex justify-center gap-6">
               {restaurants.map((restaurant) => (
                 <div
                   className="flex justify-center border-black drop-shadow-md"
-                  key={restaurant.id}
+                  key={restaurant?.id}
                 >
                   <div className="text-center rounded-lg shadow-lg bg-[#f2efef] w-[400px]">
                     <div className="relative rounded-lg bg-black pb-2/3">
                       <img
                         className="absolute h-full w-full rounded-t-lg object-cover"
-                        src={restaurant.image_url}
+                        src={restaurant?.image_url}
                         alt=""
                       />
                     </div>
                     <div className="p-6">
                       <h5 className="text-gray-900 text-xl font-medium mb-2">
-                        {restaurant.name}
+                        {restaurant?.name}
                       </h5>
                       <p className="text-gray-700 text-base mb-2">
-                        {restaurant.location.address1},{" "}
-                        {restaurant.location.zip_code}
+                        {restaurant?.location.address1},{" "}
+                        {restaurant?.location.zip_code}
                       </p>
                       <p className="text-gray-700 text-base mb-6">
-                        {restaurant.display_phone}
+                        {restaurant?.display_phone}
                       </p>
 
-                      <span class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
-
-                      <span class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
-                      <span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                      <span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                      <span class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
-
-                      <span class="relative transition-colors text-black duration-300 delay-200 group-hover:text-white ease">
-                        <button
-                          className="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-[#F0C797] border border-gray-100 rounded-lg shadow-inner group"
-                          onClick={selectionMade}
-                          value={restaurant.id}
-                        >
-                          DETAILS
-                        </button>
-                      </span>
+                      <button
+                        className="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-[#F0C797] hover:bg-black hover:text-white border border-gray-100 rounded-lg shadow-inner group"
+                        onClick={selectionMade}
+                        value={restaurant?.id}
+                      >
+                        DETAILS
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -234,15 +233,15 @@ export default function RestaurantList() {
           </>
         ) : (
           <>
-            <div>
+            <div style={{ display: "grid", placeItems: "center" }}>
               <RestaurantDetail idData={id} />
+              <button
+                onClick={selectionMade}
+                className="mb-10 mt-20 text-[#BB5855] rounded text-md outline outline-offset-4 outline-2 font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c]"
+              >
+                Back to Results
+              </button>
             </div>
-            <button
-              onClick={selectionMade}
-              className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c]"
-            >
-              Go back to your results
-            </button>
           </>
         )}
       </>

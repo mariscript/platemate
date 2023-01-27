@@ -26,7 +26,7 @@ export default function LoginComponent() {
       }, 3000);
       navigate("/me");
     } else {
-      setErrorMessage("Incorrect email or password");
+      setErrorMessage("Incorrect email or password.");
       setTimeout(() => {
         setErrorMessage("");
       }, 3000);
@@ -66,7 +66,7 @@ export default function LoginComponent() {
             <div className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-[#F0C797] bg-clip-padding rounded-md outline-none text-current">
               <div className="modal-header p-6 mt-2 text-center">
                 <div className="flex justify-center items-center">
-                  <h1 className="text-5xl font-medium mr-2">Login</h1>
+                  <h1 className="text-4xl mr-2 tracking-[4px]">Login</h1>
                   <img src={require("../images/lock.png")} width="40px" />
                 </div>
                 <svg
