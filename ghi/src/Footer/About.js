@@ -44,7 +44,7 @@ export default function About() {
                 </div>
                 <div className="p-6">
                   <h5 className="text-lg font-bold mb-4">Zachary Macek</h5>
-                  <p className="mb-6">"My favorite food is crab legs."</p>
+                  <p className="mb-6">"I'm Zac. My journey in programming started in early 2022. My favorite part about working on this app, besides the friendships we built along the way (apologies for the cheese, pun intended), was working on the databases and completing the backend functionality. My favorite food is crab legs. "</p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
                       href="https://www.linkedin.com/in/zachary-macek/"
@@ -99,9 +99,10 @@ export default function About() {
                   <h5 className="text-lg font-bold mb-4">Gina John</h5>
                   <p className="mb-6">
                     "The toughest part of this project was working with the
-                    external API to display data in the way we wanted. It was a
-                    fun challenge and the results were fruitful (pun intended).
-                    My favorite food is tofu tikka masala with basmati rice!"
+                    external API to display data in the way we wanted and
+                    working with new tools like Redux. The challenge was worth
+                    it after seeing what we could create. My favorite food is
+                    tofu tikka masala with basmati rice!"
                   </p>
                   <ul className="list-inside flex mx-auto justify-center">
                     <a
@@ -122,7 +123,7 @@ export default function About() {
                       </svg>
                     </a>
                     <a
-                      href="git"
+                      href="https://gitlab.com/gejohn793"
                       target="_blank"
                       title="Gitlab"
                       className="px-2"

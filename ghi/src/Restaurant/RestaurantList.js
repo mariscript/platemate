@@ -6,7 +6,7 @@ import RestaurantDetail from "./RestaurantDetail";
 import { storeRestList } from "../store/restListState";
 import { storeDietNeeds } from "../store/dietNeedsSlice";
 
-export default function RestaurantList({ refresh }) {
+export default function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
   const [id, setId] = useState("");
   const { token } = useAuthContext();
@@ -23,6 +23,7 @@ export default function RestaurantList({ refresh }) {
       setSelectionMade(true);
       setId(e.target.value);
     }
+    console.log(id);
   };
 
   const [load, setLoad] = useState({
@@ -52,16 +53,6 @@ export default function RestaurantList({ refresh }) {
     setDietRestrict(dietRestrictEntries);
   }
 
-  // function changeCatString() {
-  //   if (yelpCat.length > 1) {
-  //     let randomCat = Math.floor(Math.random() * (yelpCat.length + 1));
-  //     setFinalString(yelpCat[randomCat]);
-  //   } else if (yelpCat.length === 1) {
-  //     setFinalString(yelpCat.toString());
-  //   }
-  // }
-  // console.log(finalString);
-
   const getRestaurants = async () => {
     console.log("I am being called");
     let errorFound = false;
@@ -79,7 +70,9 @@ export default function RestaurantList({ refresh }) {
       };
       const resp = await fetch(url, fetchConfig);
       const data = await resp.json();
+      console.log(data);
       setRestaurants(data.businesses.slice(0, 3));
+
       if (data.businesses.length === 0) {
         errorFound = true;
       }
@@ -203,41 +196,34 @@ export default function RestaurantList({ refresh }) {
               {restaurants.map((restaurant) => (
                 <div
                   className="flex justify-center border-black drop-shadow-md"
-                  key={restaurant.id}
+                  key={restaurant?.id}
                 >
                   <div className="text-center rounded-lg shadow-lg bg-[#f2efef] w-[400px]">
                     <div className="relative rounded-lg bg-black pb-2/3">
                       <img
                         className="absolute h-full w-full rounded-t-lg object-cover"
-                        src={restaurant.image_url}
+                        src={restaurant?.image_url}
                         alt=""
                       />
                     </div>
                     <div className="p-6">
                       <h5 className="text-gray-900 text-xl font-medium mb-2">
-                        {restaurant.name}
+                        {restaurant?.name}
                       </h5>
                       <p className="text-gray-700 text-base mb-2">
-                        {restaurant.location.address1},{" "}
-                        {restaurant.location.zip_code}
+                        {restaurant?.location.address1},{" "}
+                        {restaurant?.location.zip_code}
                       </p>
                       <p className="text-gray-700 text-base mb-6">
-                        {restaurant.display_phone}
+                        {restaurant?.display_phone}
                       </p>
 
                       <button
-                        className="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-[#F0C797] border border-gray-100 rounded-lg shadow-inner group"
+                        className="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-[#F0C797] hover:bg-black hover:text-white border border-gray-100 rounded-lg shadow-inner group"
                         onClick={selectionMade}
-                        value={restaurant.id}
+                        value={restaurant?.id}
                       >
-                        <span class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
-                        <span class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
-                        <span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                        <span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                        <span class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
-                        <span class="relative transition-colors text-black duration-300 delay-200 group-hover:text-white ease">
-                          DETAILS
-                        </span>
+                        DETAILS
                       </button>
                     </div>
                   </div>
@@ -247,15 +233,15 @@ export default function RestaurantList({ refresh }) {
           </>
         ) : (
           <>
-            <div>
+            <div style={{ display: "grid", placeItems: "center" }}>
               <RestaurantDetail idData={id} />
+              <button
+                onClick={selectionMade}
+                className="mb-10 mt-20 text-[#BB5855] rounded text-md outline outline-offset-4 outline-2 font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c]"
+              >
+                Back to Results
+              </button>
             </div>
-            <button
-              onClick={selectionMade}
-              className="text-[#BB5855] mx-6 rounded text-sm outline outline-offset-4 outline-2 py-0 px-4 relative font-semibold text-center no-underline transition-all duration-300 ease-in-out cursor-pointer hover:text-[#bb58557c]"
-            >
-              Go back to your results
-            </button>
           </>
         )}
       </>

@@ -1,6 +1,8 @@
 ## Week 5:
 ### 1/26/2023
 - updated about page blurb
+- tried to help with Restaurant Detail page and restaurant list page
+- built a table for open hours on restaurant detail page
 
 ### 1/25/2023
 - fixed the card formatting on Restaurant List
