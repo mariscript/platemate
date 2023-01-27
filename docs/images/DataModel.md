@@ -1,7 +1,5 @@
 # Data Models
 
-_For Accounts_
-
 ### Accounts
 
 | Name            | Type | Not Null | Primary Key |
