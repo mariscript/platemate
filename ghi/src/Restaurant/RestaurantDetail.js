@@ -165,6 +165,7 @@ export default function RestaurantDetail({ idData }) {
               <a
                 href={restaurant.url}
                 className="relative px-6 py-3 font-bold text-black group -mt-2"
+                target="_blank"
               >
                 <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-[#FABB72] group-hover:translate-x-0 group-hover:translate-y-0"></span>
                 <span className="absolute inset-0 w-full h-full border-4 border-black"></span>
@@ -176,45 +177,4 @@ export default function RestaurantDetail({ idData }) {
       </>
     );
   }
-}
-{
-  /* <div className="mx-auto">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                    <th>Sunday</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {/* <tr>
-                    <td>{restaurant.hours[0].open[0].start} -</td>
-                    <td>{restaurant.hours[0].open[1].start} -</td>
-                    <td>{restaurant.hours[0].open[2].start} -</td>
-                    <td>{restaurant.hours[0].open[3].start} -</td>
-                    <td>{restaurant.hours[0].open[4].start} -</td>
-                    <td>{restaurant.hours[0].open[5].start} -</td>
-                    <td>{restaurant.hours[0].open[6].start} -</td>
-                  </tr>
-                  <tr>
-                    <td>{restaurant.hours[0].open[0].end}</td>
-                    <td>{restaurant.hours[0].open[1].end}</td>
-                    <td>{restaurant.hours[0].open[2].end}</td>
-                    <td>{restaurant.hours[0].open[3].end}</td>
-                    <td>{restaurant.hours[0].open[4].end}</td>
-                    <td>{restaurant.hours[0].open[5].end}</td>
-                    <td>{restaurant.hours[0].open[6].end}</td>
-                  </tr> */
-}
-{
-  /* </tbody>
-              </table> */
-}
-{
-  /* </div> */
 }

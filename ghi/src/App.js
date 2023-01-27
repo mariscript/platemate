@@ -37,50 +37,48 @@ export default function App() {
         <Login />
         <Nav />
 
-        <div>
-          <Routes>
-            <Route
-              path="/"
-              element={[
-                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
-                <MainPage />,
-              ]}
-            />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout />} />
-            <Route
-              path="/restaurants"
-              element={[
-                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
-                <RestaurantList refresh={refresh} />,
-              ]}
-            />
-            <Route path="/restaurant" element={<RestaurantDetailTest />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route
-              path="/me"
-              element={[
-                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
-                <UserProfile />,
-              ]}
-            />
-            <Route
-              path="/questionnaire"
-              element={[
-                <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
-              ]}
-            />
-            <Route path="/logout" element={<Logout />} />
-            <Route path="me">
-              <Route path="updateaccount" element={<UpdateAccountInfo />} />
-              <Route path="updateneeds" element={<UpdateDietaryNeeds />} />
-              <Route path="createneeds" element={<CreateDietaryNeeds />} />
-            </Route>
-          </Routes>
-          <Footer />
-        </div>
+        <Routes>
+          <Route
+            path="/"
+            element={[
+              <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+              <MainPage />,
+            ]}
+          />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route
+            path="/restaurants"
+            element={[
+              <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+              <RestaurantList refresh={refresh} />,
+            ]}
+          />
+          <Route path="/restaurant" element={<RestaurantDetailTest />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route
+            path="/me"
+            element={[
+              <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+              <UserProfile />,
+            ]}
+          />
+          <Route
+            path="/questionnaire"
+            element={[
+              <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
+            ]}
+          />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/me">
+            <Route path="updateaccount" element={<UpdateAccountInfo />} />
+            <Route path="updateneeds" element={<UpdateDietaryNeeds />} />
+            <Route path="createneeds" element={<CreateDietaryNeeds />} />
+          </Route>
+        </Routes>
+        <Footer />
       </BrowserRouter>
     </AuthProvider>
   );
