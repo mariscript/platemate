@@ -17,7 +17,6 @@ export default function RestaurantList() {
   const [selection, setSelectionMade] = useState(false);
 
   const selectionMade = (e) => {
-    console.log(e.target.value);
     if (selection) {
       setSelectionMade(false);
     } else {

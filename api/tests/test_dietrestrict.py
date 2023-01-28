@@ -1,12 +1,12 @@
 # This test was by Natalie
-
-import json
 from fastapi.testclient import TestClient
 from queries.diet_restrict import DietRestrictQueries
 from authenticator import authenticator
 from main import app
 
+
 client = TestClient(app=app)
+
 
 def get_current_account_data_mock():
     return {
@@ -14,9 +14,11 @@ def get_current_account_data_mock():
         'username': 'test@email.com'
     }
 
+
 class DietRestrictQueriesMock:
     def get_all_diet_restricts(self):
         return []
+
 
 def test_diet_restrict_list():
     # Arrange

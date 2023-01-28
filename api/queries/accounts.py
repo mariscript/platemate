@@ -1,4 +1,3 @@
-import os
 from pydantic import BaseModel
 from queries.pool import pool
 from typing import Union
@@ -7,11 +6,10 @@ from typing import Union
 class Error(BaseModel):
     message: str
 
+
 class DuplicateUserError(ValueError):
     pass
 
-class Error(BaseModel):
-    message: str
 
 class Account(BaseModel):
     id: int
@@ -21,6 +19,7 @@ class Account(BaseModel):
     zipcode: str
     hashed_password: str
 
+
 class AccountIn(BaseModel):
     first_name: str
     last_name: str
@@ -28,11 +27,13 @@ class AccountIn(BaseModel):
     zipcode: str
     password: str
 
+
 class AccountInUpdate(BaseModel):
     first_name: str
     last_name: str
     email: str
     zipcode: str
+
 
 class AccountOut(BaseModel):
     id: int
@@ -40,6 +41,7 @@ class AccountOut(BaseModel):
     last_name: str
     email: str
     zipcode: str
+
 
 class AccountsOut(BaseModel):
     accounts: list[AccountOut]
@@ -60,7 +62,7 @@ class AccountsQueries:
                     FROM accounts
                     WHERE email = %s;
                     """,
-                    [email]
+                    [email],
                 )
 
                 record = result.fetchone()
@@ -85,11 +87,13 @@ class AccountsQueries:
                         VALUES (%s, %s, %s, %s, %s)
                         RETURNING id;
                         """,
-                        [account.first_name,
-                        account.last_name,
-                        account.email,
-                        account.zipcode,
-                        hashed_password]
+                        [
+                            account.first_name,
+                            account.last_name,
+                            account.email,
+                            account.zipcode,
+                            hashed_password,
+                        ],
                     )
                     id = result.fetchone()[0]
                     return Account(
@@ -139,17 +143,18 @@ class AccountsQueries:
                     FROM accounts
                     WHERE id = %s;
                     """,
-                    [id]
+                    [id],
                 )
 
                 results = db.fetchone()
-                if results is None: return results
+                if results is None:
+                    return results
                 account = {}
                 for i, column in enumerate(db.description):
                     account[column.name] = results[i]
                 return account
 
-    def update_account(self,id:int, account:AccountIn) -> Union[AccountOut,Error]:
+    def update_account(self, id: int, account: AccountInUpdate) -> Union[AccountOut, Error]:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
@@ -167,13 +172,12 @@ class AccountsQueries:
                             account.last_name,
                             account.email,
                             account.zipcode,
-                            id
-                        ]
+                            id,
+                        ],
                     )
                     return self.account_in_to_out(id, account)
-        except Exception as e:
-            print(e)
-            return {"message":"Could not update the account"}
+        except Exception:
+            return {"message": "Could not update the account"}
 
     def account_in_to_out(self, id: int, account: AccountIn):
         old_data = account.dict()
@@ -188,8 +192,8 @@ class AccountsQueries:
                         DELETE FROM accounts
                         WHERE id = %s
                         """,
-                        [id]
+                        [id],
                     )
             return True
-        except Exception as e:
+        except Exception:
             return False
