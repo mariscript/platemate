@@ -53,7 +53,7 @@ build-api-backend:
     - docker push "$CONTAINER_FULL_IMAGE_NAME_WITH_TAG"
     - echo $CONTAINER_FULL_IMAGE_NAME_WITH_TAG
     - echo "Deploying on CapRover..."
-    - docker run caprover/cli-caprover:v2.1.1 caprover deploy --caproverUrl $CAPROVER_URL --caproverPassword $CAPROVER_PASSWORD --caproverApp $CAPROVER_APP --imageName $CONTAINER_FULL_IMAGE_NAME_WITH_TAG --ci $CI
+    - docker run caprover/cli-caprover:v2.1.1 caprover deploy --caproverUrl $CAPROVER_URL --caproverPassword $CAPROVER_PASSWORD --caproverApp $CAPROVER_APP --imageName $CONTAINER_FULL_IMAGE_NAME_WITH_TAG
   only:
     - main
     - marison
@@ -72,6 +72,7 @@ build-front-end-job:
   script:
     - cd ghi
     - npm install
+    - npm uninstall autoprefixer
     - npm run build
     - cp build/index.html build/404.html
   artifacts:
