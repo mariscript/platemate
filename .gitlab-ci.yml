@@ -10,6 +10,7 @@ variables:
   POSTGRES_PASSWORD: platemate
   DATABASE_URL: postgres://postgres:843a829fd09aaaa8@srv-captain--platemate-db:5432
   SIGNING_KEY: fed410876876994129227b1b8a46a8e22c503cbf4e9b073db8350cb72e04314b
+  YELP_KEY: vcRdQhzTUq_JUSGwKuJBMJ2EFp4p0UncF_kHHfiVYqD2XYPcNGjFqbrmJ0gTMbT06LhWLKgjdgJ41Jh4oIE2aRDW9aZ1aj4rMihfVOF8VoWr44jq1xzeyzu_xM-gY3Yx
 
   # Run flake8 to check for code quality
 # lint-test-job:
@@ -66,7 +67,7 @@ build-front-end-job:
     # You need to substitute in your real values for
     # GROUP_NAME, PROJECT_NAME, & WEBSERVICE_NAME below.
     PUBLIC_URL: https://team-4-hack-n-snack.gitlab.io/platemate
-    REACT_APP_PLATEMATE_API_HOST: http://platemate.sept-ct-4.mod3projects.com
+    REACT_APP_PLATEMATE_API_HOST: https://platemate.sept-ct-4.mod3projects.com
   script:
     - cd ghi
     - npm install
