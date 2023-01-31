@@ -1,8 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const ignoreTransitionProps = require("postcss-ignore-transition-properties");
-const autoprefixer = require("autoprefixer");
-
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -18,9 +15,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tw-elements/dist/plugin"),
-    ignoreTransitionProps(),
-    autoprefixer(/* config */),
-  ],
+  plugins: [require("tw-elements/dist/plugin")],
 };
