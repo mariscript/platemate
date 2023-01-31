@@ -25,12 +25,15 @@ function GetToken() {
 
 export default function App() {
   const [refresh, setRefresh] = useState(false);
+  const domain = /https:\/\/[^/]+/;
+  const basename = process.env.PUBLIC_URL.replace(domain, "");
   setTimeout(() => {
     setRefresh(false);
   }, 10000);
+
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <GetToken />
         <Signup />
         <Login />

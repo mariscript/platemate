@@ -1,7 +1,7 @@
 import requests
-from .keys import YELP_KEY
+import os
 
-
+YELP_KEY = os.environ["YELP_KEY"]
 
 class YelpQueries:
     def get_yelp(self, location: str, budget: int, open_at: int, term : str, diet_needs: str):
