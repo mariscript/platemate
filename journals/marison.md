@@ -1,5 +1,9 @@
 # Journal
 
+### 1/31/2023 Tuesday
+
+Attempting to deploy
+
 ## Week 5
 
 ### 1/27/2023 Friday DUE DATE DAY!
