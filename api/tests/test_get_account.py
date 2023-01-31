@@ -1,11 +1,12 @@
-# This test was written by Marison 
-import json
+# This test was written by Marison
 from fastapi.testclient import TestClient
 from queries.accounts import AccountsQueries, AccountOut
 from authenticator import authenticator
 from main import app
 
+
 client = TestClient(app=app)
+
 
 def get_current_account_data_mock():
     return {
@@ -13,12 +14,19 @@ def get_current_account_data_mock():
         'username': 'test@email.com'
     }
 
+
 class GetAccountQueriesMock:
     def get_account_by_id(self, id: int) -> AccountOut:
         if id == 789:
-            return AccountOut(id=7, first_name="test", last_name="test_last", email="test@email.com", zipcode="12345")
+            return AccountOut(
+                id=7,
+                first_name="test",
+                last_name="test_last",
+                email="test@email.com",
+                zipcode="12345")
         else:
             return None
+
 
 def test_get_account():
     # arrange

@@ -1,15 +1,16 @@
-#this test was by Gina
-
-import json
+# this test was by Gina
 from fastapi.testclient import TestClient
 from queries.accounts import AccountsQueries
 from main import app
 
+
 client = TestClient(app=app)
+
 
 class AccountQueriesMock:
     def get_all_accounts(self):
         return []
+
 
 def test_account_list():
     # Arrange

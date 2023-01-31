@@ -60,7 +60,9 @@ PlateMate was created for individuals that want to go out, either alone or with 
 
 10. Exit the container's CLI
 
-11. Get ready to find your new favorite restaurant on PlateMate!
+11. Create a new file in queries/ named "keys.py", and insert a Yelp fusion key from the dev website.
+
+12. Get ready to find your new favorite restaurant on PlateMate!
 
 ## Test [Should provide location of tests with test author]:
 

@@ -19,7 +19,7 @@ export default function UpdateDietaryNeeds() {
   const { token } = useAuthContext();
   const navigate = useNavigate();
   const [cancelEdit, setCancelEdit] = useState(false);
-  const [account, setAccount] = useState({});
+  const [setAccount] = useState({});
   const [, , , , , updateallergy, updatedietrestrict] = useToken();
 
   const [allergy, setAllergy] = useState({});

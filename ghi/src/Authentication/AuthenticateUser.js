@@ -61,7 +61,6 @@ export const useAuthContext = () => useContext(AuthContext);
 
 export function useToken() {
   const { token, setToken } = useAuthContext();
-  const [dupEmailError, setDuplicateEmail] = useState(false);
 
   useEffect(() => {
     async function fetchToken() {
@@ -227,6 +226,5 @@ export function useToken() {
     updatedietrestrict,
     createallergy,
     createdietrestrict,
-    dupEmailError,
   ];
 }

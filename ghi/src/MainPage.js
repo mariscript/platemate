@@ -1,4 +1,4 @@
-import { useToken, useAuthContext } from "./Authentication/AuthenticateUser";
+import { useAuthContext } from "./Authentication/AuthenticateUser";
 
 export default function MainPage() {
   const { token } = useAuthContext();

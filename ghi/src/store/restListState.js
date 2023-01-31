@@ -7,7 +7,7 @@ export const restListState = createSlice({
   initialState,
   reducers: {
     storeRestList: (state, action) => {
-        return {...state = action.payload}
+      return { ...(state = action.payload) };
     },
     clearForm: () => {
       return initialState;

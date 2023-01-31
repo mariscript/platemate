@@ -3,18 +3,11 @@ import { useAuthContext, useToken } from "../Authentication/AuthenticateUser";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFish,
-  faBreadSlice,
-  faLeaf,
-  faCarrot,
-  faBowlFood,
   faLocationDot,
   faEnvelope,
-  faUser,
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
-import { useDispatch } from "react-redux";
 
 export default function UpdateAccountInfo() {
   const [account, setAccount] = useState({});

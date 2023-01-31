@@ -2,7 +2,8 @@
 
 ### (Fri) 1/27/2023
 
-- fixed errors on the console and merge party!
+- fixed errors on the console and final merge party!
+- showed Candice our preview for the project
 
 ### (Thurs) 1/26/2023
 

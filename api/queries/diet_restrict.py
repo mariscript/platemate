@@ -1,18 +1,18 @@
-import os
 from pydantic import BaseModel
 from queries.pool import pool
 from typing import Union
-from queries.accounts import Account
 
 
 class Error(BaseModel):
     message: str
+
 
 class DietRestrictIn(BaseModel):
     vegan: bool
     vegetarian: bool
     halal: bool
     account_id: int
+
 
 class DietRestrictOut(BaseModel):
     id: int
@@ -21,11 +21,13 @@ class DietRestrictOut(BaseModel):
     halal: bool
     account_id: int
 
+
 class DietRestrictsOut(BaseModel):
     diet_restricts: list[DietRestrictOut]
 
+
 class DietRestrictQueries(BaseModel):
-    def create(self, diet_restrict : DietRestrictIn) -> DietRestrictOut:
+    def create(self, diet_restrict: DietRestrictIn) -> DietRestrictOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 result = db.execute(
@@ -34,19 +36,21 @@ class DietRestrictQueries(BaseModel):
                     VALUES(%s, %s, %s, %s)
                     RETURNING id;
                     """,
-                    [diet_restrict.vegan,
-                    diet_restrict.vegetarian,
-                    diet_restrict.halal,
-                    diet_restrict.account_id]
+                    [
+                        diet_restrict.vegan,
+                        diet_restrict.vegetarian,
+                        diet_restrict.halal,
+                        diet_restrict.account_id,
+                    ],
                 )
                 id = result.fetchone()[0]
                 return DietRestrictOut(
                     id=id,
                     vegan=diet_restrict.vegan,
                     vegetarian=diet_restrict.vegetarian,
-                    halal= diet_restrict.halal,
-                    account_id=diet_restrict.account_id
-                    )
+                    halal=diet_restrict.halal,
+                    account_id=diet_restrict.account_id,
+                )
 
     def get_all_diet_restricts(self):
         with pool.connection() as conn:
@@ -82,19 +86,20 @@ class DietRestrictQueries(BaseModel):
                     FROM diet_restrict
                     WHERE account_id = %s;
                     """,
-                    [account_id]
+                    [account_id],
                 )
 
                 results = db.fetchone()
-                if results is None: return results
+                if results is None:
+                    return results
                 diet_restrict = {}
                 for i, column in enumerate(db.description):
                     diet_restrict[column.name] = results[i]
                 return diet_restrict
 
-
-
-    def update_diet_restrict(self, account_id:int, diet_restrict:DietRestrictIn) -> Union[DietRestrictOut,Error]:
+    def update_diet_restrict(
+        self, account_id: int, diet_restrict: DietRestrictIn
+    ) -> Union[DietRestrictOut, Error]:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
@@ -112,16 +117,16 @@ class DietRestrictQueries(BaseModel):
                             diet_restrict.vegetarian,
                             diet_restrict.halal,
                             diet_restrict.account_id,
-                            account_id
-                        ]
+                            account_id,
+                        ],
                     )
                     return self.diet_restrict_in_to_out(account_id, diet_restrict)
         except Exception as e:
             print(e)
-            return {"message":"Could not update the diet_restrict"}
+            return {"message": "Could not update the diet_restrict"}
 
     def diet_restrict_in_to_out(self, id: int, diet_restrict: DietRestrictIn):
-        old_data =  diet_restrict.dict()
+        old_data = diet_restrict.dict()
         return DietRestrictOut(id=id, **old_data)
 
     def delete_diet_restrict(self, id: int) -> bool:
@@ -132,6 +137,6 @@ class DietRestrictQueries(BaseModel):
                     DELETE FROM diet_restrict
                     WHERE id = %s
                     """,
-                    [id]
+                    [id],
                 )
                 return True

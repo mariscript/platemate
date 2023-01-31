@@ -1,11 +1,12 @@
 # This test was Authored by Zac
-import json
 from fastapi.testclient import TestClient
 from queries.allergies import AllergiesQueries
 from authenticator import authenticator
 from main import app
 
+
 client = TestClient(app=app)
+
 
 def get_current_account_data_mock():
     return {
@@ -13,9 +14,11 @@ def get_current_account_data_mock():
         'username': 'test@email.com'
     }
 
+
 class AllergiesQueriesMock:
     def get_all_allergies(self):
         return []
+
 
 def test_allergies_list():
     # Arrange

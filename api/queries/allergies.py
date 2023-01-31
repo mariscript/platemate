@@ -1,17 +1,17 @@
-import os
 from pydantic import BaseModel
 from queries.pool import pool
 from typing import Union
-from queries.accounts import Account
 
 
 class Error(BaseModel):
     message: str
 
+
 class AllergyIn(BaseModel):
     seafood: bool
     gluten_free: bool
     account_id: int
+
 
 class AllergyOut(BaseModel):
     id: int
@@ -19,11 +19,12 @@ class AllergyOut(BaseModel):
     gluten_free: bool
     account_id: int
 
+
 class AllergiesOut(BaseModel):
     allergies: list[AllergyOut]
 
-class AllergiesQueries(BaseModel):
 
+class AllergiesQueries(BaseModel):
     def create(self, allergies: AllergyIn) -> AllergyOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
@@ -34,15 +35,15 @@ class AllergiesQueries(BaseModel):
                     RETURNING id;
                     """,
                     [allergies.seafood,
-                    allergies.gluten_free,
-                    allergies.account_id]
-                )
+                        allergies.gluten_free,
+                        allergies.account_id],
+                    )
                 id = result.fetchone()[0]
                 return AllergyOut(
                     id=id,
                     seafood=allergies.seafood,
                     gluten_free=allergies.gluten_free,
-                    account_id=allergies.account_id
+                    account_id=allergies.account_id,
                 )
 
     def get_all_allergies(self):
@@ -77,19 +78,20 @@ class AllergiesQueries(BaseModel):
                     FROM allergies
                     WHERE account_id = %s;
                     """,
-                    [account_id]
+                    [account_id],
                 )
 
                 results = db.fetchone()
-                if results is None: return results
+                if results is None:
+                    return results
                 allergy = {}
                 for i, column in enumerate(db.description):
                     allergy[column.name] = results[i]
                 return allergy
 
-
-
-    def update_allergy(self, account_id:int, allergy:AllergyIn) -> Union[AllergyOut,Error]:
+    def update_allergy(
+        self, account_id: int, allergy: AllergyIn
+    ) -> Union[AllergyOut, Error]:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
@@ -105,13 +107,13 @@ class AllergiesQueries(BaseModel):
                             allergy.seafood,
                             allergy.gluten_free,
                             allergy.account_id,
-                            account_id
-                        ]
+                            account_id,
+                        ],
                     )
                     return self.allergy_in_to_out(account_id, allergy)
         except Exception as e:
             print(e)
-            return {"message":"Could not update the allergy"}
+            return {"message": "Could not update the allergy"}
 
     def allergy_in_to_out(self, id: int, allergy: AllergyIn):
         old_data = allergy.dict()
@@ -125,7 +127,7 @@ class AllergiesQueries(BaseModel):
                     DELETE FROM allergies
                     WHERE id = %s
                     """,
-                    [id]
+                    [id],
                 )
 
                 return True
