@@ -15,7 +15,12 @@ app.include_router(diet_restrict.router, tags=['Diet Restrictions'])
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        os.environ.get("CORS_HOST", "http://localhost:3000", None)
+        "http://localhost:8000",
+        "http://localhost:3000",
+        "https://team-4-hack-n-snack.gitlab.io",
+        os.environ.get("REACT_APP_PLATEMATE_API_HOST", None),
+        os.environ.get("CORS_HOST", None),
+        os.environ.get("PUBLIC_URL", None),
     ],
     allow_credentials=True,
     allow_methods=["*"],
