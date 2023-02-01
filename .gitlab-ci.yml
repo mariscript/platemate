@@ -3,9 +3,6 @@ stages:
   - build
   - deploy
 
-services:
-  - postgres:14.2-bullseye
-
 variables:
   DATABASE_URL: postgres://postgres:843a829fd09aaaa8@srv-captain--platemate-db:5432
   SIGNING_KEY: fed410876876994129227b1b8a46a8e22c503cbf4e9b073db8350cb72e04314b
@@ -35,6 +32,7 @@ build-api-backend:
     CORS_HOST: https://team-4-hack-n-snack.gitlab.io
   services:
     - docker:19.03.1-dind
+    - postgres:14.2-bullseye
   before_script:
     - export DOCKER_REGISTRY_USER=$CI_REGISTRY_USER # built-in GitLab Registry User
     - export DOCKER_REGISTRY_PASSWORD=$CI_REGISTRY_PASSWORD # built-in GitLab Registry Password
@@ -66,7 +64,7 @@ build-front-end-job:
     # You need to substitute in your real values for
     # GROUP_NAME, PROJECT_NAME, & WEBSERVICE_NAME below.
     PUBLIC_URL: https://team-4-hack-n-snack.gitlab.io/platemate
-    REACT_APP_PLATEMATE_API_HOST: https://platemate.sept-ct-4.mod3projects.com
+    REACT_APP_PLATEMATE_API_HOST: https://api.sept-ct-4.mod3projects.com
   script:
     - cd ghi
     - npm install
