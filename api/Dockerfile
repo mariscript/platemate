@@ -12,6 +12,7 @@ COPY authenticator.py authenticator.py
 # Modify these instructions to do that
 COPY queries queries
 COPY routers routers
+COPY tests tests
 
 # If you're using a relational database with migrations,
 # uncomment the following line
