@@ -26,7 +26,7 @@ export default function UpdateDietaryNeeds() {
   const [diet_restrict, setDiet] = useState({});
 
   const fetchAccount = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me`;
     const result = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -35,7 +35,7 @@ export default function UpdateDietaryNeeds() {
   };
 
   const fetchAllergies = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me/`;
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me`;
     const result = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -46,7 +46,7 @@ export default function UpdateDietaryNeeds() {
   };
 
   const fetchDietRestrict = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restricts/me/`;
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restricts/me`;
     const result = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
     });

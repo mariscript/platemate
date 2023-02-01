@@ -24,7 +24,7 @@ export default function UserProfile() {
   const dispatch = useDispatch();
 
   const fetchAccount = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me`;
     const result = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -38,7 +38,7 @@ export default function UserProfile() {
   };
 
   const fetchAllergies = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me/`;
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/allergies/me`;
     const result = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -47,7 +47,7 @@ export default function UserProfile() {
   };
 
   const fetchDietRestrict = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restricts/me/`;
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/diet_restricts/me`;
     const result = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
     });

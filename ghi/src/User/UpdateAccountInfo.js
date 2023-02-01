@@ -22,7 +22,7 @@ export default function UpdateAccountInfo() {
   const { token } = useAuthContext();
 
   const fetchAccount = async () => {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me/`;
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/me`;
     const result = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
     });

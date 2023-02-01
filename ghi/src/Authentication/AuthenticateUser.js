@@ -7,7 +7,7 @@ export function getToken() {
 }
 
 export async function getTokenInternal() {
-  const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/token/`;
+  const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/token`;
   try {
     const response = await fetch(url, {
       credentials: "include",
@@ -73,7 +73,7 @@ export function useToken() {
   }, [setToken, token]);
 
   async function login(email, password) {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/token/`;
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/token`;
     const form = new FormData();
     form.append("username", email);
     form.append("password", password);
@@ -93,7 +93,7 @@ export function useToken() {
 
   async function logout() {
     if (token) {
-      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/token/`;
+      const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/token`;
       await fetch(url, { method: "delete", credentials: "include" });
       internalToken = null;
       setToken(null);
@@ -102,7 +102,7 @@ export function useToken() {
   }
 
   async function signup(first_name, last_name, email, zipcode, password) {
-    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts/`;
+    const url = `${process.env.REACT_APP_PLATEMATE_API_HOST}/api/accounts`;
     const response = await fetch(url, {
       method: "post",
       body: JSON.stringify({
