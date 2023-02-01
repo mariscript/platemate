@@ -11,7 +11,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="justify-center mx-16">
-          <a href="/" className="flex items-center">
+          <a href="/platemate" className="flex items-center">
             <h1 className="flex space-x-1 tracking-[7px] text-3xl font-md items-center">
               Plate
             </h1>
