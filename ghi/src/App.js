@@ -42,7 +42,7 @@ export default function App() {
         <div>
           <Routes>
             <Route
-              path="/platemate"
+              path="/"
               element={[
                 <QuestionModal refresh={refresh} setRefresh={setRefresh} />,
                 <MainPage />,
