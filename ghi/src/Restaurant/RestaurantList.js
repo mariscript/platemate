@@ -111,7 +111,7 @@ export default function RestaurantList() {
     return;
   }
 
-  if (load.issue) {
+  if (load.issue || !zipcode) {
     return (
       <>
         <div className="flex justify-center mt-10 mb-5">
