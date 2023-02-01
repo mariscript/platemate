@@ -190,7 +190,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="/about"
+                      href="platemate/about"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -246,7 +246,7 @@ export default function Nav() {
           </Transition>
         </Menu>
         <div className="mx-auto">
-          <a href="/">
+          <a href="/platemate">
             <div className="flex justify-between tracking-[7px] text-3xl items-center mr-10">
               <h1>Plate</h1>
               <img
@@ -258,7 +258,7 @@ export default function Nav() {
             </div>
           </a>
         </div>
-        <a href="/">
+        <a href="/platemate">
           <button
             type="button"
             className="bg-[#BB5855] mx-[40px] rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer"
