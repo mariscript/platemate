@@ -156,7 +156,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="platemate/me"
+                      href="/me"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -172,7 +172,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="platemate/restaurants"
+                      href="/restaurants"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -190,7 +190,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="platemate/about"
+                      href="/about"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -206,7 +206,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="platemate/resources"
+                      href="/resources"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -224,7 +224,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="platemate/logout"
+                      href="/logout"
                       onClick={logout}
                       className={classNames(
                         active
@@ -258,7 +258,7 @@ export default function Nav() {
             </div>
           </a>
         </div>
-        <a href="/platemate">
+        <a href="/">
           <button
             type="button"
             className="bg-[#BB5855] mx-[40px] rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer"
