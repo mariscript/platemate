@@ -1,17 +1,18 @@
 import React from "react";
 import plateLogo from "../images/plate.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="w-1/2 mx-auto h-8 transparent 0 bottom-0 items-center inset-x-0 bg-[#fef5ed] mt-10">
       <div className="flex justify-center text-gray-600">
         <div className="mb-2 col-end-7 col-span-2">
-          <a href="/about" className="hover:underline font-semibold text-s">
+          <Link to="/about" className="hover:underline font-semibold text-s">
             About
-          </a>
+          </Link>
         </div>
         <div className="justify-center mx-16">
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <h1 className="flex space-x-1 tracking-[7px] text-3xl font-md items-center">
               Plate
             </h1>
@@ -23,12 +24,15 @@ const Footer = () => {
             <h1 className="flex space-x-1 tracking-[7px] text-3xl font-md items-center">
               Mate
             </h1>
-          </a>
+          </Link>
         </div>
         <div className="mb-2 col-end-7 col-span-2">
-          <a href="/resources" className="hover:underline font-semibold text-s">
+          <Link
+            to="/resources"
+            className="hover:underline font-semibold text-s"
+          >
             Resources
-          </a>
+          </Link>
         </div>
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
