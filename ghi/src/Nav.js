@@ -172,7 +172,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="./restaurants"
+                      href="/restaurants"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -190,7 +190,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="./about"
+                      href="/about"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -206,7 +206,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="./resources"
+                      href="/resources"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -224,7 +224,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="./logout"
+                      href="/logout"
                       onClick={logout}
                       className={classNames(
                         active

@@ -34,6 +34,7 @@ export default function RestaurantList() {
   const dietRestrict = useSelector(
     (state) => state.dietNeeds.name.diet_restrict
   );
+
   const yelpResponse = useSelector((state) => state.yelp.name);
   const location = yelpResponse.zipcode;
   const budget = yelpResponse.budget;
@@ -111,7 +112,7 @@ export default function RestaurantList() {
     return;
   }
 
-  if (load.issue || !zipcode) {
+  if (load.issue) {
     return (
       <>
         <div className="flex justify-center mt-10 mb-5">

@@ -112,12 +112,12 @@ export default function UpdateDietaryNeeds() {
     setVegetarian("");
     setHalal("");
 
-    navigate("/me");
+    navigate("platemate/me");
   };
 
   const handleCancelEdit = () => {
     setCancelEdit(!cancelEdit);
-    navigate("/me");
+    navigate("platemate/me");
   };
 
   useEffect(() => {

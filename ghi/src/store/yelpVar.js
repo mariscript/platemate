@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  zipcode: "",
-  budget: 0,
-  datetime: "",
+  zipcode: "00000",
+  budget: 1,
+  datetime: "2023-01-25 07:00",
   takeInOut: "",
   categories: [],
 };
