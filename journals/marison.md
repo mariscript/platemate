@@ -1,5 +1,9 @@
 # Journal
 
+### 2/2/2023
+
+Deploying attempt
+
 ### 1/31/2023 Tuesday
 
 Attempting to deploy
