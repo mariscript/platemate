@@ -156,7 +156,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="./me"
+                      href=".platemate/me"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -172,7 +172,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="/restaurants"
+                      href=".platemate/restaurants"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -190,7 +190,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="/about"
+                      href=".platemate/about"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -206,7 +206,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="/resources"
+                      href=".platemate/resources"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -224,7 +224,7 @@ export default function Nav() {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="/logout"
+                      href=".platemate/logout"
                       onClick={logout}
                       className={classNames(
                         active
