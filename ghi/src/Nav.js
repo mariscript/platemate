@@ -51,7 +51,7 @@ export default function Nav() {
         className="top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-3"
       >
         <div className="mx-auto">
-          <a href="/platemate">
+          <Link to="/platemate">
             <div className="flex justify-between tracking-[8px] ml-44 text-4xl font-md items-center">
               <h1 className="-mr-1">Plate</h1>
               <img
@@ -61,7 +61,7 @@ export default function Nav() {
               />
               <h1>Mate</h1>
             </div>
-          </a>
+          </Link>
         </div>
         <div className="hidden md:flex items-center">
           <button
@@ -156,8 +156,8 @@ export default function Nav() {
               <div className="py-1">
                 <Menu.Item>
                   {({ active }) => (
-                    <a
-                      href="/me"
+                    <Link
+                      to="/me"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -167,13 +167,13 @@ export default function Nav() {
                     >
                       <FontAwesomeIcon icon={faUser} className="mr-2" />
                       My Profile
-                    </a>
+                    </Link>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <a
-                      href="/restaurants"
+                    <Link
+                      to="/restaurants"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -183,15 +183,15 @@ export default function Nav() {
                     >
                       <FontAwesomeIcon icon={faList} className="mr-2" />
                       My List of Restaurants
-                    </a>
+                    </Link>
                   )}
                 </Menu.Item>
               </div>
               <div className="py-1">
                 <Menu.Item>
                   {({ active }) => (
-                    <a
-                      href="/about"
+                    <Link
+                      to="/about"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -201,13 +201,13 @@ export default function Nav() {
                     >
                       <FontAwesomeIcon icon={faCircleInfo} className="mr-2" />
                       About
-                    </a>
+                    </Link>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <a
-                      href="/resources"
+                    <Link
+                      to="/resources"
                       className={classNames(
                         active
                           ? "bg-[#dad6d0] text-[#BB5855]"
@@ -217,15 +217,15 @@ export default function Nav() {
                     >
                       <FontAwesomeIcon icon={faTools} className="mr-2" />
                       Resources
-                    </a>
+                    </Link>
                   )}
                 </Menu.Item>
               </div>
               <div className="py-1">
                 <Menu.Item>
                   {({ active }) => (
-                    <a
-                      href="/logout"
+                    <Link
+                      to="/logout"
                       onClick={logout}
                       className={classNames(
                         active
@@ -239,7 +239,7 @@ export default function Nav() {
                         className="mr-2"
                       />
                       Logout
-                    </a>
+                    </Link>
                   )}
                 </Menu.Item>
               </div>
@@ -247,7 +247,7 @@ export default function Nav() {
           </Transition>
         </Menu>
         <div className="mx-auto">
-          <a href="/">
+          <Link to="/">
             <div className="flex justify-between tracking-[7px] text-3xl items-center mr-10">
               <h1>Plate</h1>
               <img
@@ -257,9 +257,9 @@ export default function Nav() {
               />
               <h1>Mate</h1>
             </div>
-          </a>
+          </Link>
         </div>
-        <a href="/">
+        <Link to="/">
           <button
             type="button"
             className="bg-[#BB5855] mx-[40px] rounded text-[#FDECA9] text-sm py-1 px-4 relative inline-flex group items-center justify-center cursor-pointer"
@@ -272,7 +272,7 @@ export default function Nav() {
               className="ml-1.5"
             />
           </button>
-        </a>
+        </Link>
       </nav>
     );
   }
