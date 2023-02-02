@@ -4,7 +4,7 @@
 
 ### Friday 1/28/2023
 
-Due date! Today was mostly error handling and getting the project ready for submission. We did show Candice the project, and she thought it looked great! I let her know about some paint points for us like clearing the redux store and some of the API limitations. She was super understanding and actually glad that we experienced some issues of that scale because that is how the working world is. I am really glad we had this experience. I learned a lot by self teaching and from some members of my group, but I am excited to have a code review with Candice next week to improve our code. It's done!
+Due date! Today was mostly error handling and getting the project ready for submission. We did show Candice the project, and she thought it looked great! I let her know about some paint points for us like clearing the redux store and some of the API limitations. She was super understanding and actually glad that we experienced some issues of that scale because that is how the working world is. I am really glad we had this experience. I learned a lot by self teaching and from some members of my group, but I am excited to have a code review with Candice next week to improve our code. It's done! Yay :)
 
 ### Thuesday 1/27/23
 
