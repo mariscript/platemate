@@ -51,7 +51,7 @@ export default function Nav() {
         className="top-0 left-0 flex justify-center items-center bg-[#FDECA9] py-3"
       >
         <div className="mx-auto">
-          <Link to="/">
+          <a href="/platemate">
             <div className="flex justify-between tracking-[8px] ml-44 text-4xl font-md items-center">
               <h1 className="-mr-1">Plate</h1>
               <img
@@ -61,7 +61,7 @@ export default function Nav() {
               />
               <h1>Mate</h1>
             </div>
-          </Link>
+          </a>
         </div>
         <div className="hidden md:flex items-center">
           <button
