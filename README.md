@@ -1,12 +1,11 @@
 # PlateMate
 
 _Designed and Created By:_
-
-- Zachary Macek
+ 
 - Gina John
 - Natalie Tang
 - Marison Munoz
-- Jason Olefson
+- Zachary Macek
 
 PlateMate streamlines the search for the perfect dining experience by allowing users to easily find a restaurant that meets their preferences and requirements. By answering a few questions about price range, cuisine, location and atmosphere, users are presented with a tailored list of options. With PlateMate, users can explore reviews and menus, and make a reservation or order food for pickup or delivery with just a few clicks.
 
