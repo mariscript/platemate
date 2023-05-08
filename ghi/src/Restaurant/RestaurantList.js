@@ -36,10 +36,12 @@ export default function RestaurantList() {
   );
 
   const yelpResponse = useSelector((state) => state.yelp.name);
+  console.log(yelpResponse)
   const location = yelpResponse.zipcode;
   const budget = yelpResponse.budget;
   const openAt = yelpResponse.datetime;
   const yelpCat = yelpResponse.categories;
+  
 
   function dietNeedsFilter() {
     if (token) {
